@@ -7,6 +7,8 @@ public class LevelManager : MonoBehaviour
     public static LevelManager control;
     public CubeSpawner spawner;
 
+    public FaceDataSO facesData;
+
     [SerializeField] private Face _currentSelectedFace;
 
     public int CubeAmount
@@ -32,9 +34,29 @@ public class LevelManager : MonoBehaviour
         spawner = GetComponentInChildren<CubeSpawner>();
     }
 
+    private void Start()
+    {
+        BuildInitialCube();
+    }
+
+    /// <summary>
+    /// Creates the initial cube, with a city hall face looking upwards.
+    /// </summary>
+    public void BuildInitialCube()
+    {
+        Cube initialCube;
+        initialCube = spawner.GetInitialCube();
+        initialCube.transform.position = Vector3.zero;
+    }
+
+    [ContextMenu("Build")]
     public bool Build()
     {
+        Cube newCube;
+        newCube = spawner.GetNextCube();
         return false;
     }
+
+
 
 }

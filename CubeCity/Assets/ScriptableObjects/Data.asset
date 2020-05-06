@@ -1,0 +1,165 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2043609dc166bfe46ade90b409eea21b, type: 3}
+  m_Name: Data
+  m_EditorClassIdentifier: 
+  faces:
+  - name: HousingArea
+    _prosperity: 1
+    _population: 1
+    _pullution: 1
+    _productivity: 1
+    _sustainability: 1
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: Factory
+    _prosperity: 2
+    _population: 2
+    _pullution: 2
+    _productivity: 2
+    _sustainability: 2
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: Park
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: ShoppingArea
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: Dump
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: AgriculturalArea
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: CivicCenter
+    _prosperity: 10
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: College
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: SolarPowerPlant
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: Meteorite
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: NaturalReserve
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: RadioactiveZone
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: UFO
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: Metropolis
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
+  - name: SpaceCompany
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Face : MonoBehaviour, IRaySelectable, IPoolable
+public class Face : MonoBehaviour, IRaySelectable
 {
     public FaceTypes Type
     {
@@ -14,10 +14,13 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
         set
         {
             _type = value;
+            SetValues();
         }
     }
     [SerializeField] private FaceTypes _type;
-    
+
+    [SerializeField] private FaceOrientationType _orientation;
+
     public bool IsSelected
     {
         get
@@ -32,6 +35,8 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
     [SerializeField] private bool _isSelected;
 
     private bool isCovered;
+
+    [SerializeField] private FaceStats _stats;
 
     public void Select()
     {
@@ -48,11 +53,15 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
         return isCovered;
     }
 
-    public void Initialize()
+    public FaceOrientationType GetOrientationType()
     {
-        // TODO: revisart bien si necesita ser realmente un Ipoolable.
+        return _orientation;
+    }
 
-        throw new System.NotImplementedException();
+    public void SetValues()
+    {
+        if (LevelManager.control != null)
+            _stats = LevelManager.control.facesData.GetStats(Type);
     }
 
     private void OnValidate()
