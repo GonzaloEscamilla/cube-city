@@ -10,9 +10,23 @@ public class CubeSpawner : MonoBehaviour
     private Pool _cubePool;
     private Cube _currentSpawnedCube;
 
+    [SerializeField] private Pool[] facePools;
+
     private void Awake()
     {
         _cubePool = GetComponent<Pool>();
+
+        Pool[] auxPool = GetComponentsInChildren<Pool>();
+        facePools = new Pool[auxPool.Length - 1]; // Removing the _cubePool;
+
+        for (int i = 1; i < auxPool.Length; i++)
+        {
+            if (auxPool[i].tag == "FacePools")
+            {
+                facePools[i -1] = auxPool[i];
+            }
+        }
+
     }
 
     /// <summary>
@@ -32,13 +46,23 @@ public class CubeSpawner : MonoBehaviour
     /// Get a new random cube.
     /// </summary>
     /// <returns></returns>
-    public Cube GetNextCube()
+    public void NextCube()
     {
         _currentSpawnedCube = _cubePool.GetPooledObject().GetComponent<Cube>();
 
         SetCubeFaces(_currentSpawnedCube);
+    }
 
-        return _currentSpawnedCube;
+    /// <summary>
+    /// Returns the current spawned cube if any.
+    /// </summary>
+    /// <returns></returns>
+    public Cube GetCurrentCube()
+    {
+        if (_currentSpawnedCube != null)
+            return _currentSpawnedCube;
+        else
+            return null;
     }
 
     /// <summary>
@@ -48,7 +72,10 @@ public class CubeSpawner : MonoBehaviour
     private void SetCubeFaces(Cube spawnedCube)
     {
         Face[] cubeFaces = _currentSpawnedCube.GetComponentsInChildren<Face>();
+        Transform newFace;
+        
         int randomType;
+
 
         for (int i = 0; i < cubeFaces.Length; i++)
         {
@@ -56,6 +83,10 @@ public class CubeSpawner : MonoBehaviour
             randomType = Random.Range(0, 6);
 
             cubeFaces[i].Type = (FaceTypes)randomType;
+
+            newFace = facePools[randomType].GetPooledObject().transform;
+            newFace.SetParent(cubeFaces[i].transform);
+            newFace.SetPositionAndRotation(cubeFaces[i].transform.position, cubeFaces[i].transform.rotation);
         }
     }
 
@@ -68,6 +99,8 @@ public class CubeSpawner : MonoBehaviour
     private void SetCubeFaces(Cube spawnedCube, FaceTypes forcedFaceType, FaceOrientationType side)
     {
         Face[] cubeFaces = _currentSpawnedCube.GetComponentsInChildren<Face>();
+        Transform newFace;
+
         int randomType;
 
         for (int i = 0; i < cubeFaces.Length; i++)
@@ -79,7 +112,10 @@ public class CubeSpawner : MonoBehaviour
                 cubeFaces[i].Type = (FaceTypes)randomType;
             else
                 cubeFaces[i].Type = forcedFaceType;
+
+            newFace = facePools[randomType].GetPooledObject().transform;
+            newFace.SetParent(cubeFaces[i].transform);
+            newFace.SetPositionAndRotation(cubeFaces[i].transform.position, cubeFaces[i].transform.rotation);
         }
     }
-
 }

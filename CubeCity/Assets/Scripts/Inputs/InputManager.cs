@@ -39,7 +39,7 @@ public class InputManager : MonoBehaviour
     /// <summary>
     /// Is the UI selected. Its true if the input position is above a UI element.
     /// </summary>
-    private bool isUISelected;
+    private bool isUISelected = false;
 
     #endregion
 
@@ -53,6 +53,10 @@ public class InputManager : MonoBehaviour
     private float elapsedTime;
     private int tapFlag;
     private bool isTapping;
+
+    // -------------------Swipe---------------------------|
+
+    private bool isSwiping = false;
 
     // -------------------Panning-------------------------|
 
@@ -99,10 +103,12 @@ public class InputManager : MonoBehaviour
             }
             if (firstTouch.phase == TouchPhase.Moved)
             {
+                isSwiping = true;
                 Swipe();
             }
             if (firstTouch.phase == TouchPhase.Ended)
             {
+                isSwiping = false;
                 tapFlag++;
             }
         }
@@ -256,7 +262,7 @@ public class InputManager : MonoBehaviour
     {
         elapsedTime = 0f;
 
-        while (elapsedTime <= tapTimeThreshold)
+        while (elapsedTime <= tapTimeThreshold && !isSwiping)
         {
             if (tapFlag >= 2)
             {

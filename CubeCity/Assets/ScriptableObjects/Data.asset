@@ -14,21 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faces:
   - name: HousingArea
-    _prosperity: 1
-    _population: 1
-    _pullution: 1
-    _productivity: 1
-    _sustainability: 1
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
     _happiness: 0
     _consumption: 0
     _technology: 0
     _knowledge: 0
   - name: Factory
-    _prosperity: 2
-    _population: 2
-    _pullution: 2
-    _productivity: 2
-    _sustainability: 2
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
     _happiness: 0
     _consumption: 0
     _technology: 0

@@ -19,8 +19,6 @@ public class Face : MonoBehaviour, IRaySelectable
     }
     [SerializeField] private FaceTypes _type;
 
-    [SerializeField] private FaceOrientationType _orientation;
-
     public bool IsSelected
     {
         get
@@ -34,9 +32,12 @@ public class Face : MonoBehaviour, IRaySelectable
     }
     [SerializeField] private bool _isSelected;
 
-    private bool isCovered;
+    [SerializeField] private FaceOrientationType _orientation;
+    [SerializeField] private FaceData _data;
+    [SerializeField] private Transform _spawnPosition;
 
-    [SerializeField] private FaceStats _stats;
+
+    private bool isCovered;
 
     public void Select()
     {
@@ -53,6 +54,11 @@ public class Face : MonoBehaviour, IRaySelectable
         return isCovered;
     }
 
+    public Transform GetSpawnPosition()
+    {
+        return _spawnPosition;
+    }
+
     public FaceOrientationType GetOrientationType()
     {
         return _orientation;
@@ -61,7 +67,7 @@ public class Face : MonoBehaviour, IRaySelectable
     public void SetValues()
     {
         if (LevelManager.control != null)
-            _stats = LevelManager.control.facesData.GetStats(Type);
+            _data = LevelManager.control.GetFaceData(Type);
     }
 
     private void OnValidate()

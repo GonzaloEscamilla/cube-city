@@ -10,14 +10,11 @@ public class Pool : MonoBehaviour
 
     public List<Setup>[] pool;
 
-    [SerializeField]
-    private int startAmount;
+    [SerializeField] private int startAmount = 1;
 
-    [SerializeField]
-    private bool canGrow;
+    [SerializeField] private bool canGrow = false;
 
-    [SerializeField]
-    private bool initializedAtStart;
+    [SerializeField] private bool initializedAtStart;
 
     void Awake()
     {

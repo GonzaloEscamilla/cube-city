@@ -24,7 +24,10 @@ public class RaycastSelectionHandler : MonoBehaviour
         if (Physics.Raycast(_ray, out _raycastHit))
         {
             if (_selection != null)
+            {
                 _selection.Unselect();
+                EventsManager.control.onFaceUnselected();
+            }
 
             _selection = _raycastHit.transform.GetComponent<IRaySelectable>();
 
@@ -33,13 +36,28 @@ public class RaycastSelectionHandler : MonoBehaviour
                 if (!_selection.IsSelected)
                 {
                     _raycastHit.transform.GetComponent<IRaySelectable>().Select();
+                    EventsManager.control.FaceSelected(GetSelection());
+                    
                     return _raycastHit.transform;
                 }
             }
         }
         else if (_selection != null)
+        {
             _selection.Unselect();
+            EventsManager.control.onFaceUnselected();
+        }
 
         return null;
+    }
+
+    public Face GetSelection()
+    {
+        if (_selection != null)
+        {
+            return _selection as Face;
+        }
+        else
+            return null;
     }
 }

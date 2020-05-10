@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f689fa8dd3c165448ab00f5a6a00ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 0}
-  _currentSelectedFace: {fileID: 0}
+  facesData: {fileID: 11400000, guid: 260641564ee5ed749838681a8603ae0e, type: 2}
 --- !u!1001 &6019823102772928642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55,7 +54,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3354265754124654, guid: 76509b2a20d5ea240acc5e111aa9a65e, type: 3}
       propertyPath: startAmount
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3354265754124654, guid: 76509b2a20d5ea240acc5e111aa9a65e, type: 3}
       propertyPath: canGrow
@@ -119,7 +118,7 @@ PrefabInstance:
     - target: {fileID: 7482583180114654059, guid: 76509b2a20d5ea240acc5e111aa9a65e,
         type: 3}
       propertyPath: m_Name
-      value: Pool - Cubes
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76509b2a20d5ea240acc5e111aa9a65e, type: 3}

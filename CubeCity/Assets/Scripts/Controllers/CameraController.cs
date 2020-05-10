@@ -48,10 +48,22 @@ public class CameraController : MonoBehaviour
     /// </summary>
     private Camera mainCamera;
 
+    private Coroutine transitionCoroutine;
+
     private void Awake()
     {
         mainCamera = Camera.main;
         SetTarget();
+    }
+
+    private void Start()
+    {
+        EventsManager.control.onCubeAdded += PositionAndRorationTransition;
+    }
+
+    private void OnDestroy()
+    {
+        EventsManager.control.onCubeAdded -= PositionAndRorationTransition;
     }
 
     /// <summary>
@@ -100,6 +112,7 @@ public class CameraController : MonoBehaviour
         return target;
     }
 
+
     /// <summary>
     /// Performs a Zoom on the camera filed of view.
     /// </summary>
@@ -145,7 +158,22 @@ public class CameraController : MonoBehaviour
     /// <param name="newTransform"></param>
     public void PositionAndRorationTransition(Transform newTransform)
     {
-        StartCoroutine(Transition(newTransform, advanceSettings.transitionTime));
+        if (transitionCoroutine != null)
+            StopCoroutine(transitionCoroutine);
+
+        transitionCoroutine = StartCoroutine(Transition(newTransform, advanceSettings.transitionTime));
+    }
+
+    /// <summary>
+    /// Makes the camera go the the desired position.
+    /// </summary>
+    /// <param name="newTransform"></param>
+    public void PositionAndRorationTransition(Cube newTransform)
+    {
+        if (transitionCoroutine != null)
+            StopCoroutine(transitionCoroutine);
+
+        transitionCoroutine = StartCoroutine(Transition(newTransform.transform, advanceSettings.transitionTime));
     }
 
     /// <summary>
@@ -154,7 +182,10 @@ public class CameraController : MonoBehaviour
     /// <param name="newTransform"></param>
     public void PositionAndRorationTransition(Transform newTransform, float transitionTime)
     {
-        StartCoroutine(Transition(newTransform, transitionTime));
+        if (transitionCoroutine != null)
+            StopCoroutine(transitionCoroutine);
+
+        transitionCoroutine = StartCoroutine(Transition(newTransform, transitionTime));
     }
 
     /// <summary>
