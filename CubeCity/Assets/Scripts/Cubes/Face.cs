@@ -35,6 +35,8 @@ public class Face : MonoBehaviour, IRaySelectable
     [SerializeField] private FaceOrientationType _orientation;
     [SerializeField] private FaceData _data;
     [SerializeField] private Transform _spawnPosition;
+    [SerializeField] private float _previewCubeOffsetPosition = 1.2f;
+    [SerializeField] private float _initialSpawnPositionOffset = 10f;
 
 
     private bool isCovered;
@@ -54,9 +56,26 @@ public class Face : MonoBehaviour, IRaySelectable
         return isCovered;
     }
 
-    public Transform GetSpawnPosition()
+    public Vector3 GetInitialSpawnPosition()
     {
-        return _spawnPosition;
+        Vector3 direction = (_spawnPosition.position - this.transform.position).normalized;
+        return _spawnPosition.position + direction * _initialSpawnPositionOffset;
+    }
+
+    public Vector3 GetFinalSpawnPosition()
+    {
+        return _spawnPosition.position;
+    }
+
+    public Vector3[] GetSpawnPositions()
+    {
+        return new Vector3[] { GetInitialSpawnPosition(), GetFinalSpawnPosition()};
+    }
+
+    public Vector3 GetPreviewCubePosition()
+    {
+        Vector3 direction = (_spawnPosition.position - this.transform.position).normalized;
+        return  _spawnPosition.position + direction * _previewCubeOffsetPosition;
     }
 
     public FaceOrientationType GetOrientationType()

@@ -58,12 +58,12 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        EventsManager.control.onCubeAdded += PositionAndRorationTransition;
+        EventsManager.control.onCubeBuilded += PositionAndRorationTransition;
     }
 
     private void OnDestroy()
     {
-        EventsManager.control.onCubeAdded -= PositionAndRorationTransition;
+        EventsManager.control.onCubeBuilded -= PositionAndRorationTransition;
     }
 
     /// <summary>
@@ -168,7 +168,7 @@ public class CameraController : MonoBehaviour
     /// Makes the camera go the the desired position.
     /// </summary>
     /// <param name="newTransform"></param>
-    public void PositionAndRorationTransition(Cube newTransform)
+    public void PositionAndRorationTransition(CubeBehaviour newTransform)
     {
         if (transitionCoroutine != null)
             StopCoroutine(transitionCoroutine);

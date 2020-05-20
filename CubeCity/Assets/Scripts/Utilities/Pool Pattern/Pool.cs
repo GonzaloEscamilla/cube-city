@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Pool : MonoBehaviour
 {
-    public List<Probability> probs;
-
     public Setup[] objectToPool;
 
-    public List<Setup>[] pool;
+    public List<Setup> pool;
 
     [SerializeField] private int startAmount = 1;
 
@@ -16,12 +14,19 @@ public class Pool : MonoBehaviour
 
     [SerializeField] private bool initializedAtStart;
 
+
+    // TODO: Revisar si realmente es necesario esto, posiblemnte se pueda resolver lo del preview cube en el futuro cuando solo haya que remplazar el mesh y la textura y no todo el gameobject.
+    /// <summary>
+    /// This is absolutly needed if for example you need to destry the object outside.
+    /// </summary>
+    [SerializeField] private bool detachObjectWhenPooled = false;
+
     void Awake()
     {
         InitPool(startAmount);
 
         if (initializedAtStart)
-            GetPooledObject();
+            GetPooledObject(0);
     }
 
     public void InitPool(int amount)
@@ -29,40 +34,44 @@ public class Pool : MonoBehaviour
         if (amount == 0)
             return;
 
-        pool = new List<Setup>[objectToPool.Length];
-
-        for (int i = 0; i < pool.Length; i++)
-            pool[i] = new List<Setup>();
-
-
         for (int i = 0; i < startAmount; i++)
-            InstantiateNewObject(false);
+            InstantiateNewObject(false,0);
     }
 
-    public Setup InstantiateNewObject(bool isActive)
-    {
-        return InstantiateNewObject(isActive, 0);
-    }
-
-    public Setup InstantiateNewObject(bool isActive, int objectToInstantiateIndex)
+    public Setup InstantiateNewObject(bool isActive, int objIndex)
     {
         Setup newObject;
 
-        newObject = (Instantiate(objectToPool[objectToInstantiateIndex], this.transform));
+        newObject = (Instantiate(objectToPool[objIndex], this.transform));
         newObject.SetupAll();
         newObject.gameObject.SetActive(isActive);
-        pool[objectToInstantiateIndex].Add(newObject);
+        pool.Add(newObject);
 
         return newObject;
     }
 
-    [ContextMenu("GetPooled")]
     public Setup GetPooledObject()
     {
         return GetPooledObject(0);
     }
+    
+    public Setup GetPooledObject(Transform newParent)
+    {
+        Setup auxObject = GetPooledObject(0);
+        auxObject.transform.SetParent(newParent);
 
-    public Setup GetPooledObject(int poolIndex)
+        pool.Remove(auxObject);
+    
+        return auxObject;
+    }
+
+    [ContextMenu("Test")]
+    public void Test()
+    {
+        pool.Remove(pool[0]);
+    }
+
+    public Setup GetPooledObject(int objIndex)
     {
         if (pool == null)
         {
@@ -72,11 +81,11 @@ public class Pool : MonoBehaviour
 
         Setup obj;
 
-        for (int i = 0; i < pool[poolIndex].Count; i++)
+        for (int i = 0; i < pool.Count; i++)
         {
-            if (!pool[poolIndex][i].gameObject.activeInHierarchy)
+            if (!pool[i].gameObject.activeInHierarchy)
             {
-                obj = pool[poolIndex][i];
+                obj = pool[i];
                 obj.gameObject.SetActive(true);
                 obj.SetupAll();
                 return obj;
@@ -84,7 +93,7 @@ public class Pool : MonoBehaviour
         }
 
         if (canGrow)
-            return obj = InstantiateNewObject(true, poolIndex);
+            return obj = InstantiateNewObject(true, objIndex);
 
         return null;
     }
