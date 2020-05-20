@@ -4,13 +4,13 @@ using UnityEngine;
 
 public enum FaceTypes
 {
+    CivicCenter,
     HousingArea,
     Factory,
     Park,
     ShoppingArea,
     Dump,
     AgriculturalArea,
-    CivicCenter,
     College,
     SolarPowerPlant,
     Meteorite,

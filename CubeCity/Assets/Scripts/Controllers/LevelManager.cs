@@ -86,7 +86,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void BuildInitialCube()
     {
-        Cube initialCube;
+        CubeBehaviour initialCube;
         initialCube = spawner.GetInitialCube();
         initialCube.transform.position = Vector3.zero;
         
@@ -111,17 +111,21 @@ public class LevelManager : MonoBehaviour
         if (CurrentSelectedFace == null)
             return;
 
-        Cube newCube = spawner.GetCurrentCube();
+        CubeBehaviour newCube = spawner.GetCurrentCube();
 
         if (_currentSelectedFace != null && newCube != null)
         {
-            newCube.transform.position = _currentSelectedFace.GetSpawnPosition().position;
+            // newCube.transform.position = _currentSelectedFace.GetFinalSpawnPosition();
+            MoveBuildedCube(newCube);
         }
 
         OnFaceUnselected();
+    }
 
-        EventsManager.control.CubeAdded(newCube);
-        
+    public void OnBuildFinish()
+    {
+        EventsManager.control.CubeBuilded(spawner.GetCurrentCube());
+
         NextTurn();
     }
 
@@ -130,4 +134,9 @@ public class LevelManager : MonoBehaviour
         return facesData.GetStats(type);
     }
 
+    private void MoveBuildedCube(CubeBehaviour buildedCube)
+    {
+        Action newAction = OnBuildFinish;
+        buildedCube.Move(_currentSelectedFace.GetSpawnPositions(), newAction);
+    }
 }

@@ -22,8 +22,14 @@ public class EventsManager : MonoBehaviour
     public delegate void OnCreateButtonPressed();
     public OnCreateButtonPressed onCreateButtonPressed;
 
-    public delegate void OnCubeAdded(Cube newCube);
-    public OnCubeAdded onCubeAdded;
+    public delegate void OnCubeBuilded(CubeBehaviour newCube);
+    public OnCubeBuilded onCubeBuilded;
+
+    public delegate void OnCubeCreated(CubeBehaviour newCube);
+    public OnCubeCreated onCubeCreated;
+
+    public delegate void OnPreviewCubeRotated(RotationAxis axis, bool positiveRotation);
+    public OnPreviewCubeRotated onPreviewCubeRotated;
 
     public void FaceSelected(Face selectedFace)
     {
@@ -39,9 +45,19 @@ public class EventsManager : MonoBehaviour
         onCreateButtonPressed?.Invoke();
     }
 
-    public void CubeAdded(Cube addedCube)
+    public void CubeBuilded(CubeBehaviour addedCube)
     {
-        onCubeAdded?.Invoke(addedCube);
+        onCubeBuilded?.Invoke(addedCube);
+    }
+
+    public void CubeCreated(CubeBehaviour newCreatedCube)
+    {
+        onCubeCreated?.Invoke(newCreatedCube);
+    }
+
+    public void PreviewCubeRotated(RotationAxis axis, bool positiveRotation)
+    {
+        onPreviewCubeRotated?.Invoke(axis, positiveRotation);
     }
 
 }

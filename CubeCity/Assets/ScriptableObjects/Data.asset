@@ -13,6 +13,16 @@ MonoBehaviour:
   m_Name: Data
   m_EditorClassIdentifier: 
   faces:
+  - name: CivicCenter
+    _prosperity: 0
+    _population: 0
+    _pullution: 0
+    _productivity: 0
+    _sustainability: 0
+    _happiness: 0
+    _consumption: 0
+    _technology: 0
+    _knowledge: 0
   - name: HousingArea
     _prosperity: 0
     _population: 0
@@ -65,16 +75,6 @@ MonoBehaviour:
     _knowledge: 0
   - name: AgriculturalArea
     _prosperity: 0
-    _population: 0
-    _pullution: 0
-    _productivity: 0
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
-  - name: CivicCenter
-    _prosperity: 10
     _population: 0
     _pullution: 0
     _productivity: 0
