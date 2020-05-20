@@ -10,7 +10,7 @@ public class TestROtate : MonoBehaviour
     [ContextMenu("Rotate X Positive")]
     public void RotateAround_xAxisPositive()
     {
-        targetRotation = this.transform.rotation;
+        //targetRotation = this.transform.rotation;
         targetRotation = Quaternion.Euler(90, 0, 0) * targetRotation;
         StopAllCoroutines();
         StartCoroutine(DoRotation());
@@ -19,7 +19,7 @@ public class TestROtate : MonoBehaviour
     [ContextMenu("Rotate X Negative")]
     public void RotateAround_xAxisNegative()
     {
-        targetRotation = this.transform.rotation;
+        //targetRotation = this.transform.rotation;
         targetRotation = Quaternion.Euler(-90, 0, 0) * targetRotation;
         StopAllCoroutines();
         StartCoroutine(DoRotation());
@@ -28,7 +28,7 @@ public class TestROtate : MonoBehaviour
     [ContextMenu("Rotate Y Positive")]
     public void RotateAround_yAxisPositive()
     {
-        targetRotation = this.transform.rotation;
+        //targetRotation = this.transform.rotation;
         targetRotation = Quaternion.Euler(0, 90, 0) * targetRotation;
         StopAllCoroutines();
         StartCoroutine(DoRotation());
@@ -37,7 +37,7 @@ public class TestROtate : MonoBehaviour
     [ContextMenu("Rotate Y Negative")]
     public void RotateAround_yAxisNegative()
     {
-        targetRotation = this.transform.rotation;
+        //targetRotation = this.transform.rotation;
         targetRotation = Quaternion.Euler(0, -90, 0) * targetRotation;
         StopAllCoroutines();
         StartCoroutine(DoRotation());
@@ -46,7 +46,7 @@ public class TestROtate : MonoBehaviour
     [ContextMenu("Rotate Z Positive")]
     public void RotateAround_zAxisPositive()
     {
-        targetRotation = this.transform.rotation;
+        //targetRotation = this.transform.rotation;
         targetRotation = Quaternion.Euler(0, 0, 90) * targetRotation;
         StopAllCoroutines();
         StartCoroutine(DoRotation());
@@ -55,7 +55,7 @@ public class TestROtate : MonoBehaviour
     [ContextMenu("Rotate Z Negative")]
     public void RotateAround_zAxisNegative()
     {
-        targetRotation = this.transform.rotation;
+        //targetRotation = this.transform.rotation;
         targetRotation = Quaternion.Euler(0, 0, -90) * targetRotation;
         StopAllCoroutines();
         StartCoroutine(DoRotation());

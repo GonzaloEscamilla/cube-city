@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3260593217063470171
+--- !u!1001 &5210324072999132804
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 5722387342622938243, guid: ae6b6f77b7055c146bc023494107be98,
         type: 3}
       propertyPath: m_Name
-      value: _FaceGraphics - Civic Center
+      value: _FaceGraphics - Base (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae6b6f77b7055c146bc023494107be98, type: 3}

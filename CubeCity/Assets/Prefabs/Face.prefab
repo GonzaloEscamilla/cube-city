@@ -50,7 +50,7 @@ MonoBehaviour:
   _isSelected: 0
   _orientation: 0
   _data:
-    name: 
+    name: CivicCenter
     _prosperity: 0
     _population: 0
     _pullution: 0
@@ -61,6 +61,8 @@ MonoBehaviour:
     _technology: 0
     _knowledge: 0
   _spawnPosition: {fileID: 5214495688697512000}
+  _previewCubeOffsetPosition: 5
+  _initialSpawnPositionOffset: 10
 --- !u!64 &7875039169856358406
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -35,7 +35,7 @@ public class Face : MonoBehaviour, IRaySelectable
     [SerializeField] private FaceOrientationType _orientation;
     [SerializeField] private FaceData _data;
     [SerializeField] private Transform _spawnPosition;
-    [SerializeField] private float _previewCubeOffsetPosition = 1.2f;
+    [SerializeField] private float _previewCubeOffsetPosition = 1.5f;
     [SerializeField] private float _initialSpawnPositionOffset = 10f;
 
 
