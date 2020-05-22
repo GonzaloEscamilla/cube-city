@@ -2391,6 +2391,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6017195685357134316, guid: 36371efb5796fb8469ecc82714e1f0de,
+        type: 3}
+      propertyPath: detachObjectWhenPooled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6960098518806736302, guid: 36371efb5796fb8469ecc82714e1f0de,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2621,12 +2626,12 @@ PrefabInstance:
     - target: {fileID: 8808096460243993843, guid: 55186f8255bd1434d9231390c957c5ca,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.022919912
+      value: -0.022919914
       objectReference: {fileID: 0}
     - target: {fileID: 8808096460243993843, guid: 55186f8255bd1434d9231390c957c5ca,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0008331196
+      value: -0.0008331197
       objectReference: {fileID: 0}
     - target: {fileID: 8808096460243993843, guid: 55186f8255bd1434d9231390c957c5ca,
         type: 3}
