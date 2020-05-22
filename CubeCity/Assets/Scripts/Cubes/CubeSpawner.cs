@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Policy;
 using UnityEngine;
+using UnityEngine.Animations;
 
 [RequireComponent(typeof(Pool))]
 public class CubeSpawner : MonoBehaviour
@@ -9,10 +11,20 @@ public class CubeSpawner : MonoBehaviour
     // TODO: Esta clase va a tner toda la logica tmabien de la randomizacion de caras segun la cantidad de recursos.
 
     private Pool _cubePool;
-    private CubeBehaviour _currentSpawnedCube;
+    [SerializeField] private CubeBehaviour _currentSpawnedCube;
     private PreviewCube _previewCube;
 
     [SerializeField] private Pool[] facePools;
+
+    private void OnEnable()
+    {
+        EventsManager.control.OnPreviewCubeRotated += OnPreviewCubeRotatedEvent;
+    }
+
+    private void OnDisable()
+    {
+        EventsManager.control.OnPreviewCubeRotated -= OnPreviewCubeRotatedEvent;
+    }
 
     private void Awake()
     {
@@ -45,6 +57,18 @@ public class CubeSpawner : MonoBehaviour
     {
         if (_currentSpawnedCube != null)
             return _currentSpawnedCube;
+        else
+            return null;
+    }
+
+    /// <summary>
+    /// Returns the current spawned cube if any.
+    /// </summary>
+    /// <returns></returns>
+    public CubeBehaviour GetPreviewCube()
+    {
+        if (_previewCube != null)
+            return _previewCube;
         else
             return null;
     }
@@ -138,8 +162,6 @@ public class CubeSpawner : MonoBehaviour
         //_previewCube.SetMaterialSettings();
     }
 
-
-
     private void SetFaceGraphics(Face[] faces, int index, int randomType)
     {
         Transform newFace;
@@ -150,4 +172,8 @@ public class CubeSpawner : MonoBehaviour
         newFace.SetPositionAndRotation(faces[index].transform.position, faces[index].transform.rotation);
     }
 
+    private void OnPreviewCubeRotatedEvent(Vector3 axis)
+    {
+        GetComponentInChildren<RotationBehaviour>().RotateObject(_currentSpawnedCube.gameObject, axis, 90);
+    }
 }

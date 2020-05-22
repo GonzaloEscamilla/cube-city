@@ -6,25 +6,61 @@ using UnityEngine;
 public class PreviewCube : CubeBehaviour
 {
     [SerializeField] private Quaternion _currentRotation;
+    private RotationBehaviour rotationBehaviour;
 
     private void Start()
     {
+        rotationBehaviour = GetComponent<RotationBehaviour>();
+
         EventsManager.control.onfaceSelected += SetPosition;
+        EventsManager.control.onCreateButtonPressed += ResetPosition;
         EventsManager.control.onFaceUnselected += ClearPosition;
     }
 
     private void OnDestroy()
     {
         EventsManager.control.onfaceSelected -= SetPosition;
+        EventsManager.control.onCreateButtonPressed -= ResetPosition;
         EventsManager.control.onFaceUnselected -= ClearPosition;
     }
 
     
-    public void Rotate()
+    public void Rotate_X_positive()
     {
-
+        rotationBehaviour.RotateObject(this.gameObject, Vector3.right, 90);
+        EventsManager.control.PreviewCubeRotated(Vector3.right);
     }
 
+    public void Rotate_X_Negative()
+    {
+        rotationBehaviour.RotateObject(this.gameObject, -Vector3.right, 90);
+        EventsManager.control.PreviewCubeRotated(-Vector3.right);
+    }
+
+    public void Rotate_Y_positive()
+    {
+        rotationBehaviour.RotateObject(this.gameObject, Vector3.up, 90);
+        EventsManager.control.PreviewCubeRotated(Vector3.up);
+    }
+
+    public void Rotate_Y_Negative()
+    {
+        rotationBehaviour.RotateObject(this.gameObject, -Vector3.up, 90);
+        EventsManager.control.PreviewCubeRotated(-Vector3.up);
+    }
+
+    public void Rotate_Z_positive()
+    {
+        rotationBehaviour.RotateObject(this.gameObject, Vector3.forward, 90);
+        EventsManager.control.PreviewCubeRotated(Vector3.forward);
+    }
+
+    public void Rotate_Z_Negative()
+    {
+        rotationBehaviour.RotateObject(this.gameObject, -Vector3.forward, 90);
+        EventsManager.control.PreviewCubeRotated(-Vector3.forward);
+    }
+    
     public void ClearGraphics()
     {
         Setup[] facesGraphics = GetComponentsInChildren<Setup>();
@@ -55,6 +91,11 @@ public class PreviewCube : CubeBehaviour
     private void SetPosition(Face selectedFace)
     {
         this.transform.position = selectedFace.GetPreviewCubePosition();
+    }
+
+    private void ResetPosition()
+    {
+        this.transform.position = new Vector3(1000, 1000, 1000);
     }
 
     private void ClearPosition()

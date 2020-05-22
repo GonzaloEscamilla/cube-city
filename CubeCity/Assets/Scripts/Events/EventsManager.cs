@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,8 +29,7 @@ public class EventsManager : MonoBehaviour
     public delegate void OnCubeCreated(CubeBehaviour newCube);
     public OnCubeCreated onCubeCreated;
 
-    public delegate void OnPreviewCubeRotated(RotationAxis axis, bool positiveRotation);
-    public OnPreviewCubeRotated onPreviewCubeRotated;
+    public Action<Vector3> OnPreviewCubeRotated;
 
     public void FaceSelected(Face selectedFace)
     {
@@ -55,9 +55,8 @@ public class EventsManager : MonoBehaviour
         onCubeCreated?.Invoke(newCreatedCube);
     }
 
-    public void PreviewCubeRotated(RotationAxis axis, bool positiveRotation)
+    public void PreviewCubeRotated(Vector3 axis)
     {
-        onPreviewCubeRotated?.Invoke(axis, positiveRotation);
+        OnPreviewCubeRotated?.Invoke(axis);
     }
-
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4133745877228650665}
   - component: {fileID: 6651857123485640974}
+  - component: {fileID: 7950865558883139112}
   m_Layer: 2
   m_Name: PreviewCube
   m_TagString: Untagged
@@ -50,6 +51,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7950865558883139112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9191841102392205086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8205afc6972af1a4e83544a364f25be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
 --- !u!1001 &3537388439541203328
 PrefabInstance:
   m_ObjectHideFlags: 0

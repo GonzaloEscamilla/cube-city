@@ -2,25 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotationHandler : MonoBehaviour
+public class RotationBehaviour : MonoBehaviour
 {
-        
-    /*
-    public EasingFunction.Ease type;
-    private EasingFunction.Function function;
-    */
-
-    [SerializeField] GameObject cubeToRotate;
-    [SerializeField] Vector3 axis;
     [SerializeField] float duration = 1; // seconds, must be >0.0f
+    Quaternion targetRotation = Quaternion.identity;
     
     // TODO: Se puede sobrecargar el mewtodo para que reciba  un tiempo de duracion. Tambien para que reciba una funcion de easing definida.
-    
-    [ContextMenu("TestRotation")]
-    public void RotateTest()
-    {
-        RotateObject(cubeToRotate,axis,90);
-    }
 
     /// <summary>
     /// Rotates and object on a defined axis a desired amount of euler angles.
@@ -31,10 +18,8 @@ public class RotationHandler : MonoBehaviour
     public void RotateObject(GameObject objToRotate, Vector3 axis, int anglesToRotate)
     {
         Quaternion initialRotation;
-        Quaternion targetRotation;
         initialRotation = objToRotate.transform.rotation;
         
-        targetRotation = initialRotation;
         targetRotation = Quaternion.Euler(axis * anglesToRotate) * targetRotation;
 
         StopAllCoroutines();

@@ -59,11 +59,13 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         EventsManager.control.onCubeBuilded += PositionAndRorationTransition;
+        EventsManager.control.onfaceSelected += PositionAndRorationTransition;
     }
 
     private void OnDestroy()
     {
         EventsManager.control.onCubeBuilded -= PositionAndRorationTransition;
+        EventsManager.control.onfaceSelected -= PositionAndRorationTransition;
     }
 
     /// <summary>
@@ -156,6 +158,18 @@ public class CameraController : MonoBehaviour
     /// Makes the camera go the the desired position.
     /// </summary>
     /// <param name="newTransform"></param>
+    public void PositionAndRorationTransition(Vector3 newTransform)
+    {
+        if (transitionCoroutine != null)
+            StopCoroutine(transitionCoroutine);
+
+        transitionCoroutine = StartCoroutine(Transition(newTransform, advanceSettings.transitionTime));
+    }
+
+    /// <summary>
+    /// Makes the camera go the the desired position.
+    /// </summary>
+    /// <param name="newTransform"></param>
     public void PositionAndRorationTransition(Transform newTransform)
     {
         if (transitionCoroutine != null)
@@ -174,6 +188,18 @@ public class CameraController : MonoBehaviour
             StopCoroutine(transitionCoroutine);
 
         transitionCoroutine = StartCoroutine(Transition(newTransform.transform, advanceSettings.transitionTime));
+    }
+
+    /// <summary>
+    /// Makes the camera go the the desired position.
+    /// </summary>
+    /// <param name="newTransform"></param>
+    public void PositionAndRorationTransition(Face selectedFace)
+    {
+        if (transitionCoroutine != null)
+            StopCoroutine(transitionCoroutine);
+
+        transitionCoroutine = StartCoroutine(Transition(selectedFace.GetFinalSpawnPosition(), advanceSettings.transitionTime));
     }
 
     /// <summary>
@@ -204,6 +230,24 @@ public class CameraController : MonoBehaviour
             yield return null;
         }
         target.position = newTransform.position;
+    }
+
+    /// <summary>
+    /// Makes a Linear interpolation between to positions of the cameras target.
+    /// </summary>
+    /// <param name="newPosition"></param>
+    /// <returns></returns>
+    private IEnumerator Transition(Vector3 newPosition, float transitionTime)
+    {
+        float elapsedTime = 0;
+
+        while (elapsedTime <= transitionTime)
+        {
+            target.position = Vector3.Lerp(target.position, newPosition, elapsedTime / transitionTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        target.position = newPosition;
     }
 
     [System.Serializable]

@@ -51,15 +51,15 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         BuildInitialCube();
-        EventsManager.control.onfaceSelected += OnFaceSelected;
-        EventsManager.control.onFaceUnselected += OnFaceUnselected;
+        EventsManager.control.onfaceSelected += OnFaceSelectedEvent;
+        EventsManager.control.onFaceUnselected += OnFaceUnselectedEvent;
         EventsManager.control.onCreateButtonPressed += Build;
     }
 
     private void OnDestroy()
     {
-        EventsManager.control.onfaceSelected -= OnFaceSelected;
-        EventsManager.control.onFaceUnselected -= OnFaceUnselected;
+        EventsManager.control.onfaceSelected -= OnFaceSelectedEvent;
+        EventsManager.control.onFaceUnselected -= OnFaceUnselectedEvent;
         EventsManager.control.onCreateButtonPressed -= Build;
     }
 
@@ -67,7 +67,7 @@ public class LevelManager : MonoBehaviour
     /// What happens when the EventsManager calls this Event.
     /// </summary>
     /// <param name="selectedFace"></param>
-    private void OnFaceSelected(Face selectedFace)
+    private void OnFaceSelectedEvent(Face selectedFace)
     {
         CurrentSelectedFace = selectedFace;
     }
@@ -76,7 +76,7 @@ public class LevelManager : MonoBehaviour
     /// What happens when the EventsManager calls this Event.
     /// </summary>
     /// <param name="selectedFace"></param>
-    private void OnFaceUnselected()
+    private void OnFaceUnselectedEvent()
     {
         CurrentSelectedFace = null;
     }
@@ -119,7 +119,7 @@ public class LevelManager : MonoBehaviour
             MoveBuildedCube(newCube);
         }
 
-        OnFaceUnselected();
+        OnFaceUnselectedEvent();
     }
 
     public void OnBuildFinish()
@@ -136,7 +136,7 @@ public class LevelManager : MonoBehaviour
 
     private void MoveBuildedCube(CubeBehaviour buildedCube)
     {
-        Action newAction = OnBuildFinish;
-        buildedCube.Move(_currentSelectedFace.GetSpawnPositions(), newAction);
+        Action callBack = OnBuildFinish;
+        buildedCube.Move(_currentSelectedFace.GetSpawnPositions(), callBack);
     }
 }

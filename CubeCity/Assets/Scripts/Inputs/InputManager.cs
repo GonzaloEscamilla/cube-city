@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// This class is used for managing all the inputs coming from the user and distributing them for their desired implementation.
@@ -21,6 +23,10 @@ public class InputManager : MonoBehaviour
     /// The RaycastSelectionHandler controller reference.
     /// </summary>
     RaycastSelectionHandler raySelector;
+
+    [SerializeField] Canvas mainCanvas;
+
+    GraphicRaycaster raycaster;
 
     #endregion
 
@@ -88,6 +94,7 @@ public class InputManager : MonoBehaviour
     {
         cameraController = GetComponent<CameraController>();
         raySelector = GetComponent<RaycastSelectionHandler>();
+        raycaster = mainCanvas.GetComponent<GraphicRaycaster>();
     }
 
     void Update()
@@ -230,15 +237,12 @@ public class InputManager : MonoBehaviour
     private void Tap()
     {
         Transform selectable;
-        
+
+        UISelectedVerification();
+
         if (!isUISelected)
         {
             selectable = raySelector.Select(Camera.main, Input.mousePosition);
-
-            if (selectable)
-            {
-                cameraController.PositionAndRorationTransition(selectable.parent.transform);
-            }
         }
 
         isTapping = false;
@@ -253,6 +257,24 @@ public class InputManager : MonoBehaviour
             StopCoroutine(tapVerificationCoroutine);
 
         tapVerificationCoroutine = StartCoroutine(TapVerification());
+    }
+
+    public void UISelectedVerification()
+    {
+        //Set up the new Pointer Event
+        PointerEventData pointerData = new PointerEventData(EventSystem.current);
+        List<RaycastResult> results = new List<RaycastResult>();
+
+        //Raycast using the Graphics Raycaster and mouse click position
+        pointerData.position = Input.mousePosition;
+        this.raycaster.Raycast(pointerData, results);
+
+        SetUISelected(results.Count > 0);
+    }
+
+    public void SetUISelected(bool isSelected)
+    {
+        isUISelected = isSelected;
     }
 
     /// <summary>
