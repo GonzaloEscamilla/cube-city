@@ -25,7 +25,7 @@ MonoBehaviour:
     _knowledge: 0
   - name: HousingArea
     _prosperity: 0
-    _population: 0
+    _population: 20
     _pullution: 0
     _productivity: 0
     _sustainability: 0
@@ -36,8 +36,8 @@ MonoBehaviour:
   - name: Factory
     _prosperity: 0
     _population: 0
-    _pullution: 0
-    _productivity: 0
+    _pullution: 15
+    _productivity: 35
     _sustainability: 0
     _happiness: 0
     _consumption: 0
@@ -48,8 +48,8 @@ MonoBehaviour:
     _population: 0
     _pullution: 0
     _productivity: 0
-    _sustainability: 0
-    _happiness: 0
+    _sustainability: 10
+    _happiness: 10
     _consumption: 0
     _technology: 0
     _knowledge: 0
@@ -59,14 +59,14 @@ MonoBehaviour:
     _pullution: 0
     _productivity: 0
     _sustainability: 0
-    _happiness: 0
-    _consumption: 0
+    _happiness: 10
+    _consumption: 10
     _technology: 0
     _knowledge: 0
   - name: Dump
     _prosperity: 0
     _population: 0
-    _pullution: 0
+    _pullution: 20
     _productivity: 0
     _sustainability: 0
     _happiness: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
     _prosperity: 0
     _population: 0
     _pullution: 0
-    _productivity: 0
+    _productivity: 20
     _sustainability: 0
     _happiness: 0
     _consumption: 0

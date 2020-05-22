@@ -6,7 +6,7 @@ public class Pool : MonoBehaviour
 {
     public Setup[] objectToPool;
 
-    public List<Setup> pool;
+    [SerializeField] public List<Setup> pool;
 
     [SerializeField] private int startAmount = 1;
 
@@ -45,6 +45,7 @@ public class Pool : MonoBehaviour
         newObject = (Instantiate(objectToPool[objIndex], this.transform));
         newObject.SetupAll();
         newObject.gameObject.SetActive(isActive);
+
         pool.Add(newObject);
 
         return newObject;
@@ -60,7 +61,10 @@ public class Pool : MonoBehaviour
         Setup auxObject = GetPooledObject(0);
         auxObject.transform.SetParent(newParent);
 
-        pool.Remove(auxObject);
+        if (detachObjectWhenPooled)
+        {
+            pool.Remove(auxObject);
+        }
     
         return auxObject;
     }

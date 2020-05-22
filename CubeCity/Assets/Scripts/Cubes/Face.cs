@@ -83,6 +83,11 @@ public class Face : MonoBehaviour, IRaySelectable
         return _orientation;
     }
 
+    public FaceData GetFaceData()
+    {
+        return _data;
+    }
+
     public void SetValues()
     {
         if (LevelManager.control != null)
