@@ -3,7 +3,77 @@ guid: c284e26f2c10f954f8ae09bdde3cff63
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arbustos2
+    second: {fileID: 2100000, guid: b6faa63c314718d4abcc7dabab9dfcef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CementoEdificios
+    second: {fileID: 2100000, guid: 5f720014b3077644da9c51bcc88a000c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cerca
+    second: {fileID: 2100000, guid: f0fbeed600f88554384ea20415ee4890, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CuboCalles
+    second: {fileID: 2100000, guid: 41868f63be8e8a046a6fccd79a44f068, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #159
+    second: {fileID: 2100000, guid: 8d270b6e061765545af422b3eea77ac2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #161
+    second: {fileID: 2100000, guid: 01c151146d0cd7b40abc0cb22ccab56d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #165
+    second: {fileID: 2100000, guid: 5053974cf1e56ae469097a0e96cd5519, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #228
+    second: {fileID: 2100000, guid: 1568258a77e88774f90a0522528f3b6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #255
+    second: {fileID: 2100000, guid: d06ad30a18a8d554d8c685929afa5c05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #291
+    second: {fileID: 2100000, guid: c2ba94d2af580c84b8c649773cf01c23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #305
+    second: {fileID: 2100000, guid: d8fb647d7908dc144b4e97dd915ee595, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #306
+    second: {fileID: 2100000, guid: 5e2736084802d1641b4762aed092c78f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PastoBosque
+    second: {fileID: 2100000, guid: 01e9163e7690dc44895f3d0f72eb0bee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn1
+    second: {fileID: 2100000, guid: a3b573c69d091004a8c59dfdfb951452, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -37,7 +107,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
+    useSRGBMaterialColor: 0
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1

@@ -3,7 +3,57 @@ guid: a0c7e1cfc2830e245a76cef8f1e92fef
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arbustos2
+    second: {fileID: 2100000, guid: 3d88f27c3f4325f4eab3ab56809bf8a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CementoEdificios
+    second: {fileID: 2100000, guid: 159646430bd82474fa69ed2e4bb3fdf3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cerca
+    second: {fileID: 2100000, guid: dbc235a9d4320b144ab911a30d46e3c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CuboCalles
+    second: {fileID: 2100000, guid: 347a3c514698dee489e4c79ca796ed65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #165
+    second: {fileID: 2100000, guid: 69a7904fcd641564dae17e3edc09372a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #255
+    second: {fileID: 2100000, guid: aac5431cd3300aa4cac2bdbc43395881, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #260
+    second: {fileID: 2100000, guid: ab78983d5dc84a94a9871cb1fa6678ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #261
+    second: {fileID: 2100000, guid: fe29cf01c93e01041b995fe693bdd05c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #57
+    second: {fileID: 2100000, guid: 4c1f318ad5fc9cf4fa4139f833bec1ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PastoBosque
+    second: {fileID: 2100000, guid: 76b6602a77e5bc84c96893c163161545, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -37,7 +87,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
+    useSRGBMaterialColor: 0
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1

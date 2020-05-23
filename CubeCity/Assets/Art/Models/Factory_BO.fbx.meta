@@ -3,7 +3,62 @@ guid: 5fccb0ca1dbf668499839b08b00fd31c
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CementoEdificios
+    second: {fileID: 2100000, guid: d12614a95c7d1a0449099bf949d875b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cerca
+    second: {fileID: 2100000, guid: c31807bdd2c34774bb4269b6076a1511, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CuboCalles
+    second: {fileID: 2100000, guid: 56733b0193015844b8eb45d0726f5f41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #159
+    second: {fileID: 2100000, guid: 2d2660d421b19e7498c5622aed50392e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #178
+    second: {fileID: 2100000, guid: 1b3b1bf21e30817409c565cac0c83f19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #219
+    second: {fileID: 2100000, guid: 818d748ac20b4014f85e29578a7a3c10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #228
+    second: {fileID: 2100000, guid: 0c4dc69f883c932449c3240b90f4278b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #231
+    second: {fileID: 2100000, guid: d800ff6eecd2ae549aac2968a18fa1d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #248
+    second: {fileID: 2100000, guid: 805cbe44e7d4a5a4eb3f03a3203497a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #288
+    second: {fileID: 2100000, guid: a731a01ebdffa31449bfcaf8a33df9e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #57
+    second: {fileID: 2100000, guid: 743eaf9381bc5104e9961ce3328470c7, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -37,7 +92,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
+    useSRGBMaterialColor: 0
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
