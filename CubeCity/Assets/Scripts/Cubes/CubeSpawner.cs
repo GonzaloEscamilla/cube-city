@@ -123,7 +123,6 @@ public class CubeSpawner : MonoBehaviour
             SetFaceGraphics(previewCubeFaces, i, randomType);
         }
         EventsManager.control.CubeCreated(spawnedCube);
-        //_previewCube.SetMaterialSettings();
     }
 
     /// <summary>
@@ -159,7 +158,6 @@ public class CubeSpawner : MonoBehaviour
             
         }
         EventsManager.control.CubeCreated(spawnedCube);
-        //_previewCube.SetMaterialSettings();
     }
 
     private void SetFaceGraphics(Face[] faces, int index, int randomType)

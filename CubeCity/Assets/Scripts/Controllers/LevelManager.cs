@@ -8,7 +8,8 @@ public class LevelManager : MonoBehaviour
     public static LevelManager control;
     
     [SerializeField] private FaceDataSO facesData;
-
+    [SerializeField] private CityStatistics cityStatistics;
+    
     private CubeSpawner spawner;
     private bool isFinishPlaying;
 
@@ -115,7 +116,6 @@ public class LevelManager : MonoBehaviour
 
         if (_currentSelectedFace != null && newCube != null)
         {
-            // newCube.transform.position = _currentSelectedFace.GetFinalSpawnPosition();
             MoveBuildedCube(newCube);
         }
 
@@ -125,6 +125,7 @@ public class LevelManager : MonoBehaviour
     public void OnBuildFinish()
     {
         EventsManager.control.CubeBuilded(spawner.GetCurrentCube());
+        UpdateFaceStatistics();
 
         NextTurn();
     }
@@ -139,4 +140,10 @@ public class LevelManager : MonoBehaviour
         Action callBack = OnBuildFinish;
         buildedCube.Move(_currentSelectedFace.GetSpawnPositions(), callBack);
     }
+
+    private void UpdateFaceStatistics()
+    {
+        cityStatistics.CalculateStatistics(spawner.GetCurrentCube().GetFacesData());
+    }
+
 }
