@@ -99,6 +99,11 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Tap();
+        }
+
         if (Input.touchCount == 1)
         {
             firstTouch = Input.GetTouch(0);

@@ -43,8 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8205afc6972af1a4e83544a364f25be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeToRotate: {fileID: 0}
-  axis: {x: 0, y: 90, z: 0}
   duration: 1
 --- !u!1 &1138575381073383726
 GameObject:
@@ -91,7 +89,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f689fa8dd3c165448ab00f5a6a00ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facesData: {fileID: 11400000, guid: 260641564ee5ed749838681a8603ae0e, type: 2}
+  _levelSystem: {fileID: 11400000, guid: a4c8ecd4bdebb3848b26a399e4989a09, type: 2}
+  _facesData: {fileID: 11400000, guid: 260641564ee5ed749838681a8603ae0e, type: 2}
+  _cityStatistics:
+    _totalProsperity: 0
+    _prosperityModifier: 0
+    _totalPopulation: 0
+    _totalPullution: 0
+    _totalProductivity: 0
+    _totalSustainability: 0
+    _totalHappiness: 0
+    _totalConsumption: 0
+    _totalTechnology: 0
+    _totalKnowledge: 0
   _currentSelectedFace: {fileID: 0}
 --- !u!1001 &6019823102772928642
 PrefabInstance:

@@ -25,6 +25,20 @@ public class CityStatistics
         CalculateStatistics(data);
     }
 
+    public CityStatistics()
+    {
+        _totalProsperity = 0;
+        _prosperityModifier = 0;
+        _totalPopulation = 0;
+        _totalPullution = 0;
+        _totalProductivity = 0;
+        _totalSustainability = 0;
+        _totalHappiness = 0;
+        _totalConsumption = 0;
+        _totalTechnology = 0;
+        _totalKnowledge = 0;
+    }
+
     public void CalculateStatistics(FaceData[] data)
     {
         for (int i = 0; i < data.Length; i++)
@@ -53,5 +67,37 @@ public class CityStatistics
             secondEquation = 1;
 
         _totalProsperity = (firstEquation / secondEquation) + thirdEquation + fourthEquation; 
+    }
+
+    /// <summary>
+    /// Return the current amount of a resource in the City.
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
+    public int GetResourceAmount(ResourceTypes type)
+    {
+        switch (type)
+        {
+            case ResourceTypes.Prosperity:
+                return _totalProsperity;
+            case ResourceTypes.Population:
+                return _totalPopulation;
+            case ResourceTypes.Pullution:
+                return _totalPullution;
+            case ResourceTypes.Productivity:
+                return _totalProductivity;
+            case ResourceTypes.Sustainability:
+                return _totalSustainability;
+            case ResourceTypes.Happiness:
+                return _totalHappiness;
+            case ResourceTypes.Consumption:
+                return _totalConsumption;
+            case ResourceTypes.Technology:
+                return _totalTechnology;
+            case ResourceTypes.Knowledge:
+                return _totalKnowledge;
+            default:
+                return 0;
+        }
     }
 }
