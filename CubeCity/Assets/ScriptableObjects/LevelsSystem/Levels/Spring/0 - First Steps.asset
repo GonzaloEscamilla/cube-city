@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: 0 - First Steps
   m_EditorClassIdentifier: 
   Name: First Steps
-  _maxCubeAmount: 10
+  _levelConstraints: []
   _objectives:
   - _type: 0
     _resourceType: 0
     _condition: 0
-    _resourceValue: 1000
+    _resourceValue: 10000
+  - _type: 0
+    _resourceType: 3
+    _condition: 0
+    _resourceValue: 100

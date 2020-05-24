@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63aab46e443c52c478d4abc492270fac, type: 3}
+  m_Name: LevelStatistics
+  m_EditorClassIdentifier: 
+  _maxCubeAmount: 0
+  _currentCubeAmount: 28
+  _timeThreshold: 0
+  _elapsedTime: 0
+  _totalProsperity: 12517
+  _prosperityModifier: 0
+  _totalPopulation: 700
+  _totalPullution: 1120
+  _totalProductivity: 980
+  _totalSustainability: 310
+  _totalHappiness: 690
+  _totalConsumption: 380
+  _totalTechnology: 0
+  _totalKnowledge: 0
+  _civicCenter: 0
+  _housingArea: 0
+  _factory: 0
+  _park: 0
+  _shoppingArea: 0
+  _dump: 0
+  _agriculturalArea: 0
+  _college: 0
+  _solarPowerPlant: 0
+  _meteorite: 0
+  _naturalReserve: 0
+  _radioactiveZone: 0
+  _UFO: 0
+  _metropolis: 0
+  _spaceCompany: 0

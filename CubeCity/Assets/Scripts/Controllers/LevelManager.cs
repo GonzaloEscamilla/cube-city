@@ -6,11 +6,13 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] bool[] completedObjectives;
+
     public static LevelManager control;
 
     [SerializeField] private LevelsSO _levelSystem;
     [SerializeField] private FaceDataSO _facesData;
-    [SerializeField] private CityStatistics _cityStatistics;
+    [SerializeField] private LevelStatistics _levelStatistics;
 
     /// <summary>
     /// The current level running on the scene.
@@ -34,19 +36,6 @@ public class LevelManager : MonoBehaviour
     }
     [SerializeField] private Face _currentSelectedFace;
 
-    public int CubeAmount
-    {
-        get
-        {
-            return _cubeAmount;
-        }
-        set
-        {
-            _cubeAmount = value;
-        }
-    }
-    private int _cubeAmount;
-
     private void Awake()
     {
         if (control != null)
@@ -64,6 +53,11 @@ public class LevelManager : MonoBehaviour
         EventsManager.control.onCreateButtonPressed += Build;
 
         InitializeLevel();
+    }
+
+    private void Update()
+    {
+        
     }
 
     private void OnDestroy()
@@ -88,26 +82,37 @@ public class LevelManager : MonoBehaviour
         // TODO: Aca deberian setearse todas las cosas importantes del nivel, como seteos de dificultad, objetivos iluminacion todo todo.
         _currentLevel = _levelSystem.GetCurrentLevel();
 
-        // Creo que es super necesario inicializar este objeto.
-        _cityStatistics = new CityStatistics();
+        // Resetear el ScriptableObject a sus valores por defecto.
+        _levelStatistics.Reset();
+
+        SetLevelConstraints();
     }
 
-    /// <summary>
-    /// What happens when the EventsManager calls this Event.
-    /// </summary>
-    /// <param name="selectedFace"></param>
-    private void OnFaceSelectedEvent(Face selectedFace)
+    public void SetLevelConstraints()
     {
-        CurrentSelectedFace = selectedFace;
-    }
+        if (_currentLevel.HasConstraints())
+        {
+            LevelConstraints[] auxConstraints = _currentLevel.GetLevelConstraints();
 
-    /// <summary>
-    /// What happens when the EventsManager calls this Event.
-    /// </summary>
-    /// <param name="selectedFace"></param>
-    private void OnFaceUnselectedEvent()
-    {
-        CurrentSelectedFace = null;
+            for (int i = 0; i < auxConstraints.Length; i++)
+            {
+                switch (auxConstraints[i].Type)
+                {
+                    case ConstraintTypes.CubeAmount:
+                        Debug.Log("Oli ");
+                         _levelStatistics.SetMaxCubeAmount(auxConstraints[i].GetMaxCubes());
+                        break;
+                    case ConstraintTypes.TimeAmount:
+                        _levelStatistics.SetTimeThereshold(auxConstraints[i].GetTimeAmount());
+                        break;
+                    case ConstraintTypes.FaceTypeAvailable:
+                        Debug.Log("There is not implementation of thes feature yet.");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 
     /// <summary>
@@ -118,23 +123,54 @@ public class LevelManager : MonoBehaviour
         CubeBehaviour initialCube;
         initialCube = _spawner.GetInitialCube();
         initialCube.transform.position = Vector3.zero;
-        
+
+        if (_levelStatistics.GetTimeThreshold() > 0)
+        {
+            StartCoroutine(RunLevelTimeLapse());
+        }
+
         NextTurn();
     }
 
     private void NextTurn()
     {
+        _levelStatistics.CurrentCubeAmount++;
+
+        UpdateFaceStatistics();
+
+        EventsManager.control.StatisticsUpdate();
+
+        EvaluateLevelEnding();
         WinOrLoss();
 
         if (!_isFinishPlaying)
         {
             PreBuild();
         }
+        else
+        {
+            LevelEnd();
+        }
+    }
+
+    public void EvaluateLevelEnding()
+    {
+        if (_currentLevel.HasConstraints())
+        {
+            Debug.Log("HasLevelEnded = " + _levelStatistics.HasLevelEnded());
+            _isFinishPlaying = _levelStatistics.HasLevelEnded();
+
+           
+        }
     }
 
     public void WinOrLoss()
     {
         LevelObjective[] objetives = _currentLevel.GetObjectives();
+        completedObjectives = new bool[objetives.Length];
+
+
+        // TODO: Esto tendria que ser algo global. Hay que implementar todo este metodo.
         bool hasWin = false;
 
         for (int i = 0; i < objetives.Length; i++)
@@ -142,13 +178,29 @@ public class LevelManager : MonoBehaviour
             switch (objetives[i].GetObjectiveType())
             {
                 case LevelObjetiveTypes.Resource:
-                    hasWin = ConditionComparator.CompareConditions(_cityStatistics.GetResourceAmount(objetives[i].GetResoruceType()), objetives[i].GetResourceValue(), objetives[i].GetCondition());
+                    completedObjectives[i] = ConditionComparator.CompareConditions(_levelStatistics.GetResourceAmount(objetives[i].GetResoruceType()), objetives[i].GetResourceValue(), objetives[i].GetCondition());
                     break;
                 default:
                     break;
             }
+            if (i == 0)
+            {
+                hasWin = completedObjectives[i];
+            }
+            else if (i > 0)
+            {
+                hasWin = completedObjectives[i - 1] & completedObjectives[i];
+            }
         }
         Debug.Log("The condition hasWin is: " + hasWin);
+    }
+
+    public void LevelEnd()
+    {
+        // TODO: Hay que implementar todo este metodo. De alguna manera tiene que mostrarse en UI asi que hay que ver si se hace con un evento o algo asi. Seee esa es la que va. Re simple. Un aciton onLevel
+
+        EventsManager.control.onCreateButtonPressed -= Build;
+        Debug.Log("Level ended.");
     }
 
     public void PreBuild()
@@ -174,9 +226,7 @@ public class LevelManager : MonoBehaviour
     public void OnBuildFinish()
     {
         EventsManager.control.CubeBuilded(_spawner.GetCurrentCube());
-        UpdateFaceStatistics();
-
-        CubeAmount++;
+        
 
         NextTurn();
     }
@@ -194,7 +244,39 @@ public class LevelManager : MonoBehaviour
 
     private void UpdateFaceStatistics()
     {
-        _cityStatistics.CalculateStatistics(_spawner.GetCurrentCube().GetFacesData());
+        _levelStatistics.CalculateNextResourcers(_spawner.GetCurrentCube().GetFacesData());
+    }
+
+    /// <summary>
+    /// What happens when the EventsManager calls this Event.
+    /// </summary>
+    /// <param name="selectedFace"></param>
+    private void OnFaceSelectedEvent(Face selectedFace)
+    {
+        CurrentSelectedFace = selectedFace;
+    }
+
+    /// <summary>
+    /// What happens when the EventsManager calls this Event.
+    /// </summary>
+    /// <param name="selectedFace"></param>
+    private void OnFaceUnselectedEvent()
+    {
+        CurrentSelectedFace = null;
+    }
+
+    public IEnumerator RunLevelTimeLapse()
+    {
+        while (!_isFinishPlaying)
+        {
+            _levelStatistics.ElapsedTime += Time.deltaTime;
+            if (_levelStatistics.ElapsedTime >= _levelStatistics.GetTimeThreshold())
+            {
+                _isFinishPlaying = true;
+                LevelEnd();
+            }
+            yield return null;
+        }
     }
 
 }

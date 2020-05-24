@@ -6,9 +6,17 @@ using UnityEngine;
 public class Level: ScriptableObject
 {
     public string Name;
-    
-    [SerializeField] private  int _maxCubeAmount;
-    [SerializeField] private  List<LevelObjective> _objectives = new List<LevelObjective>();
+
+    [SerializeField] private List<LevelConstraints> _levelConstraints = new List<LevelConstraints>(); 
+    [SerializeField] private List<LevelObjective> _objectives = new List<LevelObjective>();
+
+    private void OnValidate()
+    {
+        foreach (LevelConstraints constrait in _levelConstraints)
+        {
+            constrait.Type = constrait.Type;
+        }
+    }
 
     /// <summary>
     /// Return all the levels objetives.
@@ -25,12 +33,21 @@ public class Level: ScriptableObject
         }
     }
 
-    /// <summary>
-    /// Gets the maximum amount of cubes you can put in the Level.
-    /// </summary>
-    /// <returns></returns>
-    public int GetMaxCubes()
+    public bool HasConstraints()
     {
-        return _maxCubeAmount;
+        return _levelConstraints != null;
+    }
+
+    public LevelConstraints[] GetLevelConstraints()
+    {
+        if (_levelConstraints != null)
+        {
+            return _levelConstraints.ToArray();
+        }
+        else
+        {
+            Debug.Log("Hey, the level dosn't have any constraints.");
+            return null;
+        }
     }
 }

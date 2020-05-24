@@ -31,6 +31,12 @@ public class EventsManager : MonoBehaviour
 
     public Action<Vector3> OnPreviewCubeRotated;
 
+    #region UI Events
+
+    public Action OnStatisticsUpdate;
+
+    #endregion
+
     public void FaceSelected(Face selectedFace)
     {
         onfaceSelected?.Invoke(selectedFace);
@@ -58,5 +64,10 @@ public class EventsManager : MonoBehaviour
     public void PreviewCubeRotated(Vector3 axis)
     {
         OnPreviewCubeRotated?.Invoke(axis);
+    }
+
+    public void StatisticsUpdate()
+    {
+        OnStatisticsUpdate?.Invoke();
     }
 }

@@ -13,5 +13,17 @@ MonoBehaviour:
   m_Name: 1 - Try To Improve
   m_EditorClassIdentifier: 
   Name: 
-  _maxCubeAmount: 0
+  _levelConstraints:
+  - Name: CubeAmount
+    _type: 0
+    _maxCubeAmount: 0
+    _timeAmount: 0
+  - Name: CubeAmount
+    _type: 0
+    _maxCubeAmount: 0
+    _timeAmount: 0
+  - Name: FaceTypeAvailable
+    _type: 2
+    _maxCubeAmount: 0
+    _timeAmount: 0
   _objectives: []

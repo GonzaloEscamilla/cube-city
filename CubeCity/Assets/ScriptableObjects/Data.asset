@@ -25,7 +25,7 @@ MonoBehaviour:
     _knowledge: 0
   - name: HousingArea
     _prosperity: 0
-    _population: 10
+    _population: 20
     _pullution: 0
     _productivity: 0
     _sustainability: 0
