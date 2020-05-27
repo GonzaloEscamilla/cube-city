@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Atlas
+    second: {fileID: 2100000, guid: 65a9df2227dbce84d83ddf69354cf9fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: CementoEdificios
     second: {fileID: 2100000, guid: d12614a95c7d1a0449099bf949d875b4, type: 2}
   - first:
@@ -18,7 +23,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: CuboCalles
-    second: {fileID: 2100000, guid: 56733b0193015844b8eb45d0726f5f41, type: 2}
+    second: {fileID: 2100000, guid: c4522c14d66ad964080f5f1bf1bd2c3b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
