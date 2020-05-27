@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7253f400dca2c48a766708c24dd278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _faceData: {fileID: 11400000, guid: 260641564ee5ed749838681a8603ae0e, type: 2}
   _type: 0
   _isSelected: 0
   _orientation: 0

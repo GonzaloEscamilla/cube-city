@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Face : MonoBehaviour, IRaySelectable
 {
+    [SerializeField] FaceDataSO _faceData;
+
     public FaceTypes Type
     {
         get
@@ -90,8 +92,7 @@ public class Face : MonoBehaviour, IRaySelectable
 
     public void SetValues()
     {
-        if (LevelManager.control != null)
-            _data = LevelManager.control.GetFaceData(Type);
+        _data = _faceData.GetStats(Type);
     }
 
     private void OnValidate()

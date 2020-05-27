@@ -11,7 +11,6 @@ public class LevelManager : MonoBehaviour
     public static LevelManager control;
 
     [SerializeField] private LevelsSO _levelSystem;
-    [SerializeField] private FaceDataSO _facesData;
     [SerializeField] private LevelStatistics _levelStatistics;
 
     /// <summary>
@@ -134,15 +133,6 @@ public class LevelManager : MonoBehaviour
 
     private void NextTurn()
     {
-        _levelStatistics.CurrentCubeAmount++;
-
-        UpdateFaceStatistics();
-
-        EventsManager.control.StatisticsUpdate();
-
-        EvaluateLevelEnding();
-        WinOrLoss();
-
         if (!_isFinishPlaying)
         {
             PreBuild();
@@ -153,14 +143,60 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void PreBuild()
+    {
+        _spawner.NextCube();
+    }
+
+    /// <summary>
+    /// Called when ever a new cube is virtualy builded on the current selected face. When this ends the builded cube starts moving towards the face.
+    /// </summary>
+    public void Build()
+    {
+        if (CurrentSelectedFace == null)
+            return;
+
+        CubeBehaviour newCube = _spawner.GetCurrentCube();
+
+        if (_currentSelectedFace != null && newCube != null)
+        {
+            MoveBuildedCube(newCube);
+        }
+
+        OnFaceUnselectedEvent();
+
+        _levelStatistics.CurrentCubeAmount++;
+
+        UpdateFaceStatistics();
+
+        EventsManager.control.StatisticsUpdate();
+
+        EvaluateLevelEnding();
+        WinOrLoss();
+    }
+
+    /// <summary>
+    /// Callback function. Its called when the new builded cube sets in its final position.
+    /// </summary>
+    public void OnBuildFinish()
+    {
+        EventsManager.control.CubeBuilded(_spawner.GetCurrentCube());
+
+        NextTurn();
+    }
+
+    private void MoveBuildedCube(CubeBehaviour buildedCube)
+    {
+        Action callBack = OnBuildFinish;
+        buildedCube.Move(_currentSelectedFace.GetSpawnPositions(), callBack);
+    }
+
     public void EvaluateLevelEnding()
     {
         if (_currentLevel.HasConstraints())
         {
             Debug.Log("HasLevelEnded = " + _levelStatistics.HasLevelEnded());
             _isFinishPlaying = _levelStatistics.HasLevelEnded();
-
-           
         }
     }
 
@@ -203,44 +239,7 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Level ended.");
     }
 
-    public void PreBuild()
-    {
-        _spawner.NextCube();
-    }
-
-    public void Build()
-    {
-        if (CurrentSelectedFace == null)
-            return;
-
-        CubeBehaviour newCube = _spawner.GetCurrentCube();
-
-        if (_currentSelectedFace != null && newCube != null)
-        {
-            MoveBuildedCube(newCube);
-        }
-
-        OnFaceUnselectedEvent();
-    }
-
-    public void OnBuildFinish()
-    {
-        EventsManager.control.CubeBuilded(_spawner.GetCurrentCube());
-        
-
-        NextTurn();
-    }
-
-    public FaceData GetFaceData(FaceTypes type)
-    {
-        return _facesData.GetStats(type);
-    }
-
-    private void MoveBuildedCube(CubeBehaviour buildedCube)
-    {
-        Action callBack = OnBuildFinish;
-        buildedCube.Move(_currentSelectedFace.GetSpawnPositions(), callBack);
-    }
+    
 
     private void UpdateFaceStatistics()
     {

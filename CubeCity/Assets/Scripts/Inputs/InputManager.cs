@@ -106,6 +106,15 @@ public class InputManager : MonoBehaviour
 
         if (Input.touchCount == 1)
         {
+            /*
+            int id = firstTouch.fingerId;
+            if (EventSystem.current.IsPointerOverGameObject(id))
+                isUISelected = true;
+            else
+                isUISelected = false;
+
+            */
+
             firstTouch = Input.GetTouch(0);
 
             if (firstTouch.phase == TouchPhase.Began)
