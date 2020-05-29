@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Calles
-  m_Shader: {fileID: 4800000, guid: 15aec977bb380ad4d87a7c6c0d03bfec, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 06ebad4c422e6dd4c8185c8b4cd6946d,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,6 +20,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_85E8FF9F:
+        m_Texture: {fileID: 2800000, guid: 5038ee6185506cb45b9feff147b91943, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_AF4129EC:
+        m_Texture: {fileID: 2800000, guid: 5e94bbfd0e27abd43b2de683cac123ef, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 5e94bbfd0e27abd43b2de683cac123ef, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -56,6 +65,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_2E8277A6: 0
+    - Vector1_3263885: 0
+    - Vector1_6AACA91C: 0
+    - Vector1_8E420728: 0
+    - Vector1_94B3143E: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
