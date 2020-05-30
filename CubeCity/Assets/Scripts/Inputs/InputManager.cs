@@ -99,22 +99,32 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        // Checks first of all if there is a UI element being selected.
+        if (Input.touchCount > 0)
         {
-            Tap();
-        }
-
-        if (Input.touchCount == 1)
-        {
-            /*
             int id = firstTouch.fingerId;
             if (EventSystem.current.IsPointerOverGameObject(id))
                 isUISelected = true;
             else
                 isUISelected = false;
+        }
 
-            */
+        if (isUISelected) return;
 
+
+        // TODO: No tengo la menor idea de por que esta pasando esto. osea, el GgetMouseButtonDown se llama cuando tapeo con el dedo. Rarisimo.
+
+        /*
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("MouseTap");
+            Tap();
+        }
+        */
+
+
+        if (Input.touchCount == 1)
+        {
             firstTouch = Input.GetTouch(0);
 
             if (firstTouch.phase == TouchPhase.Began)
@@ -275,6 +285,8 @@ public class InputManager : MonoBehaviour
 
     public void UISelectedVerification()
     {
+        //TODO: Aparentemente esto solo servia para Mouse. Igualmente estaria bueno investigar sobre esta opcion.
+
         //Set up the new Pointer Event
         PointerEventData pointerData = new PointerEventData(EventSystem.current);
         List<RaycastResult> results = new List<RaycastResult>();

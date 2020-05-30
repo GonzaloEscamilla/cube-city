@@ -39,7 +39,6 @@ public class RotationBehaviour : MonoBehaviour
         {
             currentTime += Time.deltaTime / duration;
 
-            //objToRotate.transform.rotation = Quaternion.Slerp(from, to, currentTime);
             objToRotate.transform.rotation = QuaternionEasing(from, to, currentTime);
 
             yield return null;
@@ -51,25 +50,11 @@ public class RotationBehaviour : MonoBehaviour
     {
         Quaternion result = Quaternion.identity;
 
-        float x, y, z, w;
-        float a, b, c, d;
+        result.x = function(from.x, to.x, amount);
+        result.y = function(from.y, to.y, amount);
+        result.z = function(from.z, to.z, amount);
+        result.w = function(from.w, to.w, amount);
 
-        x = from.x;
-        y = from.y;
-        z = from.z;
-        w = from.w;
-
-        a = to.x;
-        b = to.y;
-        c = to.z;
-        d = to.w;
-
-        x = function(x, a, amount);
-        y = function(y, b, amount);
-        z = function(z, c, amount);
-        w = function(w, d, amount);
-
-        result = new Quaternion(x, y, z, w);
         return result;
     }
 

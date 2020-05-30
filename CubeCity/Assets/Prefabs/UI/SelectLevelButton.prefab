@@ -188,25 +188,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 0.5294118, b: 0.29803923, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_Font: {fileID: 12800000, guid: 174d3dd7ca1d29b409a6aaa0b97f2afc, type: 3}
+    m_FontSize: 90
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 91
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 1
+  m_Text: Play
 --- !u!1001 &819653737195106797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219,6 +219,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: SelectLevelHandler
       objectReference: {fileID: 0}
+    - target: {fileID: 7829941648759832131, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
+        type: 3}
+      propertyPath: _levelToSelect
+      value: 
+      objectReference: {fileID: 11400000, guid: cb182d4c156e8674ea2f5e811d705bcf,
+        type: 2}
     - target: {fileID: 7949169978761196723, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
         type: 3}
       propertyPath: m_LocalPosition.x

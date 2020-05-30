@@ -90,6 +90,13 @@ public class PreviewCube : CubeBehaviour
 
     private void SetPosition(Face selectedFace)
     {
+        ISetup[] setups = GetComponentsInChildren<ISetup>();
+
+        for (int i = 0; i < setups.Length; i++)
+        {
+            setups[i].Setup();
+        }
+        
         this.transform.position = selectedFace.GetPreviewCubePosition();
     }
 

@@ -7,6 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 668810107108284503, guid: ae6b6f77b7055c146bc023494107be98,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 668810107108284503, guid: ae6b6f77b7055c146bc023494107be98,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 668810107108284503, guid: ae6b6f77b7055c146bc023494107be98,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2009102466157945062, guid: ae6b6f77b7055c146bc023494107be98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -65,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 5722387342622938243, guid: ae6b6f77b7055c146bc023494107be98,
         type: 3}
       propertyPath: m_Name
-      value: _FaceGraphics - Civic Center
+      value: FaceGraphics - Agricultural Area
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae6b6f77b7055c146bc023494107be98, type: 3}

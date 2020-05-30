@@ -34,11 +34,14 @@ public class Face : MonoBehaviour, IRaySelectable
     }
     [SerializeField] private bool _isSelected;
 
+    [SerializeField] private FaceCollisionState _collisionState;
     [SerializeField] private FaceOrientationType _orientation;
     [SerializeField] private FaceData _data;
     [SerializeField] private Transform _spawnPosition;
     [SerializeField] private float _previewCubeOffsetPosition = 1.5f;
     [SerializeField] private float _initialSpawnPositionOffset = 10f;
+
+    [SerializeField] private List<Face> _adjacencies = new List<Face>();
 
 
     private bool isCovered;
@@ -93,6 +96,32 @@ public class Face : MonoBehaviour, IRaySelectable
     public void SetValues()
     {
         _data = _faceData.GetStats(Type);
+    }
+
+    public void SetFaceCollisionState(FaceCollisionState newState)
+    {
+        _collisionState = newState;
+    }
+
+    public void SetNewAdjacencie(Face newAdjacencie)
+    {
+        if (!_adjacencies.Contains(newAdjacencie))
+        {
+            _adjacencies.Add(newAdjacencie);
+        }
+    }
+
+    public void ClearAllAdjacencies()
+    {
+        _adjacencies.Clear();
+    }
+
+    public void RemoveAdjacencie(Face adjacencieToRemove)
+    {
+        if (_adjacencies.Contains(adjacencieToRemove))
+        {
+            _adjacencies.Remove(adjacencieToRemove);
+        }
     }
 
     private void OnValidate()

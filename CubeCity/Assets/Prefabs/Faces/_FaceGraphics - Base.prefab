@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2009102466157945062}
   - component: {fileID: 8559382472760561954}
   m_Layer: 0
-  m_Name: _FaceGraphics - Civic Center
+  m_Name: _FaceGraphics - Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,6 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8943535786891250059}
+  - {fileID: 2193317687431214228}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,6 +46,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 0
+--- !u!1 &7864856400090940981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2193317687431214228}
+  - component: {fileID: 668810107108284503}
+  - component: {fileID: 7026086152832420257}
+  m_Layer: 2
+  m_Name: Collider - Face Specific
+  m_TagString: FaceCollider
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2193317687431214228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864856400090940981}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2009102466157945062}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &668810107108284503
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864856400090940981}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 4, z: 8}
+  m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &7026086152832420257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864856400090940981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4848fdee320e2f94884697834d424d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPreviewCube: 0
 --- !u!1 &9130911096863467597
 GameObject:
   m_ObjectHideFlags: 0

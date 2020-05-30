@@ -195,7 +195,6 @@ public class LevelManager : MonoBehaviour
     {
         if (_currentLevel.HasConstraints())
         {
-            Debug.Log("HasLevelEnded = " + _levelStatistics.HasLevelEnded());
             _isFinishPlaying = _levelStatistics.HasLevelEnded();
         }
     }
@@ -243,6 +242,7 @@ public class LevelManager : MonoBehaviour
 
     private void UpdateFaceStatistics()
     {
+        // This is done before the "NextTurn" so the current cube is the one that is being putted on.
         _levelStatistics.CalculateNextResourcers(_spawner.GetCurrentCube().GetFacesData());
     }
 
