@@ -50,6 +50,12 @@ public class CubeBehaviour : MonoBehaviour
 
         return facesData;
     }
+
+    public Face[] GetFaces()
+    {
+        return GetComponentsInChildren<Face>();
+    }
+
 }
 
 public enum RotationAxis

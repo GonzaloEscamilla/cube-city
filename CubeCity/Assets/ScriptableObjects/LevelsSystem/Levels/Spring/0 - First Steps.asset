@@ -18,8 +18,4 @@ MonoBehaviour:
   - _type: 0
     _resourceType: 0
     _condition: 0
-    _resourceValue: 10000
-  - _type: 0
-    _resourceType: 3
-    _condition: 0
-    _resourceValue: 100
+    _resourceValue: 1200

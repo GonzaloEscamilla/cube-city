@@ -118,11 +118,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1217806876311530410, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
-      propertyPath: _previewCubeOffsetPosition
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1217806876311530410, guid: 3254e420c9077e94cb03006fccd08cfe,
-        type: 3}
       propertyPath: _initialSpawnPositionOffset
       value: 50
       objectReference: {fileID: 0}
@@ -228,11 +223,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1217806876311530410, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
-      propertyPath: _previewCubeOffsetPosition
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1217806876311530410, guid: 3254e420c9077e94cb03006fccd08cfe,
-        type: 3}
       propertyPath: _initialSpawnPositionOffset
       value: 50
       objectReference: {fileID: 0}
@@ -333,11 +323,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1217806876311530410, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
-      propertyPath: _previewCubeOffsetPosition
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1217806876311530410, guid: 3254e420c9077e94cb03006fccd08cfe,
-        type: 3}
       propertyPath: _initialSpawnPositionOffset
       value: 50
       objectReference: {fileID: 0}
@@ -435,11 +420,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _orientation
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1217806876311530410, guid: 3254e420c9077e94cb03006fccd08cfe,
-        type: 3}
-      propertyPath: _previewCubeOffsetPosition
-      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 1217806876311530410, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
@@ -548,11 +528,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1217806876311530410, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
-      propertyPath: _previewCubeOffsetPosition
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1217806876311530410, guid: 3254e420c9077e94cb03006fccd08cfe,
-        type: 3}
       propertyPath: _initialSpawnPositionOffset
       value: 50
       objectReference: {fileID: 0}
@@ -655,11 +630,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _orientation
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1217806876311530410, guid: 3254e420c9077e94cb03006fccd08cfe,
-        type: 3}
-      propertyPath: _previewCubeOffsetPosition
-      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 1217806876311530410, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}

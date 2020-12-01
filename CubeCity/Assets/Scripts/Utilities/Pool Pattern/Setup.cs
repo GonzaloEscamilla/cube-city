@@ -15,4 +15,5 @@ public class Setup : MonoBehaviour
         for (int i = 0; i < poolableComponents.Length; i++)
             poolableComponents[i].Initialize();
     }
+
 }

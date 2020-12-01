@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1008752289059421289}
   - component: {fileID: 6665809356149105736}
   m_Layer: 0
-  m_Name: Pool - Park
+  m_Name: Pool - IndustrialArea
   m_TagString: FacePools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool:
-  - {fileID: 6626762366019491193, guid: e88f20f2b53643646a308002dfa07621, type: 3}
+  - {fileID: 6626762366019491193, guid: 4af16d709e61a9241ac522289d65ce2c, type: 3}
   pool: []
   startAmount: 1
   canGrow: 1
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 1170792268745709458}
   - component: {fileID: 508425453586797351}
   m_Layer: 0
-  m_Name: Pool - CivicCenter
+  m_Name: Pool - BusinessArea
   m_TagString: FacePools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool:
-  - {fileID: 4505784502573764518, guid: 25daee3064ac4b14c91b0775caff010d, type: 3}
+  - {fileID: 4505784502573764518, guid: 485326a2233453e4d8a0968a7b7b6371, type: 3}
   pool: []
   startAmount: 1
   canGrow: 1
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 4411536967167640308}
   - component: {fileID: 1983382878235128565}
   m_Layer: 0
-  m_Name: Pool - ShoppingArea
+  m_Name: Pool - ParkArera
   m_TagString: FacePools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool:
-  - {fileID: 6626762366019491193, guid: 00b7d5e8f7b42cc4bbb9af5016343d88, type: 3}
+  - {fileID: 6626762366019491193, guid: 5d513e6ea6797ca4bacb70135be40e4d, type: 3}
   pool: []
   startAmount: 1
   canGrow: 1
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 3417365537035039934}
   - component: {fileID: 7209360736850544954}
   m_Layer: 0
-  m_Name: Pool - HouseingArea
+  m_Name: Pool - CommercialArea
   m_TagString: FacePools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool:
-  - {fileID: 6626762366019491193, guid: d564ee83fa848fc46ac626b921325f46, type: 3}
+  - {fileID: 6626762366019491193, guid: 6b8ff6f8c146d1f489aeddefa359bd71, type: 3}
   pool: []
   startAmount: 1
   canGrow: 1
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 2676146043670136494}
   - component: {fileID: 1526577236174311719}
   m_Layer: 0
-  m_Name: Pool - Dump
+  m_Name: Pool - ResidentialArea
   m_TagString: FacePools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool:
-  - {fileID: 6626762366019491193, guid: 5bc7aa14d72a311468fcfb195c79a72d, type: 3}
+  - {fileID: 6626762366019491193, guid: afd4b4a1b5dac524496efdb53b0f3881, type: 3}
   pool: []
   startAmount: 1
   canGrow: 1
@@ -659,6 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bff0d962b3ed7458a8161b0bed7295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentSpawnedCube: {fileID: 0}
   facePools: []
 --- !u!114 &3354265754124654
 MonoBehaviour:
@@ -790,7 +791,7 @@ GameObject:
   - component: {fileID: 4357811217635843551}
   - component: {fileID: 6348112502273526043}
   m_Layer: 0
-  m_Name: Pool - Factory
+  m_Name: Pool - GarbagedumpArea
   m_TagString: FacePools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -823,7 +824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool:
-  - {fileID: 6626762366019491193, guid: e5b48a136c5218c4fb32a410d742ff33, type: 3}
+  - {fileID: 6626762366019491193, guid: 7c2590cc032c29548bcba861a0255030, type: 3}
   pool: []
   startAmount: 1
   canGrow: 1

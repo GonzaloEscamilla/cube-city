@@ -38,7 +38,7 @@ public class Face : MonoBehaviour, IRaySelectable
     [SerializeField] private FaceOrientationType _orientation;
     [SerializeField] private FaceData _data;
     [SerializeField] private Transform _spawnPosition;
-    [SerializeField] private float _previewCubeOffsetPosition = 1.5f;
+    [SerializeField] private float _previewCubeOffsetPosition = 0f;
     [SerializeField] private float _initialSpawnPositionOffset = 10f;
 
     [SerializeField] private List<Face> _adjacencies = new List<Face>();
@@ -101,6 +101,11 @@ public class Face : MonoBehaviour, IRaySelectable
     public void SetFaceCollisionState(FaceCollisionState newState)
     {
         _collisionState = newState;
+    }
+
+    public FaceCollisionState GetFaceCollisionState()
+    {
+        return _collisionState;
     }
 
     public void SetNewAdjacencie(Face newAdjacencie)

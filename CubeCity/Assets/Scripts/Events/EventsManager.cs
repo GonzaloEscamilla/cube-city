@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class EventsManager : MonoBehaviour
@@ -20,6 +22,9 @@ public class EventsManager : MonoBehaviour
     public delegate void OnFaceUnselected();
     public OnFaceUnselected onFaceUnselected;
 
+    public delegate void OnPreviewCubeMoved(PreviewCube previewCube);
+    public OnPreviewCubeMoved onPreviewCubeMoved;
+
     public delegate void OnCreateButtonPressed();
     public OnCreateButtonPressed onCreateButtonPressed;
 
@@ -30,6 +35,8 @@ public class EventsManager : MonoBehaviour
     public OnCubeCreated onCubeCreated;
 
     public Action<Vector3> OnPreviewCubeRotated;
+
+    public Action<Face> OnPreviewFaceCollision;
 
     #region UI Events
 
@@ -70,4 +77,15 @@ public class EventsManager : MonoBehaviour
     {
         OnStatisticsUpdate?.Invoke();
     }
+
+    public void PreviewFaceCollision(Face faces)
+    {
+        OnPreviewFaceCollision?.Invoke(faces);
+    }
+
+    public void PreviewCubeMoved(PreviewCube previewCube)
+    {
+        onPreviewCubeMoved?.Invoke(previewCube);
+    }
+
 }

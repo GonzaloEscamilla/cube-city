@@ -6,12 +6,15 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] bool[] completedObjectives;
-
     public static LevelManager control;
 
     [SerializeField] private LevelsSO _levelSystem;
     [SerializeField] private LevelStatistics _levelStatistics;
+    [SerializeField] private FaceCollisionHandler _faceCollisionHandler;
+
+    [SerializeField] bool[] completedObjectives;
+
+
 
     /// <summary>
     /// The current level running on the scene.
@@ -56,7 +59,7 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        
+
     }
 
     private void OnDestroy()
@@ -64,6 +67,16 @@ public class LevelManager : MonoBehaviour
         EventsManager.control.onfaceSelected -= OnFaceSelectedEvent;
         EventsManager.control.onFaceUnselected -= OnFaceUnselectedEvent;
         EventsManager.control.onCreateButtonPressed -= Build;
+    }
+
+    public FaceCollisionHandler GetFaceCollidionsHandler()
+    {
+        return _faceCollisionHandler;
+    }
+
+    public CubeSpawner GetCubeSpawner()
+    {
+        return _spawner;
     }
 
     public void InitializeLevel()
@@ -178,7 +191,7 @@ public class LevelManager : MonoBehaviour
     /// <summary>
     /// Callback function. Its called when the new builded cube sets in its final position.
     /// </summary>
-    public void OnBuildFinish()
+    private void OnBuildFinish()
     {
         EventsManager.control.CubeBuilded(_spawner.GetCurrentCube());
 
@@ -191,7 +204,7 @@ public class LevelManager : MonoBehaviour
         buildedCube.Move(_currentSelectedFace.GetSpawnPositions(), callBack);
     }
 
-    public void EvaluateLevelEnding()
+    private void EvaluateLevelEnding()
     {
         if (_currentLevel.HasConstraints())
         {
@@ -199,7 +212,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void WinOrLoss()
+    private void WinOrLoss()
     {
         LevelObjective[] objetives = _currentLevel.GetObjectives();
         completedObjectives = new bool[objetives.Length];
@@ -237,8 +250,6 @@ public class LevelManager : MonoBehaviour
         EventsManager.control.onCreateButtonPressed -= Build;
         Debug.Log("Level ended.");
     }
-
-    
 
     private void UpdateFaceStatistics()
     {

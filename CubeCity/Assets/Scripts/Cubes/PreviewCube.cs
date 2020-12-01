@@ -6,72 +6,118 @@ using UnityEngine;
 public class PreviewCube : CubeBehaviour
 {
     [SerializeField] private Quaternion _currentRotation;
-    private RotationBehaviour rotationBehaviour;
+    private RotationBehaviour _rotationBehaviour;
+    
+    [SerializeField] private Pool[] _graphicsPool;
 
-    private void Start()
+    private void Awake()
     {
-        rotationBehaviour = GetComponent<RotationBehaviour>();
+        _rotationBehaviour = GetComponent<RotationBehaviour>();
+        _graphicsPool = GetComponentsInChildren<Pool>();
+    }
 
+    private void OnEnable()
+    {
         EventsManager.control.onfaceSelected += SetPosition;
         EventsManager.control.onCreateButtonPressed += ResetPosition;
-        EventsManager.control.onFaceUnselected += ClearPosition;
+        EventsManager.control.onFaceUnselected += ResetPosition;
+
+        EventsManager.control.onCubeCreated += SetFacesGraphics;
     }
 
     private void OnDestroy()
     {
         EventsManager.control.onfaceSelected -= SetPosition;
         EventsManager.control.onCreateButtonPressed -= ResetPosition;
-        EventsManager.control.onFaceUnselected -= ClearPosition;
+        EventsManager.control.onFaceUnselected -= ResetPosition;
+
+        EventsManager.control.onCubeCreated -= SetFacesGraphics;
     }
 
+    private void Start()
+    {
+        DisableFaceColliders();
+    }
     
     public void Rotate_X_positive()
     {
-        rotationBehaviour.RotateObject(this.gameObject, Vector3.right, 90);
+        DisableFaceColliders();
+        _rotationBehaviour.RotateObject(this.gameObject, Vector3.right, 90, EnableFaceColliders);
         EventsManager.control.PreviewCubeRotated(Vector3.right);
     }
 
     public void Rotate_X_Negative()
     {
-        rotationBehaviour.RotateObject(this.gameObject, -Vector3.right, 90);
+        DisableFaceColliders();
+        _rotationBehaviour.RotateObject(this.gameObject, -Vector3.right, 90, EnableFaceColliders);
         EventsManager.control.PreviewCubeRotated(-Vector3.right);
     }
 
     public void Rotate_Y_positive()
     {
-        rotationBehaviour.RotateObject(this.gameObject, Vector3.up, 90);
+        DisableFaceColliders();
+        _rotationBehaviour.RotateObject(this.gameObject, Vector3.up, 90, EnableFaceColliders);
         EventsManager.control.PreviewCubeRotated(Vector3.up);
     }
 
     public void Rotate_Y_Negative()
     {
-        rotationBehaviour.RotateObject(this.gameObject, -Vector3.up, 90);
+        DisableFaceColliders();
+        _rotationBehaviour.RotateObject(this.gameObject, -Vector3.up, 90, EnableFaceColliders);
         EventsManager.control.PreviewCubeRotated(-Vector3.up);
     }
 
     public void Rotate_Z_positive()
     {
-        rotationBehaviour.RotateObject(this.gameObject, Vector3.forward, 90);
+        DisableFaceColliders();
+        _rotationBehaviour.RotateObject(this.gameObject, Vector3.forward, 90, EnableFaceColliders);
         EventsManager.control.PreviewCubeRotated(Vector3.forward);
     }
 
     public void Rotate_Z_Negative()
     {
-        rotationBehaviour.RotateObject(this.gameObject, -Vector3.forward, 90);
+        DisableFaceColliders();
+        _rotationBehaviour.RotateObject(this.gameObject, -Vector3.forward, 90, EnableFaceColliders);
         EventsManager.control.PreviewCubeRotated(-Vector3.forward);
     }
     
+    public void SetFacesGraphics(CubeBehaviour cube)
+    {
+        //Debug.Log("SetFacesGraphics");
+
+        ClearGraphics();
+
+        Face[] previewCubeFaces = GetComponentsInChildren<Face>();
+        Face[] cubeFaces = cube.GetComponentsInChildren<Face>();
+
+        for (int i = 0; i < previewCubeFaces.Length; i++)
+        {
+            previewCubeFaces[i].Type = cubeFaces[i].Type;
+
+            SetFaceGraphics(previewCubeFaces[i], (int)previewCubeFaces[i].Type);
+        }
+
+    }
+
+    private void SetFaceGraphics(Face faces, int type)
+    {
+        Transform newFace;
+        faces.Type = (FaceTypes)type;
+
+        newFace = _graphicsPool[type].GetPooledObject().transform;
+        newFace.SetParent(faces.transform);
+        newFace.SetPositionAndRotation(faces.transform.position, faces.transform.rotation);
+    }
+
     public void ClearGraphics()
     {
         Setup[] facesGraphics = GetComponentsInChildren<Setup>();
-
-        if (facesGraphics.Length > 0)
+        
+        for (int i = 0; i < facesGraphics.Length; i++)
         {
-            for (int i = 0; i < facesGraphics.Length; i++)
-            {
-                //Destroy(facesGraphics[i].gameObject);
-                facesGraphics[i].gameObject.SetActive(false);
-            }
+            // TODO: Revisar este chorizote, quizas se puede hacer de una manera mucho mas simple. No es muy flexible.
+            facesGraphics[i].transform.SetParent(_graphicsPool[((int)facesGraphics[i].GetComponentInParent<Face>().Type) + 1].transform);
+            facesGraphics[i].gameObject.SetActive(false);
         }
     }
 
@@ -90,23 +136,47 @@ public class PreviewCube : CubeBehaviour
 
     private void SetPosition(Face selectedFace)
     {
-        ISetup[] setups = GetComponentsInChildren<ISetup>();
+        EventsManager.control.PreviewCubeMoved(this);
 
-        for (int i = 0; i < setups.Length; i++)
-        {
-            setups[i].Setup();
-        }
+        EnableFaceColliders();
         
         this.transform.position = selectedFace.GetPreviewCubePosition();
     }
 
     private void ResetPosition()
     {
+        EventsManager.control.PreviewCubeMoved(this);
+
+        DisableFaceColliders();
+
         this.transform.position = new Vector3(1000, 1000, 1000);
     }
 
-    private void ClearPosition()
+    /// <summary>
+    /// This will disable all the FaceCollisionBehaviour colliders.
+    /// </summary>
+    private void DisableFaceColliders()
     {
-        this.transform.position = new Vector3(1000, 1000, 1000);
+        ISwitchState[] setups = GetComponentsInChildren<ISwitchState>();
+
+        for (int i = 0; i < setups.Length; i++)
+        {
+            setups[i].Disable();
+        }
     }
+
+    /// <summary>
+    /// This will disable all the FaceCollisionBehaviour colliders.
+    /// </summary>
+    private void EnableFaceColliders()
+    {
+        ISwitchState[] setups = GetComponentsInChildren<ISwitchState>();
+
+        for (int i = 0; i < setups.Length; i++)
+        {
+            setups[i].Enable();
+        }
+    }
+
+
 }

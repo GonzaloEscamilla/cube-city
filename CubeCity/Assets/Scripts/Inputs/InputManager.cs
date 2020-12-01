@@ -45,7 +45,7 @@ public class InputManager : MonoBehaviour
     /// <summary>
     /// Is the UI selected. Its true if the input position is above a UI element.
     /// </summary>
-    private bool isUISelected = false;
+    [SerializeField] private bool isUISelected = false;
 
     #endregion
 
@@ -109,18 +109,22 @@ public class InputManager : MonoBehaviour
                 isUISelected = false;
         }
 
-        if (isUISelected) return;
-
+        if (isUISelected)
+        {
+            tapFlag = 0;
+           
+            return;
+        }
 
         // TODO: No tengo la menor idea de por que esta pasando esto. osea, el GgetMouseButtonDown se llama cuando tapeo con el dedo. Rarisimo.
 
-        /*
+        
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("MouseTap");
             Tap();
         }
-        */
+        
 
 
         if (Input.touchCount == 1)
@@ -130,10 +134,13 @@ public class InputManager : MonoBehaviour
             if (firstTouch.phase == TouchPhase.Began)
             {
                 StartTapVerification();
+                
                 tapFlag = 1;
             }
             if (firstTouch.phase == TouchPhase.Moved)
             {
+                tapFlag = 0;
+
                 isSwiping = true;
                 Swipe();
             }
@@ -145,6 +152,7 @@ public class InputManager : MonoBehaviour
         }
         if (Input.touchCount == 2)
         {
+            tapFlag = 0;
             firstTouch = Input.GetTouch(0);
             secondTouch = Input.GetTouch(1);
 
@@ -161,6 +169,7 @@ public class InputManager : MonoBehaviour
 
             if (secondTouch.phase == TouchPhase.Moved && firstTouch.phase == TouchPhase.Moved)
             {
+                //tapFlag = 0;
                 ZoomUpdateInputs();
                 ZoomVerification();
 

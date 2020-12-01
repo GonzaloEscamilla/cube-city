@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ISetup
+public interface ISwitchState
 {
-    void Setup();
+    void Enable();
+    void Disable();
 }

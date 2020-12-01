@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1217806876311530410}
   - component: {fileID: 8765128693451178991}
   m_Layer: 0
-  m_Name: Face
+  m_Name: _Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
     _technology: 0
     _knowledge: 0
   _spawnPosition: {fileID: 5214495688697512000}
-  _previewCubeOffsetPosition: 5
+  _previewCubeOffsetPosition: 0
   _initialSpawnPositionOffset: 10
   _adjacencies: []
 --- !u!65 &8765128693451178991

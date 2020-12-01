@@ -8,20 +8,21 @@ public class CubeSpawner : MonoBehaviour
 {
     // TODO: Esta clase va a tner toda la logica tmabien de la randomizacion de caras segun la cantidad de recursos.
 
-    private Pool _cubePool;
     [SerializeField] private CubeBehaviour _currentSpawnedCube;
-    private PreviewCube _previewCube;
-
     [SerializeField] private Pool[] facePools;
+    
+    private Pool _cubePool;
 
     private void OnEnable()
     {
         EventsManager.control.OnPreviewCubeRotated += OnPreviewCubeRotatedEvent;
+        EventsManager.control.OnPreviewFaceCollision += OnPreviewFaceCollisionEvent;
     }
 
     private void OnDisable()
     {
         EventsManager.control.OnPreviewCubeRotated -= OnPreviewCubeRotatedEvent;
+        EventsManager.control.OnPreviewFaceCollision -= OnPreviewFaceCollisionEvent;
     }
 
     private void Awake()
@@ -38,13 +39,6 @@ public class CubeSpawner : MonoBehaviour
                 facePools[i -1] = auxPool[i];
             }
         }
-
-        _previewCube = FindObjectOfType(typeof(PreviewCube)) as PreviewCube;
-        if (_previewCube == null)
-        {
-            Debug.LogError("There must be a previewcube component atached to a gameobject on the scene. Please make shure thats's done.");
-        }
-
     }
 
     /// <summary>
@@ -60,18 +54,6 @@ public class CubeSpawner : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns the current spawned cube if any.
-    /// </summary>
-    /// <returns></returns>
-    public CubeBehaviour GetPreviewCube()
-    {
-        if (_previewCube != null)
-            return _previewCube;
-        else
-            return null;
-    }
-
-    /// <summary>
     /// Creates the initial cube of the Level. It has a Civic Center on the Upper face.
     /// </summary>
     /// <returns></returns>
@@ -80,6 +62,8 @@ public class CubeSpawner : MonoBehaviour
         _currentSpawnedCube = _cubePool.GetPooledObject(this.transform).GetComponent<CubeBehaviour>();
 
         SetCubeFaces(_currentSpawnedCube, FaceTypes.CivicCenter, FaceOrientationType.Up);
+
+        EventsManager.control.CubeCreated(_currentSpawnedCube);
 
         return _currentSpawnedCube;
     }
@@ -104,10 +88,7 @@ public class CubeSpawner : MonoBehaviour
     private void SetCubeFaces(CubeBehaviour spawnedCube)
     {
         Face[] cubeFaces = _currentSpawnedCube.GetComponentsInChildren<Face>();
-        Face[] previewCubeFaces = _previewCube.GetComponentsInChildren<Face>();
-
-        _previewCube.ClearGraphics();
-
+        
         int randomType;
 
         for (int i = 0; i < cubeFaces.Length; i++)
@@ -118,9 +99,7 @@ public class CubeSpawner : MonoBehaviour
 
             // TODO: Revisar si se puede meter el For dentro de esta misma funcion. Puede llegar a ser interesante y util en el futuro.
             SetFaceGraphics(cubeFaces, i, randomType);
-            SetFaceGraphics(previewCubeFaces, i, randomType);
         }
-        EventsManager.control.CubeCreated(spawnedCube);
     }
 
     /// <summary>
@@ -132,30 +111,24 @@ public class CubeSpawner : MonoBehaviour
     private void SetCubeFaces(CubeBehaviour spawnedCube, FaceTypes forcedFaceType, FaceOrientationType side)
     {
         Face[] cubeFaces = _currentSpawnedCube.GetComponentsInChildren<Face>();
-        Face[] previewCubeFaces = _previewCube.GetComponentsInChildren<Face>();
 
-        _previewCube.ClearGraphics();
 
         int randomType;
 
         for (int i = 0; i < cubeFaces.Length; i++)
         {
-            //TODO aca tenemos que llamar a la funcion que aleatoriza la creacion. Por ahora vamos a hacer un aleatorio entre 1 y 7
+            //TODO aca tenemos que llamar a la funcion que aleatoriza la creacion. Por ahora vamos a hacer un aleatorio entre 1 y 7 (1 por el civic center obviamente)
             randomType = Random.Range(1, 6);
 
             if (cubeFaces[i].GetOrientationType() != side)
             {
                 SetFaceGraphics(cubeFaces, i, randomType);
-                SetFaceGraphics(previewCubeFaces, i, randomType);
             }
             else
             {
                 SetFaceGraphics(cubeFaces, i, (int)forcedFaceType);
-                SetFaceGraphics(previewCubeFaces, i, (int) forcedFaceType);
             }
-            
         }
-        EventsManager.control.CubeCreated(spawnedCube);
     }
 
     private void SetFaceGraphics(Face[] faces, int index, int randomType)
@@ -170,6 +143,29 @@ public class CubeSpawner : MonoBehaviour
 
     private void OnPreviewCubeRotatedEvent(Vector3 axis)
     {
+        Face[] auxFaces = _currentSpawnedCube.GetFaces();
+
+        for (int i = 0; i < auxFaces.Length; i++)
+        {
+            auxFaces[i].SetFaceCollisionState(FaceCollisionState.None);
+        }
+        
         GetComponentInChildren<RotationBehaviour>().RotateObject(_currentSpawnedCube.gameObject, axis, 90);
     }
+
+    private void OnPreviewFaceCollisionEvent(Face face)
+    {
+        Face[] auxFaces = _currentSpawnedCube.GetFaces();
+
+        for (int i = 0; i < auxFaces.Length; i++)
+        {
+            if (face.GetOrientationType() == auxFaces[i].GetOrientationType())
+            {
+                Debug.Log("oli");
+                auxFaces[i].SetFaceCollisionState(face.GetFaceCollisionState());
+            }
+        }
+
+    }
+
 }

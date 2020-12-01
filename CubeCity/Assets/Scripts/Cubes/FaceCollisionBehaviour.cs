@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FaceCollisionBehaviour : MonoBehaviour, ISetup
+public class FaceCollisionBehaviour : MonoBehaviour, ISwitchState
 {
     [SerializeField] Collider collisionBox;
     
     [SerializeField] bool isPreviewCube = false;
-    float _distance = 0;
 
     private void Awake()
     {
         collisionBox = GetComponent<Collider>();
+        DisableIfPreviewCube();
     }
 
     [ContextMenu("Try")]
@@ -22,40 +22,41 @@ public class FaceCollisionBehaviour : MonoBehaviour, ISetup
 
     private void OnTriggerEnter(Collider other)
     {
-        
         if (other.GetComponentInParent<Face>() && this.GetComponentInParent<PreviewCube>() && other.CompareTag("FaceCollider"))
         {
-            _distance = Vector3.Distance(this.transform.position, other.transform.position);
+            Face previewFace = GetComponentInParent<Face>();
+            Face otherFace = other.GetComponentInParent<Face>();
 
-            Debug.DrawLine(this.transform.position, other.transform.position, Color.red, 4f);
-
-            Debug.Log("Colliding with: " + other.gameObject.name + " center distance = " + _distance);
+            //Debug.Log("FaceCollisionBehaviour enter.");
+            LevelManager.control.GetFaceCollidionsHandler().HandleFaceCollision(previewFace, otherFace);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Exit");
-        if (isPreviewCube)
+        if (other.GetComponentInParent<Face>() && this.GetComponentInParent<PreviewCube>() && other.CompareTag("FaceCollider"))
         {
-            return;
-        }
-
-        if (other.GetComponentInParent<Face>() && other.CompareTag("FaceCollider"))
-        {
-            _distance = Vector3.Distance(this.transform.position, other.transform.position);
-
-            Debug.DrawLine(this.transform.position, other.transform.position, Color.red);
-
-            Debug.Log("Colliding with: " + other.gameObject.name + " center distance = " + _distance);
+            //Debug.Log("FaceCollisionBehaviour exit.");
         }
     }
 
-    public void Setup()
+    public void Enable()
+    {
+        isPreviewCube = true;
+        collisionBox.enabled = true;
+    }
+
+    public void Disable()
+    {
+        isPreviewCube = true;
+        collisionBox.enabled = false;
+        GetComponentInParent<Face>().SetFaceCollisionState(FaceCollisionState.None);
+    }
+
+    private void DisableIfPreviewCube()
     {
         if (GetComponentInParent<PreviewCube>())
         {
-            isPreviewCube = true;
             collisionBox.enabled = false;
         }
     }
