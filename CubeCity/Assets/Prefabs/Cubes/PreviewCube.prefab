@@ -1,155 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &98948639853362211
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 802328976819013026}
-  - component: {fileID: 7324051985111346250}
-  m_Layer: 0
-  m_Name: Pool - UFO (1)
-  m_TagString: FacePools
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &802328976819013026
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98948639853362211}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1000, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7082182879421837733}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7324051985111346250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98948639853362211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54728b4198853314d9589993a045217e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool:
-  - {fileID: 6626762366019491193, guid: 7b99628789e112849ba3adecea8b95a3, type: 3}
-  pool: []
-  startAmount: 6
-  canGrow: 1
-  initializedAtStart: 0
-  detachObjectWhenPooled: 1
---- !u!1 &976281971389438313
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5812661199324769155}
-  - component: {fileID: 1119912658251380840}
-  m_Layer: 0
-  m_Name: Pool - SpaceCompany (1)
-  m_TagString: FacePools
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5812661199324769155
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976281971389438313}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1000, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7082182879421837733}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1119912658251380840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976281971389438313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54728b4198853314d9589993a045217e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool:
-  - {fileID: 6626762366019491193, guid: ed5a2b7f56f049c47bc5de544242c306, type: 3}
-  pool: []
-  startAmount: 6
-  canGrow: 1
-  initializedAtStart: 0
-  detachObjectWhenPooled: 1
---- !u!1 &2544767187315545238
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3888870568631391340}
-  - component: {fileID: 3560606063364965638}
-  m_Layer: 0
-  m_Name: Pool - SolarPowerPlant (1)
-  m_TagString: FacePools
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3888870568631391340
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2544767187315545238}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1000, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7082182879421837733}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3560606063364965638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2544767187315545238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54728b4198853314d9589993a045217e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool:
-  - {fileID: 6626762366019491193, guid: 5d75d8e669d9cbb4d9c7a615c515205f, type: 3}
-  pool: []
-  startAmount: 6
-  canGrow: 1
-  initializedAtStart: 0
-  detachObjectWhenPooled: 1
 --- !u!1 &2598439263698018075
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +11,7 @@ GameObject:
   - component: {fileID: 5339056596340174865}
   - component: {fileID: 922536765393029577}
   m_Layer: 0
-  m_Name: Pool - HouseingArea (1)
+  m_Name: Pool - CommercialArea
   m_TagString: FacePools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,9 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool:
-  - {fileID: 6626762366019491193, guid: d564ee83fa848fc46ac626b921325f46, type: 3}
+  - {fileID: 6626762366019491193, guid: 4202c87af9dea3c42878b17644195f56, type: 3}
   pool: []
-  startAmount: 6
+  startAmount: 2
   canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 1
@@ -211,7 +61,7 @@ GameObject:
   - component: {fileID: 2499552270425057860}
   - component: {fileID: 6553893185445464179}
   m_Layer: 0
-  m_Name: Pool - Dump (1)
+  m_Name: Pool - ResidentialArea
   m_TagString: FacePools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,9 +94,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool:
-  - {fileID: 6626762366019491193, guid: 5bc7aa14d72a311468fcfb195c79a72d, type: 3}
+  - {fileID: 6626762366019491193, guid: 4676585688ab23444ac19dd9c83d2186, type: 3}
   pool: []
-  startAmount: 6
+  startAmount: 2
   canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 1
@@ -261,7 +111,7 @@ GameObject:
   - component: {fileID: 761850232562291760}
   - component: {fileID: 1130615234316514238}
   m_Layer: 0
-  m_Name: Pool - CivicCenter (1)
+  m_Name: Pool - BusinessArea
   m_TagString: FacePools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,9 +144,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool:
-  - {fileID: 4505784502573764518, guid: 25daee3064ac4b14c91b0775caff010d, type: 3}
+  - {fileID: 4505784502573764518, guid: 998cb633a26ad824b83a233ba4eca112, type: 3}
   pool: []
-  startAmount: 1
+  startAmount: 2
   canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 1
@@ -311,7 +161,7 @@ GameObject:
   - component: {fileID: 9136538111200817977}
   - component: {fileID: 7880136594079547090}
   m_Layer: 0
-  m_Name: Pool - Park (1)
+  m_Name: Pool - IndustrialArea
   m_TagString: FacePools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,109 +194,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool:
-  - {fileID: 6626762366019491193, guid: e88f20f2b53643646a308002dfa07621, type: 3}
+  - {fileID: 6626762366019491193, guid: bd440e9faacdc3040936e69ad14c7d99, type: 3}
   pool: []
-  startAmount: 6
-  canGrow: 1
-  initializedAtStart: 0
-  detachObjectWhenPooled: 1
---- !u!1 &4736391865960802062
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8706739052932682341}
-  - component: {fileID: 5470274936032198838}
-  m_Layer: 0
-  m_Name: Pool - Metropolis (1)
-  m_TagString: FacePools
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8706739052932682341
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4736391865960802062}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1000, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7082182879421837733}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5470274936032198838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4736391865960802062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54728b4198853314d9589993a045217e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool:
-  - {fileID: 6626762366019491193, guid: 0c43ee87dbfcdd84bb1e0bf0bf46b3c4, type: 3}
-  pool: []
-  startAmount: 6
-  canGrow: 1
-  initializedAtStart: 0
-  detachObjectWhenPooled: 1
---- !u!1 &5914900457623834807
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3649936193880840434}
-  - component: {fileID: 3235449867485658816}
-  m_Layer: 0
-  m_Name: Pool - College (1)
-  m_TagString: FacePools
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3649936193880840434
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5914900457623834807}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1000, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7082182879421837733}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3235449867485658816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5914900457623834807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54728b4198853314d9589993a045217e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool:
-  - {fileID: 6626762366019491193, guid: c97b5678269e9414bb67c073bf5ab20c, type: 3}
-  pool: []
-  startAmount: 6
+  startAmount: 2
   canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 1
@@ -483,68 +233,9 @@ Transform:
   - {fileID: 9136538111200817977}
   - {fileID: 7998910168224889142}
   - {fileID: 2499552270425057860}
-  - {fileID: 5198654844735867758}
-  - {fileID: 3649936193880840434}
-  - {fileID: 3888870568631391340}
-  - {fileID: 8054407977590094122}
-  - {fileID: 8922494161246259855}
-  - {fileID: 7445767814272921046}
-  - {fileID: 802328976819013026}
-  - {fileID: 8706739052932682341}
-  - {fileID: 5812661199324769155}
   m_Father: {fileID: 4133745877228650665}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7247193889247960288
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8922494161246259855}
-  - component: {fileID: 8275671835318186903}
-  m_Layer: 0
-  m_Name: Pool - NaturalReserve (1)
-  m_TagString: FacePools
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8922494161246259855
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7247193889247960288}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1000, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7082182879421837733}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8275671835318186903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7247193889247960288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54728b4198853314d9589993a045217e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool:
-  - {fileID: 6626762366019491193, guid: 71b273521ddf782489b452046d7d6d66, type: 3}
-  pool: []
-  startAmount: 6
-  canGrow: 1
-  initializedAtStart: 0
-  detachObjectWhenPooled: 1
 --- !u!1 &7299135084590424964
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +247,7 @@ GameObject:
   - component: {fileID: 7998910168224889142}
   - component: {fileID: 5177886904675357064}
   m_Layer: 0
-  m_Name: Pool - ShoppingArea (1)
+  m_Name: Pool - ParkArera
   m_TagString: FacePools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -589,9 +280,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool:
-  - {fileID: 6626762366019491193, guid: 00b7d5e8f7b42cc4bbb9af5016343d88, type: 3}
+  - {fileID: 6626762366019491193, guid: aee4583f3ccfbb64d9711a7edf3c4555, type: 3}
   pool: []
-  startAmount: 6
+  startAmount: 2
   canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 1
@@ -606,7 +297,7 @@ GameObject:
   - component: {fileID: 2443295851180749396}
   - component: {fileID: 6379867322549394282}
   m_Layer: 0
-  m_Name: Pool - Factory (1)
+  m_Name: Pool - GarbagedumpArea
   m_TagString: FacePools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,159 +330,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool:
-  - {fileID: 6626762366019491193, guid: e5b48a136c5218c4fb32a410d742ff33, type: 3}
+  - {fileID: 6626762366019491193, guid: f0255e5613d50874abea0d6a3dc72767, type: 3}
   pool: []
-  startAmount: 6
-  canGrow: 1
-  initializedAtStart: 0
-  detachObjectWhenPooled: 1
---- !u!1 &7875604271502357884
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5198654844735867758}
-  - component: {fileID: 1261617446825649339}
-  m_Layer: 0
-  m_Name: Pool - AgriculturalArea (1)
-  m_TagString: FacePools
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5198654844735867758
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7875604271502357884}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1000, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7082182879421837733}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1261617446825649339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7875604271502357884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54728b4198853314d9589993a045217e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool:
-  - {fileID: 6626762366019491193, guid: 79c9086477914624a9edb63da0f51eab, type: 3}
-  pool: []
-  startAmount: 6
-  canGrow: 1
-  initializedAtStart: 0
-  detachObjectWhenPooled: 1
---- !u!1 &8263075860090974266
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8054407977590094122}
-  - component: {fileID: 4347542610010240872}
-  m_Layer: 0
-  m_Name: Pool - Meteorite (1)
-  m_TagString: FacePools
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8054407977590094122
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8263075860090974266}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1000, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7082182879421837733}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4347542610010240872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8263075860090974266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54728b4198853314d9589993a045217e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool:
-  - {fileID: 6626762366019491193, guid: 5fd2796fcc6c92b43aead1030474d713, type: 3}
-  pool: []
-  startAmount: 6
-  canGrow: 1
-  initializedAtStart: 0
-  detachObjectWhenPooled: 1
---- !u!1 &8566244820971575014
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7445767814272921046}
-  - component: {fileID: 5478869721551608058}
-  m_Layer: 0
-  m_Name: Pool - RadioactiveZone (1)
-  m_TagString: FacePools
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7445767814272921046
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8566244820971575014}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1000, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7082182879421837733}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5478869721551608058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8566244820971575014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54728b4198853314d9589993a045217e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool:
-  - {fileID: 6626762366019491193, guid: 2e8a7fd9d21ba914ab7c94b9244d6651, type: 3}
-  pool: []
-  startAmount: 6
+  startAmount: 2
   canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 1

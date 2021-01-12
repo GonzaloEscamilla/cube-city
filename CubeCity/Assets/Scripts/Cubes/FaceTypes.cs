@@ -4,19 +4,10 @@ using UnityEngine;
 
 public enum FaceTypes
 {
-    CivicCenter,
-    HousingArea,
-    Factory,
-    Park,
-    ShoppingArea,
-    Dump,
-    AgriculturalArea,
-    College,
-    SolarPowerPlant,
-    Meteorite,
-    NaturalReserve,
-    RadioactiveZone,
-    UFO,
-    Metropolis,
-    SpaceCompany
+    BusinessArea,
+    CommercialArea,
+    GarbagedumpArea,
+    IndustrialArea,
+    ParkArera,
+    ResidentialArea
 }
