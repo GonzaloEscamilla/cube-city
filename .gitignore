@@ -78,3 +78,26 @@ CubeCity/Temp/
 CubeCity/obj/Debug/
 CubeCity/Assets/Omega/
 CubeCity/Assets/Omega.meta
+
+
+### FMOD Unity Integration ###
+# Never ignore DLLs in the FMOD subfolder, so make sure that the FMOD-folder is in the correct path.
+!CubeCity/[Aa]ssets/Plugins/FMOD/**/*.dll
+
+# Don't ignore images and gizmos used by FMOD in the Unity Editor
+!CubeCity/[Aa}ssets/Gizmos/FMOD/*
+!CubeCity/[Aa}ssets/Editor Default Resources/FMOD/*
+
+# Ignore the Cache-file since it is updated locally either way
+CubeCity/[Aa]ssets/**/FMODStudioCache.asset
+CubeCity/[Aa]ssets/**/FMODStudioCache.asset.meta
+CubeCity/[Aa]ssets/Plugins/FMOD/Cache.meta
+CubeCity/[Aa]ssets/Plugins/FMOD/Cache/Editor.meta
+
+# Log-files
+fmod.log
+fmod_editor.log
+
+# FMOD 1.10.x (Legacy)
+CubeCity/Assets/FMODAssets/*
+CubeCity/Assets/FMODStudioCache.meta
