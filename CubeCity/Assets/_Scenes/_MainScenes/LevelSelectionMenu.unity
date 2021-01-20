@@ -742,7 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/TestEvent
+  Event: event:/BG Music/Background Music
   PlayEvent: 1
   StopEvent: 0
   AllowFadeout: 1

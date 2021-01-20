@@ -455,9 +455,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
   HasSourceProject: 0
-  HasPlatforms: 1
+  HasPlatforms: 0
   sourceProjectPath: 
-  sourceBankPath: FMODBuilds
+  sourceBankPath: FMODBuilds/Desktop
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -481,9 +481,6 @@ MonoBehaviour:
   Banks:
   - Master.assets
   - Master.streams
-  - UnRaro
-  - UnRaro.assets
-  - UnRaro.streams
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

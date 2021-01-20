@@ -41,6 +41,17 @@ public class RotationBehaviour : MonoBehaviour
         StartCoroutine(DoRotation(objToRotate, initialRotation, targetRotation, callBack));
     }
 
+    public void FromToRotation(GameObject objToRotate, Quaternion from, Quaternion to, Action callBack)
+    {
+        Quaternion initialRotation;
+        initialRotation = objToRotate.transform.rotation;
+
+        targetRotation = to;
+
+        StopAllCoroutines();
+        StartCoroutine(DoRotation(objToRotate, initialRotation, targetRotation, callBack));
+    }
+
     IEnumerator DoRotation(GameObject objToRotate, Quaternion from, Quaternion to, Action callBack)
     {
         function = EasingFunction.GetEasingFunction(type);
