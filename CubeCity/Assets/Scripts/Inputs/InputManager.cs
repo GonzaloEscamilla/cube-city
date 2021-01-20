@@ -99,6 +99,8 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
+        UISelectedVerification();
+
         // Checks first of all if there is a UI element being selected.
         if (Input.touchCount > 0)
         {
@@ -109,6 +111,7 @@ public class InputManager : MonoBehaviour
                 isUISelected = false;
         }
 
+        
         if (isUISelected)
         {
             tapFlag = 0;
@@ -116,15 +119,14 @@ public class InputManager : MonoBehaviour
             return;
         }
 
-        // TODO: No tengo la menor idea de por que esta pasando esto. osea, el GgetMouseButtonDown se llama cuando tapeo con el dedo. Rarisimo.
+        // TODO: Esta pasando que la UI se selecciona
 
-        
+
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("MouseTap");
             Tap();
         }
-        
 
 
         if (Input.touchCount == 1)
@@ -271,7 +273,7 @@ public class InputManager : MonoBehaviour
     {
         Transform selectable;
 
-        UISelectedVerification();
+        // UISelectedVerification();
 
         if (!isUISelected)
         {

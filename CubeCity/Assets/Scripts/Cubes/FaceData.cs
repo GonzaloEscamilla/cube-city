@@ -8,7 +8,7 @@ public class FaceData
     [HideInInspector] public string name;
 
     [Header("Stats")]
-    public int _prosperity; // Only special faces should give this "resource".
+    public int _prosperity; // Currently this is the main resource.
     public int _population;
     public int _pullution;
     public int _productivity;

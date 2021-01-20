@@ -113,11 +113,11 @@ public class PreviewCube : CubeBehaviour
     {
         Setup[] facesGraphics = GetComponentsInChildren<Setup>();
 
-        Debug.Log(facesGraphics.Length, this.gameObject);
+        //Debug.Log(facesGraphics.Length, this.gameObject);
 
         for (int i = 0; i < facesGraphics.Length; i++)
         {
-            Debug.Log(facesGraphics[i], this.gameObject);
+            //Debug.Log(facesGraphics[i], this.gameObject);
             // TODO: Revisar este chorizote, quizas se puede hacer de una manera mucho mas simple. No es muy flexible.
             facesGraphics[i].transform.SetParent(_graphicsPool[((int)facesGraphics[i].GetComponentInParent<Face>().Type)].transform);
             facesGraphics[i].gameObject.SetActive(false);
