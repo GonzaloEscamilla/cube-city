@@ -42,6 +42,9 @@ public class LevelStatistics: ScriptableObject
     
     [Space(5)]
 
+    [SerializeField] private FaceData _faceData = new FaceData();
+    // TODO: borrar todos estos campos que se corresponden con un FaceData, incluso el "_totalProsperity" de arriba.
+    // Tambien borrar todos los usos y hacer los calculos sobre el atributo _faceData.
     [SerializeField] private int _totalPopulation = 0;
     [SerializeField] private int _totalPullution = 0;
     [SerializeField] private int _totalProductivity = 0;
@@ -83,7 +86,7 @@ public class LevelStatistics: ScriptableObject
         _timeThreshold = 0;
         ElapsedTime = 0;
 
-
+        _faceData = new FaceData();
         _totalProsperity = 0;
         _prosperityModifier = 0;
         _totalPopulation = 0;
@@ -112,10 +115,17 @@ public class LevelStatistics: ScriptableObject
         _spaceCompany = 0;
     }
 
+    public void CalculateNextResourcers(FaceData data)
+    {
+        _faceData += data;
+    }
+
+    // TODO: "Resourcers" está bien escrito? Si no, renombrar (también a la función de arriba)
     public void CalculateNextResourcers(FaceData[] data)
     {
         for (int i = 0; i < data.Length; i++)
         {
+            _faceData += data[i];
             _prosperityModifier += data[i]._prosperity;
             _totalPopulation += data[i]._population;
             _totalPullution += data[i]._pullution;
