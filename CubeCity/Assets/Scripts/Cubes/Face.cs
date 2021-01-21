@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Face : MonoBehaviour, IRaySelectable
+public class Face : MonoBehaviour, IRaySelectable, IPoolable
 {
     [SerializeField] FaceDataSO _faceData;
 
@@ -32,6 +32,46 @@ public class Face : MonoBehaviour, IRaySelectable
             _isSelected = value;
         }
     }
+
+    public Face[] GetAdjacentFaces()
+    {
+        //TODO: completar
+        return null;
+    }
+
+    public List<Face> GetAdjacentGroup()
+    {
+        List<Face> result = new List<Face>();
+        Dictionary<Face, bool> visited = new Dictionary<Face, bool>();
+        Queue<Face> facesToVisit = new Queue<Face>();
+        facesToVisit.Enqueue(this);
+        while (facesToVisit.Count > 0)
+        {
+            Face currentFace = facesToVisit.Dequeue();
+            bool isVisited;
+            visited.TryGetValue(currentFace, out isVisited);
+            if (!isVisited)
+            {
+                result.Add(currentFace);
+                visited[currentFace] = true;
+
+                foreach (Face adjacentFace in currentFace.GetAdjacentFaces())
+                {
+                    bool adjacentIsVisited;
+                    visited.TryGetValue(adjacentFace, out adjacentIsVisited);
+                    // TODO: hay que revisar no solo si las caras son del mismo tipo, sino también que no formen parte de un combo previo
+                    if (!adjacentIsVisited &&
+                        adjacentFace.Type == currentFace.Type
+                        && adjacentFace._level == this._level)
+                    {
+                        facesToVisit.Enqueue(adjacentFace);
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
     [SerializeField] private bool _isSelected;
 
     [SerializeField] private FaceCollisionState _collisionState;
@@ -46,6 +86,9 @@ public class Face : MonoBehaviour, IRaySelectable
 
     private bool isCovered;
 
+    // TODO: esta variable se debería asignar en 0 cuando la cara es creada
+    [SerializeField] private int _level;
+
     public void Select()
     {
         IsSelected = true;
@@ -54,6 +97,12 @@ public class Face : MonoBehaviour, IRaySelectable
     public void Unselect()
     {
         IsSelected = false;
+    }
+
+    public void Upgrade()
+    {
+        //TODO: cambiar el gráfico, animaciones, etc
+        _level++;
     }
 
     public bool GetStatus()
@@ -132,5 +181,10 @@ public class Face : MonoBehaviour, IRaySelectable
     private void OnValidate()
     {
         Type = _type;
+    }
+
+    void IPoolable.Initialize()
+    {
+        _level = 0;
     }
 }
