@@ -59,7 +59,6 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
                 {
                     bool adjacentIsVisited;
                     visited.TryGetValue(adjacentFace, out adjacentIsVisited);
-                    // TODO: hay que revisar no solo si las caras son del mismo tipo, sino también que no formen parte de un combo previo
                     if (!adjacentIsVisited &&
                         adjacentFace.Type == currentFace.Type
                         && adjacentFace._level == this._level)
