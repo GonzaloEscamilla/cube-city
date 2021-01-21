@@ -481,9 +481,6 @@ MonoBehaviour:
   Banks:
   - Master.assets
   - Master.streams
-  - UnRaro
-  - UnRaro.assets
-  - UnRaro.streams
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
