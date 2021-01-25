@@ -180,13 +180,6 @@ public class LevelManager : MonoBehaviour
         OnFaceUnselectedEvent();
 
         _levelStatistics.CurrentCubeAmount++;
-
-        UpdateFaceStatistics();
-
-        EventsManager.control.StatisticsUpdate();
-
-        EvaluateLevelEnding();
-        WinOrLoss();
     }
 
     /// <summary>
@@ -196,13 +189,24 @@ public class LevelManager : MonoBehaviour
     {
         EventsManager.control.CubeBuilded(_spawner.GetCurrentCube());
 
+        // TODO: aca deberiamos asegurarnos que las caras nuevas que estan solapadas desaparezcan.
+
         CheckExtraPoints();
+
+        UpdateFaceStatistics();
+
+        EventsManager.control.StatisticsUpdate();
+
+        EvaluateLevelEnding();
+        WinOrLoss();
 
         NextTurn();
     }
 
     private void CheckExtraPoints()
     {
+        Debug.Log("Check extra points");
+
         // Puntos extra por bonus de adyacencia
         CheckAdjacentBonus(_spawner.GetCurrentCube());
 

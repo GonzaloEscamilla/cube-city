@@ -124,7 +124,6 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("MouseTap");
             Tap();
         }
 

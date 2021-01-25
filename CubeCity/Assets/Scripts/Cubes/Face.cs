@@ -33,10 +33,39 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
         }
     }
 
+    [Tooltip("0: Forwards, 1: Backguards, 2: Right, 3: Left.")]
+    [SerializeField] private Transform[] _detectionPoints;
+
+    [SerializeField] private List<Face> faceColliders = new List<Face>();
+    [SerializeField] private LayerMask _mask;
+
+    [ContextMenu("Test")]
     public Face[] GetAdjacentFaces()
     {
-        //TODO: completar
-        return null;
+        Debug.Log("GetAdjacencyFaces");
+
+        faceColliders = new List<Face>();
+        
+        for (int j = 0; j < 4; j++)
+        {
+            Collider[] auxColliders = Physics.OverlapSphere(_detectionPoints[j].position, 0.05f, _mask);
+
+            for (int i = 0; i < auxColliders.Length; i++)
+            {
+                if (auxColliders[i].GetComponent<Face>())
+                {
+                    faceColliders.Add(auxColliders[i].GetComponent<Face>());
+                }
+            }
+        }
+
+
+        for (int i = 0; i < faceColliders.Count; i++)
+        {
+            Debug.Log("Adjacency: " + faceColliders[i]);
+        }
+
+        return faceColliders.ToArray();
     }
 
     public List<Face> GetAdjacentGroup()
@@ -185,5 +214,13 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
     void IPoolable.Initialize()
     {
         _level = 0;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        for (int i = 0; i < _detectionPoints.Length; i++)
+        {
+            Gizmos.DrawSphere(_detectionPoints[i].position, 0.25f);
+        }
     }
 }

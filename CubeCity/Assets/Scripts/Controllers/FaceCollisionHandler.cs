@@ -20,23 +20,21 @@ public class FaceCollisionHandler : MonoBehaviour
 
     public void HandleFaceCollision(Face firstFace, Face secondFace)
     {
-
-        // TODO: Importante recordar de que antes de posicionar los cubos todo los cambios de estado se deben hacer solo en preview.
-
         float faceDistance = Vector3.Distance(firstFace.transform.position,secondFace.transform.position);
 
-        /*
-        Debug.DrawLine(firstFace.transform.position, secondFace.transform.position, Color.red, 4f);
-        Debug.Log("The distance of " + firstFace.transform.root.name + " to " + secondFace.transform.parent + " is equal to " + faceDistance);
-        */
         SetStateWithDistance(firstFace, faceDistance);
         SetStateWithDistance(secondFace, faceDistance);
         
-        EventsManager.control.PreviewFaceCollision(firstFace);
+        ManageCurrentCubeState(firstFace);
 
-        if (!_affectedFaces.Contains(secondFace))
+        AddAffectedFaceToList(secondFace);
+    }
+
+    private void AddAffectedFaceToList(Face affectedFace)
+    {
+        if (!_affectedFaces.Contains(affectedFace))
         {
-            _affectedFaces.Add(secondFace);
+            _affectedFaces.Add(affectedFace);
         }
     }
 
@@ -44,12 +42,10 @@ public class FaceCollisionHandler : MonoBehaviour
     {
         if (distance <= 0.5)
         {
-            Debug.Log(face + " is overlaped.");
             face.SetFaceCollisionState(FaceCollisionState.Overlapped);
         }
         else if (distance > 0.5)
         {
-            Debug.Log(face + " is colliding.");
             face.SetFaceCollisionState(FaceCollisionState.Colliding);
         }
     }
@@ -63,18 +59,35 @@ public class FaceCollisionHandler : MonoBehaviour
         _affectedFaces.Clear();
     }
 
-    private void SetCollisionStateToSceneCube()
+    private void ManageCurrentCubeState(Face face)
     {
-        //Debug.Log("SetCOlliison");
+        CubeBehaviour currentSpawnedCube = LevelManager.control.GetCubeSpawner().GetCurrentCube();
 
-        foreach (Face face in _affectedFaces)
+        Face[] auxFaces = currentSpawnedCube.GetFaces();
+
+        for (int i = 0; i < auxFaces.Length; i++)
         {
-            if (face.GetFaceCollisionState() == FaceCollisionState.Overlapped)
+            if (face.GetOrientationType() == auxFaces[i].GetOrientationType())
             {
-                // TODO: Aca tendria que recalcularse el valor de las estadisticas.
-                face.gameObject.SetActive(false);
+                auxFaces[i].SetFaceCollisionState(face.GetFaceCollisionState());
+                if (auxFaces[i].GetFaceCollisionState() == FaceCollisionState.Overlapped)
+                {
+                    AddAffectedFaceToList(auxFaces[i]);
+                }
             }
         }
     }
 
+    //TODO: Este metodo quizas si deberia ser llamado en otro momento, como por ejemplo cuando se termina de posicionar el cubo, por que si no se ve feo.
+    private void SetCollisionStateToSceneCube()
+    {
+        foreach (Face face in _affectedFaces)
+        {
+            if (face.GetFaceCollisionState() == FaceCollisionState.Overlapped)
+            {
+                face.gameObject.SetActive(false);
+            }
+        }
+        _affectedFaces.Clear();
+    }
 }
