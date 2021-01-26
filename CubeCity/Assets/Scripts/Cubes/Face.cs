@@ -40,12 +40,13 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
     [SerializeField] private LayerMask _mask;
 
     [ContextMenu("Test")]
-    public Face[] GetAdjacentFaces()
+    public List<Face> GetAdjacentFaces()
     {
-        Debug.Log("GetAdjacencyFaces");
+        return _adjacentFaces;
+    }
 
-        faceColliders = new List<Face>();
-        
+    public void DiscoverAdjacentFaces()
+    {
         for (int j = 0; j < 4; j++)
         {
             Collider[] auxColliders = Physics.OverlapSphere(_detectionPoints[j].position, 0.05f, _mask);
@@ -54,18 +55,10 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
             {
                 if (auxColliders[i].GetComponent<Face>())
                 {
-                    faceColliders.Add(auxColliders[i].GetComponent<Face>());
+                    AddAdjacentFace(auxColliders[i].GetComponent<Face>());
                 }
             }
         }
-
-
-        for (int i = 0; i < faceColliders.Count; i++)
-        {
-            Debug.Log("Adjacency: " + faceColliders[i]);
-        }
-
-        return faceColliders.ToArray();
     }
 
     public List<Face> GetAdjacentGroup()
@@ -109,13 +102,21 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
     [SerializeField] private float _previewCubeOffsetPosition = 0f;
     [SerializeField] private float _initialSpawnPositionOffset = 10f;
 
-    [SerializeField] private List<Face> _adjacencies = new List<Face>();
+    [SerializeField] private List<Face> _adjacentFaces = new List<Face>();
 
 
     private bool isCovered;
 
     // TODO: esta variable se debería asignar en 0 cuando la cara es creada
     [SerializeField] private int _level;
+
+    public void OnDisable()
+    {
+        foreach (Face adjacentFace in GetAdjacentFaces())
+        {
+            adjacentFace.RemoveAdjacentFace(this);
+        }
+    }
 
     public void Select()
     {
@@ -185,24 +186,21 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
         return _collisionState;
     }
 
-    public void SetNewAdjacencie(Face newAdjacencie)
+    public void AddAdjacentFace(Face adjacentFace)
     {
-        if (!_adjacencies.Contains(newAdjacencie))
-        {
-            _adjacencies.Add(newAdjacencie);
-        }
+        _adjacentFaces.Add(adjacentFace);
     }
 
-    public void ClearAllAdjacencies()
+    public void ClearAdjacentFaces()
     {
-        _adjacencies.Clear();
+        _adjacentFaces.Clear();
     }
 
-    public void RemoveAdjacencie(Face adjacencieToRemove)
+    public void RemoveAdjacentFace(Face adjacentFace)
     {
-        if (_adjacencies.Contains(adjacencieToRemove))
+        if (_adjacentFaces.Contains(adjacentFace))
         {
-            _adjacencies.Remove(adjacencieToRemove);
+            _adjacentFaces.Remove(adjacentFace);
         }
     }
 
@@ -214,6 +212,7 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
     void IPoolable.Initialize()
     {
         _level = 0;
+        ClearAdjacentFaces();
     }
 
     private void OnDrawGizmosSelected()

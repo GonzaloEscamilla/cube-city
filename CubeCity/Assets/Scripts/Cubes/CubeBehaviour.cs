@@ -56,6 +56,21 @@ public class CubeBehaviour : MonoBehaviour
         return GetComponentsInChildren<Face>();
     }
 
+    public void InitializeAdjacentFaces()
+    {
+        foreach (Face face in GetFaces())
+        {
+            if (face.gameObject.activeSelf)
+            {
+                face.DiscoverAdjacentFaces();
+                foreach (Face adjacentFace in face.GetAdjacentFaces())
+                {
+                    adjacentFace.AddAdjacentFace(face);
+                }
+            }
+        }
+    }
+
 }
 
 public enum RotationAxis
