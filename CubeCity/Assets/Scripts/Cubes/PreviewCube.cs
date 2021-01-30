@@ -44,7 +44,7 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
     private void OnDestroy()
     {
         EventsManager.control.onfaceSelected -= SetPosition;
-        EventsManager.control.onCreateButtonPressed -= OnfaceUnselected;
+        EventsManager.control.onCreateButtonPressed -= ResetPosition;
         EventsManager.control.onFaceUnselected -= OnfaceUnselected;
 
         EventsManager.control.onCubeCreated -= SetFacesGraphics;

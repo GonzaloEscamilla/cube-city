@@ -37,9 +37,9 @@ public class SnapCubeToAxis : MonoBehaviour
         return v;
     }
 
-    public void Align(Vector3 alignedForward, Vector3 alignedUp)
+    public void Align(Vector3 alignedForward, Vector3 alignedUp, Action callback)
     {
-        FromToRotation(this.gameObject, this.transform.rotation, Quaternion.LookRotation(alignedForward, alignedUp), null);
+        FromToRotation(this.gameObject, this.transform.rotation, Quaternion.LookRotation(alignedForward, alignedUp), callback);
     }
     
     public void Align(Action callback)

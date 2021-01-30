@@ -67,7 +67,7 @@ public class CubeDragRotator : MonoBehaviour
 
 	public void OnDragFinished()
 	{
-		GetComponent<PreviewCube>().EnableFaceColliders();
+		
 		_isDragging = false;
 		if (CurrentWorldCube != null)
 		{
@@ -75,12 +75,18 @@ public class CubeDragRotator : MonoBehaviour
 
 			Vector3 alignedForward = SnapCubeToAxis.NearestWorldAxis(transform.forward);
 			Vector3 alignedUp = SnapCubeToAxis.NearestWorldAxis(transform.up);
-			CurrentWorldCube.GetComponent<SnapCubeToAxis>().Align(alignedForward, alignedUp);
+			CurrentWorldCube.GetComponent<SnapCubeToAxis>().Align(alignedForward, alignedUp, EnableFaceColliders);
 		}
 		else
 		{
 			Debug.LogWarning("You are trying to rotate a world cube that does not exist.");
 		}
+	}
+
+	public void EnableFaceColliders()
+	{
+		EventsManager.control.PreviewCubeMoved(GetComponent<PreviewCube>());
+		GetComponent<PreviewCube>().EnableFaceColliders();
 	}
 
 	private void Callback()

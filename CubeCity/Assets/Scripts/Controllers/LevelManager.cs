@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] bool[] completedObjectives;
 
-
+    [SerializeField] PreviewCube _previewCube;
 
     /// <summary>
     /// The current level running on the scene.
@@ -167,6 +167,8 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void Build()
     {
+        Debug.Log("Build");
+
         if (CurrentSelectedFace == null)
             return;
 
@@ -323,7 +325,7 @@ public class LevelManager : MonoBehaviour
     /// <param name="selectedFace"></param>
     private void OnFaceUnselectedEvent()
     {
-        CurrentSelectedFace = null;
+        //CurrentSelectedFace = null;
     }
 
     public IEnumerator RunLevelTimeLapse()

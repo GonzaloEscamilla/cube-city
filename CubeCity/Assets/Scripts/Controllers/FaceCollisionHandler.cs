@@ -61,6 +61,7 @@ public class FaceCollisionHandler : MonoBehaviour
 
     private void ManageCurrentCubeState(Face face)
     {
+        Debug.Log("aca se asigna");
         CubeBehaviour currentSpawnedCube = LevelManager.control.GetCubeSpawner().GetCurrentCube();
 
         Face[] auxFaces = currentSpawnedCube.GetFaces();
