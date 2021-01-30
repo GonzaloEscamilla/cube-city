@@ -14,6 +14,8 @@ public class InputManager : MonoBehaviour
 {
     #region Dependencies
 
+    [SerializeField] private PreviewCube previewCube;
+
     /// <summary>
     /// The camera controller reference.
     /// </summary>
@@ -25,7 +27,6 @@ public class InputManager : MonoBehaviour
     RaycastSelectionHandler raySelector;
 
     [SerializeField] Canvas mainCanvas;
-
     GraphicRaycaster raycaster;
 
     #endregion
@@ -85,6 +86,7 @@ public class InputManager : MonoBehaviour
     private Vector2 currentDistance = new Vector2(0, 0);
     private float speedTouch0 = 0.0F;
     private float speedTouch1 = 0.0F;
+    private bool previewCubeNotSelected;
 
     #endregion
 
@@ -126,7 +128,19 @@ public class InputManager : MonoBehaviour
         {
             Tap();
         }
+        if (Input.GetMouseButton(0))
+        {
+            Swipe();
+        }
+        if(Input.GetMouseButtonUp(0))
+        {
+        }
 
+
+        if (Input.touchCount == 0 && tapFlag == 1)
+        {
+            TouchEnded();
+        }
 
         if (Input.touchCount == 1)
         {
@@ -182,6 +196,11 @@ public class InputManager : MonoBehaviour
                 isZooming = false;
             }
         }
+    }
+
+    private void TouchEnded()
+    {
+        //throw new NotImplementedException();
     }
 
     #endregion
@@ -261,8 +280,11 @@ public class InputManager : MonoBehaviour
     /// </summary>
     private void Swipe()
     {
-        cameraController.Rotate(firstTouch.deltaPosition.x / 500);
-        cameraController.Rotate3D(firstTouch.deltaPosition.y / 100000);
+        if (!previewCube.IsSelected)
+        {
+            cameraController.Rotate(firstTouch.deltaPosition.x / 500);
+            cameraController.Rotate3D(firstTouch.deltaPosition.y / 100000);
+        }
     }
 
     /// <summary>

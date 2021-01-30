@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class CubeDragRotator : MonoBehaviour
 {
-	float rotationSpeed = 5f;
+	float rotationSpeed = 0.16f;
     private bool _isDragging;
 
 	[SerializeField] Vector3 cubeNormal;
@@ -27,7 +27,22 @@ public class CubeDragRotator : MonoBehaviour
 
     private void Update()
 	{
-		if (Input.GetMouseButtonDown(0))
+		if (Input.touchCount > 0)
+		{
+			Touch touch = Input.GetTouch(0);
+
+			if (touch.phase == TouchPhase.Began && GetComponent<PreviewCube>().IsSelected)
+			{
+				OnDragStarted();
+			}
+			if (touch.phase == TouchPhase.Ended )
+			{
+				OnDragFinished();
+
+			}
+		}
+
+		if (Input.GetMouseButtonDown(0) && GetComponent<PreviewCube>().IsSelected)
 		{
 			OnDragStarted();
 		}
@@ -37,20 +52,22 @@ public class CubeDragRotator : MonoBehaviour
 			OnDragFinished();
 		}
 
-		if (_isDragging)
+		if (_isDragging && GetComponent<PreviewCube>().IsSelected)
 		{
 			Rotate();
 		}
 	}
 
-	private void OnDragStarted()
+	public void OnDragStarted()
 	{
+		GetComponent<PreviewCube>().DisableFaceColliders();
 		_isDragging = true;
 		CheckNormal();
 	}
 
-	private void OnDragFinished()
+	public void OnDragFinished()
 	{
+		GetComponent<PreviewCube>().EnableFaceColliders();
 		_isDragging = false;
 		if (CurrentWorldCube != null)
 		{
@@ -95,10 +112,18 @@ public class CubeDragRotator : MonoBehaviour
 		} 
 	}
 
-	private void Rotate()
+	public void Rotate()
 	{
 		float XaxisRotation = Input.GetAxis("Mouse X") * rotationSpeed;
 		float YaxisRotation = Input.GetAxis("Mouse Y") * rotationSpeed;
+
+		if (Input.touchCount > 0)
+		{
+			Touch touch = Input.GetTouch(0);
+
+			XaxisRotation = touch.deltaPosition.x * rotationSpeed;
+			YaxisRotation = touch.deltaPosition.y* rotationSpeed;
+		}
 
 		Vector3 rotationX, rotationY;
 		rotationX = Vector3.zero;

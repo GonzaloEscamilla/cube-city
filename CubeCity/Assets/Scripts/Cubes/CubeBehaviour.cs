@@ -7,7 +7,7 @@ public class CubeBehaviour : MonoBehaviour
 {
     private Movement _movement;
 
-    private void Awake()
+    private void Start()
     {
         if (!GetComponent<Movement>())
             Debug.LogWarning("Please add a movement script to the gameobject.");

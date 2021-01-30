@@ -46,6 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddb0405e4ad4ed4a84481d96ad30e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugWithMouse: 1
+  previewCube: {fileID: 0}
+  mainCanvas: {fileID: 0}
+  isUISelected: 0
   tapTimeThreshold: 0.5
   minScale: 2
   maxScale: 5

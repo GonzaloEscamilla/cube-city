@@ -6,11 +6,10 @@ using UnityEngine;
 public class PreviewCube : CubeBehaviour, IRaySelectable
 {
     [SerializeField] private Quaternion _currentRotation;
-    private RotationBehaviour _rotationBehaviour;
-
-    private CubeDragRotator _dragRotator;
 
     [SerializeField] private Pool[] _graphicsPool;
+
+    private CubeDragRotator dragRotator;
 
     public bool IsSelected 
     {
@@ -23,29 +22,30 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
             _isSelected = value;
         }
     }
-    private bool _isSelected;
+    [SerializeField] private bool _isSelected;
 
     private void Awake()
     {
-        _rotationBehaviour = GetComponent<RotationBehaviour>();
         _graphicsPool = GetComponentsInChildren<Pool>();
-        _dragRotator = GetComponent<CubeDragRotator>();
+        dragRotator = GetComponent<CubeDragRotator>();
     }
 
     private void OnEnable()
     {
         EventsManager.control.onfaceSelected += SetPosition;
         EventsManager.control.onCreateButtonPressed += ResetPosition;
-        EventsManager.control.onFaceUnselected += ResetPosition;
+        EventsManager.control.onFaceUnselected += OnfaceUnselected;
 
         EventsManager.control.onCubeCreated += SetFacesGraphics;
     }
 
+   
+
     private void OnDestroy()
     {
         EventsManager.control.onfaceSelected -= SetPosition;
-        EventsManager.control.onCreateButtonPressed -= ResetPosition;
-        EventsManager.control.onFaceUnselected -= ResetPosition;
+        EventsManager.control.onCreateButtonPressed -= OnfaceUnselected;
+        EventsManager.control.onFaceUnselected -= OnfaceUnselected;
 
         EventsManager.control.onCubeCreated -= SetFacesGraphics;
     }
@@ -55,53 +55,9 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
         DisableFaceColliders();
     }
     
-    public void Rotate_X_positive()
-    {
-        DisableFaceColliders();
-        _rotationBehaviour.RotateObject(this.gameObject, Vector3.right, 90, EnableFaceColliders);
-        EventsManager.control.PreviewCubeRotated(Vector3.right);
-    }
-
-    public void Rotate_X_Negative()
-    {
-        DisableFaceColliders();
-        _rotationBehaviour.RotateObject(this.gameObject, -Vector3.right, 90, EnableFaceColliders);
-        EventsManager.control.PreviewCubeRotated(-Vector3.right);
-    }
-
-    public void Rotate_Y_positive()
-    {
-        DisableFaceColliders();
-        _rotationBehaviour.RotateObject(this.gameObject, Vector3.up, 90, EnableFaceColliders);
-        EventsManager.control.PreviewCubeRotated(Vector3.up);
-    }
-
-    public void Rotate_Y_Negative()
-    {
-        DisableFaceColliders();
-        _rotationBehaviour.RotateObject(this.gameObject, -Vector3.up, 90, EnableFaceColliders);
-        EventsManager.control.PreviewCubeRotated(-Vector3.up);
-    }
-
-    public void Rotate_Z_positive()
-    {
-        DisableFaceColliders();
-        _rotationBehaviour.RotateObject(this.gameObject, Vector3.forward, 90, EnableFaceColliders);
-        EventsManager.control.PreviewCubeRotated(Vector3.forward);
-    }
-
-    public void Rotate_Z_Negative()
-    {
-        DisableFaceColliders();
-        _rotationBehaviour.RotateObject(this.gameObject, -Vector3.forward, 90, EnableFaceColliders);
-        EventsManager.control.PreviewCubeRotated(-Vector3.forward);
-    }
-    
     public void SetFacesGraphics(CubeBehaviour cube)
     {
-        Debug.Log("Cube: ", cube.gameObject);
-
-        _dragRotator.CurrentWorldCube = cube.transform;
+        dragRotator.CurrentWorldCube = cube.transform;
 
         ClearGraphics();
 
@@ -164,19 +120,22 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
         this.transform.position = selectedFace.GetPreviewCubePosition();
     }
 
+    private void OnfaceUnselected()
+    {
+       
+    }
+
     private void ResetPosition()
     {
         EventsManager.control.PreviewCubeMoved(this);
-
         DisableFaceColliders();
-
         this.transform.position = new Vector3(1000, 1000, 1000);
     }
 
     /// <summary>
     /// This will disable all the FaceCollisionBehaviour colliders.
     /// </summary>
-    private void DisableFaceColliders()
+    public void DisableFaceColliders()
     {
         ISwitchState[] setups = GetComponentsInChildren<ISwitchState>();
 
@@ -189,7 +148,7 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
     /// <summary>
     /// This will disable all the FaceCollisionBehaviour colliders.
     /// </summary>
-    private void EnableFaceColliders()
+    public void EnableFaceColliders()
     {
         ISwitchState[] setups = GetComponentsInChildren<ISwitchState>();
 
@@ -207,5 +166,10 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
     public void Unselect()
     {
         IsSelected = false;
+    }
+
+    public void SetInputs(Vector2 deltaPosition)
+    {
+
     }
 }

@@ -52,6 +52,7 @@ public class SnapCubeToAxis : MonoBehaviour
 
     private void LastAlign()  //<= ur callback function
     {
+        
         if (completeYRotation)
             transform.rotation = new Quaternion(transform.rotation.x, -transform.rotation.y, transform.rotation.z, transform.rotation.w);
 
@@ -63,6 +64,7 @@ public class SnapCubeToAxis : MonoBehaviour
 
         if (completeWRotation)
             transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, -transform.rotation.w);
+        
     }
 
 

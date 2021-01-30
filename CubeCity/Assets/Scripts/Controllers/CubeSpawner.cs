@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
@@ -15,6 +16,7 @@ public class CubeSpawner : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log("EventMangare: " + EventsManager.control);
         EventsManager.control.OnPreviewCubeRotated += OnPreviewCubeRotatedEvent;
         EventsManager.control.OnPreviewFaceCollision += OnPreviewFaceCollisionEvent;
     }

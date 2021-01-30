@@ -7,14 +7,27 @@ using UnityEngine;
 
 public class EventsManager : MonoBehaviour
 {
-    public static EventsManager control;
-
-    private void Awake()
+    #region SINGLETON PATTERN
+    public static EventsManager _control;
+    public static EventsManager control
     {
-        if (control != null)
-            Destroy(control);
-        control = this;
+        get
+        {
+            if (_control == null)
+            {
+                _control = GameObject.FindObjectOfType<EventsManager>();
+
+                if (_control == null)
+                {
+                    GameObject container = new GameObject("Bicycle");
+                    _control = container.AddComponent<EventsManager>();
+                }
+            }
+
+            return _control;
+        }
     }
+    #endregion
 
     public delegate void OnFaceSelected(Face selectedFace);
     public OnFaceSelected onfaceSelected;
