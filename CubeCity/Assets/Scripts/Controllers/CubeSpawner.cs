@@ -149,7 +149,8 @@ public class CubeSpawner : MonoBehaviour
         {
             auxFaces[i].SetFaceCollisionState(FaceCollisionState.None);
         }
-        
+
+        // TODO: Revisar esto, no tiene setndio que llame un rotate behaviour a el primer hijo que encuentra. Deberia asegurarse de que es el cubo.
         GetComponentInChildren<RotationBehaviour>().RotateObject(_currentSpawnedCube.gameObject, axis, 90);
     }
 

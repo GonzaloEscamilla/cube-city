@@ -94,6 +94,7 @@ MonoBehaviour:
   _levelSystem: {fileID: 11400000, guid: a4c8ecd4bdebb3848b26a399e4989a09, type: 2}
   _levelStatistics: {fileID: 11400000, guid: e37448798f364e946a5142f32532cd68, type: 2}
   _faceCollisionHandler: {fileID: 6648152788704384438}
+  adjacencyBonusesSO: {fileID: 11400000, guid: 1019eb64d655c52408169f5f7fe2e0f9, type: 2}
   completedObjectives: 
   _currentSelectedFace: {fileID: 0}
 --- !u!114 &6648152788704384438
@@ -108,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c2df180d9a16ea4ea3239a3eeb98dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _affectedFaces: []
 --- !u!1001 &6019823102772928642
 PrefabInstance:
   m_ObjectHideFlags: 0

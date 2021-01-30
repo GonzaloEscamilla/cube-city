@@ -3,12 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PreviewCube : CubeBehaviour
+public class PreviewCube : CubeBehaviour, IRaySelectable
 {
     [SerializeField] private Quaternion _currentRotation;
     private RotationBehaviour _rotationBehaviour;
     
     [SerializeField] private Pool[] _graphicsPool;
+
+    public bool IsSelected 
+    {
+        get
+        {
+            return _isSelected;
+        }
+        set
+        {
+            _isSelected = value;
+        }
+    }
+    private bool _isSelected;
 
     private void Awake()
     {
@@ -181,5 +194,13 @@ public class PreviewCube : CubeBehaviour
         }
     }
 
+    public void Select()
+    {
+        IsSelected = true;
+    }
 
+    public void Unselect()
+    {
+        IsSelected = false;
+    }
 }

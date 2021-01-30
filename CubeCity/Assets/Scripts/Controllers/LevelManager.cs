@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private LevelsSO _levelSystem;
     [SerializeField] private LevelStatistics _levelStatistics;
     [SerializeField] private FaceCollisionHandler _faceCollisionHandler;
+    [SerializeField] private AdjacencyBonusesSO adjacencyBonusesSO;
 
     [SerializeField] bool[] completedObjectives;
 
@@ -179,13 +180,6 @@ public class LevelManager : MonoBehaviour
         OnFaceUnselectedEvent();
 
         _levelStatistics.CurrentCubeAmount++;
-
-        UpdateFaceStatistics();
-
-        EventsManager.control.StatisticsUpdate();
-
-        EvaluateLevelEnding();
-        WinOrLoss();
     }
 
     /// <summary>
@@ -193,9 +187,66 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     private void OnBuildFinish()
     {
-        EventsManager.control.CubeBuilded(_spawner.GetCurrentCube());
+        CubeBehaviour currentCube = _spawner.GetCurrentCube();
+        EventsManager.control.CubeBuilded(currentCube);
+
+        currentCube.InitializeAdjacentFaces();
+        CheckExtraPoints();
+
+        UpdateFaceStatistics();
+
+        EventsManager.control.StatisticsUpdate();
+
+        EvaluateLevelEnding();
+        WinOrLoss();
 
         NextTurn();
+    }
+
+    private void CheckExtraPoints()
+    {
+        // Puntos extra por bonus de adyacencia
+        CheckAdjacentBonus(_spawner.GetCurrentCube());
+
+        // Puntos extra por combos
+        foreach (List<Face> combo in GetCombos(_spawner.GetCurrentCube()))
+        {
+            foreach (Face face in combo)
+            {
+                _levelStatistics.CalculateNextResources(face.GetFaceData());
+                face.Upgrade();
+            }
+        }
+    }
+
+    private void CheckAdjacentBonus(CubeBehaviour cube)
+    {
+        foreach (Face face in cube.GetFaces())
+        {
+            foreach (Face adjacentFace in face.GetAdjacentFaces())
+            {
+                _levelStatistics.CalculateNextResources(
+                    adjacencyBonusesSO.GetBonusForFaces(face.Type, adjacentFace.Type)
+                );
+            }
+        }
+    }
+
+   
+    List<List<Face>> GetCombos(CubeBehaviour cube)
+    {
+        // TODO: pasar esta constante a otro lado
+        const int MIN_ELEMS_FOR_COMBO = 5;
+        List<List<Face>> result = new List<List<Face>>();
+        foreach (Face face in cube.GetFaces())
+        {
+            List<Face> group = face.GetAdjacentGroup();
+            if (group.Count >= MIN_ELEMS_FOR_COMBO)
+            {
+                result.Add(group);
+            }
+        }
+        return result;
     }
 
     private void MoveBuildedCube(CubeBehaviour buildedCube)
@@ -254,7 +305,7 @@ public class LevelManager : MonoBehaviour
     private void UpdateFaceStatistics()
     {
         // This is done before the "NextTurn" so the current cube is the one that is being putted on.
-        _levelStatistics.CalculateNextResourcers(_spawner.GetCurrentCube().GetFacesData());
+        _levelStatistics.CalculateNextResources(_spawner.GetCurrentCube().GetFacesData());
     }
 
     /// <summary>
