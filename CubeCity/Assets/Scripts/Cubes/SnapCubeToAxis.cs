@@ -16,7 +16,7 @@ public class SnapCubeToAxis : MonoBehaviour
     private bool completeZRotation = false;
     private bool completeWRotation = false;
 
-    private static Vector3 NearestWorldAxis(Vector3 v)
+    public static Vector3 NearestWorldAxis(Vector3 v)
     {
         if (Mathf.Abs(v.x) < Mathf.Abs(v.y))
         {
@@ -37,6 +37,11 @@ public class SnapCubeToAxis : MonoBehaviour
         return v;
     }
 
+    public void Align(Vector3 alignedForward, Vector3 alignedUp)
+    {
+        FromToRotation(this.gameObject, this.transform.rotation, Quaternion.LookRotation(alignedForward, alignedUp), null);
+    }
+    
     public void Align(Action callback)
     {
         Vector3 alignedForward = NearestWorldAxis(transform.forward);
@@ -44,7 +49,6 @@ public class SnapCubeToAxis : MonoBehaviour
 
         FromToRotation(this.gameObject, this.transform.rotation, Quaternion.LookRotation(alignedForward, alignedUp), callback);
     }
-
 
     private void LastAlign()  //<= ur callback function
     {

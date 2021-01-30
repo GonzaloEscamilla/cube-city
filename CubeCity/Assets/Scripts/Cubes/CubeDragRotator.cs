@@ -23,6 +23,8 @@ public class CubeDragRotator : MonoBehaviour
 	}
 	[SerializeField] private NormalType _normalType;
 
+	public Transform CurrentWorldCube;
+
     private void Update()
 	{
 		if (Input.GetMouseButtonDown(0))
@@ -50,7 +52,18 @@ public class CubeDragRotator : MonoBehaviour
 	private void OnDragFinished()
 	{
 		_isDragging = false;
-		GetComponent<SnapCubeToAxis>().Align(Callback);
+		if (CurrentWorldCube != null)
+		{
+			GetComponent<SnapCubeToAxis>().Align(Callback);
+
+			Vector3 alignedForward = SnapCubeToAxis.NearestWorldAxis(transform.forward);
+			Vector3 alignedUp = SnapCubeToAxis.NearestWorldAxis(transform.up);
+			CurrentWorldCube.GetComponent<SnapCubeToAxis>().Align(alignedForward, alignedUp);
+		}
+		else
+		{
+			Debug.LogWarning("You are trying to rotate a world cube that does not exist.");
+		}
 	}
 
 	private void Callback()
@@ -123,6 +136,14 @@ public class CubeDragRotator : MonoBehaviour
 
 		transform.Rotate(rotationX * XaxisRotation, Space.World);
 		transform.Rotate(rotationY * YaxisRotation, Space.World);
+
+		
+		if (CurrentWorldCube != null)
+		{
+			CurrentWorldCube.Rotate(rotationX * XaxisRotation, Space.World);
+			CurrentWorldCube.Rotate(rotationY * YaxisRotation, Space.World);
+		}
+		
 	}
 	private bool ApproximatelyPercentage(Vector3 me, Vector3 other)
 	{
