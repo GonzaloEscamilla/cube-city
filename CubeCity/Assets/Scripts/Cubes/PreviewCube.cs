@@ -113,11 +113,10 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
 
     private void SetPosition(Face selectedFace)
     {
-        EventsManager.control.PreviewCubeMoved(this);
-
-        EnableFaceColliders();
-        
+        Debug.Log("SetPosition");
         this.transform.position = selectedFace.GetPreviewCubePosition();
+        
+        EventsManager.control.PreviewCubeMoved(this);
     }
 
     private void OnfaceUnselected()

@@ -35,7 +35,7 @@ public class CubeDragRotator : MonoBehaviour
 			{
 				OnDragStarted();
 			}
-			if (touch.phase == TouchPhase.Ended )
+			if (touch.phase == TouchPhase.Ended && GetComponent<PreviewCube>().IsSelected)
 			{
 				OnDragFinished();
 
@@ -47,7 +47,7 @@ public class CubeDragRotator : MonoBehaviour
 			OnDragStarted();
 		}
 
-		if (Input.GetMouseButtonUp(0))
+		if (Input.GetMouseButtonUp(0) && GetComponent<PreviewCube>().IsSelected)
 		{
 			OnDragFinished();
 		}
@@ -75,7 +75,7 @@ public class CubeDragRotator : MonoBehaviour
 
 			Vector3 alignedForward = SnapCubeToAxis.NearestWorldAxis(transform.forward);
 			Vector3 alignedUp = SnapCubeToAxis.NearestWorldAxis(transform.up);
-			CurrentWorldCube.GetComponent<SnapCubeToAxis>().Align(alignedForward, alignedUp, EnableFaceColliders);
+			CurrentWorldCube.GetComponent<SnapCubeToAxis>().Align(alignedForward, alignedUp, OnSnapFinish);
 		}
 		else
 		{
@@ -83,10 +83,9 @@ public class CubeDragRotator : MonoBehaviour
 		}
 	}
 
-	public void EnableFaceColliders()
+	public void OnSnapFinish()
 	{
 		EventsManager.control.PreviewCubeMoved(GetComponent<PreviewCube>());
-		GetComponent<PreviewCube>().EnableFaceColliders();
 	}
 
 	private void Callback()

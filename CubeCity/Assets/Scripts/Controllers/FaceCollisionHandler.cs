@@ -52,11 +52,13 @@ public class FaceCollisionHandler : MonoBehaviour
 
     private void OnPreviewCubeMovedEvent(PreviewCube previewCube)
     {
+        Debug.Log("On preview cube mode. Clear faces");
         foreach (Face face in _affectedFaces)
         {
             face.SetFaceCollisionState(FaceCollisionState.None);
         }
         _affectedFaces.Clear();
+        previewCube.EnableFaceColliders();
     }
 
     private void ManageCurrentCubeState(Face face)
