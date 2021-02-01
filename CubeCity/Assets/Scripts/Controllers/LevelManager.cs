@@ -156,7 +156,7 @@ public class LevelManager : MonoBehaviour
 
     private void NextTurn()
     {
-        if (!_isFinishPlaying)
+        if (!_isFinishPlaying && _spawner.AvailableCubeExists())
         {
             PreBuild();
         }
@@ -349,5 +349,10 @@ public class LevelManager : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    public LevelsSO GetLevelSystem()
+    {
+        return _levelSystem;
     }
 }

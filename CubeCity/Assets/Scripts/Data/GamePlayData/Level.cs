@@ -1,17 +1,23 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [CreateAssetMenu(fileName = "NewLevel", menuName = "ScriptableObjects/LevelSystem/Level", order = 2)]
-public class Level: ScriptableObject
+public class Level : ScriptableObject
 {
     public string Name;
 
     [SerializeField] private List<LevelConstraints> _levelConstraints = new List<LevelConstraints>(); 
     [SerializeField] private List<LevelObjective> _objectives = new List<LevelObjective>();
+    
+    static FaceTypes[] faceTypes = (FaceTypes[]) Enum.GetValues(typeof(FaceTypes));
+    [SerializeField] private FacesDistribution _facesDistribution = new FacesDistribution();
+    [SerializeField] [ReadOnlyAttribute] private int amountOfCubes;
 
     private void OnValidate()
     {
+        amountOfCubes = _facesDistribution.GetTotalRemainingFaces() / 6;
         foreach (LevelConstraints constrait in _levelConstraints)
         {
             constrait.Type = constrait.Type;
@@ -49,5 +55,10 @@ public class Level: ScriptableObject
             Debug.Log("Hey, the level dosn't have any constraints.");
             return null;
         }
+    }
+
+    public FacesDistribution GetFacesDistribution()
+    {
+        return _facesDistribution;
     }
 }
