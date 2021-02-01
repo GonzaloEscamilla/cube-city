@@ -297,7 +297,7 @@ public class InputManager : MonoBehaviour
         {
             if (LevelManager.control.GameSettings.EditorMode)
             {
-                Debug.Log("Aca");
+                Debug.Log("Swipe");
                 cameraController.Rotate(Input.GetAxis("Mouse X") / 25);
                 cameraController.Rotate3D(Input.GetAxis("Mouse Y") / 2500);
             }

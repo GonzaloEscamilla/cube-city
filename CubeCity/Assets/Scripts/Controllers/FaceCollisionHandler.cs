@@ -52,11 +52,14 @@ public class FaceCollisionHandler : MonoBehaviour
 
     private void OnPreviewCubeMovedEvent(PreviewCube previewCube)
     {
+        Debug.Log("Clear Faces");
         foreach (Face face in _affectedFaces)
         {
             face.SetFaceCollisionState(FaceCollisionState.None);
         }
         _affectedFaces.Clear();
+
+        previewCube.DisableFaceColliders();
         previewCube.EnableFaceColliders();
     }
 
@@ -82,6 +85,7 @@ public class FaceCollisionHandler : MonoBehaviour
     //TODO: Este metodo quizas si deberia ser llamado en otro momento, como por ejemplo cuando se termina de posicionar el cubo, por que si no se ve feo.
     private void SetCollisionStateToSceneCube()
     {
+        Debug.Log("Set State to Scene CUbe");
         foreach (Face face in _affectedFaces)
         {
             if (face.GetFaceCollisionState() == FaceCollisionState.Overlapped)
