@@ -78,6 +78,11 @@ public class CubeSpawner : MonoBehaviour
         return _currentSpawnedCube;
     }
 
+    public bool AvailableCubeExists()
+    {
+        return _facesDistribution.GetTotalRemainingFaces() >= 6;
+    }
+
     /// <summary>
     /// Creates a new Random Cube.
     /// </summary>
