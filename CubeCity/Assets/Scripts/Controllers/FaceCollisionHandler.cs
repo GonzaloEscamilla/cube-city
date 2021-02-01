@@ -10,12 +10,19 @@ public class FaceCollisionHandler : MonoBehaviour
     {
         EventsManager.control.onPreviewCubeMoved += OnPreviewCubeMovedEvent;
         EventsManager.control.onCreateButtonPressed += SetCollisionStateToSceneCube;
+        EventsManager.control.levelEndEvent += OnLevelEnd;
     }
 
     private void OnDisable()
     {
         EventsManager.control.onPreviewCubeMoved -= OnPreviewCubeMovedEvent;
         EventsManager.control.onCreateButtonPressed -= SetCollisionStateToSceneCube;
+    }
+
+    private void OnLevelEnd()
+    {
+        //this.gameObject.SetActive(false);
+        OnDisable();
     }
 
     public void HandleFaceCollision(Face firstFace, Face secondFace)

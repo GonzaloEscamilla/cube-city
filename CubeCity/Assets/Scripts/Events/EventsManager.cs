@@ -29,6 +29,9 @@ public class EventsManager : MonoBehaviour
     }
     #endregion
 
+    public delegate void OnLevelEnd();
+    public OnLevelEnd levelEndEvent;
+
     public delegate void OnFaceSelected(Face selectedFace);
     public OnFaceSelected onfaceSelected;
 
@@ -101,4 +104,8 @@ public class EventsManager : MonoBehaviour
         onPreviewCubeMoved?.Invoke(previewCube);
     }
 
+    public void EndLevel()
+    {
+        levelEndEvent?.Invoke();
+    }
 }

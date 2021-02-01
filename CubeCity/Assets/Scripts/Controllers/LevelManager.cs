@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
     private CubeSpawner _spawner;
 
     private bool _isFinishPlaying;
+    private bool _cubeIsMoving;
 
     public Face CurrentSelectedFace
     {
@@ -91,6 +92,7 @@ public class LevelManager : MonoBehaviour
 
     public void InitializeLevel()
     {
+        _cubeIsMoving = false;
         SetCurrentLevelPresets();
 
         BuildInitialCube();
@@ -171,12 +173,36 @@ public class LevelManager : MonoBehaviour
         _spawner.NextCube();
     }
 
+    public void LevelEnd()
+    {
+        // TODO: Hay que implementar todo este metodo. De alguna manera tiene que mostrarse en UI asi que hay que ver si se hace con un evento o algo asi. Seee esa es la que va. Re simple. Un aciton onLevel
+        _isFinishPlaying = true;
+        EventsManager.control.EndLevel();
+        EventsManager.control.onCreateButtonPressed -= Build;
+        Debug.Log("Level ended.");
+    }
+
+    public bool HasLevelEnded()
+    {
+        return _isFinishPlaying;
+    }
+
+    public bool IsCubeMoving()
+    {
+        return _cubeIsMoving;
+    }
+
+    public LevelsSO GetLevelSystem()
+    {
+        return _levelSystem;
+    }
     /// <summary>
     /// Called when ever a new cube is virtualy builded on the current selected face. When this ends the builded cube starts moving towards the face.
     /// </summary>
     public void Build()
     {
         Debug.Log("Build");
+        _cubeIsMoving = true;
 
         if (CurrentSelectedFace == null)
             return;
@@ -198,6 +224,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     private void OnBuildFinish()
     {
+        _cubeIsMoving = false;
         CubeBehaviour currentCube = _spawner.GetCurrentCube();
         EventsManager.control.CubeBuilded(currentCube);
 
@@ -305,14 +332,6 @@ public class LevelManager : MonoBehaviour
         Debug.Log("The condition hasWin is: " + hasWin);
     }
 
-    public void LevelEnd()
-    {
-        // TODO: Hay que implementar todo este metodo. De alguna manera tiene que mostrarse en UI asi que hay que ver si se hace con un evento o algo asi. Seee esa es la que va. Re simple. Un aciton onLevel
-
-        EventsManager.control.onCreateButtonPressed -= Build;
-        Debug.Log("Level ended.");
-    }
-
     private void UpdateFaceStatistics()
     {
         // This is done before the "NextTurn" so the current cube is the one that is being putted on.
@@ -344,15 +363,10 @@ public class LevelManager : MonoBehaviour
             _levelStatistics.ElapsedTime += Time.deltaTime;
             if (_levelStatistics.ElapsedTime >= _levelStatistics.GetTimeThreshold())
             {
-                _isFinishPlaying = true;
                 LevelEnd();
             }
             yield return null;
         }
     }
 
-    public LevelsSO GetLevelSystem()
-    {
-        return _levelSystem;
-    }
 }
