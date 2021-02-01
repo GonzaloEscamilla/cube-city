@@ -17,7 +17,6 @@ public class CubeSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("EventMangare: " + EventsManager.control);
         EventsManager.control.OnPreviewCubeRotated += OnPreviewCubeRotatedEvent;
         EventsManager.control.OnPreviewFaceCollision += OnPreviewFaceCollisionEvent;
     }
@@ -104,8 +103,6 @@ public class CubeSpawner : MonoBehaviour
 
         for (int i = 0; i < cubeFaces.Length; i++)
         {
-            //TODO aca tenemos que llamar a la funcion que aleatoriza la creacion. Por ahora vamos a hacer un aleatorio entre 1 y 6
-            
             randomType = _facesDistribution.GetNewFaceTypeIndex();
 
             // TODO: Revisar si se puede meter el For dentro de esta misma funcion. Puede llegar a ser interesante y util en el futuro.
