@@ -156,7 +156,7 @@ public class LevelManager : MonoBehaviour
 
     private void NextTurn()
     {
-        if (!_isFinishPlaying)
+        if (!_isFinishPlaying && _spawner.AvailableCubeExists())
         {
             PreBuild();
         }

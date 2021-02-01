@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,11 +12,12 @@ public class Level : ScriptableObject
     [SerializeField] private List<LevelObjective> _objectives = new List<LevelObjective>();
     
     static FaceTypes[] faceTypes = (FaceTypes[]) Enum.GetValues(typeof(FaceTypes));
-    [SerializeField] FacesDistribution _facesDistribution = new FacesDistribution();
-
+    [SerializeField] private FacesDistribution _facesDistribution = new FacesDistribution();
+    [SerializeField] [ReadOnlyAttribute] private int amountOfCubes;
 
     private void OnValidate()
     {
+        amountOfCubes = _facesDistribution.GetTotalRemainingFaces() / 6;
         foreach (LevelConstraints constrait in _levelConstraints)
         {
             constrait.Type = constrait.Type;
