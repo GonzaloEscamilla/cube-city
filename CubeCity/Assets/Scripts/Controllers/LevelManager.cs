@@ -350,4 +350,9 @@ public class LevelManager : MonoBehaviour
             yield return null;
         }
     }
+
+    public LevelsSO GetLevelSystem()
+    {
+        return _levelSystem;
+    }
 }

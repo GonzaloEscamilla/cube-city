@@ -11,7 +11,8 @@ public class CubeSpawner : MonoBehaviour
 
     [SerializeField] private CubeBehaviour _currentSpawnedCube;
     [SerializeField] private Pool[] facePools;
-    
+
+    FacesDistribution _facesDistribution;
     private Pool _cubePool;
 
     private void OnEnable()
@@ -41,6 +42,14 @@ public class CubeSpawner : MonoBehaviour
                 facePools[i -1] = auxPool[i];
             }
         }
+    }
+
+    public void Start()
+    {
+        // TODO: pasar esto al enable
+        _facesDistribution = new FacesDistribution(
+            LevelManager.control.GetLevelSystem().GetCurrentLevel().GetFacesDistribution()
+        );
     }
 
     /// <summary>
@@ -90,14 +99,14 @@ public class CubeSpawner : MonoBehaviour
     private void SetCubeFaces(CubeBehaviour spawnedCube)
     {
         Face[] cubeFaces = _currentSpawnedCube.GetComponentsInChildren<Face>();
-        
+
         int randomType;
 
         for (int i = 0; i < cubeFaces.Length; i++)
         {
             //TODO aca tenemos que llamar a la funcion que aleatoriza la creacion. Por ahora vamos a hacer un aleatorio entre 1 y 6
             
-            randomType = Random.Range(1, 6);
+            randomType = _facesDistribution.GetNewFaceTypeIndex();
 
             // TODO: Revisar si se puede meter el For dentro de esta misma funcion. Puede llegar a ser interesante y util en el futuro.
             SetFaceGraphics(cubeFaces, i, randomType);
@@ -114,13 +123,11 @@ public class CubeSpawner : MonoBehaviour
     {
         Face[] cubeFaces = _currentSpawnedCube.GetComponentsInChildren<Face>();
 
-
         int randomType;
 
         for (int i = 0; i < cubeFaces.Length; i++)
         {
-            //TODO aca tenemos que llamar a la funcion que aleatoriza la creacion. Por ahora vamos a hacer un aleatorio entre 1 y 7 (1 por el civic center obviamente)
-            randomType = Random.Range(1, 6);
+            randomType = _facesDistribution.GetNewFaceTypeIndex();
 
             if (cubeFaces[i].GetOrientationType() != side)
             {

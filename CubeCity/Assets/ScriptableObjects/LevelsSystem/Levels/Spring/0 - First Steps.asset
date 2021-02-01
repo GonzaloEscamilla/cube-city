@@ -19,3 +19,17 @@ MonoBehaviour:
     _resourceType: 0
     _condition: 0
     _resourceValue: 10000
+  _facesDistribution:
+    distribution:
+    - name: BusinessArea
+      amount: 9
+    - name: CommercialArea
+      amount: 9
+    - name: GarbagedumpArea
+      amount: 9
+    - name: IndustrialArea
+      amount: 9
+    - name: ParkArera
+      amount: 0
+    - name: ResidentialArea
+      amount: 0

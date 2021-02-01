@@ -27,3 +27,17 @@ MonoBehaviour:
     _maxCubeAmount: 0
     _timeAmount: 0
   _objectives: []
+  _facesDistribution:
+    distribution:
+    - name: BusinessArea
+      amount: 0
+    - name: CommercialArea
+      amount: 0
+    - name: GarbagedumpArea
+      amount: 0
+    - name: IndustrialArea
+      amount: 0
+    - name: ParkArera
+      amount: 0
+    - name: ResidentialArea
+      amount: 0
