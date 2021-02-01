@@ -113,7 +113,6 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
 
     private void SetPosition(Face selectedFace)
     {
-        Debug.Log("SetPosition");
         this.transform.position = selectedFace.GetPreviewCubePosition();
         
         EventsManager.control.PreviewCubeMoved(this);

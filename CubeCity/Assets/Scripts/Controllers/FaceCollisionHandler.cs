@@ -52,7 +52,6 @@ public class FaceCollisionHandler : MonoBehaviour
 
     private void OnPreviewCubeMovedEvent(PreviewCube previewCube)
     {
-        Debug.Log("On preview cube mode. Clear faces");
         foreach (Face face in _affectedFaces)
         {
             face.SetFaceCollisionState(FaceCollisionState.None);
@@ -63,7 +62,6 @@ public class FaceCollisionHandler : MonoBehaviour
 
     private void ManageCurrentCubeState(Face face)
     {
-        Debug.Log("aca se asigna");
         CubeBehaviour currentSpawnedCube = LevelManager.control.GetCubeSpawner().GetCurrentCube();
 
         Face[] auxFaces = currentSpawnedCube.GetFaces();
