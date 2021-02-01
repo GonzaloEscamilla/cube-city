@@ -88,6 +88,14 @@ public class InputManager : MonoBehaviour
     private float speedTouch1 = 0.0F;
     private bool previewCubeNotSelected;
 
+    //----------------- Debugging ------------------------|
+    
+    private Vector2 previewMousePosition;
+    private Vector2 currentMousePosition;
+    private Vector2 deltaMousePosition;
+
+    //----------------------------------------------------|
+
     #endregion
 
     #region Unity CallBacks
@@ -103,6 +111,27 @@ public class InputManager : MonoBehaviour
     {
         UISelectedVerification();
 
+        // TODO: Esta pasando que la UI se selecciona
+
+        if (LevelManager.control.GameSettings.EditorMode)
+        {
+            //previewMousePosition = Input.mousePosition;
+
+            if (Input.GetMouseButtonDown(0))
+            {
+
+                Tap();
+            }
+            if (Input.GetMouseButton(0))
+            {
+                Swipe();
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+            }
+        }
+
+
         // Checks first of all if there is a UI element being selected.
         if (Input.touchCount > 0)
         {
@@ -113,27 +142,11 @@ public class InputManager : MonoBehaviour
                 isUISelected = false;
         }
 
-        
         if (isUISelected)
         {
             tapFlag = 0;
            
             return;
-        }
-
-        // TODO: Esta pasando que la UI se selecciona
-
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            Tap();
-        }
-        if (Input.GetMouseButton(0))
-        {
-            Swipe();
-        }
-        if(Input.GetMouseButtonUp(0))
-        {
         }
 
 
@@ -282,8 +295,16 @@ public class InputManager : MonoBehaviour
     {
         if (!previewCube.IsSelected)
         {
-            cameraController.Rotate(firstTouch.deltaPosition.x / 500);
-            cameraController.Rotate3D(firstTouch.deltaPosition.y / 100000);
+            if (LevelManager.control.GameSettings.EditorMode)
+            {
+                cameraController.Rotate(Input.GetAxis("Mouse X") / 25);
+                cameraController.Rotate3D(Input.GetAxis("Mouse Y") / 2500);
+            }
+            else
+            {
+                cameraController.Rotate(firstTouch.deltaPosition.x / 500);
+                cameraController.Rotate3D(firstTouch.deltaPosition.y / 100000);
+            }
         }
     }
 

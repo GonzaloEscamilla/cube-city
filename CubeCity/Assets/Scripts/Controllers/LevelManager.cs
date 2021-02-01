@@ -7,7 +7,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager control;
-
+    [SerializeField] private GameSettingsSO _gameSettings;
     [SerializeField] private LevelsSO _levelSystem;
     [SerializeField] private LevelStatistics _levelStatistics;
     [SerializeField] private FaceCollisionHandler _faceCollisionHandler;
@@ -38,6 +38,15 @@ public class LevelManager : MonoBehaviour
         }
     }
     [SerializeField] private Face _currentSelectedFace;
+
+    public GameSettingsSO GameSettings
+    {
+        get
+        {
+            return _gameSettings;
+        }
+    }
+   
 
     private void Awake()
     {
@@ -341,5 +350,4 @@ public class LevelManager : MonoBehaviour
             yield return null;
         }
     }
-
 }

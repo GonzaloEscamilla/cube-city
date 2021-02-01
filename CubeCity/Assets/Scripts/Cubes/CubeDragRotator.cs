@@ -119,8 +119,14 @@ public class CubeDragRotator : MonoBehaviour
 
 	public void Rotate()
 	{
-		float XaxisRotation = Input.GetAxis("Mouse X") * rotationSpeed;
-		float YaxisRotation = Input.GetAxis("Mouse Y") * rotationSpeed;
+		float XaxisRotation = 0;
+		float YaxisRotation = 0; 
+		
+		if (LevelManager.control.GameSettings.EditorMode)
+		{
+			XaxisRotation = Input.GetAxis("Mouse X") * rotationSpeed * 30;
+			YaxisRotation = Input.GetAxis("Mouse Y") * rotationSpeed * 30;
+		}
 
 		if (Input.touchCount > 0)
 		{
