@@ -65,7 +65,6 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
 
     private void SetCubeRotation(CubeBehaviour newCube)
     {
-        Debug.Log("New Rotation");
         newCube.transform.rotation = this.transform.rotation;
     }
 
