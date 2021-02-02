@@ -101,3 +101,5 @@ fmod_editor.log
 # FMOD 1.10.x (Legacy)
 CubeCity/Assets/FMODAssets/*
 CubeCity/Assets/FMODStudioCache.meta
+CubeCity/Assets/_IgnoredFiles/
+CubeCity/Assets/_IgnoredFiles.meta
