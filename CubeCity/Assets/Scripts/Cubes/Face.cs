@@ -97,7 +97,7 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
 
     [SerializeField] private FaceCollisionState _collisionState;
     [SerializeField] private FaceOrientationType _orientation;
-    [SerializeField] private FaceData _data;
+    [SerializeField] private Resources _data;
     [SerializeField] private Transform _spawnPosition;
     [SerializeField] private float _previewCubeOffsetPosition = 0f;
     [SerializeField] private float _initialSpawnPositionOffset = 10f;
@@ -166,7 +166,7 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
         return _orientation;
     }
 
-    public FaceData GetFaceData()
+    public Resources GetFaceData()
     {
         return _data;
     }

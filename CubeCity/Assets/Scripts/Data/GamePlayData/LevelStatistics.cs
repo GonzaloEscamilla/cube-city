@@ -37,26 +37,10 @@ public class LevelStatistics: ScriptableObject
     [SerializeField] private float _elapsedTime;
 
     [Header("Resources")]
-    [SerializeField] private FaceData _faceData = new FaceData();
+    [SerializeField] private Resources _resources = new Resources();
 
-    [Space(5)]
-    [SerializeField] private int _civicCenter = 0;
-    [SerializeField] private int _housingArea = 0;
-    [SerializeField] private int _factory = 0;
-    [SerializeField] private int _park = 0;
-    [SerializeField] private int _shoppingArea = 0;
-    [SerializeField] private int _dump = 0;
-    [SerializeField] private int _agriculturalArea = 0;
-    [SerializeField] private int _college = 0;
-    [SerializeField] private int _solarPowerPlant = 0;
-    [SerializeField] private int _meteorite = 0;
-    [SerializeField] private int _naturalReserve = 0;
-    [SerializeField] private int _radioactiveZone = 0;
-    [SerializeField] private int _UFO = 0;
-    [SerializeField] private int _metropolis = 0;
-    [SerializeField] private int _spaceCompany = 0;
 
-    public LevelStatistics(FaceData[] data)
+    public LevelStatistics(Resources[] data)
     {
         CalculateNextResources(data);
     }
@@ -70,35 +54,19 @@ public class LevelStatistics: ScriptableObject
         _timeThreshold = 0;
         ElapsedTime = 0;
 
-        _faceData = new FaceData();
-
-        _civicCenter = 0;
-        _housingArea = 0;
-        _factory = 0;
-        _park = 0;
-        _shoppingArea = 0;
-        _dump = 0;
-        _agriculturalArea = 0;
-        _college = 0;
-        _solarPowerPlant = 0;
-        _meteorite = 0;
-        _naturalReserve = 0;
-        _radioactiveZone = 0;
-        _UFO = 0;
-        _metropolis = 0;
-        _spaceCompany = 0;
+        _resources = new Resources();
     }
 
-    public void CalculateNextResources(FaceData data)
+    public void CalculateNextResources(Resources data)
     {
-        _faceData += data;
+        _resources += data;
     }
 
-    public void CalculateNextResources(FaceData[] data)
+    public void CalculateNextResources(Resources[] data)
     {
         for (int i = 0; i < data.Length; i++)
         {
-            _faceData += data[i];
+            _resources += data[i];
         }
     }
 
@@ -132,20 +100,7 @@ public class LevelStatistics: ScriptableObject
     /// <returns></returns>
     public int GetResourceAmount(ResourceTypes type)
     {
-        switch (type)
-        {
-            case ResourceTypes.Prosperity:
-                return _faceData._prosperity;
-            case ResourceTypes.Happiness:
-                return _faceData._happiness;
-            case ResourceTypes.Sustainability:
-                return _faceData._sustainability;
-            case ResourceTypes.Wealth:
-                return _faceData._wealth;
-
-            default:
-                return 0;
-        }
+        return _resources.GetResourceType(type);
     }
 
     public void SetMaxCubeAmount(int amount)

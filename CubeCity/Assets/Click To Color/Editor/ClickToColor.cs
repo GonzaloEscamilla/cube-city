@@ -78,7 +78,7 @@ public class ClickToColor : EditorWindow {
         else
             skin = EditorGUIUtility.Load("Assets/Click To Color/Resources/EasyUI_LightSkin.guiskin") as GUISkin;
 
-        OWS = Resources.Load("Assets/Click To Color/Resources/OWS.png") as Texture2D;
+        OWS = UnityEngine.Resources.Load("Assets/Click To Color/Resources/OWS.png") as Texture2D;
 
     }
 

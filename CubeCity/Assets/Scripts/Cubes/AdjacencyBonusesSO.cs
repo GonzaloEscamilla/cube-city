@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Adjacency", menuName = "ScriptableObjects/Bonus", order = 1)]
+[CreateAssetMenu(fileName = "Adjacency", menuName = "ScriptableObjects/AdjacencyBonus", order = 1)]
 
 public class AdjacencyBonusesSO : ScriptableObject
 {
@@ -11,13 +11,13 @@ public class AdjacencyBonusesSO : ScriptableObject
         [SerializeField] private string Name;
         [SerializeField] public FaceTypes type1;
         [SerializeField] public FaceTypes type2;
-        [SerializeField] public FaceData bonusData;
+        [SerializeField] public Resources bonusData;
     }
     
     [SerializeField]
     private BonusTuple[] _bonusTuples;
 
-    public FaceData GetBonusForFaces(FaceTypes type1, FaceTypes type2)
+    public Resources GetBonusForFaces(FaceTypes type1, FaceTypes type2)
     {
         foreach (BonusTuple bonus in _bonusTuples)
         {
@@ -27,6 +27,16 @@ public class AdjacencyBonusesSO : ScriptableObject
                 return bonus.bonusData;
             }
         }
-        return new FaceData();
+        return new Resources();
     }
+
+    #region UNITY CALLBACKS
+    private void OnValidate()
+    {
+        for (int i = 0; i < _bonusTuples.Length; i++)
+        {
+            _bonusTuples[i].bonusData = new Resources(_bonusTuples[i].bonusData);
+        }
+    }
+    #endregion
 }

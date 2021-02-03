@@ -38,10 +38,10 @@ public class CubeBehaviour : MonoBehaviour
         _movement.StartMove(positions,callBack);
     }
 
-    public FaceData[] GetFacesData()
+    public Resources[] GetFacesData()
     {
         Face[] aux = GetComponentsInChildren<Face>();
-        FaceData[] facesData = new FaceData[aux.Length];
+        Resources[] facesData = new Resources[aux.Length];
 
         for (int i = 0; i < aux.Length; i++)
         {

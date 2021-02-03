@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/FacesData", order = 1)]
 public class FaceDataSO : ScriptableObject
 {
-    public FaceData[] faces;
+    public Resources[] faces;
 
     private void Awake()
     {
@@ -16,7 +16,7 @@ public class FaceDataSO : ScriptableObject
         }
     }
     
-    public FaceData GetStats(FaceTypes type)
+    public Resources GetStats(FaceTypes type)
     {
         return faces[(int)type];
     }
