@@ -93,6 +93,11 @@ public class LevelStatistics: ScriptableObject
         return (noMoreCubes && timeEnded);
     }
 
+    public Resources GetResources()
+    {
+        return _resources;
+    }
+
     /// <summary>
     /// Return the current amount of a resource in the City.
     /// </summary>

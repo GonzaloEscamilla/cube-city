@@ -19,7 +19,7 @@ public class FaceCollisionHandler : MonoBehaviour
         EventsManager.control.onCreateButtonPressed -= SetCollisionStateToSceneCube;
     }
 
-    private void OnLevelEnd()
+    private void OnLevelEnd(LevelEndData data)
     {
         //this.gameObject.SetActive(false);
         OnDisable();

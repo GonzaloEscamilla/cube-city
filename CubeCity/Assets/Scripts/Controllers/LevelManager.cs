@@ -175,10 +175,16 @@ public class LevelManager : MonoBehaviour
 
     public void LevelEnd()
     {
-        // TODO: Hay que implementar todo este metodo. De alguna manera tiene que mostrarse en UI asi que hay que ver si se hace con un evento o algo asi. Seee esa es la que va. Re simple. Un aciton onLevel
         _isFinishPlaying = true;
-        EventsManager.control.EndLevel();
         EventsManager.control.onCreateButtonPressed -= Build;
+
+        // TODO: completar campos del struct
+        LevelEndData data = new LevelEndData();
+        data.success = true;
+        data.finalResources = _levelStatistics.GetResources();
+        data.timeSpent = 0f;
+        EventsManager.control.EndLevel(data);
+
         Debug.Log("Level ended.");
     }
 
@@ -270,7 +276,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-   
     List<List<Face>> GetCombos(CubeBehaviour cube)
     {
         // TODO: pasar esta constante a otro lado
