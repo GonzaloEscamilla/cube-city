@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 5722387342622938243, guid: ae6b6f77b7055c146bc023494107be98,
         type: 3}
       propertyPath: m_Name
-      value: FaceGraphics - CommercialArea
+      value: FaceGraphics (1) - CommercialArea
       objectReference: {fileID: 0}
     - target: {fileID: 9130911096863467597, guid: ae6b6f77b7055c146bc023494107be98,
         type: 3}
@@ -140,7 +140,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5b0fbe218c54b324f9aef07246bb862a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5b0fbe218c54b324f9aef07246bb862a,
         type: 3}

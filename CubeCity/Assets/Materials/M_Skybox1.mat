@@ -75,7 +75,7 @@ Material:
     - _Rotation: 0
     - _SkyExponent1: 8.5
     - _SkyExponent2: 3
-    - _SkyIntensity: 1
+    - _SkyIntensity: 1.19
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -96,12 +96,12 @@ Material:
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColor: {r: 1, g: 0.2857143, b: 0, a: 1}
-    - _SkyColor1: {r: 0.2509804, g: 0.80901724, b: 0.8980392, a: 0}
-    - _SkyColor2: {r: 0.39607847, g: 0.54509807, b: 0.7843138, a: 0}
-    - _SkyColor3: {r: 0.5190873, g: 0.45490196, b: 0.7529412, a: 0}
+    - _SkyColor1: {r: 0.19215688, g: 0.7686275, b: 0.7058824, a: 1}
+    - _SkyColor2: {r: 0.19215687, g: 0.7305046, b: 0.76862746, a: 0}
+    - _SkyColor3: {r: 0.078431375, g: 0.43529415, b: 0.5568628, a: 0}
     - _SkyTint: {r: 0.7735849, g: 0.010946936, b: 0.010946936, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SunColor: {r: 1, g: 0.98999995, b: 0.87, a: 1}
+    - _SunColor: {r: 1, g: 1, b: 1, a: 1}
     - _SunVector: {r: 0.269, g: 0.615, b: 0.74, a: 0}
     - _Tint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
 --- !u!114 &4217790335121138547
