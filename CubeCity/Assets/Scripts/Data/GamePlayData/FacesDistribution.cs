@@ -1,21 +1,10 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class DistributionItem
+public struct DistributionItem
 {
     public string name;
     public int amount;
-    public DistributionItem(string name, int amount)
-    {
-        this.name = name;
-        this.amount = amount;
-    }
-
-    public DistributionItem(DistributionItem distributionItem)
-    {
-        this.name = distributionItem.name;
-        this.amount = distributionItem.amount;
-    }
 }
 
 [System.Serializable]
@@ -29,7 +18,8 @@ public class FacesDistribution
         distribution = new DistributionItem[faceTypes.Length];
         for (int i = 0; i < distribution.Length; i++)
         {
-            distribution[i] = new DistributionItem(((FaceTypes)i).ToString(), 0);
+            distribution[i].name = ((FaceTypes)i).ToString();
+            distribution[i].amount = 0;
         }
     }
 
@@ -38,7 +28,7 @@ public class FacesDistribution
         distribution = new DistributionItem[facesDistribution.distribution.Length];
         for (int i = 0; i < facesDistribution.distribution.Length; i++)
         {
-            distribution[i] = new DistributionItem(facesDistribution.distribution[i]);
+            distribution[i] = facesDistribution.distribution[i];
         }
     }
 
