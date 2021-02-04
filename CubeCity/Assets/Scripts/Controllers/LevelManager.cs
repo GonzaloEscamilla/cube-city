@@ -182,9 +182,10 @@ public class LevelManager : MonoBehaviour
 
         // TODO: completar campos del struct
         LevelEndData data = new LevelEndData();
-        data.success = true;
+        data.success = _hasWin;
         data.finalResources = _levelStatistics.GetResources();
         data.timeSpent = _levelStatistics.ElapsedTime;
+
         EventsManager.control.EndLevel(data);
 
         Debug.Log("Level ended.");
