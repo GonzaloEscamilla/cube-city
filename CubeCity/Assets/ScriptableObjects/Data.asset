@@ -13,153 +13,73 @@ MonoBehaviour:
   m_Name: Data
   m_EditorClassIdentifier: 
   faces:
-  - name: CivicCenter
-    _prosperity: 0
-    _population: 0
-    _pullution: 0
-    _productivity: 0
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
-  - name: HousingArea
-    _prosperity: 0
-    _population: 20
-    _pullution: 0
-    _productivity: 0
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
-  - name: Factory
-    _prosperity: 0
-    _population: 0
-    _pullution: 15
-    _productivity: 35
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
-  - name: Park
-    _prosperity: 0
-    _population: 0
-    _pullution: 0
-    _productivity: 0
-    _sustainability: 10
-    _happiness: 10
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
-  - name: ShoppingArea
-    _prosperity: 0
-    _population: 0
-    _pullution: 0
-    _productivity: 0
-    _sustainability: 0
-    _happiness: 10
-    _consumption: 10
-    _technology: 0
-    _knowledge: 0
-  - name: Dump
-    _prosperity: 0
-    _population: 0
-    _pullution: 20
-    _productivity: 0
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
+  - name: BusinessArea
+    resources:
+    - name: Prosperity
+      amount: 400
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 0
+    - name: Wealth
+      amount: 100
+  - name: CommercialArea
+    resources:
+    - name: Prosperity
+      amount: 300
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 0
+    - name: Wealth
+      amount: 50
+  - name: GarbagedumpArea
+    resources:
+    - name: Prosperity
+      amount: -600
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: -100
+    - name: Wealth
+      amount: 0
+  - name: IndustrialArea
+    resources:
+    - name: Prosperity
+      amount: 450
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: -50
+    - name: Wealth
+      amount: 80
+  - name: ParkArera
+    resources:
+    - name: Prosperity
+      amount: 200
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 50
+    - name: Wealth
+      amount: 0
+  - name: ResidentialArea
+    resources:
+    - name: Prosperity
+      amount: 100
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 0
+    - name: Wealth
+      amount: 0
   - name: AgriculturalArea
-    _prosperity: 0
-    _population: 0
-    _pullution: 0
-    _productivity: 20
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
-  - name: College
-    _prosperity: 0
-    _population: 0
-    _pullution: 0
-    _productivity: 0
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
-  - name: SolarPowerPlant
-    _prosperity: 0
-    _population: 0
-    _pullution: 0
-    _productivity: 0
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
-  - name: Meteorite
-    _prosperity: 0
-    _population: 0
-    _pullution: 0
-    _productivity: 0
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
-  - name: NaturalReserve
-    _prosperity: 0
-    _population: 0
-    _pullution: 0
-    _productivity: 0
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
-  - name: RadioactiveZone
-    _prosperity: 0
-    _population: 0
-    _pullution: 0
-    _productivity: 0
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
-  - name: UFO
-    _prosperity: 0
-    _population: 0
-    _pullution: 0
-    _productivity: 0
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
-  - name: Metropolis
-    _prosperity: 0
-    _population: 0
-    _pullution: 0
-    _productivity: 0
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
-  - name: SpaceCompany
-    _prosperity: 0
-    _population: 0
-    _pullution: 0
-    _productivity: 0
-    _sustainability: 0
-    _happiness: 0
-    _consumption: 0
-    _technology: 0
-    _knowledge: 0
+    resources:
+    - name: Prosperity
+      amount: 350
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 25
+    - name: Wealth
+      amount: 50

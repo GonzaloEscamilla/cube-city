@@ -13,17 +13,101 @@ MonoBehaviour:
   m_Name: Adjacency
   m_EditorClassIdentifier: 
   _bonusTuples:
-  - Name: 
-    type1: 0
+  - Name: Residential - Dumps
+    type1: 5
+    type2: 2
+    bonusData:
+      name: 
+      resources:
+      - name: Prosperity
+        amount: 0
+      - name: Happiness
+        amount: -30
+      - name: Sustainability
+        amount: 0
+      - name: Wealth
+        amount: 0
+  - Name: Residential - Industrial
+    type1: 5
+    type2: 3
+    bonusData:
+      name: 
+      resources:
+      - name: Prosperity
+        amount: 0
+      - name: Happiness
+        amount: -10
+      - name: Sustainability
+        amount: 0
+      - name: Wealth
+        amount: 0
+  - Name: Residential - Park
+    type1: 5
+    type2: 4
+    bonusData:
+      name: 
+      resources:
+      - name: Prosperity
+        amount: 0
+      - name: Happiness
+        amount: 20
+      - name: Sustainability
+        amount: 0
+      - name: Wealth
+        amount: 0
+  - Name: Residential - Comercial
+    type1: 5
     type2: 1
     bonusData:
       name: 
-      _prosperity: 0
-      _population: 0
-      _pullution: 0
-      _productivity: 0
-      _sustainability: 0
-      _happiness: 0
-      _consumption: 0
-      _technology: 0
-      _knowledge: 0
+      resources:
+      - name: Prosperity
+        amount: 0
+      - name: Happiness
+        amount: 10
+      - name: Sustainability
+        amount: 0
+      - name: Wealth
+        amount: 5
+  - Name: Comercial - Industrial
+    type1: 1
+    type2: 3
+    bonusData:
+      name: 
+      resources:
+      - name: Prosperity
+        amount: 0
+      - name: Happiness
+        amount: 0
+      - name: Sustainability
+        amount: 0
+      - name: Wealth
+        amount: 20
+  - Name: Busines Area - Park
+    type1: 0
+    type2: 4
+    bonusData:
+      name: 
+      resources:
+      - name: Prosperity
+        amount: 0
+      - name: Happiness
+        amount: 10
+      - name: Sustainability
+        amount: 0
+      - name: Wealth
+        amount: 0
+  - Name: Industrial - Agricultural
+    type1: 3
+    type2: 6
+    bonusData:
+      name: 
+      resources:
+      - name: Prosperity
+        amount: 0
+      - name: Happiness
+        amount: 0
+      - name: Sustainability
+        amount: 0
+      - name: Wealth
+        amount: 20
