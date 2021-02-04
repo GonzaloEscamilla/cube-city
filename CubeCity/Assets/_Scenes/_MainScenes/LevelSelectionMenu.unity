@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -417,7 +417,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 5053c8dc0e961694285b62ea4f7c6f59, type: 2}
+  sharedProfile: {fileID: 0}
 --- !u!4 &1252680626
 Transform:
   m_ObjectHideFlags: 0
@@ -723,12 +723,12 @@ GameObject:
   - component: {fileID: 1867716771}
   - component: {fileID: 1867716770}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FMOD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1867716770
 MonoBehaviour:
   m_ObjectHideFlags: 0
