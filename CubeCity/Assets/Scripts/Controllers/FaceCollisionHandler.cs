@@ -10,12 +10,19 @@ public class FaceCollisionHandler : MonoBehaviour
     {
         EventsManager.control.onPreviewCubeMoved += OnPreviewCubeMovedEvent;
         EventsManager.control.onCreateButtonPressed += SetCollisionStateToSceneCube;
+        EventsManager.control.onLevelEndEvent += OnLevelEnd;
     }
 
     private void OnDisable()
     {
         EventsManager.control.onPreviewCubeMoved -= OnPreviewCubeMovedEvent;
         EventsManager.control.onCreateButtonPressed -= SetCollisionStateToSceneCube;
+    }
+
+    private void OnLevelEnd(LevelEndData data)
+    {
+        //this.gameObject.SetActive(false);
+        OnDisable();
     }
 
     public void HandleFaceCollision(Face firstFace, Face secondFace)
@@ -52,7 +59,6 @@ public class FaceCollisionHandler : MonoBehaviour
 
     private void OnPreviewCubeMovedEvent(PreviewCube previewCube)
     {
-        Debug.Log("Clear Faces");
         foreach (Face face in _affectedFaces)
         {
             face.SetFaceCollisionState(FaceCollisionState.None);

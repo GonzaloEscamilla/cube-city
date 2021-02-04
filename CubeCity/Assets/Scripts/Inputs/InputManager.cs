@@ -48,6 +48,15 @@ public class InputManager : MonoBehaviour
     /// </summary>
     [SerializeField] private bool isUISelected = false;
 
+    private bool isTapEnabled {
+        get
+        {
+            return !isUISelected &&
+                !LevelManager.control.HasLevelEnded() &&
+                !LevelManager.control.IsCubeMoving();
+        }
+    }
+
     #endregion
 
     #region Input Fields
@@ -297,7 +306,6 @@ public class InputManager : MonoBehaviour
         {
             if (LevelManager.control.GameSettings.EditorMode)
             {
-                Debug.Log("Swipe");
                 cameraController.Rotate(Input.GetAxis("Mouse X") / 25);
                 cameraController.Rotate3D(Input.GetAxis("Mouse Y") / 2500);
             }
@@ -318,7 +326,7 @@ public class InputManager : MonoBehaviour
 
         // UISelectedVerification();
 
-        if (!isUISelected)
+        if (isTapEnabled)
         {
             selectable = raySelector.Select(Camera.main, Input.mousePosition);
         }

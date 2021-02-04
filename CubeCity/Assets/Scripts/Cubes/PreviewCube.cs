@@ -37,11 +37,10 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
         EventsManager.control.onfaceSelected += SetPosition;
         EventsManager.control.onCreateButtonPressed += ResetPosition;
         EventsManager.control.onFaceUnselected += OnfaceUnselected;
+        EventsManager.control.onLevelEndEvent += OnLevelEnd;
 
         EventsManager.control.onCubeCreated += HandleNewCube;
     }
-
-   
 
     private void OnDestroy()
     {
@@ -50,6 +49,7 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
         EventsManager.control.onFaceUnselected -= OnfaceUnselected;
 
         EventsManager.control.onCubeCreated -= HandleNewCube;
+        EventsManager.control.onLevelEndEvent -= OnLevelEnd;
     }
 
     private void Start()
@@ -126,7 +126,6 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
 
     private void SetPosition(Face selectedFace)
     {
-        Debug.Log("SetPosition");
         DisableFaceColliders();
 
         this.transform.position = selectedFace.GetPreviewCubePosition();
@@ -137,6 +136,12 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
     private void OnfaceUnselected()
     {
        
+    }
+
+    private void OnLevelEnd(LevelEndData data)
+    {
+        ResetPosition();
+        IsSelected = false;
     }
 
     private void ResetPosition()
@@ -151,7 +156,6 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
     /// </summary>
     public void DisableFaceColliders()
     {
-        Debug.Log("DisableFaceColliders");
         ISwitchState[] setups = GetComponentsInChildren<ISwitchState>();
 
         for (int i = 0; i < setups.Length; i++)
@@ -165,7 +169,6 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
     /// </summary>
     public void EnableFaceColliders()
     {
-        Debug.Log("Enable Face Colliders");
         ISwitchState[] setups = GetComponentsInChildren<ISwitchState>();
 
         for (int i = 0; i < setups.Length; i++)

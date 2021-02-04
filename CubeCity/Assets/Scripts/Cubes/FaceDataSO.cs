@@ -10,10 +10,7 @@ public class FaceDataSO : ScriptableObject
 
     private void Awake()
     {
-        for (int i = 0; i < faces.Length; i++)
-        {
-            faces[i].name = ((FaceTypes)i).ToString();
-        }
+        Init();
     }
     
     public Resources GetStats(FaceTypes type)
@@ -21,4 +18,12 @@ public class FaceDataSO : ScriptableObject
         return faces[(int)type];
     }
 
+    [ContextMenu("Initialize")]
+    public void Init()
+    {
+        for (int i = 0; i < faces.Length; i++)
+        {
+            faces[i].name = ((FaceTypes)i).ToString();
+        }
+    }
 }

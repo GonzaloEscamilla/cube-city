@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private LevelsSO _levelSystem;
     [SerializeField] private LevelStatistics _levelStatistics;
     [SerializeField] private FaceCollisionHandler _faceCollisionHandler;
-    [SerializeField] private AdjacencyBonusesSO adjacencyBonusesSO;
+    [SerializeField] private AdjacencyBonusesSO _adjacencyBonusesSO;
 
     [SerializeField] bool[] completedObjectives;
 
@@ -24,7 +24,10 @@ public class LevelManager : MonoBehaviour
 
     private CubeSpawner _spawner;
 
-    private bool _isFinishPlaying;
+    private bool _isFinishPlaying = false;
+    private bool _hasWin = false;
+    private bool _cubeIsMoving = false;
+    private bool _isPaused = false;
 
     public Face CurrentSelectedFace
     {
@@ -69,7 +72,6 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-
     }
 
     private void OnDestroy()
@@ -91,6 +93,7 @@ public class LevelManager : MonoBehaviour
 
     public void InitializeLevel()
     {
+        _cubeIsMoving = false;
         SetCurrentLevelPresets();
 
         BuildInitialCube();
@@ -121,10 +124,11 @@ public class LevelManager : MonoBehaviour
                 switch (auxConstraints[i].Type)
                 {
                     case ConstraintTypes.CubeAmount:
-                        Debug.Log("Oli ");
+                        Debug.Log("Seting Cube Amount for this level. ");
                          _levelStatistics.SetMaxCubeAmount(auxConstraints[i].GetMaxCubes());
                         break;
                     case ConstraintTypes.TimeAmount:
+                        Debug.Log("Seting Time Threshold for the current level.");
                         _levelStatistics.SetTimeThereshold(auxConstraints[i].GetTimeAmount());
                         break;
                     case ConstraintTypes.FaceTypeAvailable:
@@ -162,7 +166,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            LevelEnd();
+            LevelEnd(_hasWin);
         }
     }
 
@@ -171,12 +175,42 @@ public class LevelManager : MonoBehaviour
         _spawner.NextCube();
     }
 
+    public void LevelEnd(bool hasWin)
+    {
+        _isFinishPlaying = true;
+        EventsManager.control.onCreateButtonPressed -= Build;
+
+        // TODO: completar campos del struct
+        LevelEndData data = new LevelEndData();
+        data.success = true;
+        data.finalResources = _levelStatistics.GetResources();
+        data.timeSpent = _levelStatistics.ElapsedTime;
+        EventsManager.control.EndLevel(data);
+
+        Debug.Log("Level ended.");
+    }
+
+    public bool HasLevelEnded()
+    {
+        return _isFinishPlaying;
+    }
+
+    public bool IsCubeMoving()
+    {
+        return _cubeIsMoving;
+    }
+
+    public LevelsSO GetLevelSystem()
+    {
+        return _levelSystem;
+    }
     /// <summary>
     /// Called when ever a new cube is virtualy builded on the current selected face. When this ends the builded cube starts moving towards the face.
     /// </summary>
     public void Build()
     {
         Debug.Log("Build");
+        _cubeIsMoving = true;
 
         if (CurrentSelectedFace == null)
             return;
@@ -198,6 +232,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     private void OnBuildFinish()
     {
+        _cubeIsMoving = false;
         CubeBehaviour currentCube = _spawner.GetCurrentCube();
         EventsManager.control.CubeBuilded(currentCube);
 
@@ -209,7 +244,7 @@ public class LevelManager : MonoBehaviour
         EventsManager.control.StatisticsUpdate();
 
         EvaluateLevelEnding();
-        WinOrLoss();
+        _hasWin = WinOrLoss();
 
         NextTurn();
     }
@@ -237,13 +272,12 @@ public class LevelManager : MonoBehaviour
             foreach (Face adjacentFace in face.GetAdjacentFaces())
             {
                 _levelStatistics.CalculateNextResources(
-                    adjacencyBonusesSO.GetBonusForFaces(face.Type, adjacentFace.Type)
+                    _adjacencyBonusesSO.GetBonusForFaces(face.Type, adjacentFace.Type)
                 );
             }
         }
     }
 
-   
     List<List<Face>> GetCombos(CubeBehaviour cube)
     {
         // TODO: pasar esta constante a otro lado
@@ -274,7 +308,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void WinOrLoss()
+    private bool WinOrLoss()
     {
         LevelObjective[] objetives = _currentLevel.GetObjectives();
         completedObjectives = new bool[objetives.Length];
@@ -303,14 +337,11 @@ public class LevelManager : MonoBehaviour
             }
         }
         Debug.Log("The condition hasWin is: " + hasWin);
-    }
 
-    public void LevelEnd()
-    {
-        // TODO: Hay que implementar todo este metodo. De alguna manera tiene que mostrarse en UI asi que hay que ver si se hace con un evento o algo asi. Seee esa es la que va. Re simple. Un aciton onLevel
+        if (hasWin)
+            _isFinishPlaying = true;
 
-        EventsManager.control.onCreateButtonPressed -= Build;
-        Debug.Log("Level ended.");
+        return hasWin;
     }
 
     private void UpdateFaceStatistics()
@@ -339,20 +370,15 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator RunLevelTimeLapse()
     {
-        while (!_isFinishPlaying)
+        while (!_isFinishPlaying && !_isPaused)
         {
             _levelStatistics.ElapsedTime += Time.deltaTime;
             if (_levelStatistics.ElapsedTime >= _levelStatistics.GetTimeThreshold())
             {
-                _isFinishPlaying = true;
-                LevelEnd();
+                LevelEnd(false);
             }
             yield return null;
         }
     }
 
-    public LevelsSO GetLevelSystem()
-    {
-        return _levelSystem;
-    }
 }
