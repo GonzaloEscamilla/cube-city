@@ -49,7 +49,8 @@ MonoBehaviour:
   _levelSystem: {fileID: 11400000, guid: a4c8ecd4bdebb3848b26a399e4989a09, type: 2}
   _levelStatistics: {fileID: 11400000, guid: e37448798f364e946a5142f32532cd68, type: 2}
   _faceCollisionHandler: {fileID: 6648152788704384438}
-  adjacencyBonusesSO: {fileID: 11400000, guid: 1019eb64d655c52408169f5f7fe2e0f9, type: 2}
+  _adjacencyBonusesSO: {fileID: 11400000, guid: 1019eb64d655c52408169f5f7fe2e0f9,
+    type: 2}
   completedObjectives: 
   _previewCube: {fileID: 0}
   _currentSelectedFace: {fileID: 0}

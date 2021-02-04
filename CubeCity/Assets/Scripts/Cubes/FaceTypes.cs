@@ -9,5 +9,6 @@ public enum FaceTypes
     GarbagedumpArea,
     IndustrialArea,
     ParkArera,
-    ResidentialArea
+    ResidentialArea,
+    AgriculturalArea,
 }

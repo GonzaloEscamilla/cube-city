@@ -19,7 +19,7 @@ public class EventsManager : MonoBehaviour
 
                 if (_control == null)
                 {
-                    GameObject container = new GameObject("Bicycle");
+                    GameObject container = new GameObject("EventsManager");
                     _control = container.AddComponent<EventsManager>();
                 }
             }
@@ -30,7 +30,7 @@ public class EventsManager : MonoBehaviour
     #endregion
 
     public delegate void OnLevelEnd(LevelEndData data);
-    public OnLevelEnd levelEndEvent;
+    public OnLevelEnd onLevelEndEvent;
 
     public delegate void OnFaceSelected(Face selectedFace);
     public OnFaceSelected onfaceSelected;
@@ -106,6 +106,6 @@ public class EventsManager : MonoBehaviour
 
     public void EndLevel(LevelEndData data)
     {
-        levelEndEvent?.Invoke(data);
+        onLevelEndEvent?.Invoke(data);
     }
 }

@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private LevelsSO _levelSystem;
     [SerializeField] private LevelStatistics _levelStatistics;
     [SerializeField] private FaceCollisionHandler _faceCollisionHandler;
-    [SerializeField] private AdjacencyBonusesSO adjacencyBonusesSO;
+    [SerializeField] private AdjacencyBonusesSO _adjacencyBonusesSO;
 
     [SerializeField] bool[] completedObjectives;
 
@@ -24,8 +24,10 @@ public class LevelManager : MonoBehaviour
 
     private CubeSpawner _spawner;
 
-    private bool _isFinishPlaying;
-    private bool _cubeIsMoving;
+    private bool _isFinishPlaying = false;
+    private bool _hasWin = false;
+    private bool _cubeIsMoving = false;
+    private bool _isPaused = false;
 
     public Face CurrentSelectedFace
     {
@@ -70,7 +72,6 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-
     }
 
     private void OnDestroy()
@@ -123,10 +124,11 @@ public class LevelManager : MonoBehaviour
                 switch (auxConstraints[i].Type)
                 {
                     case ConstraintTypes.CubeAmount:
-                        Debug.Log("Oli ");
+                        Debug.Log("Seting Cube Amount for this level. ");
                          _levelStatistics.SetMaxCubeAmount(auxConstraints[i].GetMaxCubes());
                         break;
                     case ConstraintTypes.TimeAmount:
+                        Debug.Log("Seting Time Threshold for the current level.");
                         _levelStatistics.SetTimeThereshold(auxConstraints[i].GetTimeAmount());
                         break;
                     case ConstraintTypes.FaceTypeAvailable:
@@ -164,7 +166,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            LevelEnd();
+            LevelEnd(_hasWin);
         }
     }
 
@@ -173,7 +175,7 @@ public class LevelManager : MonoBehaviour
         _spawner.NextCube();
     }
 
-    public void LevelEnd()
+    public void LevelEnd(bool hasWin)
     {
         _isFinishPlaying = true;
         EventsManager.control.onCreateButtonPressed -= Build;
@@ -182,7 +184,7 @@ public class LevelManager : MonoBehaviour
         LevelEndData data = new LevelEndData();
         data.success = true;
         data.finalResources = _levelStatistics.GetResources();
-        data.timeSpent = 0f;
+        data.timeSpent = _levelStatistics.ElapsedTime;
         EventsManager.control.EndLevel(data);
 
         Debug.Log("Level ended.");
@@ -242,7 +244,7 @@ public class LevelManager : MonoBehaviour
         EventsManager.control.StatisticsUpdate();
 
         EvaluateLevelEnding();
-        WinOrLoss();
+        _hasWin = WinOrLoss();
 
         NextTurn();
     }
@@ -270,7 +272,7 @@ public class LevelManager : MonoBehaviour
             foreach (Face adjacentFace in face.GetAdjacentFaces())
             {
                 _levelStatistics.CalculateNextResources(
-                    adjacencyBonusesSO.GetBonusForFaces(face.Type, adjacentFace.Type)
+                    _adjacencyBonusesSO.GetBonusForFaces(face.Type, adjacentFace.Type)
                 );
             }
         }
@@ -306,7 +308,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void WinOrLoss()
+    private bool WinOrLoss()
     {
         LevelObjective[] objetives = _currentLevel.GetObjectives();
         completedObjectives = new bool[objetives.Length];
@@ -335,6 +337,11 @@ public class LevelManager : MonoBehaviour
             }
         }
         Debug.Log("The condition hasWin is: " + hasWin);
+
+        if (hasWin)
+            _isFinishPlaying = true;
+
+        return hasWin;
     }
 
     private void UpdateFaceStatistics()
@@ -363,12 +370,12 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator RunLevelTimeLapse()
     {
-        while (!_isFinishPlaying)
+        while (!_isFinishPlaying && !_isPaused)
         {
             _levelStatistics.ElapsedTime += Time.deltaTime;
             if (_levelStatistics.ElapsedTime >= _levelStatistics.GetTimeThreshold())
             {
-                LevelEnd();
+                LevelEnd(false);
             }
             yield return null;
         }
