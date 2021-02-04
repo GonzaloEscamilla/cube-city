@@ -68,14 +68,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-Seminario/Library/
-Seminario/Temp/
-Seminario/obj/
-Seminario/Assets/Omega/
-Seminario/Assets/Omega.meta
 CubeCity/Library/
 CubeCity/Temp/
+CubeCity/obj/
 CubeCity/obj/Debug/
+CubeCity/Assets/_Ignored/
 CubeCity/Assets/Omega/
 CubeCity/Assets/Omega.meta
 
