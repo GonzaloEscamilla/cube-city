@@ -22,6 +22,11 @@ public struct ResourceItem
         ResourceItem result = new ResourceItem(a.name, a.amount + b.amount);
         return result;
     }
+
+    public static ResourceItem operator -(ResourceItem a)
+    {
+        return new ResourceItem(a.name, -a.amount);
+    }
 }
 
 [System.Serializable]
@@ -63,6 +68,17 @@ public class Resources
         Resources result = new Resources();
         for (int i = 0; i < result.resources.Length; i++) {
             result.resources[i] = a.resources[i] + b.resources[i];
+        }
+
+        return result;
+    }
+
+    public static Resources operator -(Resources a)
+    {
+        Resources result = new Resources();
+        for (int i = 0; i < result.resources.Length; i++)
+        {
+            result.resources[i] = -a.resources[i];
         }
 
         return result;

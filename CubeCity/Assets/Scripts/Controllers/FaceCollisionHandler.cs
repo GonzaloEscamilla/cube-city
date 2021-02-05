@@ -9,20 +9,25 @@ public class FaceCollisionHandler : MonoBehaviour
     private void OnEnable()
     {
         EventsManager.control.onPreviewCubeMoved += OnPreviewCubeMovedEvent;
-        EventsManager.control.onCreateButtonPressed += SetCollisionStateToSceneCube;
+        EventsManager.control.onCubeBuilded += SetCollisionStateToSceneCube;
         EventsManager.control.onLevelEndEvent += OnLevelEnd;
     }
 
     private void OnDisable()
     {
         EventsManager.control.onPreviewCubeMoved -= OnPreviewCubeMovedEvent;
-        EventsManager.control.onCreateButtonPressed -= SetCollisionStateToSceneCube;
+        EventsManager.control.onCubeBuilded -= SetCollisionStateToSceneCube;
     }
 
     private void OnLevelEnd(LevelEndData data)
     {
         //this.gameObject.SetActive(false);
         OnDisable();
+    }
+
+    public List<Face> GetAffectedFaces()
+    {
+        return _affectedFaces;
     }
 
     public void HandleFaceCollision(Face firstFace, Face secondFace)
@@ -89,7 +94,7 @@ public class FaceCollisionHandler : MonoBehaviour
     }
 
     //TODO: Este metodo quizas si deberia ser llamado en otro momento, como por ejemplo cuando se termina de posicionar el cubo, por que si no se ve feo.
-    private void SetCollisionStateToSceneCube()
+    private void SetCollisionStateToSceneCube(CubeBehaviour cube)
     {
         Debug.Log("Set State to Scene CUbe");
         foreach (Face face in _affectedFaces)
@@ -101,4 +106,6 @@ public class FaceCollisionHandler : MonoBehaviour
         }
         _affectedFaces.Clear();
     }
+
+    
 }

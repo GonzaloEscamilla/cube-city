@@ -71,7 +71,7 @@ public class CubeSpawner : MonoBehaviour
     {
         _currentSpawnedCube = _cubePool.GetPooledObject(this.transform).GetComponent<CubeBehaviour>();
 
-        SetCubeFaces(_currentSpawnedCube, FaceTypes.BusinessArea, FaceOrientationType.Up);
+        SetCubeFaces(_currentSpawnedCube);
 
         EventsManager.control.CubeCreated(_currentSpawnedCube);
 

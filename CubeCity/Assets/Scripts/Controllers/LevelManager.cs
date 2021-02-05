@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -155,7 +156,7 @@ public class LevelManager : MonoBehaviour
             StartCoroutine(RunLevelTimeLapse());
         }
 
-        NextTurn();
+        OnBuildFinish();
     }
 
     private void NextTurn()
@@ -235,6 +236,9 @@ public class LevelManager : MonoBehaviour
     {
         _cubeIsMoving = false;
         CubeBehaviour currentCube = _spawner.GetCurrentCube();
+
+        SubstractOverlappedFacesPoints();
+
         EventsManager.control.CubeBuilded(currentCube);
 
         currentCube.InitializeAdjacentFaces();
@@ -248,6 +252,25 @@ public class LevelManager : MonoBehaviour
         _hasWin = WinOrLoss();
 
         NextTurn();
+    }
+
+    private void SubstractOverlappedFacesPoints() 
+    {
+        List<Face> affectedFaces = _faceCollisionHandler.GetAffectedFaces();
+        Face[] cubeFaces = _spawner.GetCurrentCube().GetFaces();
+
+        foreach (Face affectedFace in affectedFaces)
+        {
+            if (!cubeFaces.Contains<Face>(affectedFace))
+            {
+                _levelStatistics.CalculateNextResources(-affectedFace.GetFaceData());
+                foreach (Face adjacentFace in affectedFace.GetAdjacentFaces())
+                {
+                    Debug.Log("AdjacentFace Type: " + adjacentFace.Type);
+                    _levelStatistics.CalculateNextResources(-_adjacencyBonusesSO.GetBonusForFaces(affectedFace.Type, adjacentFace.Type));
+                }
+            }
+        }
     }
 
     private void CheckExtraPoints()
