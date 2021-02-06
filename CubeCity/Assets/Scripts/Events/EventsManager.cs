@@ -50,6 +50,8 @@ public class EventsManager : MonoBehaviour
     public delegate void OnCubeCreated(CubeBehaviour newCube);
     public OnCubeCreated onCubeCreated;
 
+    public Action<LevelsSO> OnLevelLoaded;
+
     public Action<Vector3> OnPreviewCubeRotated;
 
     public Action<Face> OnPreviewFaceCollision;
@@ -107,5 +109,10 @@ public class EventsManager : MonoBehaviour
     public void EndLevel(LevelEndData data)
     {
         onLevelEndEvent?.Invoke(data);
+    }
+
+    public void LevelLoaded(LevelsSO levelLoaded)
+    {
+        OnLevelLoaded?.Invoke(levelLoaded);
     }
 }
