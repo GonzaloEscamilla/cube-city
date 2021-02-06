@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FaceGraphics (6) - FarmArea
       objectReference: {fileID: 0}
+    - target: {fileID: 5722387342622938243, guid: ae6b6f77b7055c146bc023494107be98,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9130911096863467597, guid: ae6b6f77b7055c146bc023494107be98,
         type: 3}
       propertyPath: m_IsActive
@@ -161,11 +166,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 333ff730c0a809c4c8c74364e5968b45, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: ca2bf84894019844c83a9ddce4e216ad,
         type: 3}
       propertyPath: m_Name
       value: FarmArea
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ca2bf84894019844c83a9ddce4e216ad,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca2bf84894019844c83a9ddce4e216ad, type: 3}

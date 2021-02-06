@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FaceGraphics (2) - GarbagedumpArea
       objectReference: {fileID: 0}
+    - target: {fileID: 5722387342622938243, guid: ae6b6f77b7055c146bc023494107be98,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9130911096863467597, guid: ae6b6f77b7055c146bc023494107be98,
         type: 3}
       propertyPath: m_IsActive
@@ -146,6 +151,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GarbageDumpArea
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d6a60c11d00ea64e89677068c2539f0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d6a60c11d00ea64e89677068c2539f0, type: 3}

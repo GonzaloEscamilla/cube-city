@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Atlas Preview_FarmArea
+  m_Name: Atlas Preview_BussinesArea
   m_Shader: {fileID: -6465566751694194690, guid: e08143dd0215838419d4734b4d9e88fa,
     type: 3}
   m_ShaderKeywords: HARD_SHADING_ON
@@ -110,7 +110,7 @@ Material:
     - Vector1_1B863412: -0.1
     - Vector1_3263885: 0
     - Vector1_62FEF37A: 1
-    - Vector1_67196E36: 0
+    - Vector1_67196E36: 1
     - Vector1_6AACA91C: 0.5
     - Vector1_6DD629BE: 0.73
     - Vector1_70D13162: 5
@@ -153,9 +153,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_22BC6D68: {r: 0, g: 0, b: 0, a: 0}
+    - Color_22BC6D68: {r: 0, g: 0.14528997, b: 0.25738582, a: 1}
     - Color_499E0AD3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_BA56E0BA: {r: 1.5914239, g: 1.5997559, b: 0, a: 0}
+    - Color_BA56E0BA: {r: 1, g: 1, b: 1, a: 1}
     - Color_C447C6E7: {r: 0, g: 0.5276809, b: 1, a: 1}
     - Color_E43055B6: {r: 2.6666667, g: 2.6666667, b: 2.6666667, a: 1}
     - Vector2_9D82BACC: {r: 64, g: 64, b: 0, a: 0}

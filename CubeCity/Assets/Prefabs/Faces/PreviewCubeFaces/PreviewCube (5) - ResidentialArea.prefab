@@ -9535,6 +9535,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PreviewCube (5) - ResidentialArea
       objectReference: {fileID: 0}
+    - target: {fileID: 5722387342622938243, guid: ae6b6f77b7055c146bc023494107be98,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9130911096863467597, guid: ae6b6f77b7055c146bc023494107be98,
         type: 3}
       propertyPath: m_IsActive
@@ -9630,6 +9635,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ResidentialArea
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b93b521c5c2e4c540bad421cbaa87658,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 88861756538228313, guid: b93b521c5c2e4c540bad421cbaa87658,
         type: 3}
