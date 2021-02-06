@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2689222479024105133}
   - component: {fileID: 4475565171080184095}
   m_Layer: 5
-  m_Name: SelectLevelButton
+  m_Name: LevelSelectionButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9107089593052628945}
-  - {fileID: 7282005319462896990}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -119,7 +118,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7491303445103136686}
+      - m_Target: {fileID: 0}
         m_MethodName: SendCurrentLevel
         m_Mode: 1
         m_Arguments:
@@ -207,96 +206,3 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Play
---- !u!1001 &819653737195106797
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4732208766517495505}
-    m_Modifications:
-    - target: {fileID: 5499299410202106844, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-        type: 3}
-      propertyPath: m_Name
-      value: SelectLevelHandler
-      objectReference: {fileID: 0}
-    - target: {fileID: 7829941648759832131, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-        type: 3}
-      propertyPath: _levelToSelect
-      value: 
-      objectReference: {fileID: 11400000, guid: cb182d4c156e8674ea2f5e811d705bcf,
-        type: 2}
-    - target: {fileID: 7949169978761196723, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949169978761196723, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949169978761196723, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949169978761196723, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949169978761196723, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949169978761196723, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949169978761196723, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949169978761196723, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949169978761196723, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949169978761196723, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949169978761196723, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8e17c973697dbbc4dbccaa3f5c85cba6, type: 3}
---- !u!4 &7282005319462896990 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7949169978761196723, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-    type: 3}
-  m_PrefabInstance: {fileID: 819653737195106797}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7491303445103136686 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7829941648759832131, guid: 8e17c973697dbbc4dbccaa3f5c85cba6,
-    type: 3}
-  m_PrefabInstance: {fileID: 819653737195106797}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fee6b45387368540a879d88b9a859ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

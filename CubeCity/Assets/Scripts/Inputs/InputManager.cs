@@ -129,6 +129,7 @@ public class InputManager : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
 
+                previewCube.TapStartedOnPreviewCube = raySelector.TapStartedOnPreviewCube(Camera.main, Input.mousePosition);
                 Tap();
             }
             if (Input.GetMouseButton(0))
@@ -149,12 +150,14 @@ public class InputManager : MonoBehaviour
                 isUISelected = true;
             else
                 isUISelected = false;
+
+            previewCube.TapStartedOnPreviewCube = raySelector.TapStartedOnPreviewCube(Camera.main, Input.mousePosition);
         }
 
         if (isUISelected)
         {
             tapFlag = 0;
-           
+            //previewCube.IsSelected = false;
             return;
         }
 

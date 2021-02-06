@@ -7,10 +7,12 @@ using UnityEngine.UIElements;
 
 public class CubeDragRotator : MonoBehaviour
 {
+
 	float rotationSpeed = 0.16f;
     private bool _isDragging;
 
 	[SerializeField] Vector3 cubeNormal;
+	private PreviewCube _previewCube;
 
 	public enum NormalType
 	{
@@ -25,34 +27,39 @@ public class CubeDragRotator : MonoBehaviour
 
 	public Transform CurrentWorldCube;
 
-    private void Update()
+	private void Awake()
+	{
+		_previewCube = GetComponent<PreviewCube>();
+	}
+
+	private void Update()
 	{
 		if (Input.touchCount > 0)
 		{
 			Touch touch = Input.GetTouch(0);
 
-			if (touch.phase == TouchPhase.Began && GetComponent<PreviewCube>().IsSelected)
+			if (touch.phase == TouchPhase.Began && _previewCube.CanRotate)
 			{
 				OnDragStarted();
 			}
-			if (touch.phase == TouchPhase.Ended && GetComponent<PreviewCube>().IsSelected)
+			if (touch.phase == TouchPhase.Ended && _previewCube.CanRotate)
 			{
 				OnDragFinished();
 
 			}
 		}
 
-		if (Input.GetMouseButtonDown(0) && GetComponent<PreviewCube>().IsSelected)
+		if (Input.GetMouseButtonDown(0) && _previewCube.CanRotate)
 		{
 			OnDragStarted();
 		}
 
-		if (Input.GetMouseButtonUp(0) && GetComponent<PreviewCube>().IsSelected)
+		if (Input.GetMouseButtonUp(0) && _previewCube.CanRotate)
 		{
 			OnDragFinished();
 		}
 
-		if (_isDragging && GetComponent<PreviewCube>().IsSelected)
+		if (_isDragging && _previewCube.CanRotate)
 		{
 			Rotate();
 		}
@@ -85,7 +92,10 @@ public class CubeDragRotator : MonoBehaviour
 
 	public void OnSnapFinish()
 	{
-		EventsManager.control.PreviewCubeMoved(GetComponent<PreviewCube>());
+		if (GetComponent<PreviewCube>())
+		{
+			EventsManager.control.PreviewCubeMoved(GetComponent<PreviewCube>());
+		}
 	}
 
 	private void Callback()

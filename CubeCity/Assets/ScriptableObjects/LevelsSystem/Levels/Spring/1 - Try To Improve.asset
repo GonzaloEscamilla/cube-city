@@ -12,25 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d56c4858ca27e24aa88408a5426823f, type: 3}
   m_Name: 1 - Try To Improve
   m_EditorClassIdentifier: 
-  Name: 
-  _levelConstraints:
-  - Name: CubeAmount
-    _type: 0
-    _maxCubeAmount: 0
-    _timeAmount: 0
-  - Name: CubeAmount
-    _type: 0
-    _maxCubeAmount: 0
-    _timeAmount: 0
-  - Name: FaceTypeAvailable
-    _type: 2
-    _maxCubeAmount: 0
-    _timeAmount: 0
-  _objectives: []
+  Name: Try to Improve
+  _levelConstraints: []
+  _objectives:
+  - _type: 0
+    _resourceType: 0
+    _condition: 0
+    _resourceValue: 35000
   _facesDistribution:
     distribution:
     - name: BusinessArea
-      amount: 0
+      amount: 50
     - name: CommercialArea
       amount: 0
     - name: GarbagedumpArea
@@ -41,3 +33,4 @@ MonoBehaviour:
       amount: 0
     - name: ResidentialArea
       amount: 0
+  amountOfCubes: 8

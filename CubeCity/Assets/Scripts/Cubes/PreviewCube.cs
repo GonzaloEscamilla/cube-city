@@ -24,12 +24,21 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
     }
     [SerializeField] private bool _isSelected;
 
+    public bool CanRotate
+    {
+        get
+        {
+            return (IsSelected && TapStartedOnPreviewCube);
+        }
+       
+    }
+
+    public bool TapStartedOnPreviewCube;
+
     private void Awake()
     {
         _graphicsPool = GetComponentsInChildren<Pool>();
         dragRotator = GetComponent<CubeDragRotator>();
-
-        Debug.Log("Aca", this.gameObject);
     }
 
     private void OnEnable()

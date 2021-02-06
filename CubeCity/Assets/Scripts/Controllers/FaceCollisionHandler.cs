@@ -93,10 +93,8 @@ public class FaceCollisionHandler : MonoBehaviour
         }
     }
 
-    //TODO: Este metodo quizas si deberia ser llamado en otro momento, como por ejemplo cuando se termina de posicionar el cubo, por que si no se ve feo.
     private void SetCollisionStateToSceneCube(CubeBehaviour cube)
     {
-        Debug.Log("Set State to Scene CUbe");
         foreach (Face face in _affectedFaces)
         {
             if (face.GetFaceCollisionState() == FaceCollisionState.Overlapped)

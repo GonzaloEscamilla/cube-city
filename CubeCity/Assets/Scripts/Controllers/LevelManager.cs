@@ -211,7 +211,6 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void Build()
     {
-        Debug.Log("Build");
         _cubeIsMoving = true;
 
         if (CurrentSelectedFace == null)
@@ -360,8 +359,6 @@ public class LevelManager : MonoBehaviour
                 hasWin = completedObjectives[i - 1] & completedObjectives[i];
             }
         }
-        Debug.Log("The condition hasWin is: " + hasWin);
-
         if (hasWin)
             _isFinishPlaying = true;
 

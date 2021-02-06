@@ -64,4 +64,18 @@ public class RaycastSelectionHandler : MonoBehaviour
         else
             return null;
     }
+
+    public bool TapStartedOnPreviewCube(Camera currentCamera, Vector2 touchPosition)
+    {
+        _ray = currentCamera.ScreenPointToRay(touchPosition);
+
+        if (Physics.Raycast(_ray, out _raycastHit))
+        {
+            if (_raycastHit.transform.GetComponentInParent<PreviewCube>())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

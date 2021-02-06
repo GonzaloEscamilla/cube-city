@@ -8,9 +8,9 @@ public class SelectLevelHandler : MonoBehaviour
     [SerializeField] private LevelsSO _levelSystem;
     [SerializeField] private Level _levelToSelect;
 
-    public void SendCurrentLevel()
+    public void LoadSelectedLevel()
     {
         _levelSystem.SetCurrentLevel(_levelToSelect);
-        SceneLoaderController.control.LoadScene(GameScenes.Level);
+        SceneLoaderController.Instance.LoadScene(GameScenes.Level);
     }
 }
