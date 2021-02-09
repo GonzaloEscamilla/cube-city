@@ -211,10 +211,10 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void Build()
     {
-        _cubeIsMoving = true;
-
         if (CurrentSelectedFace == null)
             return;
+
+        _cubeIsMoving = true;
 
         CubeBehaviour newCube = _spawner.GetCurrentCube();
 
