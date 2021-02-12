@@ -120,17 +120,19 @@ public class InputManager : MonoBehaviour
     {
         UISelectedVerification();
 
-        // TODO: Esta pasando que la UI se selecciona
-
         if (LevelManager.control.GameSettings.EditorMode)
         {
-            //previewMousePosition = Input.mousePosition;
 
             if (Input.GetMouseButtonDown(0))
             {
-
                 previewCube.TapStartedOnPreviewCube = raySelector.TapStartedOnPreviewCube(Camera.main, Input.mousePosition);
+
                 Tap();
+
+                // TODO: Hacer lo mismo pero en la parte de los inputs de del touch.
+
+                if (previewCube.CanRotate)
+                    previewCube._dragRotator.OnDragStarted();
             }
             if (Input.GetMouseButton(0))
             {
@@ -138,6 +140,10 @@ public class InputManager : MonoBehaviour
             }
             if (Input.GetMouseButtonUp(0))
             {
+                previewCube.TapStartedOnPreviewCube = false;
+
+                if (previewCube._dragRotator.IsDragging)
+                    previewCube._dragRotator.OnDragFinished();
             }
         }
 
@@ -165,6 +171,7 @@ public class InputManager : MonoBehaviour
         if (Input.touchCount == 0 && tapFlag == 1)
         {
             TouchEnded();
+            previewCube.TapStartedOnPreviewCube = false;
         }
 
         if (Input.touchCount == 1)

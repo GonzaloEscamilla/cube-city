@@ -9,7 +9,7 @@ public class CubeDragRotator : MonoBehaviour
 {
 
 	float rotationSpeed = 0.16f;
-    private bool _isDragging;
+    public bool IsDragging;
 
 	[SerializeField] Vector3 cubeNormal;
 	private PreviewCube _previewCube;
@@ -40,6 +40,7 @@ public class CubeDragRotator : MonoBehaviour
 
 			if (touch.phase == TouchPhase.Began && _previewCube.CanRotate)
 			{
+				Debug.Log("Input del Touch");
 				OnDragStarted();
 			}
 			if (touch.phase == TouchPhase.Ended && _previewCube.CanRotate)
@@ -49,8 +50,10 @@ public class CubeDragRotator : MonoBehaviour
 			}
 		}
 
+		/*
 		if (Input.GetMouseButtonDown(0) && _previewCube.CanRotate)
 		{
+			Debug.Log("Input del mouse.");
 			OnDragStarted();
 		}
 
@@ -58,8 +61,8 @@ public class CubeDragRotator : MonoBehaviour
 		{
 			OnDragFinished();
 		}
-
-		if (_isDragging && _previewCube.CanRotate)
+		*/
+		if (IsDragging && _previewCube.CanRotate)
 		{
 			Rotate();
 		}
@@ -67,15 +70,17 @@ public class CubeDragRotator : MonoBehaviour
 
 	public void OnDragStarted()
 	{
+		Debug.Log("Drag Started");
 		GetComponent<PreviewCube>().DisableFaceColliders();
-		_isDragging = true;
+		IsDragging = true;
 		CheckNormal();
 	}
 
 	public void OnDragFinished()
 	{
 		
-		_isDragging = false;
+		Debug.Log("Drag Finished");
+		IsDragging = false;
 		if (CurrentWorldCube != null)
 		{
 			GetComponent<SnapCubeToAxis>().Align(Callback);

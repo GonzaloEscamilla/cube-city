@@ -9,7 +9,7 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
 
     [SerializeField] private Pool[] _graphicsPool;
 
-    private CubeDragRotator dragRotator;
+    public CubeDragRotator _dragRotator;
 
     public bool IsSelected 
     {
@@ -38,7 +38,7 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
     private void Awake()
     {
         _graphicsPool = GetComponentsInChildren<Pool>();
-        dragRotator = GetComponent<CubeDragRotator>();
+        _dragRotator = GetComponent<CubeDragRotator>();
     }
 
     private void OnEnable()
@@ -79,7 +79,7 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
 
     public void SetFacesGraphics(CubeBehaviour cube)
     {
-        dragRotator.CurrentWorldCube = cube.transform;
+        _dragRotator.CurrentWorldCube = cube.transform;
 
         ClearGraphics();
 
