@@ -32,5 +32,5 @@ MonoBehaviour:
     - name: ParkArera
       amount: 0
     - name: ResidentialArea
-      amount: 18
-  amountOfCubes: 3
+      amount: 30
+  amountOfCubes: 5
