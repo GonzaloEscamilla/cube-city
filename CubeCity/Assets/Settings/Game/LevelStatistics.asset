@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63aab46e443c52c478d4abc492270fac, type: 3}
+  m_Name: LevelStatistics
+  m_EditorClassIdentifier: 
+  _maxCubeAmount: 0
+  _currentCubeAmount: 28
+  _timeThreshold: 0
+  _elapsedTime: 0
+  _resources:
+    name: 
+    resources:
+    - name: Prosperity
+      amount: 0
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 0
+    - name: Wealth
+      amount: 0

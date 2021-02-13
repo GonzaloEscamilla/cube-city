@@ -22,7 +22,7 @@ MonoBehaviour:
   _facesDistribution:
     distribution:
     - name: BusinessArea
-      amount: 0
+      amount: 20
     - name: CommercialArea
       amount: 0
     - name: GarbagedumpArea
@@ -33,4 +33,4 @@ MonoBehaviour:
       amount: 0
     - name: ResidentialArea
       amount: 29
-  amountOfCubes: 5
+  amountOfCubes: 8
