@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private SoundsDefinition soundsDefinition;
+    private Dictionary<string, FMOD.Studio.EventInstance> AllSounds = new Dictionary<string, FMOD.Studio.EventInstance>();
+
+    private void Awake()
     {
-        
+        Init();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Init()
     {
-        
+        InstantiateAllSounds();
+    }
+
+    public void PlayOneShoot(string Name)
+    {
+
+    }
+
+    private void InstantiateAllSounds()
+    {
+        foreach (SoundsDefinition.OneShootCubeSound cubeSound in soundsDefinition.CubeSounds)
+        {
+            FMOD.Studio.EventInstance newSound = FMODUnity.RuntimeManager.CreateInstance(cubeSound.SoundEvent);
+            AllSounds.Add(cubeSound.Name, newSound);
+        }
+
+        foreach (SoundsDefinition.OneShootUISound uiSound in soundsDefinition.UISounds)
+        {
+            FMOD.Studio.EventInstance newSound = FMODUnity.RuntimeManager.CreateInstance(uiSound.SoundEvent);
+            AllSounds.Add(uiSound.Name, newSound);
+        }
     }
 }

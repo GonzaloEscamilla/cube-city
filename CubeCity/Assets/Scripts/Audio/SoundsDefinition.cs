@@ -4,7 +4,7 @@ using UnityEngine;
 using FMODUnity;
 
 [CreateAssetMenu(fileName = "Sounds", menuName = "ScriptableObjects/Audio/Sounds", order = 1)]
-public class SoundsSO : ScriptableObject
+public class SoundsDefinition : ScriptableObject
 {
     [Space(10f)]
     [Header("One Shoots")]
