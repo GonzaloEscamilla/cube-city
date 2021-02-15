@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    private SoundsDefinition soundsDefinition;
-    private Dictionary<string, FMOD.Studio.EventInstance> AllSounds = new Dictionary<string, FMOD.Studio.EventInstance>();
+    [SerializeField] private SoundsDefinition soundsDefinition;
+    [SerializeField] private Dictionary<string, FMOD.Studio.EventInstance> AllSounds = new Dictionary<string, FMOD.Studio.EventInstance>();
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayOneShoot(string Name)
     {
-
+        AllSounds[Name].start();
     }
 
     private void InstantiateAllSounds()

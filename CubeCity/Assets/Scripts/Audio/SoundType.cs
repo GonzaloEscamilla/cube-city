@@ -16,3 +16,20 @@ public enum UISound
     SceneFadeIn,
     SceneFadeOut,
 }
+
+public enum BonusSound
+{
+    ComboPositive,
+    ComboNegative,
+    PowerUp,
+}
+
+public enum LevelClipSound
+{
+    SmallSuburb,
+    GreenCommunity,
+    Downtown,
+    Countryside,
+    BigCity,
+    Metropolis,
+}

@@ -28,4 +28,24 @@ MonoBehaviour:
     SoundEvent: 
   - Name: SceneFadeOut
     SoundEvent: 
+  BonusSounds:
+  - Name: ComboPositive
+    SoundEvent: 
+  - Name: ComboNegative
+    SoundEvent: 
+  - Name: PowerUp
+    SoundEvent: 
+  LevelClips:
+  - Name: SmallSuburb
+    SoundEvent: 
+  - Name: GreenCommunity
+    SoundEvent: 
+  - Name: Downtown
+    SoundEvent: 
+  - Name: Countryside
+    SoundEvent: 
+  - Name: BigCity
+    SoundEvent: 
+  - Name: Metropolis
+    SoundEvent: 
   None: 0

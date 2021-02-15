@@ -15,6 +15,7 @@ public class Level : ScriptableObject
     [SerializeField] private FacesDistribution _facesDistribution = new FacesDistribution();
     [SerializeField] [ReadOnlyAttribute] private int amountOfCubes;
 
+
     private void OnValidate()
     {
         amountOfCubes = _facesDistribution.GetTotalRemainingFaces() / 6;
