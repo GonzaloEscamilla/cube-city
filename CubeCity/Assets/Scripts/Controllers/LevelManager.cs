@@ -231,6 +231,8 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     private void OnBuildFinish()
     {
+        SoundManager.Instance.PlayOneShoot(CubeSound.CubePlaced.ToString());
+
         _cubeIsMoving = false;
         CubeBehaviour currentCube = _spawner.GetCurrentCube();
 

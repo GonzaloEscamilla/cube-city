@@ -31,7 +31,7 @@ public enum UISound
     TextboxWriting,
     PlayButton,
     AchivementAcomplished,
-    ResourcesUpdate
+    ResourcesUpdate,
 }
 
 public enum BonusSound
@@ -53,5 +53,6 @@ public enum LevelClipSound
 
 public enum AmbienceSound
 {
-    Ambience
+    Ambience1,
+    Ambience2
 }

@@ -18,20 +18,20 @@ MonoBehaviour:
   - Name: CubeMovement
     SoundEvent: 
   - Name: CubePlaced
-    SoundEvent: 
+    SoundEvent: event:/Oneshots/CubeSound/CubePlaced
   - Name: CubeError
-    SoundEvent: 
+    SoundEvent: event:/Oneshots/CubeSound/CubeError
   - Name: CubeRotated
-    SoundEvent: 
+    SoundEvent: event:/Oneshots/CubeSound/CubeRotated
   - Name: PreviewCubeMoved
-    SoundEvent: 
+    SoundEvent: event:/Oneshots/CubeSound/PreviewCubeMoved
   - Name: PreviewCubeRotationStarted
-    SoundEvent: 
+    SoundEvent: event:/Oneshots/CubeSound/CubeRotated
   - Name: PreviewCubeSnaped
     SoundEvent: 
   UISounds:
   - Name: TapButton
-    SoundEvent: 
+    SoundEvent: event:/Oneshots/UISound/TapButton
   - Name: SwitchButton
     SoundEvent: 
   - Name: CancelButton
@@ -81,5 +81,10 @@ MonoBehaviour:
   - Name: BigCity
     SoundEvent: 
   - Name: Metropolis
+    SoundEvent: 
+  AmbienceSounds:
+  - Name: Ambience1
+    SoundEvent: 
+  - Name: Ambience2
     SoundEvent: 
   None: 0

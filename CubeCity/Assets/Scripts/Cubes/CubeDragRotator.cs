@@ -70,7 +70,7 @@ public class CubeDragRotator : MonoBehaviour
 
 	public void OnDragStarted()
 	{
-		Debug.Log("Drag Started");
+		SoundManager.Instance.PlayOneShoot(CubeSound.PreviewCubeRotationStarted.ToString());
 		GetComponent<PreviewCube>().DisableFaceColliders();
 		IsDragging = true;
 		CheckNormal();

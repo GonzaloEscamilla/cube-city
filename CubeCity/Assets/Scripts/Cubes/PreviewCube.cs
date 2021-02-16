@@ -135,6 +135,7 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
 
     private void SetPosition(Face selectedFace)
     {
+        SoundManager.Instance.PlayOneShoot(CubeSound.PreviewCubeMoved.ToString());
         DisableFaceColliders();
 
         this.transform.position = selectedFace.GetPreviewCubePosition();

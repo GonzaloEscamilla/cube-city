@@ -41,6 +41,7 @@ public class SoundsDefinition : ScriptableObject
     [System.Serializable]
     public class LevelClip : Sound { }
 
+    [System.Serializable]
     public class Ambience: Sound { }
 
     private bool _isInitialized = false;
@@ -131,7 +132,7 @@ public class SoundsDefinition : ScriptableObject
         {
             for (int i = 0; i < diference; i++)
             {
-                CubeSounds.RemoveAt(UISounds.Count - 1);
+                CubeSounds.RemoveAt((UISounds.Count - 1));
             }
         }
 
