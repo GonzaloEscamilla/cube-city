@@ -16,8 +16,6 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] bool[] completedObjectives;
 
-    [SerializeField] PreviewCube _previewCube;
-
     /// <summary>
     /// The current level running on the scene.
     /// </summary>

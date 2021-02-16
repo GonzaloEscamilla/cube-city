@@ -15,18 +15,52 @@ MonoBehaviour:
   CubeSounds:
   - Name: CubeCreated
     SoundEvent: 
-  - Name: CubeRotated
-    SoundEvent: 
   - Name: CubeMovement
     SoundEvent: 
-  - Name: CubeSelected
+  - Name: CubePlaced
+    SoundEvent: 
+  - Name: CubeError
+    SoundEvent: 
+  - Name: CubeRotated
+    SoundEvent: 
+  - Name: PreviewCubeMoved
+    SoundEvent: 
+  - Name: PreviewCubeRotationStarted
+    SoundEvent: 
+  - Name: PreviewCubeSnaped
     SoundEvent: 
   UISounds:
   - Name: TapButton
     SoundEvent: 
+  - Name: SwitchButton
+    SoundEvent: 
+  - Name: CancelButton
+    SoundEvent: 
+  - Name: TabButton
+    SoundEvent: 
+  - Name: BuyButton
+    SoundEvent: 
+  - Name: RewardButton
+    SoundEvent: 
+  - Name: CheckBoxButton
+    SoundEvent: 
+  - Name: MoveOpenMenu
+    SoundEvent: 
+  - Name: MoveCloseMenu
+    SoundEvent: 
   - Name: SceneFadeIn
     SoundEvent: 
   - Name: SceneFadeOut
+    SoundEvent: 
+  - Name: PopupMessage
+    SoundEvent: 
+  - Name: TextboxWriting
+    SoundEvent: 
+  - Name: PlayButton
+    SoundEvent: 
+  - Name: AchivementAcomplished
+    SoundEvent: 
+  - Name: ResourcesUpdate
     SoundEvent: 
   BonusSounds:
   - Name: ComboPositive

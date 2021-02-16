@@ -14,6 +14,7 @@ public class SoundsDefinition : ScriptableObject
     public List<OneShootUISound> UISounds;
     public List<OneShootBonusSound> BonusSounds;
     public List<LevelClip> LevelClips;
+    public List<Ambience> AmbienceSounds;
 
     [Space(10f)]
     [Header("Music")]
@@ -40,6 +41,8 @@ public class SoundsDefinition : ScriptableObject
     [System.Serializable]
     public class LevelClip : Sound { }
 
+    public class Ambience: Sound { }
+
     private bool _isInitialized = false;
 
     private void OnEnable()
@@ -51,6 +54,7 @@ public class SoundsDefinition : ScriptableObject
             UISounds = new List<OneShootUISound>();
             BonusSounds = new List<OneShootBonusSound>();
             LevelClips = new List<LevelClip>();
+            AmbienceSounds = new List<Ambience>();
 
             for (int i = 0; i < System.Enum.GetNames(typeof(CubeSound)).Length; i++)
             {
@@ -76,9 +80,14 @@ public class SoundsDefinition : ScriptableObject
                 LevelClips[i].Name = ((LevelClipSound)i).ToString();
             }
 
+            for (int i = 0; i < System.Enum.GetNames(typeof(AmbienceSound)).Length; i++)
+            {
+                AmbienceSounds.Add(new Ambience());
+                AmbienceSounds[i].Name = ((AmbienceSound)i).ToString();
+            }
+
             _isInitialized = true;
         }
-
     }
 
     [ContextMenu("Refresh")]
@@ -88,6 +97,7 @@ public class SoundsDefinition : ScriptableObject
         RefreshUISounds();
         RefreshBonusSounds();
         RefreshLevelClipSounds();
+        RefreshLevelAmbienceSounds();
     }
 
     private void RefreshCubeSounds()
@@ -179,6 +189,29 @@ public class SoundsDefinition : ScriptableObject
         for (int i = 0; i < LevelClips.Count; i++)
         {
             LevelClips[i].Name = ((LevelClipSound)i).ToString();
+        }
+    }
+
+    private void RefreshLevelAmbienceSounds()
+    {
+        int diference = AmbienceSounds.Count - System.Enum.GetNames(typeof(AmbienceSound)).Length;
+
+        if (diference > 0)
+        {
+            for (int i = 0; i < diference; i++)
+            {
+                AmbienceSounds.RemoveAt(AmbienceSounds.Count - 1);
+            }
+        }
+
+        for (int i = AmbienceSounds.Count; i < System.Enum.GetNames(typeof(AmbienceSound)).Length; i++)
+        {
+            AmbienceSounds.Add(new Ambience());
+        }
+
+        for (int i = 0; i < AmbienceSounds.Count; i++)
+        {
+            AmbienceSounds[i].Name = ((AmbienceSound)i).ToString();
         }
     }
 }

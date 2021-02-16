@@ -34,8 +34,8 @@ public class LevelUIManager : MonoBehaviour
 
     public void StatisticsUpdateEvent()
     {
-        txtCubeAmount.text = "CurrentCubeAmount: " + _levelStatistics.CurrentCubeAmount.ToString();
-        txtTime.text = "CurrentTimeIs: " + _levelStatistics.ElapsedTime.ToString();
+        // txtCubeAmount.text = "CurrentCubeAmount: " + _levelStatistics.CurrentCubeAmount.ToString();
+        // txtTime.text = "CurrentTimeIs: " + _levelStatistics.ElapsedTime.ToString();
     }
 
 }

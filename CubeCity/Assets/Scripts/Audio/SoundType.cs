@@ -5,16 +5,33 @@ using UnityEngine;
 public enum CubeSound
 {
     CubeCreated,
-    CubeRotated,
     CubeMovement,
-    CubeSelected,
+    CubePlaced,
+    CubeError,
+    CubeRotated,
+    PreviewCubeMoved,
+    PreviewCubeRotationStarted,
+    PreviewCubeSnaped
 }
 
 public enum UISound
 {
     TapButton,
+    SwitchButton,
+    CancelButton,
+    TabButton,
+    BuyButton,
+    RewardButton,
+    CheckBoxButton,
+    MoveOpenMenu,
+    MoveCloseMenu,
     SceneFadeIn,
     SceneFadeOut,
+    PopupMessage,
+    TextboxWriting,
+    PlayButton,
+    AchivementAcomplished,
+    ResourcesUpdate
 }
 
 public enum BonusSound
@@ -32,4 +49,9 @@ public enum LevelClipSound
     Countryside,
     BigCity,
     Metropolis,
+}
+
+public enum AmbienceSound
+{
+    Ambience
 }
