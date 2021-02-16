@@ -13,7 +13,7 @@ Material:
     _NORMALMAP _RECEIVE_SHADOWS_OFF _SOFTPARTICLES_ON
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: 3050
   stringTagMap:
     RenderType: Transparent
@@ -71,7 +71,7 @@ Material:
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
     - _ColorMode: 3
-    - _Cull: 2
+    - _Cull: 0
     - _Cutoff: 0.4
     - _DetailNormalMapScale: 1
     - _DistortionBlend: 0.552
