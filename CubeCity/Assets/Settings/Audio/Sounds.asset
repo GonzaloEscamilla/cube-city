@@ -18,13 +18,13 @@ MonoBehaviour:
   - Name: CubeMovement
     SoundEvent: 
   - Name: CubePlaced
-    SoundEvent: 
-  - Name: CubeError
-    SoundEvent: 
-  - Name: CubeRotated
     SoundEvent: event:/Oneshots/CubeSound/CubePlaced
-  - Name: PreviewCubeMoved
+  - Name: CubeError
+    SoundEvent: event:/Oneshots/CubeSound/CubeError
+  - Name: CubeRotated
     SoundEvent: 
+  - Name: PreviewCubeMoved
+    SoundEvent: event:/Oneshots/CubeSound/PreviewCubeMoved
   - Name: PreviewCubeRotationStarted
     SoundEvent: 
   - Name: PreviewCubeSnaped
