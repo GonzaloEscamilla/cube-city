@@ -18,20 +18,20 @@ MonoBehaviour:
   - Name: CubeMovement
     SoundEvent: 
   - Name: CubePlaced
-    SoundEvent: event:/Oneshots/CubeSound/CubePlaced
+    SoundEvent: 
   - Name: CubeError
-    SoundEvent: event:/Oneshots/CubeSound/CubeError
+    SoundEvent: 
   - Name: CubeRotated
-    SoundEvent: event:/Oneshots/CubeSound/CubeRotated
+    SoundEvent: event:/Oneshots/CubeSound/CubePlaced
   - Name: PreviewCubeMoved
-    SoundEvent: event:/Oneshots/CubeSound/PreviewCubeMoved
+    SoundEvent: 
   - Name: PreviewCubeRotationStarted
-    SoundEvent: event:/Oneshots/CubeSound/CubeRotated
+    SoundEvent: 
   - Name: PreviewCubeSnaped
     SoundEvent: 
   UISounds:
   - Name: TapButton
-    SoundEvent: event:/Oneshots/UISound/TapButton
+    SoundEvent: 
   - Name: SwitchButton
     SoundEvent: 
   - Name: CancelButton
