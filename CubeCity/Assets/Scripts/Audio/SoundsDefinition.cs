@@ -44,50 +44,55 @@ public class SoundsDefinition : ScriptableObject
     [System.Serializable]
     public class Ambience: Sound { }
 
-    private bool _isInitialized = false;
+    private bool _isInitialized = true;
 
     private void OnEnable()
     {
         if (!_isInitialized)
         {
-
-            CubeSounds = new List<OneShootCubeSound>();
-            UISounds = new List<OneShootUISound>();
-            BonusSounds = new List<OneShootBonusSound>();
-            LevelClips = new List<LevelClip>();
-            AmbienceSounds = new List<Ambience>();
-
-            for (int i = 0; i < System.Enum.GetNames(typeof(CubeSound)).Length; i++)
-            {
-                CubeSounds.Add(new OneShootCubeSound());
-                CubeSounds[i].Name = ((CubeSound) i).ToString();
-            }
-            
-            for (int i = 0; i < System.Enum.GetNames(typeof(UISound)).Length; i++)
-            {
-                UISounds.Add(new OneShootUISound());
-                UISounds[i].Name = ((UISound)i).ToString();
-            }
-
-            for (int i = 0; i < System.Enum.GetNames(typeof(BonusSound)).Length; i++)
-            {
-                BonusSounds.Add(new OneShootBonusSound());
-                BonusSounds[i].Name = ((BonusSound)i).ToString();
-            }
-
-            for (int i = 0; i < System.Enum.GetNames(typeof(LevelClipSound)).Length; i++)
-            {
-                LevelClips.Add(new LevelClip());
-                LevelClips[i].Name = ((LevelClipSound)i).ToString();
-            }
-
-            for (int i = 0; i < System.Enum.GetNames(typeof(AmbienceSound)).Length; i++)
-            {
-                AmbienceSounds.Add(new Ambience());
-                AmbienceSounds[i].Name = ((AmbienceSound)i).ToString();
-            }
+            Initialize();
 
             _isInitialized = true;
+        }
+    }
+
+    [ContextMenu("Initialize")]
+    private void Initialize()
+    {
+        CubeSounds = new List<OneShootCubeSound>();
+        UISounds = new List<OneShootUISound>();
+        BonusSounds = new List<OneShootBonusSound>();
+        LevelClips = new List<LevelClip>();
+        AmbienceSounds = new List<Ambience>();
+
+        for (int i = 0; i < System.Enum.GetNames(typeof(CubeSound)).Length; i++)
+        {
+            CubeSounds.Add(new OneShootCubeSound());
+            CubeSounds[i].Name = ((CubeSound)i).ToString();
+        }
+
+        for (int i = 0; i < System.Enum.GetNames(typeof(UISound)).Length; i++)
+        {
+            UISounds.Add(new OneShootUISound());
+            UISounds[i].Name = ((UISound)i).ToString();
+        }
+
+        for (int i = 0; i < System.Enum.GetNames(typeof(BonusSound)).Length; i++)
+        {
+            BonusSounds.Add(new OneShootBonusSound());
+            BonusSounds[i].Name = ((BonusSound)i).ToString();
+        }
+
+        for (int i = 0; i < System.Enum.GetNames(typeof(LevelClipSound)).Length; i++)
+        {
+            LevelClips.Add(new LevelClip());
+            LevelClips[i].Name = ((LevelClipSound)i).ToString();
+        }
+
+        for (int i = 0; i < System.Enum.GetNames(typeof(AmbienceSound)).Length; i++)
+        {
+            AmbienceSounds.Add(new Ambience());
+            AmbienceSounds[i].Name = ((AmbienceSound)i).ToString();
         }
     }
 
