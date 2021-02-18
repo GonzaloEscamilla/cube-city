@@ -10,6 +10,7 @@ public class Level : ScriptableObject
 
     [SerializeField] private List<LevelConstraints> _levelConstraints = new List<LevelConstraints>(); 
     [SerializeField] private List<LevelObjective> _objectives = new List<LevelObjective>();
+    [SerializeField] private List<LevelSecondaryObjective> _secondaryObjetives = new List<LevelSecondaryObjective>();
     
     static FaceTypes[] faceTypes = (FaceTypes[]) Enum.GetValues(typeof(FaceTypes));
     [SerializeField] private FacesDistribution _facesDistribution = new FacesDistribution();
@@ -40,14 +41,25 @@ public class Level : ScriptableObject
         }
     }
 
+    public LevelSecondaryObjective[] GetSecondaryObjetives()
+    {
+        if (_secondaryObjetives.Count > 0)
+            return _secondaryObjetives.ToArray();
+        else
+        {
+            Debug.LogError("The level don't have secondary objetives.");
+            return null;
+        }
+    }
+
     public bool HasConstraints()
     {
-        return _levelConstraints != null;
+        return _levelConstraints.Count != 0;
     }
 
     public LevelConstraints[] GetLevelConstraints()
     {
-        if (_levelConstraints != null)
+        if (_levelConstraints.Count != 0)
         {
             return _levelConstraints.ToArray();
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "LevelsSettings", menuName = "ScriptableObjects/LevelSystem/LevelsSettings", order = 0)]
-public class LevelsSO : ScriptableObject
+public class LevelsSettingsSO : ScriptableObject
 {
     [SerializeField] private Level _currentLevel;
     
@@ -26,7 +26,7 @@ public class LevelsSO : ScriptableObject
     {
         if (_currentLevel != null)
         {
-            //Debug.Log("CurrentLevel = " + _currentLevel);
+            Debug.Log("CurrentLevel = " + _currentLevel);
             return _currentLevel;
         }
         else

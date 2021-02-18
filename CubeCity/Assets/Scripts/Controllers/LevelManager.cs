@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager control;
     [SerializeField] private GameSettingsSO _gameSettings;
-    [SerializeField] private LevelsSO _levelSystem;
+    [SerializeField] private LevelsSettingsSO _levelsSettings;
     [SerializeField] private LevelStatistics _levelStatistics;
     [SerializeField] private FaceCollisionHandler _faceCollisionHandler;
     [SerializeField] private AdjacencyBonusesSO _adjacencyBonusesSO;
@@ -104,7 +104,7 @@ public class LevelManager : MonoBehaviour
     public void SetCurrentLevelPresets()
     {
         // TODO: Aca deberian setearse todas las cosas importantes del nivel, como seteos de dificultad, objetivos iluminacion todo todo.
-        _currentLevel = _levelSystem.GetCurrentLevel();
+        _currentLevel = _levelsSettings.GetCurrentLevel();
 
         // Resetear el ScriptableObject a sus valores por defecto.
         _levelStatistics.Reset();
@@ -187,7 +187,7 @@ public class LevelManager : MonoBehaviour
 
         EventsManager.control.EndLevel(data);
 
-        Debug.Log("Level ended.");
+        Debug.Log("Level ended." + " you have: " + _hasWin);
     }
 
     public bool HasLevelEnded()
@@ -200,9 +200,9 @@ public class LevelManager : MonoBehaviour
         return _cubeIsMoving;
     }
 
-    public LevelsSO GetLevelSystem()
+    public LevelsSettingsSO GetLevelSystem()
     {
-        return _levelSystem;
+        return _levelsSettings;
     }
     /// <summary>
     /// Called when ever a new cube is virtualy builded on the current selected face. When this ends the builded cube starts moving towards the face.
@@ -334,8 +334,9 @@ public class LevelManager : MonoBehaviour
     private bool WinOrLoss()
     {
         LevelObjective[] objetives = _currentLevel.GetObjectives();
-        completedObjectives = new bool[objetives.Length];
+        LevelSecondaryObjective[] secondaryObjectives = _currentLevel.GetSecondaryObjetives();
 
+        completedObjectives = new bool[objetives.Length];
 
         // TODO: Esto tendria que ser algo global. Hay que implementar todo este metodo.
         bool hasWin = false;
@@ -345,7 +346,7 @@ public class LevelManager : MonoBehaviour
             switch (objetives[i].GetObjectiveType())
             {
                 case LevelObjetiveTypes.Resource:
-                    completedObjectives[i] = ConditionComparator.CompareConditions(_levelStatistics.GetResourceAmount(objetives[i].GetResoruceType()), objetives[i].GetResourceValue(), objetives[i].GetCondition());
+                    completedObjectives[i] = ConditionComparator.CompareConditions(_levelStatistics.GetResourceAmount(objetives[i].GetResourceType()), objetives[i].GetResourceValue(), objetives[i].GetCondition());
                     break;
                 default:
                     break;

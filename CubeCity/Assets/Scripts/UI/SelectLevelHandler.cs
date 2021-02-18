@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SelectLevelHandler : MonoBehaviour
 {
-    [SerializeField] private LevelsSO _levelSystem;
+    [SerializeField] private LevelsSettingsSO _levelSystem;
     [SerializeField] private Level _levelToSelect;
 
     public void LoadSelectedLevel()

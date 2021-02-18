@@ -50,7 +50,7 @@ public class EventsManager : MonoBehaviour
     public delegate void OnCubeCreated(CubeBehaviour newCube);
     public OnCubeCreated onCubeCreated;
 
-    public Action<LevelsSO> OnLevelLoaded;
+    public Action<LevelsSettingsSO> OnLevelLoaded;
 
     public Action<Vector3> OnPreviewCubeRotated;
 
@@ -111,7 +111,7 @@ public class EventsManager : MonoBehaviour
         onLevelEndEvent?.Invoke(data);
     }
 
-    public void LevelLoaded(LevelsSO levelLoaded)
+    public void LevelLoaded(LevelsSettingsSO levelLoaded)
     {
         OnLevelLoaded?.Invoke(levelLoaded);
     }

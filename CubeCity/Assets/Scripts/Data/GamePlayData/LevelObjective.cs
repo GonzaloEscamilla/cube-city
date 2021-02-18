@@ -23,7 +23,7 @@ public class LevelObjective
     /// Gets the resource type of the objetive.
     /// </summary>
     /// <returns></returns>
-    public ResourceTypes GetResoruceType()
+    public ResourceTypes GetResourceType()
     {
         return _resourceType;
     }
