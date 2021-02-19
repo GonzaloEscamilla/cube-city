@@ -14,23 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: First Steps
   _levelConstraints: []
-  _objectives:
-  - _type: 0
+  _mainObjective:
+    _type: 0
     _resourceType: 0
     _condition: 0
-    _resourceValue: 10000
+    _resourceValue: 800
+  _secondaryObjetives:
+  - _type: 0
+    _resourceType: 1
+    _condition: 0
+    _resourceValue: 10
+  - _type: 0
+    _resourceType: 2
+    _condition: 0
+    _resourceValue: 0
   _facesDistribution:
     distribution:
     - name: BusinessArea
-      amount: 20
+      amount: 0
     - name: CommercialArea
       amount: 0
     - name: GarbagedumpArea
-      amount: 1
+      amount: 4
     - name: IndustrialArea
       amount: 0
     - name: ParkArera
-      amount: 0
+      amount: 7
     - name: ResidentialArea
-      amount: 29
-  amountOfCubes: 8
+      amount: 25
+  amountOfCubes: 6

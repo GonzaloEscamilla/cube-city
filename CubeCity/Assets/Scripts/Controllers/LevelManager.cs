@@ -14,7 +14,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private FaceCollisionHandler _faceCollisionHandler;
     [SerializeField] private AdjacencyBonusesSO _adjacencyBonusesSO;
 
-    [SerializeField] bool[] completedObjectives;
+    [SerializeField] bool _mainObjectiveCompleted;
+    [SerializeField] bool[] _secondaryObjectivesCompleted;
 
     /// <summary>
     /// The current level running on the scene.
@@ -105,6 +106,9 @@ public class LevelManager : MonoBehaviour
     {
         // TODO: Aca deberian setearse todas las cosas importantes del nivel, como seteos de dificultad, objetivos iluminacion todo todo.
         _currentLevel = _levelsSettings.GetCurrentLevel();
+
+        _mainObjectiveCompleted = false;
+        _secondaryObjectivesCompleted = new bool[_currentLevel.GetSecondaryObjetives().Length];
 
         // Resetear el ScriptableObject a sus valores por defecto.
         _levelStatistics.Reset();
@@ -247,11 +251,15 @@ public class LevelManager : MonoBehaviour
 
         EventsManager.control.StatisticsUpdate();
 
+        CheckSecondaryObjectives();
+
         EvaluateLevelEnding();
         _hasWin = WinOrLoss();
 
         NextTurn();
     }
+
+   
 
     private void SubstractOverlappedFacesPoints() 
     {
@@ -333,37 +341,30 @@ public class LevelManager : MonoBehaviour
 
     private bool WinOrLoss()
     {
-        LevelObjective[] objetives = _currentLevel.GetObjectives();
-        LevelSecondaryObjective[] secondaryObjectives = _currentLevel.GetSecondaryObjetives();
-
-        completedObjectives = new bool[objetives.Length];
-
         // TODO: Esto tendria que ser algo global. Hay que implementar todo este metodo.
         bool hasWin = false;
 
-        for (int i = 0; i < objetives.Length; i++)
-        {
-            switch (objetives[i].GetObjectiveType())
-            {
-                case LevelObjetiveTypes.Resource:
-                    completedObjectives[i] = ConditionComparator.CompareConditions(_levelStatistics.GetResourceAmount(objetives[i].GetResourceType()), objetives[i].GetResourceValue(), objetives[i].GetCondition());
-                    break;
-                default:
-                    break;
-            }
-            if (i == 0)
-            {
-                hasWin = completedObjectives[i];
-            }
-            else if (i > 0)
-            {
-                hasWin = completedObjectives[i - 1] & completedObjectives[i];
-            }
-        }
+        _mainObjectiveCompleted = ConditionComparator.CompareConditions(_levelStatistics.GetResourceAmount(_currentLevel.GetMainObjective().GetResourceType()),
+                                                                                _currentLevel.GetMainObjective().GetResourceValue(),
+                                                                                _currentLevel.GetMainObjective().GetCondition());
+        hasWin = _mainObjectiveCompleted;
+
         if (hasWin)
             _isFinishPlaying = true;
 
         return hasWin;
+    }
+
+    private void CheckSecondaryObjectives()
+    {
+        LevelSecondaryObjective[] secondaryObjectives = _currentLevel.GetSecondaryObjetives();
+
+        for (int i = 0; i < _secondaryObjectivesCompleted.Length; i++)
+        {
+            _secondaryObjectivesCompleted[i] = ConditionComparator.CompareConditions(_levelStatistics.GetResourceAmount(secondaryObjectives[i].GetResourceType()),
+                                                                                secondaryObjectives[i].GetResourceValue(),
+                                                                                secondaryObjectives[i].GetCondition());
+        }
     }
 
     private void UpdateFaceStatistics()

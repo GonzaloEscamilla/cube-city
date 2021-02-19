@@ -26,7 +26,7 @@ MonoBehaviour:
   - Name: PreviewCubeMoved
     SoundEvent: event:/Oneshots/CubeSound/PreviewCubeMoved
   - Name: PreviewCubeRotationStarted
-    SoundEvent: 
+    SoundEvent: event:/Oneshots/CubeSound/CubePlaced
   - Name: PreviewCubeSnaped
     SoundEvent: 
   UISounds:
