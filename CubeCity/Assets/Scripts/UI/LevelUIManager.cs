@@ -7,9 +7,6 @@ public class LevelUIManager : MonoBehaviour
 {
     [SerializeField] private LevelStatistics _levelStatistics;
 
-    [SerializeField] private Text txtCubeAmount;
-    [SerializeField] private Text txtTime;
-
     public Button _createButton;
 
     private void OnEnable()
@@ -34,8 +31,6 @@ public class LevelUIManager : MonoBehaviour
 
     public void StatisticsUpdateEvent()
     {
-        // txtCubeAmount.text = "CurrentCubeAmount: " + _levelStatistics.CurrentCubeAmount.ToString();
-        // txtTime.text = "CurrentTimeIs: " + _levelStatistics.ElapsedTime.ToString();
     }
 
 }

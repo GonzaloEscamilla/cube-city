@@ -237,9 +237,13 @@ public class CameraController : MonoBehaviour
     {
         float elapsedTime = 0;
 
+        Vector3 initialPosition = target.position;
+
+
+        Debug.Log("Transition Time: " + transitionTime);
         while (elapsedTime <= transitionTime)
         {
-            target.position = Vector3.Lerp(target.position, newTransform.position, elapsedTime / transitionTime);
+            target.position = Vector3.Lerp(initialPosition, newTransform.position, elapsedTime / transitionTime);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -255,9 +259,13 @@ public class CameraController : MonoBehaviour
     {
         float elapsedTime = 0;
 
+        Vector3 initialPosition = target.position;
+
+        Debug.Log("Transition Time: " + transitionTime);
+
         while (elapsedTime <= transitionTime)
         {
-            target.position = Vector3.Lerp(target.position, newPosition, elapsedTime / transitionTime);
+            target.position = Vector3.Lerp(initialPosition, newPosition, elapsedTime / transitionTime);
             elapsedTime += Time.deltaTime;
             yield return null;
         }

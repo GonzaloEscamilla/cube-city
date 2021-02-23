@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialScene: 0
   _currentScene: 0
-  waitTimeToNextScene: 0
+  waitTimeToNextScene: 0.5
