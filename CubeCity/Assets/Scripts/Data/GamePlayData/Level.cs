@@ -14,7 +14,7 @@ public class Level : ScriptableObject
     
     static FaceTypes[] faceTypes = (FaceTypes[]) Enum.GetValues(typeof(FaceTypes));
     [SerializeField] private FacesDistribution _facesDistribution = new FacesDistribution();
-    [SerializeField] [ReadOnlyAttribute] private int amountOfCubes;
+    [SerializeField] private int amountOfCubes;
 
 
     private void OnValidate()
