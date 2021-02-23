@@ -1,0 +1,313 @@
+fileFormatVersion: 2
+guid: 931ef2698fb924a44aecbfce9757482d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8716518907383292248
+    second: UI Level Btn Symbols_Options
+  - first:
+      213: 7630440945806237621
+    second: UI Level Btn Symbols_Restart
+  - first:
+      213: 757761216823000803
+    second: UI Level Btn Symbols_Acept
+  - first:
+      213: -2108680425457224138
+    second: UI Level Btn Symbols_Close
+  - first:
+      213: 5567243625754293848
+    second: UI Level Btn Symbols 86x86_4
+  - first:
+      213: -52850813808505312
+    second: UI Level Btn Symbols 86x86_5
+  - first:
+      213: -7330246524232214380
+    second: UI Level Btn Symbols 86x86_6
+  - first:
+      213: -6600530756460632203
+    second: UI Level Btn Symbols 86x86_7
+  - first:
+      213: 6688457383566750332
+    second: UI Level Btn Symbols 86x86_8
+  - first:
+      213: 4487930461369096395
+    second: UI Level Btn Symbols 86x86_9
+  - first:
+      213: 1560064806395662695
+    second: UI Level Btn Symbols 86x86_10
+  - first:
+      213: -8483727312711663382
+    second: UI Level Btn Symbols 86x86_11
+  - first:
+      213: 5297140194521469513
+    second: UI Level Btn Symbols 86x86_12
+  - first:
+      213: 8285496041680124411
+    second: UI Level Btn Symbols 86x86_13
+  - first:
+      213: 5619826224331334176
+    second: UI Level Btn Symbols 86x86_14
+  - first:
+      213: 4741044435528775379
+    second: UI Level Btn Symbols 86x86_15
+  - first:
+      213: 3833441373062298089
+    second: UI Level Btn Symbols 86x86_16
+  - first:
+      213: 2397529209180453248
+    second: UI Level Btn Symbols 86x86_17
+  - first:
+      213: -8941076926487016406
+    second: UI Level Btn Symbols 86x86_18
+  - first:
+      213: -3430444009136981855
+    second: UI Level Btn Symbols 86x86_19
+  - first:
+      213: -415119573711166337
+    second: UI Level Btn Symbols 86x86_20
+  - first:
+      213: -6155921480717939234
+    second: UI Level Btn Symbols 86x86_21
+  - first:
+      213: -6252181066916515175
+    second: UI Level Btn Symbols 86x86_22
+  - first:
+      213: -7071828785602107057
+    second: UI Level Btn Symbols 86x86_23
+  - first:
+      213: -5402826748714319895
+    second: UI Level Btn Symbols 86x86_24
+  - first:
+      213: -5674777179298422294
+    second: UI Level Btn Symbols 86x86_25
+  - first:
+      213: -8678996386313900299
+    second: UI Level Btn Symbols 86x86_26
+  - first:
+      213: -6612869286263411451
+    second: UI Level Btn Symbols 86x86_27
+  - first:
+      213: 7873693601020960872
+    second: UI Level Btn Symbols 86x86_28
+  - first:
+      213: -2928627378755368964
+    second: UI Level Btn Symbols 86x86_29
+  - first:
+      213: 7187191999548557808
+    second: UI Level Btn Symbols 86x86_30
+  - first:
+      213: -8443498420246228443
+    second: UI Level Btn Symbols 86x86_31
+  - first:
+      213: -7946835647973947294
+    second: UI Level Btn Symbols 86x86_32
+  - first:
+      213: -3618710243237883541
+    second: UI Level Btn Symbols 86x86_33
+  - first:
+      213: 7318840248445955946
+    second: UI Level Btn Symbols 86x86_0
+  - first:
+      213: -6268479487707940521
+    second: UI Level Btn Symbols 86x86_1
+  - first:
+      213: 3400531406831094755
+    second: UI Level Btn Symbols 86x86_2
+  - first:
+      213: 7242626920333555338
+    second: UI Level Btn Symbols 86x86_3
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI Level Btn Symbols 86x86_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 170
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6fe378dd6eb19560800000000000000
+      internalID: 7318840248445955946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Level Btn Symbols 86x86_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 170
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75978552e13e109a0800000000000000
+      internalID: -6268479487707940521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Level Btn Symbols 86x86_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb0ab73c4d113f20800000000000000
+      internalID: 3400531406831094755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Level Btn Symbols 86x86_3
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 84
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86b92b9fcaf28460800000000000000
+      internalID: 7242626920333555338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
