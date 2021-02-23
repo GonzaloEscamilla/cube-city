@@ -13,6 +13,7 @@ public class SelectLevelHandler : MonoBehaviour
         // TODO: Agregarlo Aca
     }
 
+    [ContextMenu("Next Level")]
     public void LoadSelectedLevel()
     {
         _levelSystem.SetCurrentLevel(_levelToSelect);
