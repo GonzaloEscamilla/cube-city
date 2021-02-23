@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using System;
+using System.Linq;
 
 /// <summary>
 /// Use this class to make changes on the camera position, rotation, and zooming values.
@@ -58,13 +60,14 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        EventsManager.control.onCubeBuilded += PositionAndRorationTransition;
+        EventsManager.control.onCubeBuilded += ReCenterCamera;
         EventsManager.control.onfaceSelected += PositionAndRorationTransition;
     }
 
+ 
     private void OnDestroy()
     {
-        EventsManager.control.onCubeBuilded -= PositionAndRorationTransition;
+        EventsManager.control.onCubeBuilded -= ReCenterCamera;
         EventsManager.control.onfaceSelected -= PositionAndRorationTransition;
     }
 
@@ -213,6 +216,17 @@ public class CameraController : MonoBehaviour
 
         transitionCoroutine = StartCoroutine(Transition(newTransform, transitionTime));
     }
+
+    private void ReCenterCamera(CubeBehaviour newCube)
+    {
+        CubeBehaviour[] cubes = LevelManager.control.GetCubesBuilded().ToArray();
+        Vector3[] positions = new Vector3[cubes.Length];
+        for (int i = 0; i < positions.Length; i++)
+            positions[i] = cubes[i].transform.position;
+        
+        transitionCoroutine = StartCoroutine(Transition(MathUtils.GetGeometricCenter(positions), advanceSettings.transitionTime));
+    }
+
 
     /// <summary>
     /// Makes a Linear interpolation between to positions of the cameras target.

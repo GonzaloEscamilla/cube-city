@@ -69,7 +69,7 @@ public class CubeSpawner : MonoBehaviour
     /// <returns></returns>
     public CubeBehaviour GetInitialCube()
     {
-        _currentSpawnedCube = _cubePool.GetPooledObject(this.transform).GetComponent<CubeBehaviour>();
+        _currentSpawnedCube = GetNewCube();
 
         SetCubeFaces(_currentSpawnedCube);
 
@@ -89,11 +89,16 @@ public class CubeSpawner : MonoBehaviour
     /// <returns></returns>
     public void NextCube()
     {
-        _currentSpawnedCube = _cubePool.GetPooledObject(this.transform).GetComponent<CubeBehaviour>();
+        _currentSpawnedCube = GetNewCube();
 
         SetCubeFaces(_currentSpawnedCube);
 
         EventsManager.control.CubeCreated(_currentSpawnedCube);
+    }
+
+    public CubeBehaviour GetNewCube()
+    {
+        return _cubePool.GetPooledObject(this.transform).GetComponent<CubeBehaviour>();
     }
 
     /// <summary>

@@ -18,6 +18,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] bool _mainObjectiveCompleted;
     [SerializeField] bool[] _secondaryObjectivesCompleted;
 
+    [SerializeField] private List<CubeBehaviour> _cubesBuilded = new List<CubeBehaviour>();
+
+
     /// <summary>
     /// The current level running on the scene.
     /// </summary>
@@ -231,6 +234,11 @@ public class LevelManager : MonoBehaviour
         _levelStatistics.CurrentCubeAmount++;
     }
 
+    public List<CubeBehaviour> GetCubesBuilded()
+    {
+        return _cubesBuilded;
+    }
+
     /// <summary>
     /// Callback function. Its called when the new builded cube sets in its final position.
     /// </summary>
@@ -246,6 +254,10 @@ public class LevelManager : MonoBehaviour
         EventsManager.control.CubeBuilded(currentCube);
 
         currentCube.InitializeAdjacentFaces();
+
+        if (!_cubesBuilded.Contains(currentCube))
+            _cubesBuilded.Add(currentCube);
+
         CheckExtraPoints();
 
         UpdateFaceStatistics();
@@ -310,7 +322,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    List<List<Face>> GetCombos(CubeBehaviour cube)
+    private List<List<Face>> GetCombos(CubeBehaviour cube)
     {
         // TODO: pasar esta constante a otro lado
         const int MIN_ELEMS_FOR_COMBO = 5;
