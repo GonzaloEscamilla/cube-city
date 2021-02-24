@@ -9,7 +9,7 @@ public class UIButtonUtility : MonoBehaviour, IPointerUpHandler, IPointerDownHan
     /// <summary>
     /// The button can be preseed?
     /// </summary>
-    public bool enabledButton;
+    public bool enabledButton = true;
 
     /// <summary>
     /// Is the pointer inside the button area?

@@ -10,7 +10,7 @@ public class SelectLevelHandler : MonoBehaviour
 
     public void SetLevelToLoad(Level levelToLoad)
     {
-        // TODO: Agregarlo Aca
+        _levelToSelect = levelToLoad;
     }
 
     [ContextMenu("Next Level")]
