@@ -666,3 +666,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a67c948b9c27d4f80b747f990294c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelNameToSet: Nivel #
+  levelScoreToSet: 10000
+  levelObjectivesToSet:
+  - OBJ 1
+  - OBJ 2
+  - OBJ 3
+  levelHandler: {fileID: 0}
+  popUpLevelSelection: {fileID: 0}
+  levelToLoad: {fileID: 11400000, guid: cb182d4c156e8674ea2f5e811d705bcf, type: 2}
