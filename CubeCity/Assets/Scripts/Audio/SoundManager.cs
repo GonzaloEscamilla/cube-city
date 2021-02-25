@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class SoundManager : Singleton<SoundManager>
 {
+    [SerializeField] private StudioEventEmitter studioEventEmitter;
     [SerializeField] private SoundsDefinition soundsDefinition;
     [SerializeField] private Dictionary<string, FMOD.Studio.EventInstance> AllSounds = new Dictionary<string, FMOD.Studio.EventInstance>();
     [SerializeField] private List<string> allSound = new List<string>();
+
 
     private void Awake()
     {
@@ -18,6 +20,7 @@ public class SoundManager : Singleton<SoundManager>
     {
         InstantiateAllSounds();
         DontDestroyOnLoad(this);
+        //EventsManager.control.OnLevelLoaded += context => PlaylevelSound(); 
     }
 
     public void PlayOneShoot(string name)
@@ -129,4 +132,15 @@ public class SoundManager : Singleton<SoundManager>
             }
         }
     }
+
+    public void SetLevelSound(SoundsDefinition.LevelClip levelClip)
+    {
+        studioEventEmitter.Event = levelClip.SoundEvent;
+    }
+
+    public void PlaylevelSound()
+    {
+        studioEventEmitter.Play();
+    }
+
 }

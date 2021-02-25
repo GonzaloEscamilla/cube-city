@@ -65,6 +65,9 @@ public class SetLevelButton : ButtonComponent
                 popUpLevelSelection.levelObjectives[i].text = levelObjectivesToSet[i];
         }
 
+        if(levelToLoad != null)
+            SoundManager.Instance.SetLevelSound(levelToLoad.GetLevelClipSound());
+
         if (levelHandler != null)
             levelHandler.SetLevelToLoad(levelToLoad);
     }

@@ -15,6 +15,7 @@ public class Level : ScriptableObject
     static FaceTypes[] faceTypes = (FaceTypes[]) Enum.GetValues(typeof(FaceTypes));
     [SerializeField] private FacesDistribution _facesDistribution = new FacesDistribution();
     [SerializeField] private int amountOfCubes;
+    [SerializeField] private SoundsDefinition.LevelClip levelSound;
 
 
     private void OnValidate()
@@ -72,5 +73,10 @@ public class Level : ScriptableObject
     public FacesDistribution GetFacesDistribution()
     {
         return _facesDistribution;
+    }
+
+    public SoundsDefinition.LevelClip GetLevelClipSound()
+    {
+        return levelSound;
     }
 }
