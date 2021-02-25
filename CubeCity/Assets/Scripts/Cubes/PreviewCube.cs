@@ -43,22 +43,27 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
 
     private void OnEnable()
     {
-        EventsManager.control.onfaceSelected += SetPosition;
-        EventsManager.control.onCreateButtonPressed += ResetPosition;
-        EventsManager.control.onFaceUnselected += OnfaceUnselected;
-        EventsManager.control.onLevelEndEvent += OnLevelEnd;
+        EventsManager.Instance.onfaceSelected += SetPosition;
+        EventsManager.Instance.onCreateButtonPressed += ResetPosition;
+        EventsManager.Instance.onFaceUnselected += OnfaceUnselected;
+        EventsManager.Instance.onLevelEndEvent += OnLevelEnd;
 
-        EventsManager.control.onCubeCreated += HandleNewCube;
+        EventsManager.Instance.onCubeCreated += HandleNewCube;
     }
 
     private void OnDestroy()
     {
-        EventsManager.control.onfaceSelected -= SetPosition;
-        EventsManager.control.onCreateButtonPressed -= ResetPosition;
-        EventsManager.control.onFaceUnselected -= OnfaceUnselected;
+        if (EventsManager.Instance != null)
+        {
 
-        EventsManager.control.onCubeCreated -= HandleNewCube;
-        EventsManager.control.onLevelEndEvent -= OnLevelEnd;
+            EventsManager.Instance.onfaceSelected -= SetPosition;
+            EventsManager.Instance.onCreateButtonPressed -= ResetPosition;
+            EventsManager.Instance.onFaceUnselected -= OnfaceUnselected;
+
+            EventsManager.Instance.onCubeCreated -= HandleNewCube;
+            EventsManager.Instance.onLevelEndEvent -= OnLevelEnd;
+        }
+
     }
 
     private void Start()
@@ -141,7 +146,7 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
 
         this.transform.position = selectedFace.GetPreviewCubePosition();
         
-        EventsManager.control.PreviewCubeMoved(this);
+        EventsManager.Instance.PreviewCubeMoved(this);
     }
 
     private void OnfaceUnselected()

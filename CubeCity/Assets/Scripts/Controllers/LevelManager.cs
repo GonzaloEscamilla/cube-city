@@ -1,10 +1,10 @@
-﻿using JetBrains.Annotations;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -67,9 +67,9 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        EventsManager.control.onfaceSelected += OnFaceSelectedEvent;
-        EventsManager.control.onFaceUnselected += OnFaceUnselectedEvent;
-        EventsManager.control.onCreateButtonPressed += Build;
+        EventsManager.Instance.onfaceSelected += OnFaceSelectedEvent;
+        EventsManager.Instance.onFaceUnselected += OnFaceUnselectedEvent;
+        EventsManager.Instance.onCreateButtonPressed += Build;
 
         InitializeLevel();
     }
@@ -80,9 +80,12 @@ public class LevelManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        EventsManager.control.onfaceSelected -= OnFaceSelectedEvent;
-        EventsManager.control.onFaceUnselected -= OnFaceUnselectedEvent;
-        EventsManager.control.onCreateButtonPressed -= Build;
+        if (EventsManager.Instance != null)
+        {
+            EventsManager.Instance.onfaceSelected -= OnFaceSelectedEvent;
+            EventsManager.Instance.onFaceUnselected -= OnFaceUnselectedEvent;
+            EventsManager.Instance.onCreateButtonPressed -= Build;
+        }
     }
 
     public FaceCollisionHandler GetFaceCollidionsHandler()
@@ -100,6 +103,13 @@ public class LevelManager : MonoBehaviour
         _cubeIsMoving = false;
         SetCurrentLevelPresets();
 
+        //BuildInitialCube();
+        StartCoroutine(InitializingLevel());
+    }
+
+    private IEnumerator InitializingLevel()
+    {
+        yield return new WaitForEndOfFrame();
         BuildInitialCube();
     }
 
@@ -153,6 +163,8 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void BuildInitialCube()
     {
+        Debug.LogWarning("Build Initial Cube");
+
         CubeBehaviour initialCube;
         initialCube = _spawner.GetInitialCube();
         initialCube.transform.position = Vector3.zero;
@@ -163,6 +175,7 @@ public class LevelManager : MonoBehaviour
         }
 
         OnBuildFinish();
+        Debug.LogWarning("On Build FInish");
     }
 
     private void NextTurn()
@@ -185,7 +198,7 @@ public class LevelManager : MonoBehaviour
     public void LevelEnd(bool hasWin)
     {
         _isFinishPlaying = true;
-        EventsManager.control.onCreateButtonPressed -= Build;
+        EventsManager.Instance.onCreateButtonPressed -= Build;
 
         // TODO: completar campos del struct
         LevelEndData data = new LevelEndData();
@@ -193,7 +206,7 @@ public class LevelManager : MonoBehaviour
         data.finalResources = _levelStatistics.GetResources();
         data.timeSpent = _levelStatistics.ElapsedTime;
 
-        EventsManager.control.EndLevel(data);
+        EventsManager.Instance.EndLevel(data);
 
         Debug.Log("Level ended." + " you have: " + _hasWin);
     }
@@ -249,20 +262,22 @@ public class LevelManager : MonoBehaviour
         _cubeIsMoving = false;
         CubeBehaviour currentCube = _spawner.GetCurrentCube();
 
+        if (!_cubesBuilded.Contains(currentCube))
+            _cubesBuilded.Add(currentCube);
+
         SubstractOverlappedFacesPoints();
 
-        EventsManager.control.CubeBuilded(currentCube);
+        EventsManager.Instance.CubeBuilded(currentCube);
 
         currentCube.InitializeAdjacentFaces();
 
-        if (!_cubesBuilded.Contains(currentCube))
-            _cubesBuilded.Add(currentCube);
+       
 
         CheckExtraPoints();
 
         UpdateFaceStatistics();
 
-        EventsManager.control.StatisticsUpdate();
+        EventsManager.Instance.StatisticsUpdate();
 
         CheckSecondaryObjectives();
 

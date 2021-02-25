@@ -99,7 +99,7 @@ public class CubeDragRotator : MonoBehaviour
 	{
 		if (GetComponent<PreviewCube>())
 		{
-			EventsManager.control.PreviewCubeMoved(GetComponent<PreviewCube>());
+			EventsManager.Instance.PreviewCubeMoved(GetComponent<PreviewCube>());
 		}
 	}
 

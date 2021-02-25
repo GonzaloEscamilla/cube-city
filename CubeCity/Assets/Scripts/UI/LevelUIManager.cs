@@ -11,12 +11,15 @@ public class LevelUIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EventsManager.control.OnStatisticsUpdate += StatisticsUpdateEvent;
+        EventsManager.Instance.OnStatisticsUpdate += StatisticsUpdateEvent;
     }
 
     private void OnDisable()
     {
-        EventsManager.control.OnStatisticsUpdate -= StatisticsUpdateEvent;
+        if (EventsManager.Instance != null)
+        {
+            EventsManager.Instance.OnStatisticsUpdate -= StatisticsUpdateEvent;
+        }
     }
 
     private void Start()
@@ -26,7 +29,7 @@ public class LevelUIManager : MonoBehaviour
 
     public void CreateNewCube()
     {
-        EventsManager.control.CreateButtonPressed();
+        EventsManager.Instance.CreateButtonPressed();
     }
 
     public void StatisticsUpdateEvent()

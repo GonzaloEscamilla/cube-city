@@ -15,7 +15,7 @@ public class UILevelEnd : MonoBehaviour
 
     private void Init()
     {
-        EventsManager.control.onLevelEndEvent += OnLevelEnd;
+        EventsManager.Instance.onLevelEndEvent += OnLevelEnd;
     }
 
     private void OnLevelEnd(LevelEndData data)

@@ -164,7 +164,7 @@ PlayerSettings:
   applicationIdentifier: {}
   buildNumber: {}
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 19
+  AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -670,12 +670,14 @@ PlayerSettings:
   webGLWasmStreaming: 0
   scriptingDefineSymbols: {}
   platformArchitecture: {}
-  scriptingBackend: {}
+  scriptingBackend:
+    Android: 0
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0
-  additionalIl2CppArgs: 
+  additionalIl2CppArgs: --additional-cpp="C:/Users/burgr/Documents/Unity Proyects/_Repositories/Polo2019/CubeCity/Assets/../Temp/fmod_register_static_plugins.cpp"
+    --additional-cpp="C:/Users/burgr/Documents/Unity Proyects/_Repositories/Polo2019/CubeCity/Assets/Plugins/FMOD/src/Runtime/fmod_static_plugin_support.h"
   scriptingRuntimeVersion: 1
   gcIncremental: 0
   gcWBarrierValidation: 0

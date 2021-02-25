@@ -60,15 +60,19 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        EventsManager.control.onCubeBuilded += ReCenterCamera;
-        EventsManager.control.onfaceSelected += PositionAndRorationTransition;
+        EventsManager.Instance.onCubeBuilded += ReCenterCamera;
+        EventsManager.Instance.onfaceSelected += PositionAndRorationTransition;
     }
 
  
     private void OnDestroy()
     {
-        EventsManager.control.onCubeBuilded -= ReCenterCamera;
-        EventsManager.control.onfaceSelected -= PositionAndRorationTransition;
+        if (EventsManager.Instance != null)
+        {
+            EventsManager.Instance.onCubeBuilded -= ReCenterCamera;
+            EventsManager.Instance.onfaceSelected -= PositionAndRorationTransition;
+
+        }
     }
 
     /// <summary>
@@ -223,7 +227,12 @@ public class CameraController : MonoBehaviour
         Vector3[] positions = new Vector3[cubes.Length];
         for (int i = 0; i < positions.Length; i++)
             positions[i] = cubes[i].transform.position;
-        
+
+        if (newCube == null || cubes.Length == 0)
+        {
+            transitionCoroutine = StartCoroutine(Transition(Vector3.zero, advanceSettings.transitionTime));
+        }
+
         transitionCoroutine = StartCoroutine(Transition(MathUtils.GetGeometricCenter(positions), advanceSettings.transitionTime));
     }
 
@@ -241,6 +250,8 @@ public class CameraController : MonoBehaviour
 
 
         Debug.Log("Transition Time: " + transitionTime);
+        Debug.Log("TargetInitialPosition: " + initialPosition);
+        Debug.Log("TargetNewPosition: " + newTransform.position);
         while (elapsedTime <= transitionTime)
         {
             target.position = Vector3.Lerp(initialPosition, newTransform.position, elapsedTime / transitionTime);
@@ -262,6 +273,8 @@ public class CameraController : MonoBehaviour
         Vector3 initialPosition = target.position;
 
         Debug.Log("Transition Time: " + transitionTime);
+        Debug.Log("TargetInitialPosition: " + initialPosition);
+        Debug.Log("TargetNewPosition: " + newPosition);
 
         while (elapsedTime <= transitionTime)
         {

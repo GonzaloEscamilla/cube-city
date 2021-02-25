@@ -17,14 +17,17 @@ public class CubeSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        EventsManager.control.OnPreviewCubeRotated += OnPreviewCubeRotatedEvent;
-        EventsManager.control.OnPreviewFaceCollision += OnPreviewFaceCollisionEvent;
+        EventsManager.Instance.OnPreviewCubeRotated += OnPreviewCubeRotatedEvent;
+        EventsManager.Instance.OnPreviewFaceCollision += OnPreviewFaceCollisionEvent;
     }
 
     private void OnDisable()
     {
-        EventsManager.control.OnPreviewCubeRotated -= OnPreviewCubeRotatedEvent;
-        EventsManager.control.OnPreviewFaceCollision -= OnPreviewFaceCollisionEvent;
+        if (EventsManager.Instance != null)
+        {
+            EventsManager.Instance.OnPreviewCubeRotated -= OnPreviewCubeRotatedEvent;
+            EventsManager.Instance.OnPreviewFaceCollision -= OnPreviewFaceCollisionEvent;
+        }
     }
 
     private void Awake()
@@ -45,10 +48,8 @@ public class CubeSpawner : MonoBehaviour
 
     public void Start()
     {
-        // TODO: pasar esto al enable
-        _facesDistribution = new FacesDistribution(
-            LevelManager.control.GetLevelSystem().GetCurrentLevel().GetFacesDistribution()
-        );
+        Debug.Log("Start del Spawner face dsitribution: " + LevelManager.control.GetLevelSystem().GetCurrentLevel().GetFacesDistribution());
+        _facesDistribution = new FacesDistribution(LevelManager.control.GetLevelSystem().GetCurrentLevel().GetFacesDistribution());
     }
 
     /// <summary>
@@ -73,7 +74,7 @@ public class CubeSpawner : MonoBehaviour
 
         SetCubeFaces(_currentSpawnedCube);
 
-        EventsManager.control.CubeCreated(_currentSpawnedCube);
+        EventsManager.Instance.CubeCreated(_currentSpawnedCube);
 
         return _currentSpawnedCube;
     }
@@ -93,7 +94,7 @@ public class CubeSpawner : MonoBehaviour
 
         SetCubeFaces(_currentSpawnedCube);
 
-        EventsManager.control.CubeCreated(_currentSpawnedCube);
+        EventsManager.Instance.CubeCreated(_currentSpawnedCube);
     }
 
     public CubeBehaviour GetNewCube()

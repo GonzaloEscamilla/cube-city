@@ -14,7 +14,7 @@ public class CubeBehaviour : MonoBehaviour
 
         _movement = GetComponent<Movement>();
 
-        EventsManager.control.onCubeCreated += CubeInnerSpawn;
+        EventsManager.Instance.onCubeCreated += CubeInnerSpawn;
     }
 
     /// <summary>

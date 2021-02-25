@@ -14,12 +14,15 @@ public class VFXEventManager : Singleton<VFXEventManager>
 
     private void OnEnable()
     {
-        EventsManager.control.onCubeBuilded += OnCubeBuildedEffect;
+        EventsManager.Instance.onCubeBuilded += OnCubeBuildedEffect;
     }
 
     private void OnDisable()
     {
-        EventsManager.control.onCubeBuilded -= OnCubeBuildedEffect;
+        if (EventsManager.Instance != null)
+        {
+            EventsManager.Instance.onCubeBuilded -= OnCubeBuildedEffect;
+        }
     }
 
     public Action<Face> onCubeBuildedEffect;

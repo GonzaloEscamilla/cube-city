@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 /// <summary>
 /// This class is used for managing all the inputs coming from the user and distributing them for their desired implementation.
@@ -118,6 +119,12 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
+        if (Camera.main == null)
+        {
+            Debug.LogWarning("There is not a main camera");
+            return;
+        }
+
         UISelectedVerification();
 
         if (LevelManager.control.GameSettings.EditorMode)
@@ -125,6 +132,16 @@ public class InputManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                Debug.Log("Mouse Input");
+                if (Camera.main != null)
+                {
+                    Debug.LogWarning("I ahve a  main camera");
+                }
+
+                Debug.Log("PreviewCube: " + previewCube);
+                Debug.Log("RaySelector: " + raySelector);
+                Debug.Log("Camera.Main: " + Camera.main.name);
+                Debug.Log("Input.MousePosition: " + Input.mousePosition);
                 previewCube.TapStartedOnPreviewCube = raySelector.TapStartedOnPreviewCube(Camera.main, Input.mousePosition);
 
                 Tap();
@@ -157,6 +174,17 @@ public class InputManager : MonoBehaviour
             else
                 isUISelected = false;
 
+            Debug.Log("Touch Input");
+            if (Camera.main != null)
+            {
+                Debug.LogWarning("I ahve a  main camera");
+            }
+
+            Debug.Log("PreviewCube: " + previewCube);
+            Debug.Log("RaySelector: " + raySelector);
+            Debug.Log("Camera.Main: " + Camera.main.name);
+            Debug.Log("Input.MousePosition: " + Input.mousePosition);
+            Debug.Log("Input.TouchCOunt: " + Input.touchCount);
             previewCube.TapStartedOnPreviewCube = raySelector.TapStartedOnPreviewCube(Camera.main, Input.mousePosition);
         }
 

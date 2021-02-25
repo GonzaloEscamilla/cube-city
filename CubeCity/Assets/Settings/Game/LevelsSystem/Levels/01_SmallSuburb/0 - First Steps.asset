@@ -43,3 +43,6 @@ MonoBehaviour:
     - name: ResidentialArea
       amount: 6
   amountOfCubes: 6
+  levelSound:
+    Name: 
+    SoundEvent: 

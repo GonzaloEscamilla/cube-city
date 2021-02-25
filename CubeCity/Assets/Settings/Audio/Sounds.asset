@@ -31,11 +31,11 @@ MonoBehaviour:
     SoundEvent: 
   UISounds:
   - Name: TapButton
-    SoundEvent: 
+    SoundEvent: event:/Oneshots/UISound/TapButton
   - Name: SwitchButton
     SoundEvent: 
   - Name: CancelButton
-    SoundEvent: 
+    SoundEvent: event:/Oneshots/UISound/CancelButton
   - Name: TabButton
     SoundEvent: 
   - Name: BuyButton

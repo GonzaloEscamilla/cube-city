@@ -5,29 +5,13 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class EventsManager : MonoBehaviour
+public class EventsManager : Singleton<EventsManager>
 {
-    #region SINGLETON PATTERN
-    public static EventsManager _control;
-    public static EventsManager control
+    private void Awake()
     {
-        get
-        {
-            if (_control == null)
-            {
-                _control = GameObject.FindObjectOfType<EventsManager>();
-
-                if (_control == null)
-                {
-                    GameObject container = new GameObject("EventsManager");
-                    _control = container.AddComponent<EventsManager>();
-                }
-            }
-
-            return _control;
-        }
+        this.transform.parent = null;
+        DontDestroyOnLoad(this);
     }
-    #endregion
 
     public delegate void OnLevelEnd(LevelEndData data);
     public OnLevelEnd onLevelEndEvent;

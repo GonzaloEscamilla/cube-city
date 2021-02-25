@@ -26,7 +26,7 @@ public class RaycastSelectionHandler : MonoBehaviour
             if (_selection != null && !_raycastHit.transform.GetComponentInParent<PreviewCube>())
             {
                 _selection.Unselect();
-                EventsManager.control.onFaceUnselected();
+                EventsManager.Instance.onFaceUnselected();
             }
 
             _selection = _raycastHit.transform.GetComponent<IRaySelectable>();
@@ -39,7 +39,7 @@ public class RaycastSelectionHandler : MonoBehaviour
 
                     if (!_raycastHit.transform.GetComponentInParent<PreviewCube>())
                     {
-                        EventsManager.control.FaceSelected(GetSelection());
+                        EventsManager.Instance.FaceSelected(GetSelection());
                     }
                     
                     return _raycastHit.transform;
@@ -49,7 +49,7 @@ public class RaycastSelectionHandler : MonoBehaviour
         else if (_selection != null)
         {
             _selection.Unselect();
-            EventsManager.control.onFaceUnselected();
+            EventsManager.Instance.onFaceUnselected();
         }
 
         return null;
