@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0d59e8ecff4a24c86de2596d0cf080, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  EditorMode: 1
+  EditorMode: 0

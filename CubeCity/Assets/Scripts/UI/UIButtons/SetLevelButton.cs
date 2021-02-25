@@ -8,6 +8,25 @@ using UnityEngine;
 [RequireComponent(typeof(UIButtonUtility))]
 public class SetLevelButton : ButtonComponent
 {
+
+    /// <summary>
+    /// Reference to the level Handler
+    /// </summary>
+    private SelectLevelHandler levelHandler;
+
+    /// <summary>
+    /// Reference to the PopUpLevelSelection.
+    /// </summary>
+    private PopupLevelSelection popUpLevelSelection;
+
+    /// <summary>
+    /// Reference to the level to load.
+    /// </summary>
+    [SerializeField]
+    public Level levelToLoad;
+
+    [Header("Settings")]
+
     /// <summary>
     /// Level name to set to the pop up.
     /// </summary>
@@ -26,23 +45,11 @@ public class SetLevelButton : ButtonComponent
     [SerializeField]
     private string[] levelObjectivesToSet;
 
-    /// <summary>
-    /// Reference to the level Handler
-    /// </summary>
-    [SerializeField]
-    private SelectLevelHandler levelHandler;
-
-    /// <summary>
-    /// Reference to the PopUpLevelSelection.
-    /// </summary>
-    [SerializeField]
-    private PopupLevelSelection popUpLevelSelection;
-
-    /// <summary>
-    /// Reference to the level to load.
-    /// </summary>
-    [SerializeField]
-    public Level levelToLoad;
+    public void Init(SelectLevelHandler selectLevelHandler, PopupLevelSelection popupLevelSelection)
+    {
+        this.levelHandler = selectLevelHandler;
+        this.popUpLevelSelection = popupLevelSelection;
+    }
 
     /// <summary>
     /// Sets the pop up.

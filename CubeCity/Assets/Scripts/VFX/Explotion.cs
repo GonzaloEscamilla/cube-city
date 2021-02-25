@@ -7,12 +7,18 @@ public class Explotion : ParticlesHandler
 {
     private void OnEnable()
     {
-        VFXEventManager.Instance.onCubeBuildedEffect += onCubeBuilded;
+        if (VFXEventManager.Instance != null)
+        {
+            VFXEventManager.Instance.onCubeBuildedEffect += onCubeBuilded;
+        }
     }
 
     private void OnDisable()
     {
-        VFXEventManager.Instance.onCubeBuildedEffect -= onCubeBuilded;
+        if (VFXEventManager.Instance != null)
+        { 
+            VFXEventManager.Instance.onCubeBuildedEffect -= onCubeBuilded;
+        }
     }
 
     private void SetPosition(Vector3 newPosition)

@@ -6,6 +6,12 @@ using UnityEngine.Events;
 
 public class VFXEventManager : Singleton<VFXEventManager>
 {
+    private void Awake()
+    {
+        this.transform.parent = null;
+        DontDestroyOnLoad(Instance);
+    }
+
     private void OnEnable()
     {
         EventsManager.control.onCubeBuilded += OnCubeBuildedEffect;

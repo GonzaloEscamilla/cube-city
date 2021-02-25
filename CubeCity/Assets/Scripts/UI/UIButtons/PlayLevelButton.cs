@@ -5,8 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(UIButtonUtility))]
 public class PlayLevelButton : ButtonComponent
 {
-    [SerializeField]
     private SelectLevelHandler levelHandler;
+
+    private void Awake()
+    {
+        levelHandler = FindObjectOfType<SelectLevelHandler>();
+    }
 
     public override void Release()
     {

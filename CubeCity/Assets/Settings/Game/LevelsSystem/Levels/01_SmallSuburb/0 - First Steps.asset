@@ -18,7 +18,7 @@ MonoBehaviour:
     _type: 0
     _resourceType: 0
     _condition: 0
-    _resourceValue: 800
+    _resourceValue: 5500
   _secondaryObjetives:
   - _type: 0
     _resourceType: 1
@@ -31,15 +31,15 @@ MonoBehaviour:
   _facesDistribution:
     distribution:
     - name: BusinessArea
-      amount: 0
+      amount: 6
     - name: CommercialArea
-      amount: 0
+      amount: 6
     - name: GarbagedumpArea
-      amount: 4
+      amount: 6
     - name: IndustrialArea
-      amount: 0
+      amount: 6
     - name: ParkArera
-      amount: 7
+      amount: 6
     - name: ResidentialArea
-      amount: 25
+      amount: 6
   amountOfCubes: 6
