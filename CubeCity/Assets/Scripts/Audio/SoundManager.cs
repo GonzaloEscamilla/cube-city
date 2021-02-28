@@ -56,7 +56,7 @@ public class SoundManager : Singleton<SoundManager>
             }
             catch (EventNotFoundException)
             {
-                Debug.LogWarning($"The path {ambienceSound.SoundEvent} does not exist.");
+                Debug.LogWarning($"The path of {ambienceSound.Name} does not exist.");
             }
         }
     }
@@ -74,7 +74,7 @@ public class SoundManager : Singleton<SoundManager>
             }
             catch (EventNotFoundException)
             {
-                Debug.LogWarning($"The path {levelClipSound.SoundEvent} does not exist.");
+                Debug.LogWarning($"The path of {levelClipSound.Name} does not exist. Please add an event path to that sound");
             }
         }
     }
@@ -92,7 +92,7 @@ public class SoundManager : Singleton<SoundManager>
             }
             catch (EventNotFoundException)
             {
-                Debug.LogWarning($"The path {bonusSound.SoundEvent} does not exist.");
+                Debug.LogWarning($"The path of {bonusSound.Name} does not exist.");
             }
         }
     }
@@ -110,7 +110,7 @@ public class SoundManager : Singleton<SoundManager>
             }
             catch (EventNotFoundException)
             {
-                Debug.LogWarning($"The path {uiSound.SoundEvent} does not exist.");
+                Debug.LogWarning($"The path of {uiSound.Name} does not exist.");
             }
         }
     }
@@ -128,7 +128,7 @@ public class SoundManager : Singleton<SoundManager>
             }
             catch (EventNotFoundException)
             {
-                Debug.LogWarning($"The path {cubeSound.SoundEvent} does not exist.");
+                Debug.LogWarning($"The path of {cubeSound.Name} does not exist.");
             }
         }
     }

@@ -26,7 +26,6 @@ public class LevelsSettingsSO : ScriptableObject
     {
         if (_currentLevel != null)
         {
-            Debug.Log("CurrentLevel = " + _currentLevel.ToString());
             return _currentLevel;
         }
         else

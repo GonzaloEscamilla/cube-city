@@ -51,7 +51,9 @@ MonoBehaviour:
   _faceCollisionHandler: {fileID: 6648152788704384438}
   _adjacencyBonusesSO: {fileID: 11400000, guid: 1019eb64d655c52408169f5f7fe2e0f9,
     type: 2}
-  completedObjectives: 
+  _mainObjectiveCompleted: 0
+  _secondaryObjectivesCompleted: 
+  _cubesBuilded: []
   _currentSelectedFace: {fileID: 0}
 --- !u!114 &6648152788704384438
 MonoBehaviour:

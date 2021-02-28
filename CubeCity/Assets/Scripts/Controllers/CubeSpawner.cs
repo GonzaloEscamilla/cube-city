@@ -48,7 +48,6 @@ public class CubeSpawner : MonoBehaviour
 
     public void Start()
     {
-        Debug.Log("Start del Spawner face dsitribution: " + LevelManager.control.GetLevelSystem().GetCurrentLevel().GetFacesDistribution());
         _facesDistribution = new FacesDistribution(LevelManager.control.GetLevelSystem().GetCurrentLevel().GetFacesDistribution());
     }
 

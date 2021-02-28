@@ -206,7 +206,7 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
 
     private void OnValidate()
     {
-        Type = _type;
+        //Type = _type;
     }
 
     void IPoolable.Initialize()

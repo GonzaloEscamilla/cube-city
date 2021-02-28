@@ -38,7 +38,6 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
     private void Awake()
     {
         _graphicsPool = GetComponentsInChildren<Pool>();
-        _dragRotator = GetComponent<CubeDragRotator>();
     }
 
     private void OnEnable()
@@ -143,6 +142,9 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
         SoundManager.Instance.PlayOneShoot(CubeSound.PreviewCubeMoved.ToString());
 
         DisableFaceColliders();
+
+        Debug.Log("SelectedFace: " + selectedFace.name, selectedFace.gameObject);
+        Debug.Log("PreviewCubePosition: " + selectedFace.GetPreviewCubePosition());
 
         this.transform.position = selectedFace.GetPreviewCubePosition();
         

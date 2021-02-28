@@ -25,7 +25,7 @@ public class RaycastSelectionHandler : MonoBehaviour
         
         if (Physics.Raycast(_ray, out _raycastHit))
         {
-            if (_selection != null && !(_raycastHit.transform.gameObject.layer == previewCubeLayer))
+            if (_selection != null && !(previewCubeLayer == (previewCubeLayer | (1 << _raycastHit.collider.gameObject.layer))))
             {
                 _selection.Unselect();
                 EventsManager.Instance.onFaceUnselected();
@@ -39,7 +39,7 @@ public class RaycastSelectionHandler : MonoBehaviour
                 {
                     _raycastHit.transform.GetComponent<IRaySelectable>().Select();
 
-                    if (!(_raycastHit.transform.gameObject.layer == previewCubeLayer))
+                    if (!(previewCubeLayer == (previewCubeLayer | (1 << _raycastHit.collider.gameObject.layer))))
                     {
                         EventsManager.Instance.FaceSelected(GetSelection());
                     }
@@ -73,7 +73,7 @@ public class RaycastSelectionHandler : MonoBehaviour
 
         if (Physics.Raycast(_ray, out _raycastHit))
         {
-            if ((_raycastHit.transform.gameObject.layer == previewCubeLayer))
+            if ((previewCubeLayer == (previewCubeLayer | (1 << _raycastHit.collider.gameObject.layer))))
             {
                 return true;
             }

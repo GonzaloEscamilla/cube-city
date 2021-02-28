@@ -4,11 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - FaceCollider
   - SpawnPosition
   - Target
-  - PreviewCube
-  - FaceCollider
   - FacePools
+  - PreviewCube
   layers:
   - Default
   - TransparentFX
@@ -18,9 +18,9 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
   - Adjacency
   - PreviewCubeFace
+  - 
   - 
   - 
   - 

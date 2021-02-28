@@ -124,6 +124,7 @@ public class InputManager : MonoBehaviour
 
         UISelectedVerification();
 
+#if UNITY_EDITOR
         if (LevelManager.control.GameSettings.EditorMode)
         {
 
@@ -150,8 +151,7 @@ public class InputManager : MonoBehaviour
                     previewCube._dragRotator.OnDragFinished();
             }
         }
-
-
+#endif
         // Checks first of all if there is a UI element being selected.
         if (Input.touchCount > 0)
         {
@@ -162,6 +162,9 @@ public class InputManager : MonoBehaviour
                 isUISelected = false;
 
             previewCube.TapStartedOnPreviewCube = raySelector.TapStartedOnPreviewCube(cameraController.GetCamera(), Input.mousePosition);
+
+            if (previewCube.CanRotate)
+                previewCube._dragRotator.OnDragStarted();
         }
 
         if (isUISelected)
@@ -176,6 +179,8 @@ public class InputManager : MonoBehaviour
         {
             TouchEnded();
             previewCube.TapStartedOnPreviewCube = false;
+            if (previewCube._dragRotator.IsDragging)
+                previewCube._dragRotator.OnDragFinished();
         }
 
         if (Input.touchCount == 1)
@@ -239,9 +244,9 @@ public class InputManager : MonoBehaviour
         //throw new NotImplementedException();
     }
 
-    #endregion
+#endregion
 
-    #region Custom Methods
+#region Custom Methods
 
     /// <summary>
     /// Saves the initiali position of the inputs.
@@ -402,5 +407,5 @@ public class InputManager : MonoBehaviour
         isTapping = false;
     }
 
-    #endregion
+#endregion
 }

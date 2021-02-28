@@ -48,13 +48,12 @@ public class CameraController : MonoBehaviour
     /// <summary>
     /// Scene Main Camera.
     /// </summary>
-    private Camera mainCamera;
+    [SerializeField] private Camera mainCamera;
 
     private Coroutine transitionCoroutine;
 
     private void Awake()
     {
-        mainCamera = Camera.main;
         SetTarget();
     }
 
@@ -62,6 +61,7 @@ public class CameraController : MonoBehaviour
     {
         EventsManager.Instance.onCubeBuilded += ReCenterCamera;
         EventsManager.Instance.onfaceSelected += PositionAndRorationTransition;
+        mainCamera = FindObjectOfType<Camera>();
     }
 
  

@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelSystem: {fileID: 11400000, guid: a4c8ecd4bdebb3848b26a399e4989a09, type: 2}
-  _levelToSelect: {fileID: 0}
+  _levelToSelect: {fileID: 11400000, guid: cb182d4c156e8674ea2f5e811d705bcf, type: 2}
