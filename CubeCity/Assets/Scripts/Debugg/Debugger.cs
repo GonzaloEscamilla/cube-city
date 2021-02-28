@@ -14,8 +14,10 @@ public class Debugger : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 30;
+        /*
+        Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 0;
+        */
     }
 
     private void Update()
