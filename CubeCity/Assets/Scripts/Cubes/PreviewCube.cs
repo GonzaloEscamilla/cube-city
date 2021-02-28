@@ -33,7 +33,25 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
        
     }
 
-    public bool TapStartedOnPreviewCube;
+    public bool TapStartedOnPreviewCube {
+        get
+        {
+            return tapStartedOnPreviewCube;
+        }
+        set
+        {
+            tapStartedOnPreviewCube = value;
+            if (tapStartedOnPreviewCube == false)
+            {
+                IsSelected = false;
+            }
+            else
+            {
+                IsSelected = true;
+            }
+        }
+    }
+    [SerializeField] private bool tapStartedOnPreviewCube;
 
     private void Awake()
     {

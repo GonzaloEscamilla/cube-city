@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
     /// <summary>
     /// Zoom Speed.
     /// </summary>
-    [SerializeField] private int zoomSpeed = 1;
+    private float zoomSpeed = 0.1f;
 
     /// <summary>
     /// Advance Settings.
@@ -51,6 +51,15 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Camera mainCamera;
 
     private Coroutine transitionCoroutine;
+
+    private bool isZooming;
+    private Coroutine zoomingRoutine;
+    private float zoomAmountAdded;
+    private float zoomFactor = 0.25f;
+
+    private TopRigRadius topRigRadius = new TopRigRadius();
+    private MiddleRigRadius middleRigRadius = new MiddleRigRadius();
+    private BottomRigRadius bottomRigRadius = new BottomRigRadius();
 
     private void Awake()
     {
@@ -128,9 +137,71 @@ public class CameraController : MonoBehaviour
     /// <param name="zoomValue"></param>
     public void Zoom(float zoomValue)
     {
+        if (!isZooming)
+        {
+            isZooming = true;
+            zoomAmountAdded = zoomValue * zoomFactor;
+            zoomingRoutine = StartCoroutine(Zooming());
+        }
+        else
+        {
+            zoomAmountAdded += zoomValue * zoomFactor;
+        }
         // TODO: Tanto el zoom como el rotate deberian ser corutinas, para poder lerpear.
+        //CMCamera.m_Lens.FieldOfView = Mathf.Clamp(CMCamera.m_Lens.FieldOfView + (zoomValue * zoomSpeed), 15, 90);
+    }
 
-        CMCamera.m_Lens.FieldOfView = Mathf.Clamp(CMCamera.m_Lens.FieldOfView + (zoomValue * zoomSpeed), 15, 90);
+    public void ZoomStop()
+    {
+        Debug.Log("Stop zooming");
+        isZooming = false;
+    }
+
+    private IEnumerator Zooming()
+    {
+        Debug.Log("Start Zooming");
+        float zoomObjetiveTopRig = Mathf.Clamp((CMCamera.m_Orbits[0].m_Radius + zoomAmountAdded), topRigRadius.minDistance, topRigRadius.maxDistance);
+        float zoomObjetiveMiddleRig = Mathf.Clamp((CMCamera.m_Orbits[1].m_Radius + zoomAmountAdded), middleRigRadius.minDistance, middleRigRadius.maxDistance);
+        float zoomObjetiveBottomRig = Mathf.Clamp((CMCamera.m_Orbits[2].m_Radius + zoomAmountAdded), bottomRigRadius.minDistance, bottomRigRadius.maxDistance);
+
+        /*
+        while (isZooming || Mathf.Abs((zoomObjetiveMiddleRig - CMCamera.m_Orbits[1].m_Radius)) >= 1f)
+        {
+            zoomObjetiveTopRig = Mathf.Clamp((CMCamera.m_Orbits[0].m_Radius + zoomAmountAdded), topRigRadius.minDistance, topRigRadius.maxDistance);
+            zoomObjetiveMiddleRig = Mathf.Clamp((CMCamera.m_Orbits[1].m_Radius + zoomAmountAdded), middleRigRadius.minDistance, middleRigRadius.maxDistance);
+            zoomObjetiveBottomRig = Mathf.Clamp((CMCamera.m_Orbits[2].m_Radius + zoomAmountAdded), bottomRigRadius.minDistance, bottomRigRadius.maxDistance);
+
+            CMCamera.m_Orbits[0].m_Radius = Mathf.Lerp(CMCamera.m_Orbits[0].m_Radius, zoomObjetiveTopRig, zoomSpeed);
+            CMCamera.m_Orbits[1].m_Radius = Mathf.Lerp(CMCamera.m_Orbits[1].m_Radius, zoomObjetiveTopRig, zoomSpeed);
+            CMCamera.m_Orbits[2].m_Radius = Mathf.Lerp(CMCamera.m_Orbits[2].m_Radius, zoomObjetiveTopRig, zoomSpeed);
+
+            yield return null;
+        }*/
+
+        while (Mathf.Abs(zoomAmountAdded) > 0.1f || isZooming)
+        {
+            Debug.Log("Diference grater than: " + 1);
+            zoomObjetiveTopRig = Mathf.Clamp((CMCamera.m_Orbits[0].m_Radius + zoomAmountAdded), topRigRadius.minDistance, topRigRadius.maxDistance);
+            zoomObjetiveMiddleRig = Mathf.Clamp((CMCamera.m_Orbits[1].m_Radius + zoomAmountAdded), middleRigRadius.minDistance, middleRigRadius.maxDistance);
+            zoomObjetiveBottomRig = Mathf.Clamp((CMCamera.m_Orbits[2].m_Radius + zoomAmountAdded), bottomRigRadius.minDistance, bottomRigRadius.maxDistance);
+
+            CMCamera.m_Orbits[0].m_Radius = Mathf.Lerp(CMCamera.m_Orbits[0].m_Radius, zoomObjetiveTopRig, zoomSpeed);
+            CMCamera.m_Orbits[1].m_Radius = Mathf.Lerp(CMCamera.m_Orbits[1].m_Radius, zoomObjetiveTopRig, zoomSpeed);
+            CMCamera.m_Orbits[2].m_Radius = Mathf.Lerp(CMCamera.m_Orbits[2].m_Radius, zoomObjetiveTopRig, zoomSpeed);
+
+            if (zoomAmountAdded > 0)
+                zoomAmountAdded -= Time.deltaTime / 0.025f;
+            else if(zoomAmountAdded < 0)
+                zoomAmountAdded += Time.deltaTime / 0.025f;
+            else
+            {
+                CMCamera.m_Orbits[0].m_Radius = zoomObjetiveTopRig;
+                CMCamera.m_Orbits[1].m_Radius = zoomObjetiveMiddleRig;
+                CMCamera.m_Orbits[2].m_Radius = zoomObjetiveBottomRig;
+            }
+
+            yield return null;
+        }
     }
 
     /// <summary>
@@ -284,5 +355,45 @@ public class CameraController : MonoBehaviour
         /// Amount of time that takes to the camera to go from its current position to the desired one.
         /// </summary>
         public float transitionTime = 2;
+    }
+
+ 
+}
+
+
+public class RigsRadius
+{
+    public float maxDistance;
+    public float centerDistance;
+    public float minDistance;
+}
+
+public class TopRigRadius : RigsRadius
+{
+    public TopRigRadius()
+    {
+        maxDistance = 145f;
+        centerDistance = 45;
+        minDistance = 15;
+    }
+}
+
+public class MiddleRigRadius : RigsRadius
+{
+    public MiddleRigRadius()
+    {
+        maxDistance = 145f;
+        centerDistance = 45;
+        minDistance = 15;
+    }
+}
+
+public class BottomRigRadius : RigsRadius
+{
+    public BottomRigRadius()
+    {
+        maxDistance = 145f;
+        centerDistance = 45;
+        minDistance = 15;
     }
 }

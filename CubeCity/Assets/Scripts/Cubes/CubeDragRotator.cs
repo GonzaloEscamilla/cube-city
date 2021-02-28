@@ -7,8 +7,7 @@ using UnityEngine.UIElements;
 
 public class CubeDragRotator : MonoBehaviour
 {
-
-	float rotationSpeed = 0.16f;
+	float rotationSpeed = 0.3f;
     public bool IsDragging;
 
 	[SerializeField] Vector3 cubeNormal;
@@ -141,7 +140,7 @@ public class CubeDragRotator : MonoBehaviour
 			Touch touch = Input.GetTouch(0);
 
 			XaxisRotation = touch.deltaPosition.x * rotationSpeed;
-			YaxisRotation = touch.deltaPosition.y* rotationSpeed;
+			YaxisRotation = touch.deltaPosition.y * rotationSpeed;
 		}
 
 		Vector3 rotationX, rotationY;

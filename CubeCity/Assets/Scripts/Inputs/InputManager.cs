@@ -70,6 +70,7 @@ public class InputManager : MonoBehaviour
     private float elapsedTime;
     private int tapFlag;
     private bool isTapping;
+    private bool tapStartingPointVerified;
 
     // -------------------Swipe---------------------------|
 
@@ -88,7 +89,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] private float maxScale = 5.0F;
     [SerializeField] private float minimumPinchSpeed = 5.0F;
     [SerializeField] private float varianceInDistances = 5.0F;
-    [SerializeField] private float deadZone = 5f;
+    private float deadZone = 0.1f;
     private bool isZooming;
 
     private float touchDelta = 0.0F;
@@ -161,10 +162,6 @@ public class InputManager : MonoBehaviour
             else
                 isUISelected = false;
 
-            previewCube.TapStartedOnPreviewCube = raySelector.TapStartedOnPreviewCube(cameraController.GetCamera(), Input.mousePosition);
-
-            if (previewCube.CanRotate)
-                previewCube._dragRotator.OnDragStarted();
         }
 
         if (isUISelected)
@@ -181,11 +178,22 @@ public class InputManager : MonoBehaviour
             previewCube.TapStartedOnPreviewCube = false;
             if (previewCube._dragRotator.IsDragging)
                 previewCube._dragRotator.OnDragFinished();
+
+            tapStartingPointVerified = false;
         }
 
         if (Input.touchCount == 1)
         {
             firstTouch = Input.GetTouch(0);
+
+            if (!tapStartingPointVerified)
+            {
+                previewCube.TapStartedOnPreviewCube = raySelector.TapStartedOnPreviewCube(cameraController.GetCamera(), firstTouch.position);
+                tapStartingPointVerified = true;
+            }
+
+            if (previewCube.CanRotate)
+                previewCube._dragRotator.OnDragStarted();
 
             if (firstTouch.phase == TouchPhase.Began)
             {
@@ -231,13 +239,17 @@ public class InputManager : MonoBehaviour
 
                 if (isZooming)
                     Zoom();
+           
             }
             if (secondTouch.phase == TouchPhase.Ended)
             {
                 isZooming = false;
+                ZoomStop();
             }
         }
     }
+
+ 
 
     private void TouchEnded()
     {
@@ -293,10 +305,15 @@ public class InputManager : MonoBehaviour
     private void Zoom()
     {
         if ((touchDelta + varianceInDistances <= 1) && (speedTouch0 > minimumPinchSpeed) && (speedTouch1 > minimumPinchSpeed))
-            cameraController.Zoom(1);
+            cameraController.Zoom(-touchDelta);
         
         if ((touchDelta + varianceInDistances > 1) && (speedTouch0 > minimumPinchSpeed) && (speedTouch1 > minimumPinchSpeed))
-            cameraController.Zoom(-1);
+            cameraController.Zoom(-touchDelta);
+    }
+
+    private void ZoomStop()
+    {
+        cameraController.ZoomStop();
     }
 
     /// <summary>
@@ -347,7 +364,12 @@ public class InputManager : MonoBehaviour
 
         if (isTapEnabled)
         {
+#if UNITY_EDITOR
+
             selectable = raySelector.Select(cameraController.GetCamera(), Input.mousePosition);
+#else
+            selectable = raySelector.Select(cameraController.GetCamera(), Input.GetTouch(0).position);
+#endif
         }
 
         isTapping = false;

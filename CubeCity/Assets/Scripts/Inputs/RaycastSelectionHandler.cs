@@ -50,6 +50,7 @@ public class RaycastSelectionHandler : MonoBehaviour
         }
         else if (_selection != null)
         {
+            Debug.Log("No hay hit pero tenia seleccion de antes");
             _selection.Unselect();
             EventsManager.Instance.onFaceUnselected();
         }
@@ -69,6 +70,7 @@ public class RaycastSelectionHandler : MonoBehaviour
 
     public bool TapStartedOnPreviewCube(Camera currentCamera, Vector2 touchPosition)
     {
+        Debug.Log("Tap Started On Pewview Verigfication");
         _ray = currentCamera.ScreenPointToRay(touchPosition);
 
         if (Physics.Raycast(_ray, out _raycastHit))
