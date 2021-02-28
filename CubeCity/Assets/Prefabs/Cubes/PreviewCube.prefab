@@ -392,6 +392,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentRotation: {x: 0, y: 0, z: 0, w: 0}
   _graphicsPool: []
+  _dragRotator: {fileID: 0}
+  _isSelected: 0
+  TapStartedOnPreviewCube: 0
 --- !u!54 &3447531261966337561
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -450,6 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b49801bd50f5e4f926601aa4afe94a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsDragging: 0
   cubeNormal: {x: 0, y: 0, z: 0}
   _normalType: 0
   CurrentWorldCube: {fileID: 0}
@@ -492,7 +496,7 @@ PrefabInstance:
     - target: {fileID: 1217806876311530411, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1217806876311530411, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
@@ -597,7 +601,7 @@ PrefabInstance:
     - target: {fileID: 1217806876311530411, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1217806876311530411, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
@@ -702,7 +706,7 @@ PrefabInstance:
     - target: {fileID: 1217806876311530411, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1217806876311530411, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
@@ -802,7 +806,7 @@ PrefabInstance:
     - target: {fileID: 1217806876311530411, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1217806876311530411, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
@@ -902,7 +906,7 @@ PrefabInstance:
     - target: {fileID: 1217806876311530411, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1217806876311530411, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
@@ -1002,7 +1006,7 @@ PrefabInstance:
     - target: {fileID: 1217806876311530411, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1217806876311530411, guid: 3254e420c9077e94cb03006fccd08cfe,
         type: 3}

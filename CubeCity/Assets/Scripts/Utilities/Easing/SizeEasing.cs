@@ -41,7 +41,6 @@ public class SizeEasing : MonoBehaviour
             x = function(newScale.x, amount, (elapsedTime / duration));
             y = function(newScale.y, amount, (elapsedTime / duration));
             z = function(newScale.z, amount, (elapsedTime / duration));
-            Debug.Log("newScale = " + newScale.x);
 
             transform.localScale = new Vector3(x,y,z);
 

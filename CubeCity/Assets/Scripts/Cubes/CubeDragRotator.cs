@@ -40,7 +40,6 @@ public class CubeDragRotator : MonoBehaviour
 
 			if (touch.phase == TouchPhase.Began && _previewCube.CanRotate)
 			{
-				Debug.Log("Input del Touch");
 				OnDragStarted();
 			}
 			if (touch.phase == TouchPhase.Ended && _previewCube.CanRotate)
@@ -78,8 +77,6 @@ public class CubeDragRotator : MonoBehaviour
 
 	public void OnDragFinished()
 	{
-		
-		Debug.Log("Drag Finished");
 		IsDragging = false;
 		if (CurrentWorldCube != null)
 		{
@@ -88,10 +85,6 @@ public class CubeDragRotator : MonoBehaviour
 			Vector3 alignedForward = SnapCubeToAxis.NearestWorldAxis(transform.forward);
 			Vector3 alignedUp = SnapCubeToAxis.NearestWorldAxis(transform.up);
 			CurrentWorldCube.GetComponent<SnapCubeToAxis>().Align(alignedForward, alignedUp, OnSnapFinish);
-		}
-		else
-		{
-			Debug.LogWarning("You are trying to rotate a world cube that does not exist.");
 		}
 	}
 

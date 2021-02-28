@@ -248,10 +248,6 @@ public class CameraController : MonoBehaviour
 
         Vector3 initialPosition = target.position;
 
-
-        Debug.Log("Transition Time: " + transitionTime);
-        Debug.Log("TargetInitialPosition: " + initialPosition);
-        Debug.Log("TargetNewPosition: " + newTransform.position);
         while (elapsedTime <= transitionTime)
         {
             target.position = Vector3.Lerp(initialPosition, newTransform.position, elapsedTime / transitionTime);
@@ -271,10 +267,6 @@ public class CameraController : MonoBehaviour
         float elapsedTime = 0;
 
         Vector3 initialPosition = target.position;
-
-        Debug.Log("Transition Time: " + transitionTime);
-        Debug.Log("TargetInitialPosition: " + initialPosition);
-        Debug.Log("TargetNewPosition: " + newPosition);
 
         while (elapsedTime <= transitionTime)
         {

@@ -78,13 +78,11 @@ public class LevelStatistics: ScriptableObject
         if (_maxCubeAmount > 0)
         {
             noMoreCubes = CurrentCubeAmount >= _maxCubeAmount;
-            Debug.Log("No More Cubes : " + noMoreCubes);
         }
         else
             return false;
         if (_timeThreshold > 0)
         {
-            Debug.Log("Time");
             timeEnded = ElapsedTime >= _timeThreshold;
         }
         else

@@ -46,7 +46,7 @@ MonoBehaviour:
   objectToPool:
   - {fileID: 6626762366019491193, guid: 4af16d709e61a9241ac522289d65ce2c, type: 3}
   pool: []
-  startAmount: 1
+  startAmount: 20
   canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   objectToPool:
   - {fileID: 4505784502573764518, guid: 485326a2233453e4d8a0968a7b7b6371, type: 3}
   pool: []
-  startAmount: 1
+  startAmount: 20
   canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   objectToPool:
   - {fileID: 6626762366019491193, guid: 5d513e6ea6797ca4bacb70135be40e4d, type: 3}
   pool: []
-  startAmount: 1
+  startAmount: 20
   canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   objectToPool:
   - {fileID: 6626762366019491193, guid: 6b8ff6f8c146d1f489aeddefa359bd71, type: 3}
   pool: []
-  startAmount: 1
+  startAmount: 20
   canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   objectToPool:
   - {fileID: 6626762366019491193, guid: afd4b4a1b5dac524496efdb53b0f3881, type: 3}
   pool: []
-  startAmount: 1
+  startAmount: 20
   canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 0
@@ -367,7 +367,7 @@ MonoBehaviour:
   objectToPool:
   - {fileID: 6626762366019491193, guid: 7c2590cc032c29548bcba861a0255030, type: 3}
   pool: []
-  startAmount: 1
+  startAmount: 20
   canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 0

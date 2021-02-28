@@ -36,11 +36,11 @@ public class Movement : MonoBehaviour
     private bool zAxis;
 
     [Space]
-
+    /*
     public UnityEvent OnStart;
     public UnityEvent OnNewPosition;
     public UnityEvent OnEnd;
-    public UnityAction action;
+    */
 
     private Coroutine _movementCoroutine;
 
@@ -88,10 +88,9 @@ public class Movement : MonoBehaviour
 
     IEnumerator Move(Vector3[] positions, float duration, Action callBack)
     {
-        action += Messange;
-        OnStart.AddListener(action);
+       // OnStart.AddListener(action);
 
-        OnStart.Invoke();
+        //OnStart.Invoke();
 
         function = EasingFunction.GetEasingFunction(type);
 
@@ -102,7 +101,7 @@ public class Movement : MonoBehaviour
 
         do
         {
-            OnStart.Invoke();
+           // OnStart.Invoke();
 
             transform.position = positions[0];
 
@@ -140,13 +139,13 @@ public class Movement : MonoBehaviour
 
                 elapsedTime = 0f;
 
-                if (i < positions.Length - 2)
-                    OnNewPosition.Invoke();
+               // if (i < positions.Length - 2)
+                   // OnNewPosition.Invoke();
             }
 
             if (!rewindOnEnd)
             {
-                OnEnd.Invoke();
+                //OnEnd.Invoke();
                 callBack.Invoke();
             }
             else
@@ -185,21 +184,16 @@ public class Movement : MonoBehaviour
 
                     elapsedTime = 0f;
 
-                    if (i > positions.Length + 2)
-                        OnNewPosition.Invoke();
+                    //if (i > positions.Length + 2)
+                       // OnNewPosition.Invoke();
                 }
 
-                OnEnd.Invoke();
+               // OnEnd.Invoke();
                 callBack.Invoke();
 
             }
         }
         while (loop);
-    }
-
-    public void Messange()
-    {
-        Mathf.Abs(5f);
     }
 
     public float GetTotalDistance(Vector3[] positions)

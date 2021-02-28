@@ -179,7 +179,6 @@ public class CubeSpawner : MonoBehaviour
         {
             if (face.GetOrientationType() == auxFaces[i].GetOrientationType())
             {
-                Debug.Log("oli");
                 auxFaces[i].SetFaceCollisionState(face.GetFaceCollisionState());
             }
         }

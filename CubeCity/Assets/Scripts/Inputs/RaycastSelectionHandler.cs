@@ -8,6 +8,8 @@ using UnityEngine;
 /// </summary>
 public class RaycastSelectionHandler : MonoBehaviour
 {
+    [SerializeField] private LayerMask previewCubeLayer;
+
     private Ray _ray;
     private RaycastHit _raycastHit;
     private IRaySelectable _selection;
@@ -23,7 +25,7 @@ public class RaycastSelectionHandler : MonoBehaviour
         
         if (Physics.Raycast(_ray, out _raycastHit))
         {
-            if (_selection != null && !_raycastHit.transform.GetComponentInParent<PreviewCube>())
+            if (_selection != null && !(_raycastHit.transform.gameObject.layer == previewCubeLayer))
             {
                 _selection.Unselect();
                 EventsManager.Instance.onFaceUnselected();
@@ -37,7 +39,7 @@ public class RaycastSelectionHandler : MonoBehaviour
                 {
                     _raycastHit.transform.GetComponent<IRaySelectable>().Select();
 
-                    if (!_raycastHit.transform.GetComponentInParent<PreviewCube>())
+                    if (!(_raycastHit.transform.gameObject.layer == previewCubeLayer))
                     {
                         EventsManager.Instance.FaceSelected(GetSelection());
                     }
@@ -71,7 +73,7 @@ public class RaycastSelectionHandler : MonoBehaviour
 
         if (Physics.Raycast(_ray, out _raycastHit))
         {
-            if (_raycastHit.transform.GetComponentInParent<PreviewCube>())
+            if ((_raycastHit.transform.gameObject.layer == previewCubeLayer))
             {
                 return true;
             }

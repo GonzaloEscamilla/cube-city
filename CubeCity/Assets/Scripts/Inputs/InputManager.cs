@@ -119,11 +119,8 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (Camera.main == null)
-        {
-            Debug.LogWarning("There is not a main camera");
+        if (cameraController.GetCamera() == null)
             return;
-        }
 
         UISelectedVerification();
 
@@ -132,17 +129,7 @@ public class InputManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Mouse Input");
-                if (Camera.main != null)
-                {
-                    Debug.LogWarning("I ahve a  main camera");
-                }
-
-                Debug.Log("PreviewCube: " + previewCube);
-                Debug.Log("RaySelector: " + raySelector);
-                Debug.Log("Camera.Main: " + Camera.main.name);
-                Debug.Log("Input.MousePosition: " + Input.mousePosition);
-                previewCube.TapStartedOnPreviewCube = raySelector.TapStartedOnPreviewCube(Camera.main, Input.mousePosition);
+                previewCube.TapStartedOnPreviewCube = raySelector.TapStartedOnPreviewCube(cameraController.GetCamera(), Input.mousePosition);
 
                 Tap();
 
@@ -174,18 +161,7 @@ public class InputManager : MonoBehaviour
             else
                 isUISelected = false;
 
-            Debug.Log("Touch Input");
-            if (Camera.main != null)
-            {
-                Debug.LogWarning("I ahve a  main camera");
-            }
-
-            Debug.Log("PreviewCube: " + previewCube);
-            Debug.Log("RaySelector: " + raySelector);
-            Debug.Log("Camera.Main: " + Camera.main.name);
-            Debug.Log("Input.MousePosition: " + Input.mousePosition);
-            Debug.Log("Input.TouchCOunt: " + Input.touchCount);
-            previewCube.TapStartedOnPreviewCube = raySelector.TapStartedOnPreviewCube(Camera.main, Input.mousePosition);
+            previewCube.TapStartedOnPreviewCube = raySelector.TapStartedOnPreviewCube(cameraController.GetCamera(), Input.mousePosition);
         }
 
         if (isUISelected)
@@ -366,7 +342,7 @@ public class InputManager : MonoBehaviour
 
         if (isTapEnabled)
         {
-            selectable = raySelector.Select(Camera.main, Input.mousePosition);
+            selectable = raySelector.Select(cameraController.GetCamera(), Input.mousePosition);
         }
 
         isTapping = false;

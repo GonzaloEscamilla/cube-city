@@ -301,7 +301,6 @@ public class LevelManager : MonoBehaviour
                 _levelStatistics.CalculateNextResources(-affectedFace.GetFaceData());
                 foreach (Face adjacentFace in affectedFace.GetAdjacentFaces())
                 {
-                    Debug.Log("AdjacentFace Type: " + adjacentFace.Type);
                     _levelStatistics.CalculateNextResources(-_adjacencyBonusesSO.GetBonusForFaces(affectedFace.Type, adjacentFace.Type));
                 }
             }
