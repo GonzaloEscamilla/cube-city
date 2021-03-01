@@ -121,7 +121,9 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         if (cameraController.GetCamera() == null)
+        {
             return;
+        }
 
         UISelectedVerification();
 

@@ -70,7 +70,7 @@ public class CameraController : MonoBehaviour
     {
         EventsManager.Instance.onCubeBuilded += ReCenterCamera;
         EventsManager.Instance.onfaceSelected += PositionAndRorationTransition;
-        mainCamera = FindObjectOfType<Camera>();
+        //mainCamera = FindObjectOfType<Camera>();
     }
 
  
@@ -109,7 +109,7 @@ public class CameraController : MonoBehaviour
     /// <returns></returns>
     public Camera GetCamera()
     {
-        return Camera.main;
+        return mainCamera;
     }
 
     /// <summary>
@@ -153,13 +153,11 @@ public class CameraController : MonoBehaviour
 
     public void ZoomStop()
     {
-        Debug.Log("Stop zooming");
         isZooming = false;
     }
 
     private IEnumerator Zooming()
     {
-        Debug.Log("Start Zooming");
         float zoomObjetiveTopRig = Mathf.Clamp((CMCamera.m_Orbits[0].m_Radius + zoomAmountAdded), topRigRadius.minDistance, topRigRadius.maxDistance);
         float zoomObjetiveMiddleRig = Mathf.Clamp((CMCamera.m_Orbits[1].m_Radius + zoomAmountAdded), middleRigRadius.minDistance, middleRigRadius.maxDistance);
         float zoomObjetiveBottomRig = Mathf.Clamp((CMCamera.m_Orbits[2].m_Radius + zoomAmountAdded), bottomRigRadius.minDistance, bottomRigRadius.maxDistance);
@@ -180,7 +178,6 @@ public class CameraController : MonoBehaviour
 
         while (Mathf.Abs(zoomAmountAdded) > 0.1f || isZooming)
         {
-            Debug.Log("Diference grater than: " + 1);
             zoomObjetiveTopRig = Mathf.Clamp((CMCamera.m_Orbits[0].m_Radius + zoomAmountAdded), topRigRadius.minDistance, topRigRadius.maxDistance);
             zoomObjetiveMiddleRig = Mathf.Clamp((CMCamera.m_Orbits[1].m_Radius + zoomAmountAdded), middleRigRadius.minDistance, middleRigRadius.maxDistance);
             zoomObjetiveBottomRig = Mathf.Clamp((CMCamera.m_Orbits[2].m_Radius + zoomAmountAdded), bottomRigRadius.minDistance, bottomRigRadius.maxDistance);

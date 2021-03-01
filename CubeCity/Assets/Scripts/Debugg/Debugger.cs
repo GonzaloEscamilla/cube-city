@@ -4,9 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Debugger : MonoBehaviour
 {
-    [SerializeField] private Text txtTargetFramerate;
-    [SerializeField] private Text txtVSyncCount;
-
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -14,15 +11,9 @@ public class Debugger : MonoBehaviour
 
     private void Start()
     {
-        /*
-        Application.targetFrameRate = 60;
+        
+        Application.targetFrameRate = 30;
         QualitySettings.vSyncCount = 0;
-        */
-    }
-
-    private void Update()
-    {
-        txtTargetFramerate.text =  "TargetFrameRate: " + Screen.currentResolution.ToString();
-        txtVSyncCount.text = "VSyncCount: " + QualitySettings.vSyncCount.ToString();
+        
     }
 }
