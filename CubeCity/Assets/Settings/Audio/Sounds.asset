@@ -26,14 +26,14 @@ MonoBehaviour:
   - Name: PreviewCubeMoved
     SoundEvent: event:/Oneshots/CubeSound/PreviewCubeMoved
   - Name: PreviewCubeRotationStarted
-    SoundEvent: event:/Oneshots/CubeSound/CubePlaced
+    SoundEvent: event:/Oneshots/CubeSound/CubeRotated
   - Name: PreviewCubeSnaped
-    SoundEvent: 
+    SoundEvent: event:/Oneshots/CubeSound/PreviewCubeSnaped
   UISounds:
   - Name: TapButton
     SoundEvent: event:/Oneshots/UISound/TapButton
   - Name: SwitchButton
-    SoundEvent: 
+    SoundEvent: event:/Oneshots/UISound/SwitchButton
   - Name: CancelButton
     SoundEvent: event:/Oneshots/UISound/CancelButton
   - Name: TabButton

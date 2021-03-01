@@ -45,4 +45,4 @@ MonoBehaviour:
   amountOfCubes: 6
   levelSound:
     Name: 
-    SoundEvent: 
+    SoundEvent: event:/BG Music/SmallSuburb
