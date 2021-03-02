@@ -9208,6 +9208,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 5722387342622938243, guid: ae6b6f77b7055c146bc023494107be98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 9130911096863467597, guid: ae6b6f77b7055c146bc023494107be98,
         type: 3}
       propertyPath: m_IsActive
@@ -9294,6 +9299,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ea19c6866bcf9df43bed160e619cd332, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 91d73db5930bbf24484d5f47f71a0499,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 91d73db5930bbf24484d5f47f71a0499,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 91d73db5930bbf24484d5f47f71a0499,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 91d73db5930bbf24484d5f47f71a0499,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 91d73db5930bbf24484d5f47f71a0499,
         type: 3}
       propertyPath: m_Name
@@ -9302,7 +9327,17 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 91d73db5930bbf24484d5f47f71a0499,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 4294967294
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 91d73db5930bbf24484d5f47f71a0499,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 91d73db5930bbf24484d5f47f71a0499,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91d73db5930bbf24484d5f47f71a0499, type: 3}

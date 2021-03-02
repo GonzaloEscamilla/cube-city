@@ -9540,6 +9540,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 5722387342622938243, guid: ae6b6f77b7055c146bc023494107be98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 9130911096863467597, guid: ae6b6f77b7055c146bc023494107be98,
         type: 3}
       propertyPath: m_IsActive
@@ -9631,6 +9636,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 81498ca6f6caf73409979b8ff01dd9d2, type: 2}
+    - target: {fileID: -1504981713932161579, guid: b93b521c5c2e4c540bad421cbaa87658,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: b93b521c5c2e4c540bad421cbaa87658,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: b93b521c5c2e4c540bad421cbaa87658,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: b93b521c5c2e4c540bad421cbaa87658,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: b93b521c5c2e4c540bad421cbaa87658,
         type: 3}
       propertyPath: m_Name
@@ -9639,7 +9664,17 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: b93b521c5c2e4c540bad421cbaa87658,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 4294967294
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b93b521c5c2e4c540bad421cbaa87658,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b93b521c5c2e4c540bad421cbaa87658,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 88861756538228313, guid: b93b521c5c2e4c540bad421cbaa87658,
         type: 3}
