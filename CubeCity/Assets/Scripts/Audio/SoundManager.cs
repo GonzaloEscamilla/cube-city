@@ -143,4 +143,13 @@ public class SoundManager : Singleton<SoundManager>
         studioEventEmitter.Play();
     }
 
+    public void SetEventParameterOneShot(string soundName, string parameterName, float value, bool lerp)
+    {
+        AllSounds[soundName].setParameterByName(parameterName, value, !lerp);
+    }
+
+    public void SetEventParameterMusic(string parameterName, float value, bool lerp)
+    {
+        studioEventEmitter.SetParameter(parameterName, value, !lerp);
+    }
 }
