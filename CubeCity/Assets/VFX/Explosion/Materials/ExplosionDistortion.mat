@@ -9,8 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: ExplosionDistortion
   m_Shader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _COLOROVERLAY_ON _DISTORTION_ON _EMISSION _FADING_ON
-    _NORMALMAP _RECEIVE_SHADOWS_OFF _SOFTPARTICLES_ON
+  m_ShaderKeywords: _ALPHATEST_ON _DISTORTION_ON _EMISSION _NORMALMAP
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
@@ -70,7 +69,7 @@ Material:
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
-    - _ColorMode: 3
+    - _ColorMode: 0
     - _Cull: 0
     - _Cutoff: 0.4
     - _DetailNormalMapScale: 1
@@ -93,7 +92,7 @@ Material:
     - _QueueOffset: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SoftParticlesEnabled: 1
+    - _SoftParticlesEnabled: 0
     - _SoftParticlesFarFadeDistance: 1
     - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
@@ -103,12 +102,12 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _BaseColor: {r: 1.1887974, g: 0.7667743, b: 0.433911, a: 1}
-    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColorAddSubDiff: {r: -1, g: 1, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 1.1887974, g: 0.7667743, b: 0.43391103, a: 1}
     - _ColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0.8113208, g: 0.6067958, b: 0.4783731, a: 1}
-    - _SoftParticleFadeParams: {r: 0, g: 1, b: 0, a: 0}
+    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &4688770957660375876
 MonoBehaviour:
   m_ObjectHideFlags: 11
