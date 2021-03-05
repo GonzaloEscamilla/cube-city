@@ -58,7 +58,7 @@ public class Movement : MonoBehaviour
         if (_movementCoroutine != null)
             StopCoroutine(_movementCoroutine);
         
-        _movementCoroutine = StartCoroutine(Move(auxPositions, movementDuration, callBack));
+        _movementCoroutine = StartCoroutine(Move(auxPositions, movementDuration, callBack, null));
     }
 
     public void StartMove(float duration, Action callBack)
@@ -66,7 +66,7 @@ public class Movement : MonoBehaviour
         if (_movementCoroutine != null)
             StopCoroutine(_movementCoroutine);
 
-        _movementCoroutine = StartCoroutine(Move(auxPositions, duration, callBack));
+        _movementCoroutine = StartCoroutine(Move(auxPositions, duration, callBack, null));
     }
 
     public void StartMove(Vector3[] positions, Action callBack)
@@ -74,7 +74,15 @@ public class Movement : MonoBehaviour
         if (_movementCoroutine != null)
             StopCoroutine(_movementCoroutine);
 
-        _movementCoroutine = StartCoroutine(Move(positions, movementDuration, callBack));
+        _movementCoroutine = StartCoroutine(Move(positions, movementDuration, callBack, null));
+    }
+
+    public void StartMove(Vector3[] positions, Action callBack, AnimationCurve curve)
+    {
+        if (_movementCoroutine != null)
+            StopCoroutine(_movementCoroutine);
+
+        _movementCoroutine = StartCoroutine(Move(positions, movementDuration, callBack, curve));
     }
 
     public void StartMove(Vector3[] positions, float duration, Action callBack)
@@ -82,11 +90,11 @@ public class Movement : MonoBehaviour
         if (_movementCoroutine != null)
             StopCoroutine(_movementCoroutine);
 
-        _movementCoroutine = StartCoroutine(Move(positions, duration, callBack));
+        _movementCoroutine = StartCoroutine(Move(positions, duration, callBack, null));
     }
 
 
-    IEnumerator Move(Vector3[] positions, float duration, Action callBack)
+    IEnumerator Move(Vector3[] positions, float duration, Action callBack, AnimationCurve curve)
     {
        // OnStart.AddListener(action);
 
@@ -116,9 +124,22 @@ public class Movement : MonoBehaviour
 
                 while (elapsedTime < durationPercentage)
                 {
-                    x = function(positions[i].x, positions[i + 1].x, (elapsedTime / durationPercentage));
-                    y = function(positions[i].y, positions[i + 1].y, (elapsedTime / durationPercentage));
-                    z = function(positions[i].z, positions[i + 1].z, (elapsedTime / durationPercentage));
+                    if (curve != null)
+                    {
+                        Debug.Log("aca");
+                        float curveValue;
+                        curveValue = curve.Evaluate(elapsedTime / durationPercentage);
+
+                        x = function(positions[i].x, positions[i + 1].x, curveValue);
+                        y = function(positions[i].y, positions[i + 1].y, curveValue);
+                        z = function(positions[i].z, positions[i + 1].z, curveValue);
+                    }
+                    else
+                    {
+                        x = function(positions[i].x, positions[i + 1].x, (elapsedTime / durationPercentage));
+                        y = function(positions[i].y, positions[i + 1].y, (elapsedTime / durationPercentage));
+                        z = function(positions[i].z, positions[i + 1].z, (elapsedTime / durationPercentage));
+                    }
 
                     elapsedTime += Time.deltaTime;
 

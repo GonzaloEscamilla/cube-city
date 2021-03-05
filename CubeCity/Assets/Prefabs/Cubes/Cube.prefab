@@ -52,6 +52,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60978fccaa6a34a49befa309318fb9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6366427
+      value: 0.9990239
+      inSlope: 0.068709485
+      outSlope: -0.9174739
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.10676551
+      outWeight: 0.19632046
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.98548627
+      outSlope: 0.98548627
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.16240159
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &7692151961419310021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,11 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8505e00194d434f4d8e44420f2f12436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 16
+  type: 21
   loop: 0
   rewindOnEnd: 0
   elapsedTime: 0
-  movementDuration: 0.7
+  movementDuration: 1
   positions: []
   xAxis: 0
   yAxis: 0

@@ -89,6 +89,7 @@ public class CubeSpawner : MonoBehaviour
     /// <returns></returns>
     public void NextCube()
     {
+        Debug.Log("Next Cube");
         _currentSpawnedCube = GetNewCube();
 
         SetCubeFaces(_currentSpawnedCube);

@@ -169,6 +169,8 @@ public class LevelManager : MonoBehaviour
         initialCube = _spawner.GetInitialCube();
         initialCube.transform.position = Vector3.zero;
 
+        Debug.Log("InitialCUbe position: " + initialCube.transform.position, initialCube.gameObject);
+
         if (_levelStatistics.GetTimeThreshold() > 0)
         {
             StartCoroutine(RunLevelTimeLapse());
@@ -255,8 +257,10 @@ public class LevelManager : MonoBehaviour
     /// <summary>
     /// Callback function. Its called when the new builded cube sets in its final position.
     /// </summary>
-    private void OnBuildFinish()
+    public void OnBuildFinish() // No se hace pero bue, lo de poner publico este metodo. es para probar el DOTween
     {
+        Debug.LogWarning("OnBuild Finish", this.gameObject);
+
         SoundManager.Instance.PlayOneShoot(CubeSound.CubePlaced.ToString());
 
         _cubeIsMoving = false;
@@ -270,8 +274,6 @@ public class LevelManager : MonoBehaviour
         EventsManager.Instance.CubeBuilded(currentCube);
 
         currentCube.InitializeAdjacentFaces();
-
-       
 
         CheckExtraPoints();
 

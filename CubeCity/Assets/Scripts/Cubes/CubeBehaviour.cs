@@ -2,10 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.Events;
 
 public class CubeBehaviour : MonoBehaviour
 {
     private Movement _movement;
+    [SerializeField] private AnimationCurve _curve;
 
     private void Start()
     {
@@ -35,7 +38,7 @@ public class CubeBehaviour : MonoBehaviour
 
     public void Move(Vector3[] positions, Action callBack)
     {
-        _movement.StartMove(positions,callBack);
+        _movement.StartMove(positions,callBack, _curve);
     }
 
     public Resources[] GetFacesData()
