@@ -84,6 +84,8 @@ public class CubeDragRotator : MonoBehaviour
 			Vector3 alignedForward = SnapCubeToAxis.NearestWorldAxis(transform.forward);
 			Vector3 alignedUp = SnapCubeToAxis.NearestWorldAxis(transform.up);
 			CurrentWorldCube.GetComponent<SnapCubeToAxis>().Align(alignedForward, alignedUp, OnSnapFinish);
+
+            SoundManager.Instance.PlayOneShoot(CubeSound.PreviewCubeSnaped.ToString());
 		}
 	}
 
@@ -92,7 +94,7 @@ public class CubeDragRotator : MonoBehaviour
 		if (GetComponent<PreviewCube>())
 		{
 			EventsManager.Instance.PreviewCubeMoved(GetComponent<PreviewCube>());
-		}
+        }
 	}
 
 	private void Callback()
