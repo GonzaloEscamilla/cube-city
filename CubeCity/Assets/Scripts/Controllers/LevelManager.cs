@@ -32,6 +32,7 @@ public class LevelManager : MonoBehaviour
     private bool _hasWin = false;
     private bool _cubeIsMoving = false;
     private bool _isPaused = false;
+    private bool _firstCubeBuild = true;
 
     public Face CurrentSelectedFace
     {
@@ -177,6 +178,9 @@ public class LevelManager : MonoBehaviour
         }
 
         OnBuildFinish();
+
+        _firstCubeBuild = false;
+
         Debug.LogWarning("On Build FInish");
     }
 
@@ -261,7 +265,8 @@ public class LevelManager : MonoBehaviour
     {
         Debug.LogWarning("OnBuild Finish", this.gameObject);
 
-        SoundManager.Instance.PlayOneShoot(CubeSound.CubePlaced.ToString());
+        if (!_firstCubeBuild)
+            SoundManager.Instance.PlayOneShoot(CubeSound.CubePlaced.ToString());
 
         _cubeIsMoving = false;
         CubeBehaviour currentCube = _spawner.GetCurrentCube();
