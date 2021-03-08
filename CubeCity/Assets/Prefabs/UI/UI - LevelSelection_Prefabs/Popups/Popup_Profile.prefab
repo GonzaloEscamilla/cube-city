@@ -1306,7 +1306,6 @@ GameObject:
   - component: {fileID: 5303377780080613057}
   - component: {fileID: 5303377780080613058}
   - component: {fileID: 1491207507055449626}
-  - component: {fileID: 1063166592793712738}
   m_Layer: 5
   m_Name: Btn_powerups
   m_TagString: Untagged
@@ -1447,19 +1446,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enabledButton: 1
---- !u!114 &1063166592793712738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5303377780080613052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 555473fcb09d38347aab97e833060f2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundToPlay: 0
 --- !u!1 &5303377780081532819
 GameObject:
   m_ObjectHideFlags: 0
@@ -3672,6 +3658,8 @@ GameObject:
   - component: {fileID: 5303377780671120504}
   - component: {fileID: 5303377780671120505}
   - component: {fileID: 5303377780671120506}
+  - component: {fileID: 1347088772535489325}
+  - component: {fileID: 673171066131823487}
   m_Layer: 5
   m_Name: Btn_powerups
   m_TagString: Untagged
@@ -3843,6 +3831,32 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1347088772535489325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303377780671120500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92df1e9ce9bf3354a87f181ad6f3ca2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabledButton: 1
+--- !u!114 &673171066131823487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303377780671120500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555473fcb09d38347aab97e833060f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay: 3
 --- !u!1 &5303377780700434106
 GameObject:
   m_ObjectHideFlags: 0
@@ -4670,7 +4684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555473fcb09d38347aab97e833060f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: 0
+  soundToPlay: 3
 --- !u!1 &5303377780886395680
 GameObject:
   m_ObjectHideFlags: 0
@@ -4909,7 +4923,6 @@ GameObject:
   - component: {fileID: 5303377780970369245}
   - component: {fileID: 5303377780970369246}
   - component: {fileID: 1893622010697810080}
-  - component: {fileID: 5138432070120641278}
   m_Layer: 5
   m_Name: Btn_skins
   m_TagString: Untagged
@@ -5050,19 +5063,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enabledButton: 1
---- !u!114 &5138432070120641278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5303377780970369240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 555473fcb09d38347aab97e833060f2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundToPlay: 0
 --- !u!1 &5303377781033342898
 GameObject:
   m_ObjectHideFlags: 0
@@ -6720,7 +6720,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -6732,9 +6732,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
