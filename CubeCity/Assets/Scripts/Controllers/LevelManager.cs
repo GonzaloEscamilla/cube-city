@@ -75,10 +75,6 @@ public class LevelManager : MonoBehaviour
         InitializeLevel();
     }
 
-    private void Update()
-    {
-    }
-
     private void OnDestroy()
     {
         if (EventsManager.Instance != null)
@@ -164,13 +160,11 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void BuildInitialCube()
     {
-        Debug.LogWarning("Build Initial Cube");
+        Debug.Log("Build Initial Cube");
 
         CubeBehaviour initialCube;
         initialCube = _spawner.GetInitialCube();
         initialCube.transform.position = Vector3.zero;
-
-        Debug.Log("InitialCUbe position: " + initialCube.transform.position, initialCube.gameObject);
 
         if (_levelStatistics.GetTimeThreshold() > 0)
         {

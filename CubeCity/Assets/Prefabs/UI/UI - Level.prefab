@@ -1783,6 +1783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5120364326445606115}
   - component: {fileID: 5120364326445606114}
+  - component: {fileID: 721297000481648131}
   m_Layer: 5
   m_Name: Scores
   m_TagString: Untagged
@@ -1836,6 +1837,22 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &721297000481648131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5120364326445606112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7eefe85dad62494aa2f26504fc77a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelStatistics: {fileID: 11400000, guid: e37448798f364e946a5142f32532cd68, type: 2}
+  _prosperityBar: {fileID: 2658254226622808979}
+  prosperityBarFillSpeed: 0.5
+  type: 4
 --- !u!1 &5120364326506799910
 GameObject:
   m_ObjectHideFlags: 0
