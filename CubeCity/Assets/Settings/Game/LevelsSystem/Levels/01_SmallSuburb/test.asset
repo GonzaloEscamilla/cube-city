@@ -10,43 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d56c4858ca27e24aa88408a5426823f, type: 3}
-  m_Name: 0 - First Steps
+  m_Name: test
   m_EditorClassIdentifier: 
-  Name: First Steps
+  Name: Try to Improve
   _levelConstraints: []
   _mainObjective:
     _type: 0
     _resourceType: 0
     _condition: 0
-    _resourceValue: 5500
+    _resourceValue: 6000
   _secondaryObjetives:
   - _type: 0
     _resourceType: 1
     _condition: 0
-    _resourceValue: 500
+    _resourceValue: 100
   - _type: 0
     _resourceType: 2
     _condition: 0
-    _resourceValue: 700
+    _resourceValue: 250
   - _type: 0
     _resourceType: 3
     _condition: 0
-    _resourceValue: 1000
+    _resourceValue: 250
   _facesDistribution:
     distribution:
     - name: BusinessArea
-      amount: 6
+      amount: 0
     - name: CommercialArea
-      amount: 6
+      amount: 0
     - name: GarbagedumpArea
       amount: 6
     - name: IndustrialArea
-      amount: 6
+      amount: 0
     - name: ParkArera
       amount: 6
     - name: ResidentialArea
-      amount: 6
-  amountOfCubes: 6
+      amount: 30
+  amountOfCubes: 7
   levelSound:
     Name: 
     SoundEvent: event:/BG Music/SmallSuburb

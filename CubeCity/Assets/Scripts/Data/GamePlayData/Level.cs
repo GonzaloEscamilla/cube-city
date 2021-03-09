@@ -51,6 +51,17 @@ public class Level : ScriptableObject
         }
     }
 
+    public int GetResourceAmountByType(ResourceTypes type)
+    {
+        foreach (LevelSecondaryObjective secondaryObjective in _secondaryObjetives)
+        {
+            if (secondaryObjective.GetResourceType() == type)
+            {
+                return secondaryObjective.GetResourceValue();
+            }
+        }
+        return -1;
+    }
 
     public bool HasConstraints()
     {

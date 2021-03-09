@@ -175,7 +175,7 @@ public class LevelManager : MonoBehaviour
 
         _firstCubeBuild = false;
 
-        Debug.LogWarning("On Build FInish");
+        Debug.Log("On Build FInish");
     }
 
     private void NextTurn()
