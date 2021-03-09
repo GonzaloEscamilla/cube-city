@@ -8,7 +8,6 @@ using UnityEngine;
 [RequireComponent(typeof(UIButtonUtility))]
 public class SetLevelButton : ButtonComponent
 {
-
     /// <summary>
     /// Reference to the level Handler
     /// </summary>
@@ -45,10 +44,17 @@ public class SetLevelButton : ButtonComponent
     [SerializeField]
     private string[] levelObjectivesToSet;
 
+    [SerializeField]
+    private GameObject[] levelStars;
+
+    private SaveData saveData;
+
     public void Init(SelectLevelHandler selectLevelHandler, PopupLevelSelection popupLevelSelection)
     {
         this.levelHandler = selectLevelHandler;
         this.popUpLevelSelection = popupLevelSelection;
+        saveData = SaveLoadController.instance.saveData;
+        SetLevel();
     }
 
     /// <summary>
@@ -70,5 +76,23 @@ public class SetLevelButton : ButtonComponent
 
         if (levelHandler != null)
             levelHandler.SetLevelToLoad(levelToLoad);
+    }
+
+
+    public void SetLevel()
+    {
+        if (saveData.levelDatas == null)
+            return;
+
+        for (int i = 0; i < saveData.levelDatas.Count; i++)
+        {
+            if (saveData.levelDatas[i].levelNumber == levelToLoad.LevelNumber)
+            {
+                for (int j = 0; j < saveData.levelDatas[i].starsAmount; j++)
+                {
+                    levelStars[j].SetActive(true);
+                }
+            }
+        }
     }
 }

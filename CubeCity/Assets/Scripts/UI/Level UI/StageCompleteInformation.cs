@@ -17,6 +17,8 @@ public class StageCompleteInformation : MonoBehaviour
 
     private LevelStatistics levelStatistics;
 
+    private SaveData saveData;
+
     private void Start() => Init();
 
     private void Init()
@@ -64,7 +66,33 @@ public class StageCompleteInformation : MonoBehaviour
                 break;
         }
 
+        SaveInformarion(endData.levelNumber,starsAmount, levelStatistics.GetResourceAmount(ResourceTypes.Prosperity));
+
         for (int i = 0; i < starsAmount; i++)
             PopUpStars[i].sprite = CompleteStarSprite;
-    }    
+    }
+
+    private void SaveInformarion(int levelnumber,int starsAmount, int levelscore)
+    {
+        if (saveData.levelDatas == null)
+            saveData.levelDatas = new List<levelData>();
+
+        levelData LevelDataToSave = new levelData();
+        LevelDataToSave.starsAmount = starsAmount;
+        LevelDataToSave.levelScore = levelscore;
+
+        int length = saveData.levelDatas.Count;
+
+        saveData.levelDatas.RemoveAll(Data => Data.levelNumber == levelnumber && Data.starsAmount < starsAmount);
+        
+        if(length != saveData.levelDatas.Count)
+            saveData.levelDatas.Add(LevelDataToSave);
+
+        SaveLoadController.instance.Save();
+    }
+
+    private void OnEnable()
+    {
+        saveData = SaveLoadController.instance.saveData;
+    }
 }

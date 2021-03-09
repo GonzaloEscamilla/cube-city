@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 0 - First Steps
   m_EditorClassIdentifier: 
   Name: First Steps
+  LevelNumber: 0
   _levelConstraints: []
   _mainObjective:
     _type: 0

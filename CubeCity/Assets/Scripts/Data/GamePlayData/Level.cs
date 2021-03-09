@@ -7,6 +7,7 @@ using UnityEngine;
 public class Level : ScriptableObject
 {
     public string Name;
+    public int LevelNumber;
 
     [SerializeField] private List<LevelConstraints> _levelConstraints = new List<LevelConstraints>(); 
     [SerializeField] private LevelObjective _mainObjective;
@@ -16,7 +17,6 @@ public class Level : ScriptableObject
     [SerializeField] private FacesDistribution _facesDistribution = new FacesDistribution();
     [SerializeField] private int amountOfCubes;
     [SerializeField] private SoundsDefinition.LevelClip levelSound;
-
 
     private void OnValidate()
     {

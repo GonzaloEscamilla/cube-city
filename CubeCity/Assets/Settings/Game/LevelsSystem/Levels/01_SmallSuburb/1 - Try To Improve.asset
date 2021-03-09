@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 1 - Try To Improve
   m_EditorClassIdentifier: 
   Name: Try to Improve
+  LevelNumber: 1
   _levelConstraints: []
   _mainObjective:
     _type: 0

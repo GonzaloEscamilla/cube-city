@@ -202,6 +202,7 @@ public class LevelManager : MonoBehaviour
 
         // TODO: completar campos del struct
         LevelEndData data = new LevelEndData();
+        data.levelNumber = _currentLevel.LevelNumber;
         data.success = _hasWin;
         data.finalResources = _levelStatistics.GetResources();
         data.timeSpent = _levelStatistics.ElapsedTime;
