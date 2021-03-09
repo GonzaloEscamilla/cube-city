@@ -205,6 +205,10 @@ public class LevelManager : MonoBehaviour
         data.success = _hasWin;
         data.finalResources = _levelStatistics.GetResources();
         data.timeSpent = _levelStatistics.ElapsedTime;
+        data.secondaryObjectives = new bool[_secondaryObjectivesCompleted.Length];
+
+        for (int i = 0; i < data.secondaryObjectives.Length; i++)
+            data.secondaryObjectives[i] = _secondaryObjectivesCompleted[i]; 
 
         EventsManager.Instance.EndLevel(data);
 
@@ -432,4 +436,8 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public LevelStatistics GetLevelStatistics()
+    {
+        return _levelStatistics;
+    }
 }
