@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822c5777ec9c27c4aa87f429526c90b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: b144b1c35c0810f46991a47fa3866a6f, type: 2}
   initialScene: 0
   _currentScene: 0
-  waitTimeToNextScene: 0.5

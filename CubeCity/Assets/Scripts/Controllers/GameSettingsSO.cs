@@ -6,4 +6,5 @@ using UnityEngine;
 public class GameSettingsSO : ScriptableObject
 {
     public bool EditorMode;
+    public float loadingTime;
 }
