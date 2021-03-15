@@ -39,6 +39,18 @@ public class LevelStatistics: ScriptableObject
     [Header("Resources")]
     [SerializeField] private Resources _resources = new Resources();
 
+    public int AmountOfCombosMade
+    {
+        get
+        {
+            return _amountOfCombosMade;
+        }
+        set
+        {
+            _amountOfCombosMade = value;
+        }
+    }
+    [SerializeField] private int _amountOfCombosMade;
 
     public LevelStatistics(Resources[] data)
     {
@@ -55,6 +67,7 @@ public class LevelStatistics: ScriptableObject
         ElapsedTime = 0;
 
         _resources = new Resources();
+        _amountOfCombosMade = 0;
     }
 
     public void CalculateNextResources(Resources data)

@@ -18,6 +18,11 @@ public class UILevelEnd : MonoBehaviour
         EventsManager.Instance.onLevelEndEvent += OnLevelEnd;
     }
 
+    private void OnDisable()
+    {
+        EventsManager.Instance.onLevelEndEvent -= OnLevelEnd;
+    }
+
     private void OnLevelEnd(LevelEndData data)
     {
         fadePanel.DOPlayForward();

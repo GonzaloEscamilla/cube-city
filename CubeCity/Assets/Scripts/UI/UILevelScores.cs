@@ -47,7 +47,7 @@ public class UILevelScores : MonoBehaviour
     private void Init()
     {
         EventsManager.Instance.OnStatisticsUpdate += OnStatisticsUpdate;
-        _levelMaxProsperity = LevelManager.control.GetLevelSystem().GetCurrentLevel().GetMainObjective().GetResourceValue();
+        _levelMaxProsperity = LevelManager.control.GetLevelSystem().GetCurrentLevel().GetMainObjective().GetObjetiveValue();
 
         _levelMaxHappines = LevelManager.control.GetLevelSystem().GetCurrentLevel().GetResourceAmountByType(ResourceTypes.Happiness);
         _levelMaxSustainability = LevelManager.control.GetLevelSystem().GetCurrentLevel().GetResourceAmountByType(ResourceTypes.Sustainability);

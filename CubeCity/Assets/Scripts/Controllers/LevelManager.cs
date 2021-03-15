@@ -344,15 +344,15 @@ public class LevelManager : MonoBehaviour
 
     private List<List<Face>> GetCombos(CubeBehaviour cube)
     {
-        // TODO: pasar esta constante a otro lado
-        const int MIN_ELEMS_FOR_COMBO = 5;
         List<List<Face>> result = new List<List<Face>>();
         foreach (Face face in cube.GetFaces())
         {
             List<Face> group = face.GetAdjacentGroup();
-            if (group.Count >= MIN_ELEMS_FOR_COMBO)
+            if (group.Count >= _gameSettings.MIN_ELEMS_FOR_COMBO)
             {
                 result.Add(group);
+                _levelStatistics.AmountOfCombosMade++;
+                EventsManager.Instance.ComboMade();
             }
         }
         return result;
@@ -378,7 +378,7 @@ public class LevelManager : MonoBehaviour
         bool hasWin = false;
 
         _mainObjectiveCompleted = ConditionComparator.CompareConditions(_levelStatistics.GetResourceAmount(_currentLevel.GetMainObjective().GetResourceType()),
-                                                                                _currentLevel.GetMainObjective().GetResourceValue(),
+                                                                                _currentLevel.GetMainObjective().GetObjetiveValue(),
                                                                                 _currentLevel.GetMainObjective().GetCondition());
         hasWin = _mainObjectiveCompleted;
 
@@ -394,9 +394,21 @@ public class LevelManager : MonoBehaviour
 
         for (int i = 0; i < _secondaryObjectivesCompleted.Length; i++)
         {
-            _secondaryObjectivesCompleted[i] = ConditionComparator.CompareConditions(_levelStatistics.GetResourceAmount(secondaryObjectives[i].GetResourceType()),
-                                                                                secondaryObjectives[i].GetResourceValue(),
-                                                                                secondaryObjectives[i].GetCondition());
+            switch (secondaryObjectives[i].GetObjectiveType())
+            {
+                case LevelObjetiveTypes.Resource:
+                    _secondaryObjectivesCompleted[i] = ConditionComparator.CompareConditions(_levelStatistics.GetResourceAmount(secondaryObjectives[i].GetResourceType()),
+                                                                                        secondaryObjectives[i].GetObjetiveValue(),
+                                                                                        secondaryObjectives[i].GetCondition());
+                    break;
+                case LevelObjetiveTypes.Combo:
+                    _secondaryObjectivesCompleted[i] = ConditionComparator.CompareConditions(_levelStatistics.AmountOfCombosMade,
+                                                                                        secondaryObjectives[i].GetObjetiveValue(),
+                                                                                        secondaryObjectives[i].GetCondition());
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

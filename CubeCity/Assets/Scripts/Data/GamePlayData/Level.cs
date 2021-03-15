@@ -57,7 +57,7 @@ public class Level : ScriptableObject
         {
             if (secondaryObjective.GetResourceType() == type)
             {
-                return secondaryObjective.GetResourceValue();
+                return secondaryObjective.GetObjetiveValue();
             }
         }
         return -1;
