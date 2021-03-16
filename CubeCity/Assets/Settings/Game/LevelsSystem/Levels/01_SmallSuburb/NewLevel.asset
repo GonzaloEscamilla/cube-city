@@ -10,28 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d56c4858ca27e24aa88408a5426823f, type: 3}
-  m_Name: test
+  m_Name: NewLevel
   m_EditorClassIdentifier: 
-  Name: Try to Improve
+  Name: 
+  LevelNumber: 0
   _levelConstraints: []
   _mainObjective:
     _type: 0
     _resourceType: 0
     _condition: 0
-    _resourceValue: 6000
+    _value: 10000
   _secondaryObjetives:
   - _type: 0
     _resourceType: 1
     _condition: 0
-    _resourceValue: 100
+    _value: 50000
   - _type: 0
     _resourceType: 2
     _condition: 0
-    _resourceValue: 250
+    _value: 50000
   - _type: 0
     _resourceType: 3
     _condition: 0
-    _resourceValue: 250
+    _value: 50000
   _facesDistribution:
     distribution:
     - name: BusinessArea
@@ -39,14 +40,16 @@ MonoBehaviour:
     - name: CommercialArea
       amount: 0
     - name: GarbagedumpArea
-      amount: 6
+      amount: 0
     - name: IndustrialArea
       amount: 0
     - name: ParkArera
-      amount: 6
+      amount: 0
     - name: ResidentialArea
-      amount: 30
-  amountOfCubes: 7
+      amount: 0
+    - name: FarmArea
+      amount: 32
+  amountOfCubes: 5
   levelSound:
     Name: 
-    SoundEvent: event:/BG Music/SmallSuburb
+    SoundEvent: 

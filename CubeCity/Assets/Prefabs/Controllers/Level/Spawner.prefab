@@ -250,6 +250,56 @@ MonoBehaviour:
   canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 0
+--- !u!1 &6798135002036922980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5606531361142759395}
+  - component: {fileID: 1957212837812498431}
+  m_Layer: 0
+  m_Name: Pool - FarmArea
+  m_TagString: FacePools
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5606531361142759395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6798135002036922980}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5480345717540028813}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1957212837812498431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6798135002036922980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54728b4198853314d9589993a045217e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPool:
+  - {fileID: 6626762366019491193, guid: aaadfd8cd609ece47a2890658b5a9b1e, type: 3}
+  pool: []
+  startAmount: 20
+  canGrow: 1
+  initializedAtStart: 0
+  detachObjectWhenPooled: 0
 --- !u!1 &7482583180114654059
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +335,7 @@ Transform:
   - {fileID: 1008752289059421289}
   - {fileID: 4411536967167640308}
   - {fileID: 2676146043670136494}
+  - {fileID: 5606531361142759395}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
