@@ -8,7 +8,7 @@ public class LevelObjective
     [SerializeField] private LevelObjetiveTypes _type;
     [SerializeField] private ResourceTypes _resourceType;
     [SerializeField] private Comparator _condition;
-    [SerializeField] private int _resourceValue;
+    [SerializeField] private int _value;
 
     /// <summary>
     /// Returns the ObjetiveType of this objetive.
@@ -41,9 +41,9 @@ public class LevelObjective
     /// Gets the value of the resource to be compared.
     /// </summary>
     /// <returns></returns>
-    public int GetResourceValue()
+    public int GetObjetiveValue()
     {
-        return _resourceValue;
+        return _value;
     }
 }
 
@@ -59,4 +59,5 @@ public enum Comparator
 public enum LevelObjetiveTypes
 {
     Resource,
+    Combo,
 }

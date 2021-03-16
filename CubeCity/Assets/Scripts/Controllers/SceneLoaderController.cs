@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoaderController : Singleton<SceneLoaderController>
 {
-    [SerializeField] private GameScenes initialScene;
-    [SerializeField] private GameScenes _currentScene;
+    [Header("References")]
+    [SerializeField] private GameSettingsSO settings;
+
 
     [Space]
 
     [Header("Settings")]
-    [SerializeField] private float waitTimeToNextScene;
+    [SerializeField] private GameScenes initialScene;
+    [SerializeField] private GameScenes _currentScene;
 
     private void Awake()
     {
@@ -64,6 +66,6 @@ public class SceneLoaderController : Singleton<SceneLoaderController>
 
     private IEnumerator WaitTimeToNextScene()
     {
-        yield return new WaitForSeconds(waitTimeToNextScene);
+        yield return new WaitForSeconds(settings.loadingTime);
     }
 }

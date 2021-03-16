@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aecf41b2c50e6d34ca242f8daeace6dd, type: 3}
+  m_Name: LoadingSceneSettings
+  m_EditorClassIdentifier: 
+  tips:
+  - {fileID: 11400000, guid: 66bcdd781118d774e9a77a515efd19ac, type: 2}
+  - {fileID: 11400000, guid: 612b8662b12910e4b86f855478c0b0e4, type: 2}
+  - {fileID: 11400000, guid: 2ff74d7acc9d3ca4197c3a4635ecd39f, type: 2}
+  - {fileID: 11400000, guid: eebea2a6597372e4c92b3ab59fd65dc1, type: 2}
+  - {fileID: 11400000, guid: a2b78bfba1aa2e54da6e90ccea58b084, type: 2}
+  - {fileID: 11400000, guid: 1a3cf7f858195ff45830c43a29f451d3, type: 2}
+  - {fileID: 11400000, guid: 4ea34701c070c1d40b96efed490f1bca, type: 2}

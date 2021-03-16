@@ -97,7 +97,7 @@ public class CameraController : MonoBehaviour
     /// </summary>
     private void SetTarget()
     {
-        // TODO: Revisar si es necesario hacer una sobrecarga del metodo para resivir otro target. De ser asi revisar su documentacion.
+        // TODO: Revisar si es necesario hacer una sobrecarga del metodo para recibir otro target. De ser asi revisar su documentacion.
 
         CMCamera.Follow = target;
         CMCamera.LookAt = target;
@@ -354,9 +354,11 @@ public class CameraController : MonoBehaviour
         public float transitionTime = 2;
     }
 
- 
+    public float GetCameraDistanceFromTarget()
+    {
+        return Mathf.InverseLerp(15, 145, CMCamera.m_Orbits[1].m_Radius);
+    }
 }
-
 
 public class RigsRadius
 {

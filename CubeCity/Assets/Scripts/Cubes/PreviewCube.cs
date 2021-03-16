@@ -161,9 +161,6 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
 
         DisableFaceColliders();
 
-        Debug.Log("SelectedFace: " + selectedFace.name, selectedFace.gameObject);
-        Debug.Log("PreviewCubePosition: " + selectedFace.GetPreviewCubePosition());
-
         this.transform.position = selectedFace.GetPreviewCubePosition();
         
         EventsManager.Instance.PreviewCubeMoved(this);

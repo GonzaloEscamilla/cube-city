@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 0 - First Steps
   m_EditorClassIdentifier: 
   Name: First Steps
+  LevelNumber: 0
   _levelConstraints: []
   _mainObjective:
     _type: 0
@@ -23,11 +24,15 @@ MonoBehaviour:
   - _type: 0
     _resourceType: 1
     _condition: 0
-    _resourceValue: 10
+    _resourceValue: 500
   - _type: 0
     _resourceType: 2
     _condition: 0
-    _resourceValue: 0
+    _resourceValue: 700
+  - _type: 0
+    _resourceType: 3
+    _condition: 0
+    _resourceValue: 1000
   _facesDistribution:
     distribution:
     - name: BusinessArea

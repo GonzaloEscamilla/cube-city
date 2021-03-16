@@ -10,5 +10,5 @@ public enum FaceTypes
     IndustrialArea,
     ParkArera,
     ResidentialArea,
-    AgriculturalArea,
+    FarmArea,
 }

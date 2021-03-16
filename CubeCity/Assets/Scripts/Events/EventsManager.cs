@@ -40,11 +40,18 @@ public class EventsManager : Singleton<EventsManager>
 
     public Action<Face> OnPreviewFaceCollision;
 
+    public Action OnComboMade;
+
     #region UI Events
 
     public Action OnStatisticsUpdate;
 
     #endregion
+
+    public void ComboMade()
+    {
+        OnComboMade?.Invoke();
+    }
 
     public void FaceSelected(Face selectedFace)
     {

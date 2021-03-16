@@ -126,7 +126,6 @@ public class Movement : MonoBehaviour
                 {
                     if (curve != null)
                     {
-                        Debug.Log("aca");
                         float curveValue;
                         curveValue = curve.Evaluate(elapsedTime / durationPercentage);
 

@@ -75,6 +75,11 @@ public class Player : Singleton<Player>
         }
     }
 
+    public bool CanBuy(int neddedAmount)
+    {
+        return CristalsAmount > neddedAmount;
+    }
+
     [ContextMenu("teST")]
     public void Test()
     {

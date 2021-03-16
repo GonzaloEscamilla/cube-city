@@ -650,3 +650,7 @@ MonoBehaviour:
   - OBJ 1
   - OBJ 2
   - OBJ 3
+  levelStars:
+  - {fileID: 4371657705915169670}
+  - {fileID: 4371657707361140202}
+  - {fileID: 4371657707524192694}

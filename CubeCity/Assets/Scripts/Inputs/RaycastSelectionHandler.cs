@@ -70,7 +70,6 @@ public class RaycastSelectionHandler : MonoBehaviour
 
     public bool TapStartedOnPreviewCube(Camera currentCamera, Vector2 touchPosition)
     {
-        Debug.Log("Tap Started On Pewview Verigfication");
         _ray = currentCamera.ScreenPointToRay(touchPosition);
 
         if (Physics.Raycast(_ray, out _raycastHit))
