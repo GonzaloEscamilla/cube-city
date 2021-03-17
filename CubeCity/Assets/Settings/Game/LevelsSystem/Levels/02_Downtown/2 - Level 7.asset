@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d56c4858ca27e24aa88408a5426823f, type: 3}
+  m_Name: 2 - Level 7
+  m_EditorClassIdentifier: 
+  Name: Level 7
+  LevelNumber: 15
+  _levelConstraints: []
+  _mainObjective:
+    _type: 0
+    _resourceType: 0
+    _condition: 1
+    _value: 8000
+  _secondaryObjetives:
+  - _type: 0
+    _resourceType: 3
+    _condition: 1
+    _value: 500
+  - _type: 0
+    _resourceType: 1
+    _condition: 1
+    _value: 500
+  - _type: 0
+    _resourceType: 2
+    _condition: 1
+    _value: 500
+  _facesDistribution:
+    distribution:
+    - name: BusinessArea
+      amount: 0
+    - name: CommercialArea
+      amount: 10
+    - name: GarbagedumpArea
+      amount: 8
+    - name: IndustrialArea
+      amount: 0
+    - name: ParkArera
+      amount: 10
+    - name: ResidentialArea
+      amount: 10
+    - name: FarmArea
+      amount: 10
+  amountOfCubes: 8
+  levelSound:
+    Name: 
+    SoundEvent: 
