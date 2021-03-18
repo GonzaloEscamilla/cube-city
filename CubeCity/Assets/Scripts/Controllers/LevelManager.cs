@@ -403,6 +403,8 @@ public class LevelManager : MonoBehaviour
                     break;
                 case LevelObjetiveTypes.Combo:
                     _secondaryObjectivesCompleted[i] = ConditionComparator.CompareConditions(_levelStatistics.AmountOfCombosMade,
+                                                                                        secondaryObjectives[i].GetObjetiveValue(),
+                                                                                        secondaryObjectives[i].GetCondition());
                     break;
                 default:
                     break;
