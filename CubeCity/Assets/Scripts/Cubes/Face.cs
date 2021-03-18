@@ -188,7 +188,10 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
 
     public void AddAdjacentFace(Face adjacentFace)
     {
-        _adjacentFaces.Add(adjacentFace);
+        if (!adjacentFace._adjacentFaces.Contains(adjacentFace))
+        {
+            _adjacentFaces.Add(adjacentFace);
+        }
     }
 
     public void ClearAdjacentFaces()
@@ -201,6 +204,42 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
         if (_adjacentFaces.Contains(adjacentFace))
         {
             _adjacentFaces.Remove(adjacentFace);
+        }
+    }
+
+    [ContextMenu("Demolition")]
+    public void Demolition()
+    {
+        LevelManager.control.GetLevelStatistics().CalculateNextResources(-GetFaceData());
+        CheckAdjacenciesAffected();
+        Type = FaceTypes.Demolished;
+    }
+
+    [ContextMenu("Reform")]
+    public void CheckReform()
+    {
+        ReformFace(FaceTypes.GarbagedumpArea);
+    }
+
+    public void ReformFace(FaceTypes newType)
+    {
+        Demolition();
+        Type = newType;
+        foreach (Face adjacentFace in GetAdjacentFaces())
+        {
+            LevelManager.control.GetLevelStatistics().CalculateNextResources(
+                LevelManager.control.GetAdjacencyBounisesSO().GetBonusForFaces(Type, adjacentFace.Type)
+            );
+        }
+    }
+
+    private void CheckAdjacenciesAffected()
+    {
+        foreach (Face adjacentFace in GetAdjacentFaces())
+        {
+            LevelManager.control.GetLevelStatistics().CalculateNextResources(-
+                LevelManager.control.GetAdjacencyBounisesSO().GetBonusForFaces(Type, adjacentFace.Type)
+            );
         }
     }
 
