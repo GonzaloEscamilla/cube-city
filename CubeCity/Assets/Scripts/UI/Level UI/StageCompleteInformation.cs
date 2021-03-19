@@ -95,4 +95,9 @@ public class StageCompleteInformation : MonoBehaviour
     {
         saveData = SaveLoadController.instance.saveData;
     }
+
+    private void OnDisable()
+    {
+        EventsManager.Instance.onLevelEndEvent -= OnLevelEnd;
+    }
 }
