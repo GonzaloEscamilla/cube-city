@@ -124,6 +124,9 @@ public class LevelManager : MonoBehaviour
         // Resetear el ScriptableObject a sus valores por defecto.
         _levelStatistics.Reset();
 
+        if(_currentLevel.GetTutorial() != null)
+            TutorialManager.Instance.SetTutorials(_currentLevel, _levelStatistics);
+
         SetLevelConstraints();
     }
 
@@ -352,7 +355,6 @@ public class LevelManager : MonoBehaviour
             {
                 result.Add(group);
                 _levelStatistics.AmountOfCombosMade++;
-                EventsManager.Instance.ComboMade();
             }
         }
         return result;

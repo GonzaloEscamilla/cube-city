@@ -9,6 +9,7 @@ public class Level : ScriptableObject
     public string Name;
     public int LevelNumber;
 
+    [SerializeField] private TutorialSO tutorial;
     [SerializeField] private List<LevelConstraints> _levelConstraints = new List<LevelConstraints>(); 
     [SerializeField] private LevelObjective _mainObjective;
     [SerializeField] private List<LevelSecondaryObjective> _secondaryObjetives = new List<LevelSecondaryObjective>();
@@ -89,5 +90,10 @@ public class Level : ScriptableObject
     public SoundsDefinition.LevelClip GetLevelClipSound()
     {
         return levelSound;
+    }
+
+    public TutorialSO GetTutorial()
+    {
+        return tutorial;
     }
 }

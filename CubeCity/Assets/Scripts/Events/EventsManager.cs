@@ -42,6 +42,8 @@ public class EventsManager : Singleton<EventsManager>
 
     public Action OnComboMade;
 
+    public Action OnBonusMade;
+
     #region UI Events
 
     public Action OnStatisticsUpdate;
@@ -51,6 +53,11 @@ public class EventsManager : Singleton<EventsManager>
     public void ComboMade()
     {
         OnComboMade?.Invoke();
+    }
+
+    public void BonusMade()
+    {
+        OnBonusMade?.Invoke();
     }
 
     public void FaceSelected(Face selectedFace)
