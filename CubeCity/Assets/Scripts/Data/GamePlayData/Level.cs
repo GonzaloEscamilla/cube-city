@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewLevel", menuName = "ScriptableObjects/LevelSystem/Level", order = 2)]
 public class Level : ScriptableObject
 {
+    [Header("Settings")]
+
     public string Name;
     public int LevelNumber;
 
@@ -16,7 +18,15 @@ public class Level : ScriptableObject
     static FaceTypes[] faceTypes = (FaceTypes[]) Enum.GetValues(typeof(FaceTypes));
     [SerializeField] private FacesDistribution _facesDistribution = new FacesDistribution();
     [SerializeField] private int amountOfCubes;
+
+    [Header("Audio Settings")]
+
     [SerializeField] private SoundsDefinition.LevelClip levelSound;
+   
+    [Header("PowerUp Settings")]
+
+    [SerializeField] private int amountOfExtraCubes = 3;
+
 
     private void OnValidate()
     {
@@ -25,6 +35,13 @@ public class Level : ScriptableObject
         {
             constrait.Type = constrait.Type;
         }
+
+        amountOfExtraCubes = 3;
+    }
+
+    public int GetExtraCubes()
+    {
+        return amountOfExtraCubes;
     }
 
     /// <summary>

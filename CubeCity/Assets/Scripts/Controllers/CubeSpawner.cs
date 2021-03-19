@@ -15,6 +15,10 @@ public class CubeSpawner : MonoBehaviour
     FacesDistribution _facesDistribution;
     private Pool _cubePool;
 
+    private bool extraCubesModeActive = false;
+    private bool isExtraCubesActive = false;
+    private int amountOfExtraFaces = 0;
+
     private void OnEnable()
     {
         EventsManager.Instance.OnPreviewCubeRotated += OnPreviewCubeRotatedEvent;
@@ -51,6 +55,13 @@ public class CubeSpawner : MonoBehaviour
         _facesDistribution = new FacesDistribution(LevelManager.control.GetLevelSystem().GetCurrentLevel().GetFacesDistribution());
     }
 
+    [ContextMenu("ActivateExtraCubes")]
+    public void ActiveExtraCubes()
+    {
+        isExtraCubesActive = true;
+        amountOfExtraFaces = 6 * LevelManager.control.GetLevelSystem().GetCurrentLevel().GetExtraCubes();
+    }
+
     /// <summary>
     /// Returns the current spawned cube if any.
     /// </summary>
@@ -80,6 +91,9 @@ public class CubeSpawner : MonoBehaviour
 
     public bool AvailableCubeExists()
     {
+        if (isExtraCubesActive)
+            return amountOfExtraFaces > 0;
+
         return _facesDistribution.GetTotalRemainingFaces() >= 6;
     }
 
@@ -110,11 +124,27 @@ public class CubeSpawner : MonoBehaviour
     {
         Face[] cubeFaces = _currentSpawnedCube.GetComponentsInChildren<Face>();
 
-        int randomType;
+        int randomType = 0;
 
         for (int i = 0; i < cubeFaces.Length; i++)
         {
-            randomType = _facesDistribution.GetNewFaceTypeIndex();
+            if (!extraCubesModeActive)
+            {
+                randomType = _facesDistribution.GetNewFaceTypeIndex();
+            }
+            else if(amountOfExtraFaces > 0)
+            {
+                randomType = _facesDistribution.GetNewFaceTypeIndex();
+                amountOfExtraFaces--;
+            }
+
+            if (randomType == -1 && isExtraCubesActive)
+            {
+                extraCubesModeActive = true;
+                _facesDistribution.ResetForExtraFaces(LevelManager.control.GetLevelSystem().GetCurrentLevel().GetFacesDistribution());
+                randomType = _facesDistribution.GetNewFaceTypeIndex();
+                amountOfExtraFaces--;
+            }
 
             // TODO: Revisar si se puede meter el For dentro de esta misma funcion. Puede llegar a ser interesante y util en el futuro.
             SetFaceGraphics(cubeFaces, i, randomType);
