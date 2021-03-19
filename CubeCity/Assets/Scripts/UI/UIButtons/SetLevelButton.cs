@@ -86,7 +86,7 @@ public class SetLevelButton : ButtonComponent
 
         for (int i = 0; i < saveData.levelDatas.Count; i++)
         {
-            if (saveData.levelDatas[i].levelNumber == levelToLoad.LevelNumber)
+            if (levelToLoad != null && saveData.levelDatas[i].levelNumber == levelToLoad.LevelNumber)
             {
                 for (int j = 0; j < saveData.levelDatas[i].starsAmount; j++)
                 {
