@@ -302,6 +302,11 @@ PrefabInstance:
       propertyPath: m_TextStyleHashCode
       value: -1183493901
       objectReference: {fileID: 0}
+    - target: {fileID: 4568206265953081220, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5192060994404410703, guid: 6fc9f68fe7e52624694efa3478a2c93c,
         type: 3}
       propertyPath: m_AnchorMin.y
