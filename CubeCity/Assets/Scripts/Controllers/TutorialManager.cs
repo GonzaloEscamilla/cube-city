@@ -24,7 +24,10 @@ public class TutorialManager : Singleton<TutorialManager>
     public void SetTutorialScreen(Sprite image, string description)
     {
         tutorialText.text = description;
-        tutorialImage.sprite = image;
+
+        if(image != null)
+            tutorialImage.sprite = image;
+
         tutorialPanel.DOPlayForward();
     }
 }
