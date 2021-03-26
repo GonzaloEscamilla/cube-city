@@ -117,6 +117,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: World3_Level3
       objectReference: {fileID: 0}
+    - target: {fileID: 709463774042401245, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelNameToSet
+      value: LEVEL 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 709463774042401245, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelScoreToSet
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 709463774042401245, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[0]
+      value: Economy greater than 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 709463774042401245, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[1]
+      value: Happiness greater than 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 709463774042401245, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[2]
+      value: Sustainability greater than 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 709463774042401245, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelToLoad
+      value: 
+      objectReference: {fileID: 11400000, guid: 89fad4830d04f3b4a89bed16956088c1,
+        type: 2}
+    - target: {fileID: 709463774042401245, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 709463774042401245, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 709463774042401245, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 837279474243296856, guid: 6fc9f68fe7e52624694efa3478a2c93c,
         type: 3}
       propertyPath: m_FillAmount
@@ -232,6 +278,52 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1147421749240476814, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelNameToSet
+      value: LEVEL 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147421749240476814, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelScoreToSet
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147421749240476814, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[0]
+      value: Economy greater than 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147421749240476814, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[1]
+      value: Happiness greater than 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147421749240476814, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[2]
+      value: Achieve 4 combos
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147421749240476814, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelToLoad
+      value: 
+      objectReference: {fileID: 11400000, guid: c21bd17a9bff2294f9ae1b2154182e1b,
+        type: 2}
+    - target: {fileID: 1147421749240476814, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147421749240476814, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147421749240476814, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1388998162074168490, guid: 6fc9f68fe7e52624694efa3478a2c93c,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -332,6 +424,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: World3_Level4
       objectReference: {fileID: 0}
+    - target: {fileID: 2043025662937477770, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelNameToSet
+      value: LEVEL 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043025662937477770, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelScoreToSet
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043025662937477770, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[0]
+      value: Economy greater than 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043025662937477770, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[1]
+      value: Happiness less than 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043025662937477770, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[2]
+      value: Achieve 5 combos
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043025662937477770, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelToLoad
+      value: 
+      objectReference: {fileID: 11400000, guid: d035494abf0ed2c458a9af3659fa4231,
+        type: 2}
+    - target: {fileID: 2043025662937477770, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043025662937477770, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043025662937477770, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2131403546481905433, guid: 6fc9f68fe7e52624694efa3478a2c93c,
         type: 3}
       propertyPath: m_text
@@ -394,6 +532,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: World3_Level6
       objectReference: {fileID: 0}
+    - target: {fileID: 3149451824644194938, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelNameToSet
+      value: LEVEL 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149451824644194938, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelScoreToSet
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149451824644194938, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[0]
+      value: Economy greater than 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149451824644194938, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[1]
+      value: Happiness less than 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149451824644194938, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[2]
+      value: Sustainability less than 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149451824644194938, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelToLoad
+      value: 
+      objectReference: {fileID: 11400000, guid: 05145ddf7f39709409e64709eb774af5,
+        type: 2}
+    - target: {fileID: 3149451824644194938, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149451824644194938, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149451824644194938, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3991481174825482113, guid: 6fc9f68fe7e52624694efa3478a2c93c,
         type: 3}
       propertyPath: m_Name
@@ -453,6 +637,52 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824365538751539772, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelNameToSet
+      value: LEVEL 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824365538751539772, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelScoreToSet
+      value: 7000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824365538751539772, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[0]
+      value: Economy greater than 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824365538751539772, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[1]
+      value: Happiness greater than 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824365538751539772, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[2]
+      value: Sustainability greater than 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824365538751539772, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelToLoad
+      value: 
+      objectReference: {fileID: 11400000, guid: 57353b7afa7732a4fa9a5c95b632712c,
+        type: 2}
+    - target: {fileID: 4824365538751539772, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824365538751539772, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824365538751539772, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[2]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4919145046720603136, guid: 6fc9f68fe7e52624694efa3478a2c93c,
         type: 3}
@@ -553,6 +783,52 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490835319608697829, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelNameToSet
+      value: LEVEL 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490835319608697829, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelScoreToSet
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490835319608697829, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[0]
+      value: Economy greater than 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490835319608697829, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[1]
+      value: Happiness greater than 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490835319608697829, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[2]
+      value: Achieve 3 combos
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490835319608697829, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelToLoad
+      value: 
+      objectReference: {fileID: 11400000, guid: c5fde26a58c5f8e4992c92f2981960a2,
+        type: 2}
+    - target: {fileID: 5490835319608697829, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490835319608697829, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490835319608697829, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[2]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5780293244262777008, guid: 6fc9f68fe7e52624694efa3478a2c93c,
         type: 3}
@@ -753,6 +1029,98 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: World3_Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055371459413292463, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelNameToSet
+      value: LEVEL 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055371459413292463, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelScoreToSet
+      value: 12000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055371459413292463, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[0]
+      value: Economy greater than 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055371459413292463, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[1]
+      value: Happiness greater than 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055371459413292463, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[2]
+      value: Sustainability greater than 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055371459413292463, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelToLoad
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f54f2612d157204ca3250b9c3a1ef8b,
+        type: 2}
+    - target: {fileID: 6055371459413292463, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055371459413292463, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055371459413292463, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073490455917408636, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelNameToSet
+      value: LEVEL 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073490455917408636, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelScoreToSet
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073490455917408636, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[0]
+      value: Economy greater than 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073490455917408636, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[1]
+      value: Happiness greater than 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073490455917408636, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[2]
+      value: Sustainability greater than 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073490455917408636, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelToLoad
+      value: 
+      objectReference: {fileID: 11400000, guid: c85999bb4c31b3c469c2831d395e6fb2,
+        type: 2}
+    - target: {fileID: 6073490455917408636, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073490455917408636, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073490455917408636, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[2]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6593551206952345191, guid: 6fc9f68fe7e52624694efa3478a2c93c,
         type: 3}
@@ -1017,6 +1385,52 @@ PrefabInstance:
     - target: {fileID: 8127123516959183068, guid: 6fc9f68fe7e52624694efa3478a2c93c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007738675818183038, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelNameToSet
+      value: LEVEL 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007738675818183038, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelScoreToSet
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007738675818183038, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[0]
+      value: Economy greater than 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007738675818183038, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[1]
+      value: Prosperity greater than 9000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007738675818183038, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelObjectivesToSet.Array.data[2]
+      value: Achieve 5 combos
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007738675818183038, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelToLoad
+      value: 
+      objectReference: {fileID: 11400000, guid: c3ab186d97bab1c46ae8fe9134c71c63,
+        type: 2}
+    - target: {fileID: 9007738675818183038, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007738675818183038, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007738675818183038, guid: 6fc9f68fe7e52624694efa3478a2c93c,
+        type: 3}
+      propertyPath: levelStars.Array.data[2]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9032703353975152556, guid: 6fc9f68fe7e52624694efa3478a2c93c,
