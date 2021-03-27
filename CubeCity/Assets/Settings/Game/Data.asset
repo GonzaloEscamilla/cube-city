@@ -73,7 +73,7 @@ MonoBehaviour:
       amount: 0
     - name: Wealth
       amount: 0
-  - name: AgriculturalArea
+  - name: FarmArea
     resources:
     - name: Prosperity
       amount: 350
@@ -83,3 +83,13 @@ MonoBehaviour:
       amount: 25
     - name: Wealth
       amount: 50
+  - name: Demolished
+    resources:
+    - name: Prosperity
+      amount: 0
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 0
+    - name: Wealth
+      amount: 0
