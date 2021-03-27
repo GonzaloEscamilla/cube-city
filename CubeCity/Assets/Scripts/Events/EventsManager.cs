@@ -40,6 +40,8 @@ public class EventsManager : Singleton<EventsManager>
 
     public Action<Face> OnPreviewFaceCollision;
 
+    public Action OnCancelButtonPressed;
+
     public Action OnComboMade;
 
     public Action OnBonusMade;
@@ -112,5 +114,10 @@ public class EventsManager : Singleton<EventsManager>
     public void LevelLoaded(LevelsSettingsSO levelLoaded)
     {
         OnLevelLoaded?.Invoke(levelLoaded);
+    }
+
+    public void CancelButtonPressed()
+    {
+        OnCancelButtonPressed?.Invoke();
     }
 }

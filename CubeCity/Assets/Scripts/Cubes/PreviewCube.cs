@@ -64,6 +64,7 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
         EventsManager.Instance.onCreateButtonPressed += ResetPosition;
         EventsManager.Instance.onFaceUnselected += OnfaceUnselected;
         EventsManager.Instance.onLevelEndEvent += OnLevelEnd;
+        EventsManager.Instance.OnCancelButtonPressed += CancelButtonPressed;
 
         EventsManager.Instance.onCubeCreated += HandleNewCube;
     }
@@ -76,6 +77,7 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
             EventsManager.Instance.onfaceSelected -= SetPosition;
             EventsManager.Instance.onCreateButtonPressed -= ResetPosition;
             EventsManager.Instance.onFaceUnselected -= OnfaceUnselected;
+            EventsManager.Instance.OnCancelButtonPressed -= CancelButtonPressed;
 
             EventsManager.Instance.onCubeCreated -= HandleNewCube;
             EventsManager.Instance.onLevelEndEvent -= OnLevelEnd;
@@ -168,7 +170,11 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
 
     private void OnfaceUnselected()
     {
-       
+    }
+
+    private void CancelButtonPressed()
+    {
+        ResetPosition();
     }
 
     private void OnLevelEnd(LevelEndData data)

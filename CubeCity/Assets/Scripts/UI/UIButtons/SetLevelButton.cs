@@ -70,12 +70,20 @@ public class SetLevelButton : ButtonComponent
             for (int i = 0; i < popUpLevelSelection.levelObjectives.Length; i++)
                 popUpLevelSelection.levelObjectives[i].text = levelObjectivesToSet[i];
         }
+        else
+            Debug.LogWarning("The PopUpLevelSelection is null in this object.", gameObject);
+
 
         if(levelToLoad != null)
             SoundManager.Instance.SetLevelSound(levelToLoad.GetLevelClipSound());
+        else
+            Debug.LogWarning("The levelToLoad is null in this object.", gameObject);
 
         if (levelHandler != null)
             levelHandler.SetLevelToLoad(levelToLoad);
+        else
+            Debug.LogWarning("The levelHandler is null in this object.", gameObject);
+
     }
 
 

@@ -1409,6 +1409,7 @@ GameObject:
   - component: {fileID: 5120364325697331741}
   - component: {fileID: 7933577096950724660}
   - component: {fileID: 6315837551728643137}
+  - component: {fileID: 7301355878352875864}
   m_Layer: 5
   m_Name: UI - Level
   m_TagString: Untagged
@@ -1515,7 +1516,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelStatistics: {fileID: 11400000, guid: e37448798f364e946a5142f32532cd68, type: 2}
+  _UIBottomTools: {fileID: 7301355878352875864}
+  _UIButtonQuit: {fileID: 8307974250297090168}
   _createButton: {fileID: 5120364324985473668}
+  _cancel: {fileID: 2452874625376973282}
 --- !u!114 &6315837551728643137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1530,6 +1534,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadePanel: {fileID: 5120364326657880339}
   endLevelUI: {fileID: 5120364324989582481}
+--- !u!114 &7301355878352875864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5120364325697331714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c325e582dde084898df78fc32d26f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cubePlacementButtons: {fileID: 2670290156329010201}
+  powerUpsButtons: {fileID: 4815631879530306210}
 --- !u!1 &5120364325905397214
 GameObject:
   m_ObjectHideFlags: 0
@@ -4253,6 +4271,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d0390bd8b8ffd640b34fe25065ff1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8307974250297090168 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1545215181399703296, guid: 2e8e7b85f6c4cfc4bb20bfcbf351bf5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7366322828084404088}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8894026825088932271
