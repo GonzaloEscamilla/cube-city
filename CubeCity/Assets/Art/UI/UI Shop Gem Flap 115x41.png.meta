@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 6b53d58ab2ef83748b0583b424293123
+guid: 653014f28f4099e4fbb854f2c946beed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7229157816007899559
-    second: UI Shop Item Holder 170x93_0
-  - first:
-      213: -4937791129401369105
-    second: UI Shop Item Holder 170x93_1
+      213: -4216825501476271885
+    second: UI Shop Gem Flap 115x41_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI Shop Item Holder 170x93_0
+      name: UI Shop Gem Flap 115x41_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 163
-        width: 170
-        height: 93
+        y: 23
+        width: 115
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,29 +116,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9564c9f944fdcab90800000000000000
-      internalID: -7229157816007899559
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Shop Item Holder 170x93_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 70
-        width: 170
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fedd4fc1121797bb0800000000000000
-      internalID: -4937791129401369105
+      spriteID: 3f8c2b05c83da75c0800000000000000
+      internalID: -4216825501476271885
       vertices: []
       indices: 
       edges: []
