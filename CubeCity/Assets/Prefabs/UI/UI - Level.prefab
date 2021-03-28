@@ -709,6 +709,7 @@ GameObject:
   - component: {fileID: 8734318209576562059}
   - component: {fileID: 4989554521441293527}
   - component: {fileID: 597047818489328228}
+  - component: {fileID: 9125822398133168505}
   m_Layer: 5
   m_Name: PowerUp_Button_1
   m_TagString: Untagged
@@ -843,6 +844,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: 0
+--- !u!114 &9125822398133168505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4551536715624085804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18728c2df4c89a143bb60c6ac4492b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myPowerUp: 1
+  hasBeingUsed: 0
 --- !u!1 &5120364324932427009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,7 +1749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5120364325930135766
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3078,6 +3093,7 @@ GameObject:
   - component: {fileID: 2761389428913161729}
   - component: {fileID: 755552083958337780}
   - component: {fileID: 3471069507999382553}
+  - component: {fileID: 8317259892068476349}
   m_Layer: 5
   m_Name: PowerUp_Button_3
   m_TagString: Untagged
@@ -3212,6 +3228,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: 0
+--- !u!114 &8317259892068476349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6232426557127073425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18728c2df4c89a143bb60c6ac4492b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myPowerUp: 4
+  hasBeingUsed: 0
 --- !u!1 &6287386866168973992
 GameObject:
   m_ObjectHideFlags: 0
@@ -3730,6 +3760,7 @@ GameObject:
   - component: {fileID: 732808752309695079}
   - component: {fileID: 9074993399003039005}
   - component: {fileID: 8016646479116942010}
+  - component: {fileID: 3991508877200152411}
   m_Layer: 5
   m_Name: PowerUp_Button_2
   m_TagString: Untagged
@@ -3864,6 +3895,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: 0
+--- !u!114 &3991508877200152411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555273913246649656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18728c2df4c89a143bb60c6ac4492b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myPowerUp: 2
+  hasBeingUsed: 0
 --- !u!1 &8034322330096787311
 GameObject:
   m_ObjectHideFlags: 0

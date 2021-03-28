@@ -56,7 +56,7 @@ public class CubeSpawner : MonoBehaviour
     }
 
     [ContextMenu("ActivateExtraCubes")]
-    public void ActiveExtraCubes()
+    public void ActivateExtraCubes()
     {
         isExtraCubesActive = true;
         amountOfExtraFaces = 6 * LevelManager.control.GetLevelSystem().GetCurrentLevel().GetExtraCubes();

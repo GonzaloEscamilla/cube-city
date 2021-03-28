@@ -58,6 +58,18 @@ public class RaycastSelectionHandler : MonoBehaviour
         return null;
     }
 
+    public Face SelectAFace(Camera currentCamera, Vector2 touchPosition)
+    {
+        _ray = currentCamera.ScreenPointToRay(touchPosition);
+
+        if (Physics.Raycast(_ray, out _raycastHit))
+        {
+                return _raycastHit.transform.GetComponent<IRaySelectable>() as Face;
+        }
+        Debug.LogWarning("The Selection is Null");
+        return null;
+    }
+
     public Face GetSelection()
     {
         if (_selection != null)
@@ -65,7 +77,10 @@ public class RaycastSelectionHandler : MonoBehaviour
             return _selection as Face;
         }
         else
+        {
+            Debug.LogWarning("The Selection is Null");
             return null;
+        }
     }
 
     public bool TapStartedOnPreviewCube(Camera currentCamera, Vector2 touchPosition)

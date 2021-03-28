@@ -49,6 +49,8 @@ public class InputManager : MonoBehaviour
     /// </summary>
     [SerializeField] private bool isUISelected = false;
 
+    public bool IsOnPowerUpMode { get; set; }
+
     private bool isTapEnabled {
         get
         {
@@ -368,9 +370,26 @@ public class InputManager : MonoBehaviour
         {
 #if UNITY_EDITOR
 
-            selectable = raySelector.Select(cameraController.GetCamera(), Input.mousePosition);
+            if (!IsOnPowerUpMode)
+            {
+                selectable = raySelector.Select(cameraController.GetCamera(), Input.mousePosition);
+            }
+            else
+            {
+                PowerUpsManager.Instance.DoPowerUp(raySelector.SelectAFace(cameraController.GetCamera(), Input.mousePosition));
+                IsOnPowerUpMode = false;
+            }
 #else
-            selectable = raySelector.Select(cameraController.GetCamera(), Input.GetTouch(0).position);
+            if(!isOnPowerUpMode)
+            {
+                selectable = raySelector.Select(cameraController.GetCamera(), Input.GetTouch(0).position);
+            }
+            else
+            {
+                PowerUpsManager.Instance.DoPowerUp(raySelector.SelectAFace(cameraController.GetCamera(), Input.GetTouch(0).position));
+                isOnPowerUpMode = false;
+            }
+
 #endif
         }
 
