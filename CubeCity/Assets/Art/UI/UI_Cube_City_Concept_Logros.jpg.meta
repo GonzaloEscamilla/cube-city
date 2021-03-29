@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: cb708906de7837948861d07d5ee5c612
+guid: 4592c265b3513fb438ae7594ac672cd8
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 8483344445221683829
-    second: UI Achievements Price Holder 96x96_0
-  - first:
-      213: -6484856487061255442
-    second: UI Achievements Price Holder 96x96_1
-  - first:
-      213: 6701049622315220750
-    second: UI Achievements Price Holder 96x96_2
-  - first:
-      213: -5588795557818831625
-    second: UI Achievements Price Holder 96x96_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -52,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,91 +97,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: UI Achievements Price Holder 96x96_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 160
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 572c8b483d4eab570800000000000000
-      internalID: 8483344445221683829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Achievements Price Holder 96x96_1
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 160
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eea835d12692106a0800000000000000
-      internalID: -6484856487061255442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Achievements Price Holder 96x96_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0f3d58b029eefc50800000000000000
-      internalID: 6701049622315220750
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Achievements Price Holder 96x96_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7fc6de50d0c9072b0800000000000000
-      internalID: -5588795557818831625
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

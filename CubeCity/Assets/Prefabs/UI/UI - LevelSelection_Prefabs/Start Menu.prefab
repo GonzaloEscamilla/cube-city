@@ -358,7 +358,7 @@ MonoBehaviour:
   tweenTargetIsTargetGO: 1
   delay: 0
   duration: 0.5
-  easeType: 6
+  easeType: 7
   easeCurve:
     serializedVersion: 2
     m_Curve:
@@ -918,7 +918,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 589143892841908295}
-        m_MethodName: DOPlay
+        m_MethodName: DOPlayForward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
