@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd369b48e044674981f42436ed1a347, type: 3}
+  m_Name: 03_BigCity
+  m_EditorClassIdentifier: 
+  Name: Big City
+  _levels:
+  - {fileID: 11400000, guid: c5fde26a58c5f8e4992c92f2981960a2, type: 2}
+  - {fileID: 11400000, guid: 57353b7afa7732a4fa9a5c95b632712c, type: 2}
+  - {fileID: 11400000, guid: d035494abf0ed2c458a9af3659fa4231, type: 2}
+  - {fileID: 11400000, guid: 89fad4830d04f3b4a89bed16956088c1, type: 2}
+  - {fileID: 11400000, guid: 05145ddf7f39709409e64709eb774af5, type: 2}
+  - {fileID: 11400000, guid: c3ab186d97bab1c46ae8fe9134c71c63, type: 2}
+  - {fileID: 11400000, guid: c21bd17a9bff2294f9ae1b2154182e1b, type: 2}
+  - {fileID: 11400000, guid: 0f54f2612d157204ca3250b9c3a1ef8b, type: 2}
+  - {fileID: 11400000, guid: c85999bb4c31b3c469c2831d395e6fb2, type: 2}

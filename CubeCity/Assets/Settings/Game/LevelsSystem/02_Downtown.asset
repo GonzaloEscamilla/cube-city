@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd369b48e044674981f42436ed1a347, type: 3}
+  m_Name: 02_Downtown
+  m_EditorClassIdentifier: 
+  Name: Downtown
+  _levels:
+  - {fileID: 11400000, guid: e64f48b7d448bcc45bd892f69ba2cb0c, type: 2}
+  - {fileID: 11400000, guid: 3c214b60e41aca84295dee62bef09717, type: 2}
+  - {fileID: 11400000, guid: ac0a3d81240fbd340bd7c95b286e6aa0, type: 2}
+  - {fileID: 11400000, guid: bc193110e6abb22478c62cd1736c7d87, type: 2}
+  - {fileID: 11400000, guid: ea0653d1dea66094d9ee00812552d4a5, type: 2}
+  - {fileID: 11400000, guid: 95744ba44e62f4c4f840fc148154a9c0, type: 2}
+  - {fileID: 11400000, guid: 8e40bf5db0fe07e4a88654feb949029a, type: 2}
+  - {fileID: 11400000, guid: c64648ea57cb2eb45afafd9c7c215dbd, type: 2}
+  - {fileID: 11400000, guid: 723613ce9e310734c8951317495af52b, type: 2}

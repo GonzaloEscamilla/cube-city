@@ -32,6 +32,15 @@ public class FacesDistribution
         }
     }
 
+    public void ResetForExtraFaces(FacesDistribution facesDistribution)
+    {
+        distribution = new DistributionItem[facesDistribution.distribution.Length];
+        for (int i = 0; i < facesDistribution.distribution.Length; i++)
+        {
+            distribution[i] = facesDistribution.distribution[i];
+        }
+    }
+
     public int GetTotalRemainingFaces()
     {
         int remainingFaces = 0;
@@ -47,8 +56,8 @@ public class FacesDistribution
         int remainingFaces = GetTotalRemainingFaces();
         if (remainingFaces == 0)
         {
-            Debug.LogError("No more faces in the distribution system");
-            return Random.Range(0, 6);
+            Debug.LogWarning("No more faces in the distribution system");
+            return -1;
         }
 
         int result = 0;

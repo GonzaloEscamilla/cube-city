@@ -11,4 +11,5 @@ public enum FaceTypes
     ParkArera,
     ResidentialArea,
     FarmArea,
+    Demolished
 }
