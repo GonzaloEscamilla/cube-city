@@ -37,9 +37,9 @@ MonoBehaviour:
   - Name: CancelButton
     SoundEvent: event:/Oneshots/UISound/CancelButton
   - Name: TabButton
-    SoundEvent: 
+    SoundEvent: event:/Oneshots/UISound/TabButton
   - Name: BuyButton
-    SoundEvent: 
+    SoundEvent: event:/Oneshots/UISound/BuyButton
   - Name: RewardButton
     SoundEvent: 
   - Name: CheckBoxButton
