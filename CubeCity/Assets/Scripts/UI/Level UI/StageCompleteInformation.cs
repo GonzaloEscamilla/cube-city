@@ -115,23 +115,25 @@ public class StageCompleteInformation : MonoBehaviour
 
         levelData aux = new levelData();
         bool exists = false;
+        int auxStars = 0;
 
         for (int i = 0; i < saveData.levelDatas.Count; i++)
         {
-            if (saveData.levelDatas[i].levelNumber == levelnumber && saveData.levelDatas[i].starsAmount < starsAmount)
+            if (saveData.levelDatas[i].levelNumber == levelnumber)
             {
                 exists = true;
+                auxStars = saveData.levelDatas[i].starsAmount;
                 aux = saveData.levelDatas[i];
                 break;
             }
         }
 
-        if (exists)
+        if (exists && auxStars <= starsAmount)
         {
             saveData.levelDatas.Remove(aux);
             saveData.levelDatas.Add(LevelDataToSave);
         }
-        else
+        else if (auxStars <= starsAmount)
             saveData.levelDatas.Add(LevelDataToSave);
 
         SaveLoadController.instance.Save();
