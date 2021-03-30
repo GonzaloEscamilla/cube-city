@@ -69,6 +69,8 @@ public class SetLevelButton : ButtonComponent
 
             for (int i = 0; i < popUpLevelSelection.levelObjectives.Length; i++)
                 popUpLevelSelection.levelObjectives[i].text = levelObjectivesToSet[i];
+
+            levelToLoad.SetSecondaryObjectivesNames(levelObjectivesToSet);
         }
         else
             Debug.LogWarning("The PopUpLevelSelection is null in this object.", gameObject);
@@ -90,7 +92,10 @@ public class SetLevelButton : ButtonComponent
     public void SetLevel()
     {
         if (saveData.levelDatas == null)
+        {
             return;
+        }
+            
 
         for (int i = 0; i < saveData.levelDatas.Count; i++)
         {
@@ -99,6 +104,7 @@ public class SetLevelButton : ButtonComponent
                 for (int j = 0; j < saveData.levelDatas[i].starsAmount; j++)
                 {
                     levelStars[j].SetActive(true);
+                    Player.Instance.StarsAmount++;
                 }
             }
         }

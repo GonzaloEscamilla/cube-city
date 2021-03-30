@@ -53,10 +53,7 @@ public class Player : Singleton<Player>
         switch (_playerData)
         {
             case PlayerData.StartsAmount:
-                if (!PlayerPrefs.HasKey(PlayerData.StartsAmount.ToString()))
-                {
                     PlayerPrefs.SetInt(PlayerData.StartsAmount.ToString(), 0);
-                }
                 break;
             case PlayerData.CristalsAmount:
                 if (!PlayerPrefs.HasKey(PlayerData.CristalsAmount.ToString()))
@@ -78,14 +75,6 @@ public class Player : Singleton<Player>
     public bool CanBuy(int neddedAmount)
     {
         return CristalsAmount > neddedAmount;
-    }
-
-    [ContextMenu("teST")]
-    public void Test()
-    {
-        Debug.Log(StarsAmount);
-        StarsAmount = 1;
-        Debug.Log(StarsAmount);
     }
 }
 
