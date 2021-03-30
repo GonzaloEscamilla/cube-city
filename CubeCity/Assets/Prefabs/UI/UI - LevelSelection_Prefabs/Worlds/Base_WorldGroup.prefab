@@ -548,8 +548,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Reach 27 stars to unlock the next stage
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7f5de9e02fe9c1f48b52d7b0bead41e7, type: 2}
+  m_sharedMaterial: {fileID: 5917046192155623619, guid: 7f5de9e02fe9c1f48b52d7b0bead41e7,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -974,7 +975,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 305.7, y: -157}
-  m_SizeDelta: {x: 62.6, y: 30.8}
+  m_SizeDelta: {x: 68, y: 30.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3717256299565327850
 CanvasRenderer:
@@ -1007,8 +1008,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7f5de9e02fe9c1f48b52d7b0bead41e7, type: 2}
+  m_sharedMaterial: {fileID: 5917046192155623619, guid: 7f5de9e02fe9c1f48b52d7b0bead41e7,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
