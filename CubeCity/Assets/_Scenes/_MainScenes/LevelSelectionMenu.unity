@@ -9917,6 +9917,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: starsNedded
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7329474162175438676, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -11392,6 +11397,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8494749108627525178, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: starsNedded
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8498655555021335291, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -11776,6 +11786,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840182436870818302, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: starsNedded
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8850375078792987142, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
         type: 3}

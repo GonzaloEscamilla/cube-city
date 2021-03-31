@@ -99,10 +99,7 @@ public class SetLevelButton : ButtonComponent
     public void SetLevel()
     {
         if (saveData.levelDatas == null)
-        {
-            return;
-        }
-            
+            return;            
 
         for (int i = 0; i < saveData.levelDatas.Count; i++)
         {
