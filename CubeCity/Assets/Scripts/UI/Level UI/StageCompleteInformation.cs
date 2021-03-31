@@ -82,7 +82,7 @@ public class StageCompleteInformation : MonoBehaviour
                 break;
         }
 
-        SaveInformarion(endData.levelNumber,starsAmount, levelStatistics.GetResourceAmount(ResourceTypes.Prosperity));
+        SaveInformarion(endData.levelNumber,starsAmount, levelStatistics.GetResourceAmount(ResourceTypes.Prosperity), endData.success);
 
         for (int i = 0; i < endData.secondaryObjectives.Length; i++)
         {
@@ -103,7 +103,7 @@ public class StageCompleteInformation : MonoBehaviour
         }
     }
 
-    private void SaveInformarion(int levelnumber,int starsAmount, int levelscore)
+    private void SaveInformarion(int levelnumber,int starsAmount, int levelscore, bool hasWon)
     {
         if (saveData.levelDatas == null)
             saveData.levelDatas = new List<levelData>();
@@ -112,6 +112,7 @@ public class StageCompleteInformation : MonoBehaviour
         LevelDataToSave.levelNumber = levelnumber;
         LevelDataToSave.starsAmount = starsAmount;
         LevelDataToSave.levelScore = levelscore;
+        LevelDataToSave.completed = hasWon;
 
         levelData aux = new levelData();
         bool exists = false;
