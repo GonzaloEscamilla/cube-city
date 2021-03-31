@@ -227,7 +227,6 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_CameraOutput: 0
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
@@ -239,6 +238,7 @@ MonoBehaviour:
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
+  m_ClearDepth: 1
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
@@ -424,6 +424,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI_Loading
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180938955991109635, guid: 118a3b009a5073c449901ec36dd2e687,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 59.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180938955991109635, guid: 118a3b009a5073c449901ec36dd2e687,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180938955991109635, guid: 118a3b009a5073c449901ec36dd2e687,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 118a3b009a5073c449901ec36dd2e687, type: 3}

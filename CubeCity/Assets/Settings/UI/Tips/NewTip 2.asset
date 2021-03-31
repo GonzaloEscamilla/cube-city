@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb670fd6c13b754e922a41e9a18ccc2, type: 3}
   m_Name: NewTip 2
   m_EditorClassIdentifier: 
-  tipDescription: Focusing on your main objective may give you the starts you need
-    to move forward in the game.
+  tipDescription: Build cubes on faces that you dont want to destroy them and avoid
+    their scoring

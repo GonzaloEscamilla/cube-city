@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb670fd6c13b754e922a41e9a18ccc2, type: 3}
   m_Name: NewTip 4
   m_EditorClassIdentifier: 
-  tipDescription: Some times trying different adjacencies might help you understand
-    the possibilities of combo making
+  tipDescription: Secondary objectives may be required a positive or negative value
+    of Happiness, Economy or Sustainability

@@ -10,7 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebb670fd6c13b754e922a41e9a18ccc2, type: 3}
-  m_Name: NewTip
+  m_Name: NewTip 12
   m_EditorClassIdentifier: 
-  tipDescription: Be aware of the amount of Garbage areas that you have in the city,
-    they could become a real problem.
+  tipDescription: Get enough Stars to unlock new levels

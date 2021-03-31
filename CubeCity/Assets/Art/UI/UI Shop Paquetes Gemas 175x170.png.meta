@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 4c772bbc33def664ca0e1c14e1a2e2d3
+guid: 3a2ca6d9db18fca45a46c818348f4a68
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4081524714382465837
-    second: UI Background Skin Selection Btn 119x127_0
+      213: -1797701641166542622
+    second: UI Shop Paquetes Gemas 175x170_0
+  - first:
+      213: 7027730705010768562
+    second: UI Shop Paquetes Gemas 175x170_1
+  - first:
+      213: 8319931724567008982
+    second: UI Shop Paquetes Gemas 175x170_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,13 +108,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI Background Skin Selection Btn 119x127_0
+      name: UI Shop Paquetes Gemas 175x170_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 119
-        height: 127
+        y: 342
+        width: 175
+        height: 170
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,8 +122,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2b9eb65a1d74a830800000000000000
-      internalID: 4081524714382465837
+      spriteID: 2e8a12ac1e74d07e0800000000000000
+      internalID: -1797701641166542622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Shop Paquetes Gemas 175x170_1
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 342
+        width: 175
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bab54977d3878160800000000000000
+      internalID: 7027730705010768562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Shop Paquetes Gemas 175x170_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 172
+        width: 175
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6d15692d5567370800000000000000
+      internalID: 8319931724567008982
       vertices: []
       indices: 
       edges: []
@@ -125,7 +173,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a16b2d67c0e03dd448ed1930810a91a6
     internalID: 0
     vertices: []
     indices: 

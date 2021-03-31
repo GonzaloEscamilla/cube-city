@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4c772bbc33def664ca0e1c14e1a2e2d3
+guid: 84c4d477f066d0645bcee6b96eccde65
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4081524714382465837
-    second: UI Background Skin Selection Btn 119x127_0
+      213: -7322789270802365489
+    second: UI_Cube City Logo 905x512_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI Background Skin Selection Btn 119x127_0
+      name: UI_Cube City Logo 905x512_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 119
-        height: 127
+        y: 0
+        width: 905
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,8 +116,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2b9eb65a1d74a830800000000000000
-      internalID: 4081524714382465837
+      spriteID: fc388ccb4f9306a90800000000000000
+      internalID: -7322789270802365489
       vertices: []
       indices: 
       edges: []
