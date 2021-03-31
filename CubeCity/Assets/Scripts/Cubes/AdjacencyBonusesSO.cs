@@ -21,9 +21,9 @@ public class AdjacencyBonusesSO : ScriptableObject
     {
         foreach (BonusTuple bonus in _bonusTuples)
         {
-            if ((bonus.type1 == type1 && bonus.type2 == type2) ||
-                (bonus.type1 == type2 && bonus.type2 == type1))
+            if ((bonus.type1 == type1 && bonus.type2 == type2) || (bonus.type1 == type2 && bonus.type2 == type1))
             {
+                EventsManager.Instance.BonusMade();
                 return bonus.bonusData;
             }
         }

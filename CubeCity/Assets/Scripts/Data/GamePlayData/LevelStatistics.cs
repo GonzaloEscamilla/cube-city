@@ -116,7 +116,7 @@ public class LevelStatistics: ScriptableObject
     /// <returns></returns>
     public int GetResourceAmount(ResourceTypes type)
     {
-        return _resources.GetResourceType(type);
+        return _resources.GetResourceByType(type);
     }
 
     public void SetMaxCubeAmount(int amount)

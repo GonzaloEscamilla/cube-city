@@ -49,12 +49,27 @@ public class EventsManager : Singleton<EventsManager>
     #region UI Events
 
     public Action OnStatisticsUpdate;
+    public Action<int> OnStartsUpdate;          // Estos tres son para el sistema de achivements y solo deberia ser ejecutados cuando se update por completo el valor total
+    public Action<int> OnCombosUpdate;          //     en los player prefs, ejecutar desde el player.
+    public Action<int> OnPowerupsUpdate;        //
+    public Action<int> OnMaxProsperityUpdate;   //
 
     #endregion
+
+    public void MaxProsperityUpdate(int amount)
+    {
+        OnMaxProsperityUpdate?.Invoke(amount);
+    }
+
+    public void StarsUpdate(int currentAmount)
+    {
+        OnStartsUpdate?.Invoke(currentAmount);
+    }
 
     public void ComboMade()
     {
         OnComboMade?.Invoke();
+        Player.Instance.AmountOfCombosMade++;
     }
 
     public void BonusMade()

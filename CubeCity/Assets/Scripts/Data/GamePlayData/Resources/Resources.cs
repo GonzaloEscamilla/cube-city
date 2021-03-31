@@ -84,7 +84,7 @@ public class Resources
         return result;
     }
 
-    public int GetResourceType(ResourceTypes type)
+    public int GetResourceByType(ResourceTypes type)
     {
         return resources[(int)type].amount;
     }

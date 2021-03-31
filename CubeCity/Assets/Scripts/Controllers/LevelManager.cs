@@ -212,7 +212,12 @@ public class LevelManager : MonoBehaviour
         data.secondaryObjectives = new bool[_secondaryObjectivesCompleted.Length];
 
         for (int i = 0; i < data.secondaryObjectives.Length; i++)
-            data.secondaryObjectives[i] = _secondaryObjectivesCompleted[i]; 
+            data.secondaryObjectives[i] = _secondaryObjectivesCompleted[i];
+
+        if (Player.Instance.MaxProsperityMade < data.finalResources.GetResourceByType(ResourceTypes.Prosperity))
+            Player.Instance.MaxProsperityMade = data.finalResources.GetResourceByType(ResourceTypes.Prosperity);
+
+        Player.Instance.MaxProsperityMade = Player.Instance.MaxProsperityMade;
 
         EventsManager.Instance.EndLevel(data);
 
@@ -338,9 +343,7 @@ public class LevelManager : MonoBehaviour
         {
             foreach (Face adjacentFace in face.GetAdjacentFaces())
             {
-                _levelStatistics.CalculateNextResources(
-                    _adjacencyBonusesSO.GetBonusForFaces(face.Type, adjacentFace.Type)
-                );
+                _levelStatistics.CalculateNextResources(_adjacencyBonusesSO.GetBonusForFaces(face.Type, adjacentFace.Type));
             }
         }
     }
@@ -355,6 +358,7 @@ public class LevelManager : MonoBehaviour
             {
                 result.Add(group);
                 _levelStatistics.AmountOfCombosMade++;
+                EventsManager.Instance.ComboMade();
             }
         }
         return result;
