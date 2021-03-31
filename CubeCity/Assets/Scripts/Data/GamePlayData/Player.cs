@@ -324,4 +324,29 @@ public class Inventory : Singleton<Inventory>
                 break;
         }
     }
+
+    public int GetPowerUpFromInventory(PowerUpType type)
+    {
+        switch (type)
+        {
+            case PowerUpType.Demolition:
+                return Demolition;
+            case PowerUpType.Builder:
+                return Builder;
+            case PowerUpType.ReformResidentialArea:
+                return ReformResidentialArea;
+            case PowerUpType.ReformParkArea:
+                return ReformParkArea;
+            case PowerUpType.ReformComercial:
+                return ReformComercial;
+            case PowerUpType.ReformAgricultural:
+                return ReformAgricultural;
+            case PowerUpType.ReformBusinesArea:
+                return ReformBusinesArea;
+            case PowerUpType.ReformIndustrialArea:
+                return ReformIndustrialArea;
+        }
+
+        return 0;
+    }
 }
