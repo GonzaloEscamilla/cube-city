@@ -26,6 +26,7 @@ public class SaveLoadController : MonoBehaviour
     {
         string data = JsonUtility.ToJson(saveData);
         PlayerPrefs.SetString("GameData", data);
+        PlayerPrefs.Save();
     }
 
     public void Load()
