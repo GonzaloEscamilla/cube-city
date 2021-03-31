@@ -3635,6 +3635,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3469819985917434156, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3469819985917434158, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -9585,6 +9590,256 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[2]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[3]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[4]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[5]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[6]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[7]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[8]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[9]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[10]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[11]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[12]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[13]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[14]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[15]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[16]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[17]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[18]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[19]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[20]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[21]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[22]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[23]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[24]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[25]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[26]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[27]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[28]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[29]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[30]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[31]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[32]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[33]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[34]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[35]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[36]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[37]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[38]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[39]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[40]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[41]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[42]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[43]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[44]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[45]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[46]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[47]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[48]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: firstButtonLockedImages.Array.data[49]
+      value: 
+      objectReference: {fileID: 1138756282}
+    - target: {fileID: 7286138295588576193, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: starsNedded
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7329474162175438676, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -10820,6 +11075,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8407116877408031618, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8412218198536449820, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10959,6 +11219,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8494749108627525178, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: starsNedded
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8498655555021335291, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
         type: 3}
@@ -11324,6 +11589,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840182436870818302, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+        type: 3}
+      propertyPath: starsNedded
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8850375078792987142, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
         type: 3}
@@ -11987,6 +12257,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1138756282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3022772952372702132, guid: 1dacb16ce8f11b24592f2aca58e5cd5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 87875613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1220132618
 PrefabInstance:
   m_ObjectHideFlags: 0
