@@ -456,6 +456,11 @@ public class LevelManager : MonoBehaviour
         return _levelStatistics;
     }
 
+    public Level GetCurrentLevel()
+    {
+        return _currentLevel;
+    }
+
     public AdjacencyBonusesSO GetAdjacencyBounisesSO()
     {
         return _adjacencyBonusesSO;

@@ -7,8 +7,10 @@ using UnityEngine.Events;
 
 public class UILevelEnd : MonoBehaviour
 {
-    [SerializeField] private DOTweenAnimation fadePanel; 
+    [SerializeField] private DOTweenAnimation fadePanel;
+    
     [SerializeField] private DOTweenAnimation endLevelUI;
+    [SerializeField] private DOTweenAnimation endLevelUIFailed;
 
 
     private void Start() => Init();
@@ -24,8 +26,12 @@ public class UILevelEnd : MonoBehaviour
     }
 
     private void OnLevelEnd(LevelEndData data)
-    {
+    {        
         fadePanel.DOPlayForward();
-        endLevelUI.DOPlayForward();
+
+        if (data.success)
+            endLevelUI.DOPlayForward();
+        else
+            endLevelUIFailed.DOPlayForward();
     }
 }
