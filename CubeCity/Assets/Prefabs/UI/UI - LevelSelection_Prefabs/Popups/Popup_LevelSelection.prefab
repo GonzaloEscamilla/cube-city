@@ -3396,6 +3396,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: DOPlayBackwards
       objectReference: {fileID: 0}
+    - target: {fileID: 2759442408712060976, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
+        type: 3}
+      propertyPath: powerUpType
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5901490558850959016, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3587,6 +3592,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2759442408712060976, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
+        type: 3}
+      propertyPath: powerUpType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5901490558850959016, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3742,6 +3752,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: DOPlayBackwards
+      objectReference: {fileID: 0}
+    - target: {fileID: 2759442408712060976, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
+        type: 3}
+      propertyPath: powerUpType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5901490558850959016, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
         type: 3}
@@ -4034,6 +4049,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: DOPlayBackwards
       objectReference: {fileID: 0}
+    - target: {fileID: 2759442408712060976, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
+        type: 3}
+      propertyPath: powerUpType
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5901490558850959016, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4189,6 +4209,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: DOPlayBackwards
+      objectReference: {fileID: 0}
+    - target: {fileID: 2759442408712060976, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
+        type: 3}
+      propertyPath: powerUpType
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5901490558850959016, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
         type: 3}
@@ -4616,6 +4641,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: DOPlayBackwards
       objectReference: {fileID: 0}
+    - target: {fileID: 2759442408712060976, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
+        type: 3}
+      propertyPath: powerUpType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5901490558850959016, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4772,6 +4802,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: DOPlayBackwards
       objectReference: {fileID: 0}
+    - target: {fileID: 2759442408712060976, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
+        type: 3}
+      propertyPath: powerUpType
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5901490558850959016, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4927,6 +4962,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: DOPlayBackwards
+      objectReference: {fileID: 0}
+    - target: {fileID: 2759442408712060976, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
+        type: 3}
+      propertyPath: powerUpType
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5901490558850959016, guid: c314fd0bc8deeaf459f5f976a8e69e3b,
         type: 3}
