@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Class used to set the level pop up
@@ -38,8 +39,14 @@ public class SetLevelButton : ButtonComponent
     [SerializeField]
     private string levelScoreToSet;
 
+    [SerializeField]
+    private GameObject[] unlockedButtonImages;
+
+    [SerializeField]
+    private Button nextLevelButton;
+
     /// <summary>
-    /// objectives to set to the pop up .
+    /// objectives to set to the pop up.
     /// </summary>
     [SerializeField]
     private string[] levelObjectivesToSet;
@@ -69,6 +76,8 @@ public class SetLevelButton : ButtonComponent
 
             for (int i = 0; i < popUpLevelSelection.levelObjectives.Length; i++)
                 popUpLevelSelection.levelObjectives[i].text = levelObjectivesToSet[i];
+
+            levelToLoad.SetSecondaryObjectivesNames(levelObjectivesToSet);
         }
         else
             Debug.LogWarning("The PopUpLevelSelection is null in this object.", gameObject);
@@ -90,15 +99,25 @@ public class SetLevelButton : ButtonComponent
     public void SetLevel()
     {
         if (saveData.levelDatas == null)
-            return;
+            return;            
 
         for (int i = 0; i < saveData.levelDatas.Count; i++)
         {
             if (levelToLoad != null && saveData.levelDatas[i].levelNumber == levelToLoad.LevelNumber)
             {
+                if (saveData.levelDatas[i].completed)
+                {
+                    if (nextLevelButton != null)
+                        nextLevelButton.interactable = true;
+
+                    for (int j = 0; j < unlockedButtonImages.Length; j++)
+                        unlockedButtonImages[j].SetActive(true);
+                }
+
                 for (int j = 0; j < saveData.levelDatas[i].starsAmount; j++)
                 {
                     levelStars[j].SetActive(true);
+                    Player.Instance.StarsAmount++;
                 }
             }
         }

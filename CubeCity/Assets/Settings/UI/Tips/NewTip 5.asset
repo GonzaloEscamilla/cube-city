@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb670fd6c13b754e922a41e9a18ccc2, type: 3}
   m_Name: NewTip 5
   m_EditorClassIdentifier: 
-  tipDescription: Take your time, no one is rushing you.
+  tipDescription: Place Parks Areas near Residential or Business Areas is the easiest
+    way to score Happiness

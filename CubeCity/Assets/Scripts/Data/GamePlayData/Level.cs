@@ -12,18 +12,19 @@ public class Level : ScriptableObject
     public int LevelNumber;
 
     [SerializeField] private TutorialSO tutorial;
-    [SerializeField] private List<LevelConstraints> _levelConstraints = new List<LevelConstraints>(); 
+    [SerializeField] private List<LevelConstraints> _levelConstraints = new List<LevelConstraints>();
     [SerializeField] private LevelObjective _mainObjective;
     [SerializeField] private List<LevelSecondaryObjective> _secondaryObjetives = new List<LevelSecondaryObjective>();
-    
-    static FaceTypes[] faceTypes = (FaceTypes[]) Enum.GetValues(typeof(FaceTypes));
+    [SerializeField] private string[] secondaryObjetivesNames;
+
+    static FaceTypes[] faceTypes = (FaceTypes[])Enum.GetValues(typeof(FaceTypes));
     [SerializeField] private FacesDistribution _facesDistribution = new FacesDistribution();
     [SerializeField] private int amountOfCubes;
 
     [Header("Audio Settings")]
 
     [SerializeField] private SoundsDefinition.LevelClip levelSound;
-   
+
     [Header("PowerUp Settings")]
 
     [SerializeField] private int amountOfExtraCubes = 3;
@@ -112,5 +113,18 @@ public class Level : ScriptableObject
     public TutorialSO GetTutorial()
     {
         return tutorial;
+    }
+
+    public void SetSecondaryObjectivesNames(string[] names)
+    {
+        secondaryObjetivesNames = new string[names.Length];
+
+        for (int i = 0; i < secondaryObjetivesNames.Length; i++)
+            secondaryObjetivesNames[i] = names[i];
+    }
+
+    public string[] GetSecondaryObjectivesNames()
+    {
+        return secondaryObjetivesNames;
     }
 }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb670fd6c13b754e922a41e9a18ccc2, type: 3}
   m_Name: NewTip 6
   m_EditorClassIdentifier: 
-  tipDescription: Stop, hear the music, enjoy the view.
+  tipDescription: Try to complete the Secondary objectives to earn more Stars

@@ -16,4 +16,5 @@ public struct levelData
     public int levelNumber;
     public int starsAmount;
     public int levelScore;
+    public bool completed;
 }

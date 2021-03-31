@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb670fd6c13b754e922a41e9a18ccc2, type: 3}
   m_Name: NewTip 1
   m_EditorClassIdentifier: 
-  tipDescription: Some times it's better to take your time to think which is the
-    next move
+  tipDescription: Avoid Residential Areas near Garbage dump Areas, that will make
+    your people unhappy
