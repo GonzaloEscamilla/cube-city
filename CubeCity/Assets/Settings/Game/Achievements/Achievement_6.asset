@@ -23,6 +23,7 @@ MonoBehaviour:
     rewardType: 1
     amount: 3
     powerupType: 3
-  rewardIcon: {fileID: 0}
+  rewardIcon: {fileID: 5797075543005013831, guid: 00e9a36d468bc814a9c7517f4ac5118a,
+    type: 3}
   currentValue: 0
   state: 1

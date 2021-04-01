@@ -30,7 +30,7 @@ public class AchivementHandler : MonoBehaviour
     private void SetValues()
     {
         title.text = achievement.title;
-        rewardIcon = achievement.rewardIcon;
+        rewardIcon.sprite = achievement.rewardIcon;
     }
 
     private void StateUpdate()

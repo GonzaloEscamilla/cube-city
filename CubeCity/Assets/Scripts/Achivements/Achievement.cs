@@ -13,7 +13,7 @@ public class Achievement : ScriptableObject
     public string information;
     public AchievementCondition achievementCondition;
     public AchievementReward achievementReward;
-    public Image rewardIcon;
+    public Sprite rewardIcon;
 
     [Header("Current Progress")]
     public int currentValue;
