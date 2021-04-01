@@ -22,4 +22,16 @@ public class PopupLevelSelection : MonoBehaviour
     /// </summary>
     [SerializeField]
     public TextMeshProUGUI[] levelObjectives;
+
+    [SerializeField] private PowerUpSelectionButton[] selectedPowerUps;
+    private PowerUpType[] powerUpTypes;
+
+    public PowerUpType[] GetPowerUpTypesForLevel()
+    {
+        powerUpTypes = new PowerUpType[3];
+        for (int i = 0; i < selectedPowerUps.Length; i++)
+            powerUpTypes[i] = selectedPowerUps[i].GetPowerUpType();
+
+        return powerUpTypes;
+    }
 }

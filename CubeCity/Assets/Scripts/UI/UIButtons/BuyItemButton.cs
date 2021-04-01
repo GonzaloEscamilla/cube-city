@@ -17,7 +17,7 @@ public class BuyItemButton : ButtonComponent
 
         if (Player.Instance.CanBuy(itemPrice))
         {
-            Inventory.Instance.AddPowerUpToInventory(powerUpType, amountOfItems);
+            Player.Instance.Inventory.AddPowerUpToInventory(powerUpType, amountOfItems);
             Player.Instance.CristalsAmount -= itemPrice;
             SaveLoadController.instance.Save();
             EventsManager.Instance.Buy();

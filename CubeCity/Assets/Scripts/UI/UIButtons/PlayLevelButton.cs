@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(UIButtonUtility))]
 public class PlayLevelButton : ButtonComponent
 {
+    [SerializeField] private PopupLevelSelection levelSelection;
+
     private SelectLevelHandler levelHandler;
 
     private void Awake()
@@ -14,6 +16,7 @@ public class PlayLevelButton : ButtonComponent
 
     public override void Release()
     {
+        Player.Instance.Inventory.powerUpsForLevel = levelSelection.GetPowerUpTypesForLevel();
         levelHandler.LoadSelectedLevel();
     }
 }

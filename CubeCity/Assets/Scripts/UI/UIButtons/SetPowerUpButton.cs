@@ -25,12 +25,17 @@ public class SetPowerUpButton : MonoBehaviour
     public void Init()
     {
         EventsManager.Instance.OnBuy += UpdateValues;
-        amountText.text = "X" + Inventory.Instance.GetPowerUpFromInventory(powerUpType);
+        amountText.text = "X" + Player.Instance.Inventory.GetPowerUpFromInventory(powerUpType);
+    }
+
+    public PowerUpType GetPowerUpType()
+    {
+        return powerUpType;
     }
 
     private void UpdateValues()
     {
-         amountText.text = "X" + Inventory.Instance.GetPowerUpFromInventory(powerUpType);
+         amountText.text = "X" + Player.Instance.Inventory.GetPowerUpFromInventory(powerUpType);
     }
 
     
