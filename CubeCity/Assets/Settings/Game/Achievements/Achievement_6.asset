@@ -18,11 +18,11 @@ MonoBehaviour:
   achievementCondition:
     achievementType: 2
     condition: 0
-    value: 0
+    value: 5
   achievementReward:
-    rewardType: 0
-    amount: 0
-    powerupType: 0
+    rewardType: 1
+    amount: 3
+    powerupType: 3
   rewardIcon: {fileID: 0}
-  currentValue: 3
+  currentValue: 0
   state: 1

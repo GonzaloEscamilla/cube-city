@@ -18,10 +18,10 @@ MonoBehaviour:
   achievementCondition:
     achievementType: 0
     condition: 0
-    value: 0
+    value: 100
   achievementReward:
     rewardType: 0
-    amount: 0
+    amount: 50
     powerupType: 0
   rewardIcon: {fileID: 0}
   currentValue: 0
