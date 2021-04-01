@@ -380,14 +380,14 @@ public class InputManager : MonoBehaviour
                 IsOnPowerUpMode = false;
             }
 #else
-            if(!isOnPowerUpMode)
+            if(!IsOnPowerUpMode)
             {
                 selectable = raySelector.Select(cameraController.GetCamera(), Input.GetTouch(0).position);
             }
             else
             {
                 PowerUpsManager.Instance.DoPowerUp(raySelector.SelectAFace(cameraController.GetCamera(), Input.GetTouch(0).position));
-                isOnPowerUpMode = false;
+                IsOnPowerUpMode = false;
             }
 
 #endif
