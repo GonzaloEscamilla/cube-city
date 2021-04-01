@@ -92,12 +92,15 @@ public class Player : Singleton<Player>
         switch (_playerData)
         {
             case PlayerData.StartsAmount:
+                if (!PlayerPrefs.HasKey(PlayerData.StartsAmount.ToString()))
+                {
                     PlayerPrefs.SetInt(PlayerData.StartsAmount.ToString(), 0);
+                }
                 break;
             case PlayerData.CristalsAmount:
                 if (!PlayerPrefs.HasKey(PlayerData.CristalsAmount.ToString()))
                 {
-                    PlayerPrefs.SetInt(PlayerData.CristalsAmount.ToString(), 0);
+                    PlayerPrefs.SetInt(PlayerData.CristalsAmount.ToString(), 500);
                 }
                 break;
             case PlayerData.TimePlayed:
@@ -133,6 +136,13 @@ public class Player : Singleton<Player>
     {
         return CristalsAmount > neddedAmount;
     }
+
+    [ContextMenu("ResetPlayerValues")]
+    private void ResetPlayerValues()
+    {
+        CristalsAmount = 500;
+    }
+
 }
 
 public enum PlayerData
