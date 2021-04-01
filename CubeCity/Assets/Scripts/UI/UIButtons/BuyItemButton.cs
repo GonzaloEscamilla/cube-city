@@ -13,11 +13,14 @@ public class BuyItemButton : ButtonComponent
 
     public override void Release()
     {
+        Debug.Log("Player Money: " + Player.Instance.CristalsAmount);
+
         if (Player.Instance.CanBuy(itemPrice))
         {
             Inventory.Instance.AddPowerUpToInventory(powerUpType, amountOfItems);
             Player.Instance.CristalsAmount -= itemPrice;
             SaveLoadController.instance.Save();
+            EventsManager.Instance.Buy();
         }
         else
         {

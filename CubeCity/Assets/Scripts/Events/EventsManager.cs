@@ -53,8 +53,14 @@ public class EventsManager : Singleton<EventsManager>
     public Action<int> OnCombosUpdate;          //     en los player prefs, ejecutar desde el player.
     public Action<int> OnPowerupsUpdate;        //
     public Action<int> OnMaxProsperityUpdate;   //
+    public Action OnBuy;
 
     #endregion
+
+    public void Buy()
+    {
+        OnBuy?.Invoke();
+    }
 
     public void MaxProsperityUpdate(int amount)
     {
