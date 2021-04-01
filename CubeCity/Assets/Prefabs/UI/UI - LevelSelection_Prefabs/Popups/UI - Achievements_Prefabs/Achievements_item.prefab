@@ -659,7 +659,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 87.7, y: -65}
-  m_SizeDelta: {x: 117.3, y: 21.81}
+  m_SizeDelta: {x: 125, y: 21.81}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3827765644646581524
 CanvasRenderer:
@@ -688,7 +688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0 / 1000
+  m_text: 20000 / 20000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7f5de9e02fe9c1f48b52d7b0bead41e7, type: 2}
   m_sharedMaterial: {fileID: 5917046192155623619, guid: 7f5de9e02fe9c1f48b52d7b0bead41e7,
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.45195007, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -938,6 +938,7 @@ GameObject:
   - component: {fileID: 3827765645300809887}
   - component: {fileID: 2620149105893169983}
   - component: {fileID: 8738771138549115611}
+  - component: {fileID: 8549420704754145331}
   m_Layer: 5
   m_Name: Achievements_item
   m_TagString: Untagged
@@ -1005,6 +1006,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8549420704754145331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3827765645300809884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6ac44f28732e14d9a27438e330314c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievement: {fileID: 0}
+  title: {fileID: 3827765645033239333}
+  progressNumber: {fileID: 3827765644646581525}
+  fillBar: {fileID: 7799064313540400077}
+  rewardIcon: {fileID: 6745242757125947754}
 --- !u!1 &4825833376792985772
 GameObject:
   m_ObjectHideFlags: 0
