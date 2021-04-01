@@ -1109,6 +1109,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: achievement
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d0616051a7a4cf48b9ae805215397e8,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c31085d9969164e9ceab27d9c4b24c, type: 3}
 --- !u!224 &3802545942984009311 stripped
@@ -1284,6 +1290,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: achievement
+      value: 
+      objectReference: {fileID: 11400000, guid: 1512bfda1d9162d44afd488fb9415201,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c31085d9969164e9ceab27d9c4b24c, type: 3}
 --- !u!224 &1811533341252896793 stripped
@@ -1459,6 +1471,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: achievement
+      value: 
+      objectReference: {fileID: 11400000, guid: 4488f654be509cd4cb2a75476d5d181e,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c31085d9969164e9ceab27d9c4b24c, type: 3}
 --- !u!224 &28431763774590651 stripped
@@ -1634,6 +1652,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: achievement
+      value: 
+      objectReference: {fileID: 11400000, guid: 110da7750028b7345bcf35fdf3792def,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c31085d9969164e9ceab27d9c4b24c, type: 3}
 --- !u!224 &1132820512356985364 stripped
@@ -1809,6 +1833,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: achievement
+      value: 
+      objectReference: {fileID: 11400000, guid: b141b0108f114534bb86237711859893,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c31085d9969164e9ceab27d9c4b24c, type: 3}
 --- !u!224 &744484116685521286 stripped
@@ -1984,6 +2014,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: achievement
+      value: 
+      objectReference: {fileID: 11400000, guid: 1957d25f82eaaa0469a02f67d9d59677,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c31085d9969164e9ceab27d9c4b24c, type: 3}
 --- !u!224 &8969272655202185987 stripped
@@ -2159,6 +2195,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: achievement
+      value: 
+      objectReference: {fileID: 11400000, guid: d4df6575ac436764697b46bbf1e16545,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c31085d9969164e9ceab27d9c4b24c, type: 3}
 --- !u!224 &9125896855739551971 stripped
@@ -2334,6 +2376,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: achievement
+      value: 
+      objectReference: {fileID: 11400000, guid: 6dd9670cef225a84498b71926bdceff4,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c31085d9969164e9ceab27d9c4b24c, type: 3}
 --- !u!224 &6649815191273977201 stripped
@@ -2509,6 +2557,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: achievement
+      value: 
+      objectReference: {fileID: 11400000, guid: c4989e928c5292d42aaeb3bd8525ff2b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c31085d9969164e9ceab27d9c4b24c, type: 3}
 --- !u!224 &6670629509503321811 stripped
@@ -2684,6 +2738,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: achievement
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a20674b43b993a4ba99e056872806bf,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c31085d9969164e9ceab27d9c4b24c, type: 3}
 --- !u!224 &4877098797121083188 stripped
