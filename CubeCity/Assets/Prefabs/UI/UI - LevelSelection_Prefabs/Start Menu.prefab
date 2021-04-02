@@ -1027,6 +1027,7 @@ GameObject:
   - component: {fileID: 7007473196633904300}
   - component: {fileID: 6273901945361744333}
   - component: {fileID: 8059594460861599184}
+  - component: {fileID: 4079584882989488088}
   m_Layer: 5
   m_Name: Button_Play
   m_TagString: Untagged
@@ -1193,6 +1194,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: 0
+--- !u!114 &4079584882989488088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7717270858884547228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c394af83c080d104ea0158227c2fdf44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: b144b1c35c0810f46991a47fa3866a6f, type: 2}
+  menuAnimation: {fileID: 589143892841908295}
 --- !u!1 &9148362509287910841
 GameObject:
   m_ObjectHideFlags: 0

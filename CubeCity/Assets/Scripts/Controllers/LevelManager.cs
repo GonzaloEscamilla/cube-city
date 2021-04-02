@@ -20,7 +20,6 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private List<CubeBehaviour> _cubesBuilded = new List<CubeBehaviour>();
 
-
     /// <summary>
     /// The current level running on the scene.
     /// </summary>
@@ -73,6 +72,7 @@ public class LevelManager : MonoBehaviour
         EventsManager.Instance.onCreateButtonPressed += Build;
 
         InitializeLevel();
+        _gameSettings.SetInitialization();
     }
 
     private void OnDestroy()
@@ -273,8 +273,6 @@ public class LevelManager : MonoBehaviour
     {
         Debug.LogWarning("OnBuild Finish", this.gameObject);
 
-        if (!_firstCubeBuild)
-            SoundManager.Instance.PlayOneShoot(CubeSound.CubePlaced.ToString());
 
         _cubeIsMoving = false;
         CubeBehaviour currentCube = _spawner.GetCurrentCube();
@@ -367,6 +365,10 @@ public class LevelManager : MonoBehaviour
     private void MoveBuildedCube(CubeBehaviour buildedCube)
     {
         Action callBack = OnBuildFinish;
+
+        if (!_firstCubeBuild)
+            SoundManager.Instance.PlayOneShoot(CubeSound.CubePlaced.ToString());
+        
         buildedCube.Move(_currentSelectedFace.GetSpawnPositions(), callBack);
     }
 
