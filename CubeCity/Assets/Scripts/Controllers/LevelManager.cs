@@ -183,12 +183,13 @@ public class LevelManager : MonoBehaviour
 
     private void NextTurn()
     {
-        if (!_isFinishPlaying && _spawner.AvailableCubeExists())
+        if (_spawner.AvailableCubeExists())
         {
             PreBuild();
         }
         else
         {
+            _hasWin = WinOrLoss();
             LevelEnd(_hasWin);
         }
     }
@@ -206,7 +207,7 @@ public class LevelManager : MonoBehaviour
         // TODO: completar campos del struct
         LevelEndData data = new LevelEndData();
         data.levelNumber = _currentLevel.LevelNumber;
-        data.success = _hasWin;
+        data.success = hasWin;
         data.finalResources = _levelStatistics.GetResources();
         data.timeSpent = _levelStatistics.ElapsedTime;
         data.secondaryObjectives = new bool[_secondaryObjectivesCompleted.Length];
@@ -221,7 +222,7 @@ public class LevelManager : MonoBehaviour
 
         EventsManager.Instance.EndLevel(data);
 
-        Debug.Log("Level ended." + " you have: " + _hasWin);
+        Debug.Log("Level ended." + " you have: " + hasWin);
     }
 
     public bool HasLevelEnded()
@@ -296,7 +297,6 @@ public class LevelManager : MonoBehaviour
         CheckSecondaryObjectives();
 
         EvaluateLevelEnding();
-        _hasWin = WinOrLoss();
 
         NextTurn();
     }
@@ -374,6 +374,7 @@ public class LevelManager : MonoBehaviour
     {
         if (_currentLevel.HasConstraints())
         {
+            Debug.Log("Evaluate Level Ending with has contraints");
             _isFinishPlaying = _levelStatistics.HasLevelEnded();
         }
     }
