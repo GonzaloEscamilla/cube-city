@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0d59e8ecff4a24c86de2596d0cf080, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  MIN_ELEMS_FOR_COMBO: 5
+  MIN_ELEMS_FOR_COMBO: 3
   EditorMode: 1
   loadingTime: 3
