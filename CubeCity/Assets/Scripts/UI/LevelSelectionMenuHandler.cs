@@ -8,7 +8,7 @@ public class LevelSelectionMenuHandler : MonoBehaviour
     private SelectLevelHandler _selectLevelHandler;
     private PopupLevelSelection _popupLevelSelection;
 
-    private void Awake() => Init();
+    private void Start() => Init();
 
     private void Init()
     {

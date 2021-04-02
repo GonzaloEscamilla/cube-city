@@ -306,6 +306,7 @@ GameObject:
   - component: {fileID: 3580503734165498999}
   - component: {fileID: 2050127111061668111}
   - component: {fileID: 3194417659755442211}
+  - component: {fileID: 1737076669302951679}
   m_Layer: 5
   m_Name: Button_Yes
   m_TagString: Untagged
@@ -441,6 +442,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: 2
+--- !u!114 &1737076669302951679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3580503734165498997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f162133bafddd4e95271e9d04fdcf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3580503735367259287
 GameObject:
   m_ObjectHideFlags: 0

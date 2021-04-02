@@ -7,6 +7,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class PowerUpButton : MonoBehaviour
 {
+    [SerializeField] private Image icon;
+
     [SerializeField] private PowerUpType _myPowerUp;
     public PowerUpType MyPowerUp
     {
@@ -25,6 +27,12 @@ public class PowerUpButton : MonoBehaviour
     private void Start()
     {
         GetComponent<Button>().onClick.AddListener(() => SetPowerUp());
+    }
+
+    public void Init(Sprite icon, PowerUpType type)
+    {
+        _myPowerUp = type;
+        this.icon.sprite = icon;
     }
 
     private void SetPowerUp()

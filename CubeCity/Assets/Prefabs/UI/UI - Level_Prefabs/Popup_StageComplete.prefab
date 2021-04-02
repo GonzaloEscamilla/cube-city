@@ -622,9 +622,9 @@ GameObject:
   - component: {fileID: 4184411228311118232}
   - component: {fileID: 4184411228311118233}
   - component: {fileID: 4184411228311118234}
-  - component: {fileID: 3718364184422637415}
   - component: {fileID: 3194908323306287748}
   - component: {fileID: 3853981827470578765}
+  - component: {fileID: 1561818895079239175}
   m_Layer: 5
   m_Name: Btn_restart
   m_TagString: Untagged
@@ -734,7 +734,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3718364184422637415}
+      - m_Target: {fileID: 0}
         m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
@@ -745,18 +745,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3718364184422637415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4184411228311118236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8def0545d9227e847a9b10222d732a76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3194908323306287748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +771,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: 0
+--- !u!114 &1561818895079239175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4184411228311118236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f162133bafddd4e95271e9d04fdcf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4184411228336631719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3073,9 +3073,9 @@ GameObject:
   - component: {fileID: 7664953127955242807}
   - component: {fileID: 4341027504574926807}
   - component: {fileID: 1423050258384139980}
-  - component: {fileID: 5989429704856017430}
   - component: {fileID: 2542635992179648133}
   - component: {fileID: 329161198224117235}
+  - component: {fileID: 263235701972639676}
   m_Layer: 5
   m_Name: Btn_Restart
   m_TagString: Untagged
@@ -3185,7 +3185,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5989429704856017430}
+      - m_Target: {fileID: 0}
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
@@ -3196,18 +3196,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5989429704856017430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8310796051888407658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce8f98d591b4f7c4b93b0208bd9268a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2542635992179648133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3234,6 +3222,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: 0
+--- !u!114 &263235701972639676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310796051888407658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f162133bafddd4e95271e9d04fdcf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8483352260729737583
 GameObject:
   m_ObjectHideFlags: 0
