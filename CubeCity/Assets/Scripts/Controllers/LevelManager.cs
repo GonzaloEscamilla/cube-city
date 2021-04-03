@@ -358,6 +358,11 @@ public class LevelManager : MonoBehaviour
                 result.Add(group);
                 _levelStatistics.AmountOfCombosMade++;
                 EventsManager.Instance.ComboMade();
+                
+                if (group[0].Type != FaceTypes.GarbagedumpArea)
+                    SoundManager.Instance.PlayOneShoot(BonusSound.ComboPositive.ToString());
+                else
+                    SoundManager.Instance.PlayOneShoot(BonusSound.ComboNegative.ToString());
             }
         }
         return result;
