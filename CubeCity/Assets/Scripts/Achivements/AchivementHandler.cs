@@ -59,8 +59,11 @@ public class AchivementHandler : MonoBehaviour
 
     private void OnDisable()
     {
-        achievement.OnAchievementCompleted -= AchievementCompleted;
-        EventsManager.Instance.OnSceneLoaded -= SceneLoaded;
+        if (EventsManager.Instance != null)
+            EventsManager.Instance.OnSceneLoaded -= SceneLoaded;
+
+        if (achievement != null)
+           achievement.OnAchievementCompleted -= AchievementCompleted;
     }
 
     private void SceneLoaded(GameScenes obj)

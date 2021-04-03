@@ -100,6 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5673b4dfdf1fc4488bbeb08d0dd92a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  studioEventEmitter: {fileID: 5277926874123571248}
+  levelMusicEmmiter: {fileID: 5277926874123571248}
   soundsDefinition: {fileID: 11400000, guid: 37b1516b29ca4ab43a9ed74249d957ca, type: 2}
   allSound: []

@@ -73,6 +73,7 @@ public class LevelManager : MonoBehaviour
 
         InitializeLevel();
         _gameSettings.SetInitialization();
+        SoundManager.Instance.PlayLevelSound();
     }
 
     private void OnDestroy()

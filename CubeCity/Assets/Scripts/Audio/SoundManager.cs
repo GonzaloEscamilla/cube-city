@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    [SerializeField] private StudioEventEmitter studioEventEmitter;
+    [SerializeField] private StudioEventEmitter levelMusicEmmiter;
     [SerializeField] private SoundsDefinition soundsDefinition;
     [SerializeField] private Dictionary<string, FMOD.Studio.EventInstance> AllSounds = new Dictionary<string, FMOD.Studio.EventInstance>();
     [SerializeField] private List<string> allSound = new List<string>();
@@ -147,12 +147,18 @@ public class SoundManager : MonoBehaviour
 
     public void SetLevelSound(SoundsDefinition.LevelClip levelClip)
     {
-        studioEventEmitter.Event = levelClip.SoundEvent;
+        levelMusicEmmiter.Event = levelClip.SoundEvent;
     }
 
-    public void PlaylevelSound()
+    public void PlayLevelSound()
     {
-        studioEventEmitter.Play();
+        levelMusicEmmiter.Play();
+        SetEventParameterMusic(MusicParameters.Running_Music.ToString(), 1, true);
+    }
+
+    public void StopLevelSound()
+    {
+        SetEventParameterMusic(MusicParameters.Running_Music.ToString(), 0, true);
     }
 
     public void SetEventParameterOneShot(string soundName, string parameterName, float value, bool lerp)
@@ -162,6 +168,14 @@ public class SoundManager : MonoBehaviour
 
     public void SetEventParameterMusic(string parameterName, float value, bool lerp)
     {
-        studioEventEmitter.SetParameter(parameterName, value, !lerp);
+        levelMusicEmmiter.SetParameter(parameterName, value, !lerp);
     }
+}
+
+public enum MusicParameters
+{
+    Is_Menu_Active,
+    Running_Music,
+    Face_Type, // 0 - Park 1 - Market 2 - Business 3 - Fabric 4 - Farm 5 - House
+    Fabric_Down_Town // Activar en mundo 3 nivel 5 al 13
 }

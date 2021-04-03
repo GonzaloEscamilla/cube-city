@@ -52,6 +52,11 @@ public class SceneLoaderController : MonoBehaviour
 
     private IEnumerator Loading(GameScenes _sceneToLoad)
     {
+        if (_sceneToLoad == GameScenes.LevelSelectionMenu)
+        {
+            SoundManager.Instance.StopLevelSound();
+        }
+
         yield return SceneManager.LoadSceneAsync((int)GameScenes.Loading, LoadSceneMode.Additive);
 
         yield return StartCoroutine(Unloading((int)_currentScene));
