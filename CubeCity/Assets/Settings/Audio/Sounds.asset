@@ -64,27 +64,27 @@ MonoBehaviour:
     SoundEvent: 
   BonusSounds:
   - Name: ComboPositive
-    SoundEvent: 
+    SoundEvent: event:/Bonus/ComboPositive
   - Name: ComboNegative
     SoundEvent: 
   - Name: PowerUp
     SoundEvent: 
   LevelClips:
   - Name: SmallSuburb
-    SoundEvent: 
+    SoundEvent: event:/BG Music/SmallSuburb
   - Name: GreenCommunity
-    SoundEvent: 
+    SoundEvent: event:/BG Music/GreenComunity
   - Name: Downtown
-    SoundEvent: 
+    SoundEvent: event:/BG Music/DownTown
   - Name: Countryside
     SoundEvent: 
   - Name: BigCity
     SoundEvent: 
   - Name: Metropolis
-    SoundEvent: 
+    SoundEvent: event:/BG Music/Metropolis
   AmbienceSounds:
   - Name: Ambience1
-    SoundEvent: 
+    SoundEvent: event:/Ambience sounds/ParkAmbience
   - Name: Ambience2
     SoundEvent: 
   None: 0
