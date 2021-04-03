@@ -1,16 +1,42 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpsManager : Singleton<PowerUpsManager>
+public class PowerUpsManager : MonoBehaviour
 {
+    public static PowerUpsManager Instance;
+
     [SerializeField] private InputManager _inputManager;
 
     private PowerUpType currentPowerUp;
     private PowerUpButton currentPresedButton;
 
+    private void Awake()
+    {
+        this.transform.parent = null;
+
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        Debug.LogWarning("awake on powerup manager");
+    }
+
+    public void Init(InputManager input)
+    {
+        _inputManager = input;
+    }
+
     private void Start()
     {
+        Debug.Log("Start in PowerUpsManger");
         if (!_inputManager)
         {
             Debug.LogWarning("There is not an input manager assigned to this object. It will not work.", this.gameObject);
@@ -20,8 +46,25 @@ public class PowerUpsManager : Singleton<PowerUpsManager>
     public void PowerUpSelected(PowerUpType selectedPowerUp, PowerUpButton currentPresedButton)
     {
         currentPowerUp = selectedPowerUp;
-        _inputManager.IsOnPowerUpMode = true;
-        this.currentPresedButton = currentPresedButton;
+
+        if (selectedPowerUp != PowerUpType.Builder)
+        {
+            Debug.Log("PowerUpSelecetd");
+            _inputManager.IsOnPowerUpMode = true;
+            this.currentPresedButton = currentPresedButton;
+        }
+        else
+        {
+            LevelManager.control.GetCubeSpawner().ActivateExtraCubes();
+           
+            currentPowerUp = PowerUpType.None;
+
+            if (currentPresedButton != null)
+            {
+                currentPresedButton.HasBeingUsed = true;
+                currentPresedButton = null;
+            }
+        }
     }
 
     public void DoPowerUp()
@@ -39,7 +82,6 @@ public class PowerUpsManager : Singleton<PowerUpsManager>
                 selectedFace.Demolition();
                 break;
             case PowerUpType.Builder:
-                LevelManager.control.GetCubeSpawner().ActivateExtraCubes();
                 break;
             case PowerUpType.ReformResidentialArea:
                 selectedFace.ReformFace(FaceTypes.ResidentialArea);
@@ -67,7 +109,7 @@ public class PowerUpsManager : Singleton<PowerUpsManager>
 
         if (currentPresedButton != null)
         {
-            currentPresedButton.hasBeingUsed = true;
+            currentPresedButton.HasBeingUsed = true;
             currentPresedButton = null;
         }
     }

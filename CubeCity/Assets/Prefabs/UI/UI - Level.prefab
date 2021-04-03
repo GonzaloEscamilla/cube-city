@@ -4426,7 +4426,7 @@ PrefabInstance:
     - target: {fileID: 1768659932897946130, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1768659932897946130, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
         type: 3}
@@ -4452,7 +4452,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4815631879530306210}
+      objectReference: {fileID: 6112513810005450028}
     - target: {fileID: 1768659932897946130, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -4588,6 +4588,16 @@ PrefabInstance:
       propertyPath: icon
       value: 
       objectReference: {fileID: 5442388922186895324}
+    - target: {fileID: 2240661670128496352, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
+        type: 3}
+      propertyPath: buttonsAnimation
+      value: 
+      objectReference: {fileID: 4815631879530306210}
+    - target: {fileID: 2240661670128496352, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
+        type: 3}
+      propertyPath: usePowerupButtonsAnimation
+      value: 
+      objectReference: {fileID: 6112513810005450028}
     - target: {fileID: 6816000618209722037, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
         type: 3}
       propertyPath: m_Name
@@ -4852,7 +4862,7 @@ PrefabInstance:
     - target: {fileID: 1768659932897946130, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1768659932897946130, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
         type: 3}
@@ -4878,7 +4888,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4815631879530306210}
+      objectReference: {fileID: 6112513810005450028}
     - target: {fileID: 1768659932897946130, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -5014,6 +5024,16 @@ PrefabInstance:
       propertyPath: icon
       value: 
       objectReference: {fileID: 8844467876737381561}
+    - target: {fileID: 2240661670128496352, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
+        type: 3}
+      propertyPath: buttonsAnimation
+      value: 
+      objectReference: {fileID: 4815631879530306210}
+    - target: {fileID: 2240661670128496352, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
+        type: 3}
+      propertyPath: usePowerupButtonsAnimation
+      value: 
+      objectReference: {fileID: 6112513810005450028}
     - target: {fileID: 6816000618209722037, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
         type: 3}
       propertyPath: m_Name
@@ -5061,7 +5081,7 @@ PrefabInstance:
     - target: {fileID: 1768659932897946130, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1768659932897946130, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
         type: 3}
@@ -5087,7 +5107,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4815631879530306210}
+      objectReference: {fileID: 6112513810005450028}
     - target: {fileID: 1768659932897946130, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -5223,6 +5243,16 @@ PrefabInstance:
       propertyPath: icon
       value: 
       objectReference: {fileID: 9017156390130182769}
+    - target: {fileID: 2240661670128496352, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
+        type: 3}
+      propertyPath: buttonsAnimation
+      value: 
+      objectReference: {fileID: 4815631879530306210}
+    - target: {fileID: 2240661670128496352, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
+        type: 3}
+      propertyPath: usePowerupButtonsAnimation
+      value: 
+      objectReference: {fileID: 6112513810005450028}
     - target: {fileID: 6816000618209722037, guid: 1ac1a8b139402ce41afbaffe5bc5764e,
         type: 3}
       propertyPath: m_Name

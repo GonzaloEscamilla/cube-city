@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         set
         {
             PlayerPrefs.SetInt(PlayerData.StartsAmount.ToString(), value);
-            EventsManager.Instance.OnStartsUpdate(PlayerPrefs.GetInt(PlayerData.StartsAmount.ToString()));
+            EventsManager.Instance.StarsUpdate(StarsAmount);
         }
     }
 

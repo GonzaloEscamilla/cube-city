@@ -3,11 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 [RequireComponent(typeof(Button))]
 public class PowerUpButton : MonoBehaviour
 {
+    [SerializeField] private DOTweenAnimation buttonsAnimation;
+    [SerializeField] private DOTweenAnimation usePowerupButtonsAnimation;
     [SerializeField] private Image icon;
+
+    [Space]
+
+    [SerializeField] private Image buttonBackground; 
+    [SerializeField] private Sprite deactivatedBackground;
+    [SerializeField] private Color deactivatedColor;
 
     [SerializeField] private PowerUpType _myPowerUp;
     public PowerUpType MyPowerUp
@@ -22,7 +31,32 @@ public class PowerUpButton : MonoBehaviour
         }
     }
 
-    public bool hasBeingUsed;
+    private bool hasBeingUsed;
+    public bool HasBeingUsed
+    {
+        get
+        {
+            return hasBeingUsed;
+        }
+        set
+        {
+            hasBeingUsed = value;
+            if (hasBeingUsed)
+            {
+                buttonsAnimation.DOPlayBackwards();
+                usePowerupButtonsAnimation.DOPlayBackwards();
+
+                DisableGraphics();
+            }
+        }
+    }
+
+    private void DisableGraphics()
+    {
+        buttonBackground.sprite = deactivatedBackground;
+        buttonBackground.color = deactivatedColor;
+        icon.color = deactivatedColor;
+    }
 
     private void Start()
     {
@@ -37,8 +71,15 @@ public class PowerUpButton : MonoBehaviour
 
     private void SetPowerUp()
     {
-        if (hasBeingUsed)
+        if (hasBeingUsed || _myPowerUp == PowerUpType.None)
+        {
+            Debug.LogWarning("The power ups is TYpe: " + PowerUpType.None.ToString());
+            Debug.LogWarning("Has Being Used");
             return;
+        }
+
+        buttonsAnimation.DOPlayForward();
+        usePowerupButtonsAnimation.DOPlayForward();
 
         PowerUpsManager.Instance.PowerUpSelected(MyPowerUp, this);
     }

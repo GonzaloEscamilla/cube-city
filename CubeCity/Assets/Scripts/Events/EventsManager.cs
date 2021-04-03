@@ -62,6 +62,8 @@ public class EventsManager : MonoBehaviour
     #region UI Events
 
     public Action OnStatisticsUpdate;
+    #endregion
+
     public Action<int> OnStartsUpdate;          // Estos tres son para el sistema de achivements y solo deberia ser ejecutados cuando se update por completo el valor total
     public Action<int> OnCombosUpdate;          //     en los player prefs, ejecutar desde el player.
     public Action<int> OnPowerupsUpdate;        //
@@ -69,8 +71,7 @@ public class EventsManager : MonoBehaviour
     public Action OnBuy;
     public Action OnAchievementRedimed;
     public Action<Vector3, Quaternion> OnCubeMovingToPosition;
-
-    #endregion
+    
 
     public void CubeMovingToPosition(Vector3 finalPosition, Quaternion rotation)
     {

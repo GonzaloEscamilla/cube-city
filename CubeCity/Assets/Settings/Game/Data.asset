@@ -83,6 +83,76 @@ MonoBehaviour:
       amount: 25
     - name: Wealth
       amount: 50
+  - name: BusinessAreaLevel2
+    resources:
+    - name: Prosperity
+      amount: 350
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 25
+    - name: Wealth
+      amount: 50
+  - name: CommercialAreaLevel2
+    resources:
+    - name: Prosperity
+      amount: 350
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 25
+    - name: Wealth
+      amount: 50
+  - name: GarbagedumpAreaLevel2
+    resources:
+    - name: Prosperity
+      amount: 350
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 25
+    - name: Wealth
+      amount: 50
+  - name: IdustrialAreaLevel2
+    resources:
+    - name: Prosperity
+      amount: 350
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 25
+    - name: Wealth
+      amount: 50
+  - name: ParkAreraLevel2
+    resources:
+    - name: Prosperity
+      amount: 350
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 25
+    - name: Wealth
+      amount: 50
+  - name: ResidentialAreaLevel2
+    resources:
+    - name: Prosperity
+      amount: 350
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 25
+    - name: Wealth
+      amount: 50
+  - name: FarmAreaLevel2
+    resources:
+    - name: Prosperity
+      amount: 350
+    - name: Happiness
+      amount: 0
+    - name: Sustainability
+      amount: 25
+    - name: Wealth
+      amount: 50
   - name: Demolished
     resources:
     - name: Prosperity

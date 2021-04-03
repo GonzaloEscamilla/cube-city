@@ -9,6 +9,7 @@ public class VFXEventManager : MonoBehaviour
     public static VFXEventManager Instance;
 
     public Action<Vector3,Quaternion> onCubeBuildedEffect;
+    public Action<Vector3, Quaternion> OnFaceReformedOrDemolished;
 
     [SerializeField] private GameSettingsSO settings;
 
@@ -40,6 +41,10 @@ public class VFXEventManager : MonoBehaviour
         }
     }
 
+    public void FaceReformedOrDemolished(Vector3 position, Quaternion rotation)
+    {
+        OnFaceReformedOrDemolished?.Invoke(position, rotation);
+    }
 
     private void OnCubeMovingEffect(Vector3 finalPosition, Quaternion rotation)
     {

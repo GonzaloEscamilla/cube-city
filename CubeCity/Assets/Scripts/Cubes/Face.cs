@@ -215,6 +215,8 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
         CheckAdjacenciesAffected();
         Type = FaceTypes.Demolished;
 
+        VFXEventManager.Instance.FaceReformedOrDemolished(this.transform.position, this.transform.rotation);
+
         faceGraphicsHandler.SwitchFaceGraphics(FaceTypes.Demolished);
     }
 
@@ -234,6 +236,9 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
                 LevelManager.control.GetAdjacencyBounisesSO().GetBonusForFaces(Type, adjacentFace.Type)
             );
         }
+
+        VFXEventManager.Instance.FaceReformedOrDemolished(this.transform.position, this.transform.rotation);
+
         faceGraphicsHandler.SwitchFaceGraphics(newType);
     }
 

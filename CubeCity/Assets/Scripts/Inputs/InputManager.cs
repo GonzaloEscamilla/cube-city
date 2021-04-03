@@ -49,7 +49,20 @@ public class InputManager : MonoBehaviour
     /// </summary>
     [SerializeField] private bool isUISelected = false;
 
-    public bool IsOnPowerUpMode { get; set; }
+    private bool isOnPowerUpMode;
+
+    public bool IsOnPowerUpMode
+    {
+        get
+        {
+            return isOnPowerUpMode;
+        }
+        set
+        {
+            Debug.Log("PowerUpMode: " + value);
+            isOnPowerUpMode = value;
+        }
+    }
 
     private bool isTapEnabled {
         get
@@ -115,6 +128,7 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("InputManager: " + this.gameObject.name, this.gameObject);
         cameraController = GetComponent<CameraController>();
         raySelector = GetComponent<RaycastSelectionHandler>();
         raycaster = mainCanvas.GetComponent<GraphicRaycaster>();
@@ -370,24 +384,25 @@ public class InputManager : MonoBehaviour
         {
 #if UNITY_EDITOR
 
-            if (!IsOnPowerUpMode)
+            if (!isOnPowerUpMode)
             {
                 selectable = raySelector.Select(cameraController.GetCamera(), Input.mousePosition);
             }
             else
             {
                 PowerUpsManager.Instance.DoPowerUp(raySelector.SelectAFace(cameraController.GetCamera(), Input.mousePosition));
-                IsOnPowerUpMode = false;
+                Debug.Log("PowerUpModeChangedToFalse");
+                isOnPowerUpMode = false;
             }
 #else
-            if(!IsOnPowerUpMode)
+            if(!isOnPowerUpMode)
             {
                 selectable = raySelector.Select(cameraController.GetCamera(), Input.GetTouch(0).position);
             }
             else
             {
                 PowerUpsManager.Instance.DoPowerUp(raySelector.SelectAFace(cameraController.GetCamera(), Input.GetTouch(0).position));
-                IsOnPowerUpMode = false;
+                isOnPowerUpMode = false;
             }
 
 #endif

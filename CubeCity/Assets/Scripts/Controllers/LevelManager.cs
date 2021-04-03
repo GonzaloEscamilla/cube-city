@@ -79,6 +79,8 @@ public class LevelManager : MonoBehaviour
         InitializeLevel();
         _gameSettings.SetInitialization();
         SoundManager.Instance.PlayLevelSound();
+
+        PowerUpsManager.Instance.Init(FindObjectOfType<InputManager>());
     }
 
     private void OnDestroy()
