@@ -10,6 +10,8 @@ public class VFXEventManager : MonoBehaviour
 
     public Action<Vector3,Quaternion> onCubeBuildedEffect;
 
+    [SerializeField] private GameSettingsSO settings;
+
     private void Awake()
     {
         this.transform.parent = null;
@@ -44,8 +46,7 @@ public class VFXEventManager : MonoBehaviour
 
     private void OnCubeMovingEffect(Vector3 finalPosition, Quaternion rotation)
     {
-        Debug.Log("Effectito");
-        onCubeBuildedEffect?.Invoke(finalPosition, rotation);
+        StartCoroutine(CallWithDealy(finalPosition,rotation));
     }
 
     private void OnCubeBuildedEffect(CubeBehaviour newCube)
@@ -54,5 +55,11 @@ public class VFXEventManager : MonoBehaviour
         {
             //onCubeBuildedEffect?.Invoke(LevelManager.control.CurrentSelectedFace);
         }
+    }
+
+    private IEnumerator CallWithDealy(Vector3 finalPosition, Quaternion rotation)
+    {
+        yield return new WaitForSeconds(settings.explotionParticleDelay);
+        onCubeBuildedEffect?.Invoke(finalPosition, rotation);
     }
 }

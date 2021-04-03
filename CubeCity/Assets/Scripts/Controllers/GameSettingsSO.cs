@@ -13,7 +13,7 @@ public class GameSettingsSO : ScriptableObject
 
     [Header("VFX")]
     [Range(0f, 2f)]
-    [SerializeField] float explotionParticleDelay;
+    [SerializeField] public float explotionParticleDelay;
 
     private bool alreadyInitialized = false;
     
