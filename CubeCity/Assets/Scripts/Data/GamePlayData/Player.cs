@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Singleton<Player>
+public class Player : MonoBehaviour
 {
+    public static Player Instance;
+
     private PlayerData _playerData;
 
     public Inventory Inventory { get; private set; }
@@ -85,9 +87,20 @@ public class Player : Singleton<Player>
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        this.transform.parent = null;
+
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         Initialize();
     }
+
 
     public void Initialize()
     {

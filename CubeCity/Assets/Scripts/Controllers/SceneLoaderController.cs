@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoaderController : Singleton<SceneLoaderController>
+public class SceneLoaderController : MonoBehaviour
 {
+    public static SceneLoaderController Instance;
+
     [Header("References")]
     [SerializeField] private GameSettingsSO settings;
-
 
     [Space]
 
@@ -18,7 +19,16 @@ public class SceneLoaderController : Singleton<SceneLoaderController>
     private void Awake()
     {
         this.transform.parent = null;
-        DontDestroyOnLoad(this);
+
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     void Start()

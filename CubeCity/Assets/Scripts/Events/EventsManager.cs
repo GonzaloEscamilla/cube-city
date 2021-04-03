@@ -5,12 +5,23 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class EventsManager : Singleton<EventsManager>
+public class EventsManager : MonoBehaviour
 {
+    public static EventsManager Instance;
+
     private void Awake()
     {
         this.transform.parent = null;
-        DontDestroyOnLoad(this);
+
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     public delegate void OnLevelEnd(LevelEndData data);

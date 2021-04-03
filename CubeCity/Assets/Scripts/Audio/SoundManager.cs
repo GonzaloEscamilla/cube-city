@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : Singleton<SoundManager>
+public class SoundManager : MonoBehaviour
 {
+    public static SoundManager Instance;
+
     [SerializeField] private StudioEventEmitter studioEventEmitter;
     [SerializeField] private SoundsDefinition soundsDefinition;
     [SerializeField] private Dictionary<string, FMOD.Studio.EventInstance> AllSounds = new Dictionary<string, FMOD.Studio.EventInstance>();
@@ -13,13 +15,23 @@ public class SoundManager : Singleton<SoundManager>
 
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
         Init();
     }
 
     public void Init()
     {
         InstantiateAllSounds();
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
         //EventsManager.control.OnLevelLoaded += context => PlaylevelSound(); 
     }
 
