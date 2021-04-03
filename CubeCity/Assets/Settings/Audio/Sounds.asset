@@ -62,6 +62,10 @@ MonoBehaviour:
     SoundEvent: 
   - Name: ResourcesUpdate
     SoundEvent: 
+  - Name: GameEndVictory
+    SoundEvent: 
+  - Name: GameEndDefeat
+    SoundEvent: 
   BonusSounds:
   - Name: ComboPositive
     SoundEvent: event:/Bonus/ComboPositive

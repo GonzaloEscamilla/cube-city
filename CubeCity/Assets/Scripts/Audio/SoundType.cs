@@ -32,6 +32,8 @@ public enum UISound
     PlayButton,
     AchivementAcomplished,
     ResourcesUpdate,
+    GameEndVictory,
+    GameEndDefeat
 }
 
 public enum BonusSound
