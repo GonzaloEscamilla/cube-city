@@ -5,9 +5,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameSettings", menuName = "ScriptableObjects/GameSettings", order = 1)]
 public class GameSettingsSO : ScriptableObject
 {
+    [Header("General")]
+
     public int MIN_ELEMS_FOR_COMBO = 3;
     public bool EditorMode;
     public float loadingTime;
+
+    [Header("VFX")]
+    [Range(0f, 2f)]
+    [SerializeField] float explotionParticleDelay;
 
     private bool alreadyInitialized = false;
     

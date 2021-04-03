@@ -68,8 +68,14 @@ public class EventsManager : MonoBehaviour
     public Action<int> OnMaxProsperityUpdate;   //
     public Action OnBuy;
     public Action OnAchievementRedimed;
+    public Action<Vector3, Quaternion> OnCubeMovingToPosition;
 
     #endregion
+
+    public void CubeMovingToPosition(Vector3 finalPosition, Quaternion rotation)
+    {
+        OnCubeMovingToPosition?.Invoke(finalPosition, rotation);
+    }
 
     public void CombosUpdate(int amount)
     {

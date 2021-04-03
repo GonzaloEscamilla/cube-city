@@ -65,6 +65,11 @@ public class LevelManager : MonoBehaviour
         _spawner = GetComponentInChildren<CubeSpawner>();
     }
 
+    private void Update()
+    {
+        _levelStatistics.ElapsedTime += Time.deltaTime;
+    }
+
     private void Start()
     {
         EventsManager.Instance.onfaceSelected += OnFaceSelectedEvent;
@@ -274,7 +279,6 @@ public class LevelManager : MonoBehaviour
     {
         Debug.LogWarning("OnBuild Finish", this.gameObject);
 
-
         _cubeIsMoving = false;
         CubeBehaviour currentCube = _spawner.GetCurrentCube();
 
@@ -371,7 +375,8 @@ public class LevelManager : MonoBehaviour
 
         if (!_firstCubeBuild)
             SoundManager.Instance.PlayOneShoot(CubeSound.CubePlaced.ToString());
-        
+
+        EventsManager.Instance.CubeMovingToPosition(_currentSelectedFace.transform.position, _currentSelectedFace.transform.rotation);
         buildedCube.Move(_currentSelectedFace.GetSpawnPositions(), callBack);
     }
 

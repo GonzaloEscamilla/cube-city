@@ -8,6 +8,8 @@ public class VFXEventManager : MonoBehaviour
 {
     public static VFXEventManager Instance;
 
+    public Action<Vector3,Quaternion> onCubeBuildedEffect;
+
     private void Awake()
     {
         this.transform.parent = null;
@@ -25,24 +27,32 @@ public class VFXEventManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EventsManager.Instance.onCubeBuilded += OnCubeBuildedEffect;
+        //EventsManager.Instance.onCubeBuilded += OnCubeBuildedEffect;
+        EventsManager.Instance.OnCubeMovingToPosition += OnCubeMovingEffect;
     }
 
     private void OnDisable()
     {
         if (EventsManager.Instance != null)
         {
-            EventsManager.Instance.onCubeBuilded -= OnCubeBuildedEffect;
+           // EventsManager.Instance.onCubeBuilded -= OnCubeBuildedEffect;
+            EventsManager.Instance.OnCubeMovingToPosition -= OnCubeMovingEffect;
+
         }
     }
 
-    public Action<Face> onCubeBuildedEffect;
+
+    private void OnCubeMovingEffect(Vector3 finalPosition, Quaternion rotation)
+    {
+        Debug.Log("Effectito");
+        onCubeBuildedEffect?.Invoke(finalPosition, rotation);
+    }
 
     private void OnCubeBuildedEffect(CubeBehaviour newCube)
     {
         if (LevelManager.control.CurrentSelectedFace != null)
         {
-            onCubeBuildedEffect?.Invoke(LevelManager.control.CurrentSelectedFace);
+            //onCubeBuildedEffect?.Invoke(LevelManager.control.CurrentSelectedFace);
         }
     }
 }

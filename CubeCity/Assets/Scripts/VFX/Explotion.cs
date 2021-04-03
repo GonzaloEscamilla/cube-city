@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Explotion : ParticlesHandler
 {
-    private void OnEnable()
+    private void Start()
     {
         if (VFXEventManager.Instance != null)
         {
@@ -26,10 +26,11 @@ public class Explotion : ParticlesHandler
         this.transform.position = newPosition;
     }
 
-    private void onCubeBuilded(Face currentSelectedFace)
+    private void onCubeBuilded(Vector3 finalPosition, Quaternion rotation)
     {
-        SetPosition(currentSelectedFace.transform.position);
-        this.transform.rotation = currentSelectedFace.transform.rotation;
+        Debug.Log("Explotion");
+        SetPosition(finalPosition);
+        this.transform.rotation = rotation;
         base.Play();
     }
 }
