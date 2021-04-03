@@ -20,6 +20,10 @@ public class GameSettingsSO : ScriptableObject
         return alreadyInitialized;
     }
 
-
+    [ContextMenu("ResetPlayerPrefs")]
+    public void ResetPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 
 }

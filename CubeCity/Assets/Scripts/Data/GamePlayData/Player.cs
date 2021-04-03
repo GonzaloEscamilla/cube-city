@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
         set
         {
             PlayerPrefs.SetInt(PlayerData.AmountOfCombosMade.ToString(), value);
-            EventsManager.Instance.OnCombosUpdate(PlayerPrefs.GetInt(PlayerData.AmountOfCombosMade.ToString()));
+            EventsManager.Instance.CombosUpdate(AmountOfCombosMade);
         }
     }
 
@@ -147,6 +147,17 @@ public class Player : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    [ContextMenu("Log Values")]
+    public void LogValues()
+    {
+        Debug.Log("Stars Amount: " + StarsAmount);
+        Debug.Log("Cristals Amount: " + CristalsAmount);
+        Debug.Log("Combos Amount: " + AmountOfCombosMade);
+        Debug.Log("Maxprosperity Amount: " + MaxProsperityMade);
+        Debug.Log("Amount Of Powerups Amount: " + AmountOfPowerUpsMade);
+        Debug.Log("Time Played: " + TimePlayed);
     }
 
     public bool CanBuy(int neddedAmount)

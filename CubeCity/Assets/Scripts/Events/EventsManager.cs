@@ -57,6 +57,8 @@ public class EventsManager : MonoBehaviour
 
     public Action OnBonusMade;
 
+    public Action<GameScenes> OnSceneLoaded;
+
     #region UI Events
 
     public Action OnStatisticsUpdate;
@@ -65,8 +67,24 @@ public class EventsManager : MonoBehaviour
     public Action<int> OnPowerupsUpdate;        //
     public Action<int> OnMaxProsperityUpdate;   //
     public Action OnBuy;
+    public Action OnAchievementRedimed;
 
     #endregion
+
+    public void CombosUpdate(int amount)
+    {
+        OnCombosUpdate?.Invoke(amount);
+    }
+
+    public void AchievementRedimed()
+    {
+        OnAchievementRedimed?.Invoke();
+    }
+
+    public void SceneLoaded(GameScenes loadedScene)
+    {
+        OnSceneLoaded?.Invoke(loadedScene);
+    }
 
     public void Buy()
     {

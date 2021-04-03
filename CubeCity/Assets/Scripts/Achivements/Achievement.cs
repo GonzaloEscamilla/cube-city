@@ -49,6 +49,11 @@ public class Achievement : ScriptableObject
         }
     }
 
+    public AchievementReward GetAchievementReward()
+    {
+        return achievementReward;
+    }
+
     [ContextMenu("LogStatus")]
     private void LogStatus()
     {

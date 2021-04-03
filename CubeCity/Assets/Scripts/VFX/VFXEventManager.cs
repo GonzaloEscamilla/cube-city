@@ -4,12 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class VFXEventManager : Singleton<VFXEventManager>
+public class VFXEventManager : MonoBehaviour
 {
+    public static VFXEventManager Instance;
+
     private void Awake()
     {
         this.transform.parent = null;
-        DontDestroyOnLoad(Instance);
+
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     private void OnEnable()

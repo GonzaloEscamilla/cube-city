@@ -17,7 +17,8 @@ public class SetPowerUpButton : MonoBehaviour
     {
         if (EventsManager.Instance != null)
         {
-            EventsManager.Instance.OnBuy += UpdateValues;
+            EventsManager.Instance.OnBuy -= UpdateValues;
+            EventsManager.Instance.OnAchievementRedimed -= UpdateValues;
         }
     }
     private void Start() => Init();
@@ -25,6 +26,7 @@ public class SetPowerUpButton : MonoBehaviour
     public void Init()
     {
         EventsManager.Instance.OnBuy += UpdateValues;
+        EventsManager.Instance.OnAchievementRedimed += UpdateValues;
         amountText.text = "X" + Player.Instance.Inventory.GetPowerUpFromInventory(powerUpType);
     }
 

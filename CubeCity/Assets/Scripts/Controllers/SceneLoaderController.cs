@@ -67,6 +67,8 @@ public class SceneLoaderController : MonoBehaviour
         yield return StartCoroutine(Unloading((int)GameScenes.Loading));
 
         _currentScene = _sceneToLoad;
+
+        EventsManager.Instance.SceneLoaded(_sceneToLoad);
     }
 
     private IEnumerator Unloading(int sceneToUnload)
