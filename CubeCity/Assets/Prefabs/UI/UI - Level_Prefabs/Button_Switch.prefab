@@ -493,6 +493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8892325340074086586}
+  - component: {fileID: 254696454813480430}
   m_Layer: 5
   m_Name: Button_Switch
   m_TagString: Untagged
@@ -522,3 +523,17 @@ RectTransform:
   m_AnchoredPosition: {x: 157.4, y: 85.7}
   m_SizeDelta: {x: 77, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &254696454813480430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8259200794698100326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db430c4b9dc486b4fabb97a42590f794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonOn: {fileID: 2344271185621192083}
+  buttonOff: {fileID: 8757776318197846043}

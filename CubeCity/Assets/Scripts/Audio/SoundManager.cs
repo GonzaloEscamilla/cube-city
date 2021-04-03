@@ -205,6 +205,22 @@ public class SoundManager : MonoBehaviour
     {
         levelMusicEmmiter.SetParameter(parameterName, value, !lerp);
     }
+
+
+    [ContextMenu("Mute")]
+    public void TestMute()
+    {
+        TurnOnOffAudio(true);
+    }
+
+    public void TurnOnOffAudio(bool mute)
+    {
+        #if UNITY_EDITOR
+                UnityEditor.EditorUtility.audioMasterMute = mute;
+        #else
+        RuntimeManager.MuteAllEvents(mute);
+        #endif
+    }
 }
 
 public enum MusicParameters
