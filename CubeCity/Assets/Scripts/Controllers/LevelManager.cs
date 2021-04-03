@@ -363,7 +363,7 @@ public class LevelManager : MonoBehaviour
                 _levelStatistics.AmountOfCombosMade++;
                 Debug.Log("aca");
                 EventsManager.Instance.ComboMade();
-                SoundManager.Instance.PlayComboSound(group[0].Type);
+                //SoundManager.Instance.PlayComboSound(group[0].Type);
             }
         }
         return result;
