@@ -156,6 +156,41 @@ public class SoundManager : MonoBehaviour
         SetEventParameterMusic(MusicParameters.Running_Music.ToString(), 1, true);
     }
 
+    public void PlayComboSound(FaceTypes type)
+    {
+        PlayOneShoot(BonusSound.ComboSound.ToString());
+
+        switch (type)
+        {
+            case FaceTypes.BusinessArea:
+                SetEventParameterOneShot(BonusSound.ComboSound.ToString(), MusicParameters.Face_Type.ToString(), 2, true);
+                break;
+            case FaceTypes.CommercialArea:
+                SetEventParameterOneShot(BonusSound.ComboSound.ToString(), MusicParameters.Face_Type.ToString(), 1, true);
+                break;
+            case FaceTypes.GarbagedumpArea:
+                SetEventParameterOneShot(BonusSound.ComboSound.ToString(), MusicParameters.Face_Type.ToString(), 6, true);
+                break;
+            case FaceTypes.IndustrialArea:
+                SetEventParameterOneShot(BonusSound.ComboSound.ToString(), MusicParameters.Face_Type.ToString(), 3, true);
+                break;
+            case FaceTypes.ParkArera:
+                SetEventParameterOneShot(BonusSound.ComboSound.ToString(), MusicParameters.Face_Type.ToString(), 0, true);
+                break;
+            case FaceTypes.ResidentialArea:
+                SetEventParameterOneShot(BonusSound.ComboSound.ToString(), MusicParameters.Face_Type.ToString(), 5, true);
+                break;
+            case FaceTypes.FarmArea:
+                SetEventParameterOneShot(BonusSound.ComboSound.ToString(), MusicParameters.Face_Type.ToString(), 4, true);
+                break;
+            case FaceTypes.Demolished:
+                SetEventParameterOneShot(BonusSound.ComboSound.ToString(), MusicParameters.Face_Type.ToString(), 6, true);
+                break;
+            default:
+                break;
+        }
+    }
+
     public void StopLevelSound()
     {
         SetEventParameterMusic(MusicParameters.Running_Music.ToString(), 0, true);

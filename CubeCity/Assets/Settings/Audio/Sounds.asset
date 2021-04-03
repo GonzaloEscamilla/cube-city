@@ -67,11 +67,9 @@ MonoBehaviour:
   - Name: GameEndDefeat
     SoundEvent: 
   BonusSounds:
-  - Name: ComboPositive
-    SoundEvent: event:/Bonus/ComboPositive
-  - Name: ComboNegative
-    SoundEvent: 
   - Name: PowerUp
+    SoundEvent: 
+  - Name: ComboSound
     SoundEvent: 
   LevelClips:
   - Name: SmallSuburb

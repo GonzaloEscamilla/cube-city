@@ -38,9 +38,8 @@ public enum UISound
 
 public enum BonusSound
 {
-    ComboPositive,
-    ComboNegative,
     PowerUp,
+    ComboSound,
 }
 
 public enum LevelClipSound
