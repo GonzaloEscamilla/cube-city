@@ -49,7 +49,6 @@ public class PowerUpsManager : MonoBehaviour
 
         if (selectedPowerUp != PowerUpType.Builder)
         {
-            Debug.Log("PowerUpSelecetd");
             _inputManager.IsOnPowerUpMode = true;
             this.currentPresedButton = currentPresedButton;
         }
@@ -64,6 +63,8 @@ public class PowerUpsManager : MonoBehaviour
                 currentPresedButton.HasBeingUsed = true;
                 currentPresedButton = null;
             }
+
+            Player.Instance.Inventory.UsePowerUpFromInventory(selectedPowerUp);
         }
     }
 
@@ -74,6 +75,12 @@ public class PowerUpsManager : MonoBehaviour
 
     public void DoPowerUp(Face selectedFace)
     {
+        if (selectedFace == null)
+        {
+            Debug.LogWarning("You can't do a power up if there is not a face selected.");
+            return;
+        }
+
         switch (currentPowerUp)
         {
             case PowerUpType.None:
@@ -112,8 +119,9 @@ public class PowerUpsManager : MonoBehaviour
             currentPresedButton.HasBeingUsed = true;
             currentPresedButton = null;
         }
+        Player.Instance.Inventory.UsePowerUpFromInventory(currentPowerUp);
     }
 
-   
+
 
 }
