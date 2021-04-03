@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f689fa8dd3c165448ab00f5a6a00ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skybox: {fileID: 2100000, guid: c9958bf309acb2045b3060777a9aff83, type: 2}
   _gameSettings: {fileID: 11400000, guid: b144b1c35c0810f46991a47fa3866a6f, type: 2}
   _levelsSettings: {fileID: 11400000, guid: a4c8ecd4bdebb3848b26a399e4989a09, type: 2}
   _levelStatistics: {fileID: 11400000, guid: e37448798f364e946a5142f32532cd68, type: 2}

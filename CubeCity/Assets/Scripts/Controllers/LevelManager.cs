@@ -81,6 +81,15 @@ public class LevelManager : MonoBehaviour
         SoundManager.Instance.PlayLevelSound();
 
         PowerUpsManager.Instance.Init(FindObjectOfType<InputManager>());
+        Debug.Log("Playerskybox: " + Player.Instance.LevelSkybox);
+
+        StartCoroutine(WaitToSetSkybox());
+    }
+
+    private IEnumerator WaitToSetSkybox()
+    {
+        yield return new WaitForSeconds(0.05f);
+        RenderSettings.skybox = Player.Instance.LevelSkybox;
     }
 
     private void OnDestroy()

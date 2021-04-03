@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     public Inventory Inventory { get; private set; }
 
+    public Material LevelSkybox;
+
     public int StarsAmount
     {
         get
