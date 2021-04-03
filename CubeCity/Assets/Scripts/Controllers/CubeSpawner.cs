@@ -116,6 +116,11 @@ public class CubeSpawner : MonoBehaviour
         return _cubePool.GetPooledObject(this.transform).GetComponent<CubeBehaviour>();
     }
 
+    public GameObject GetFaceByType(FaceTypes type)
+    {
+        return facePools[(int)type].GetPooledObject().gameObject;
+    }
+
     /// <summary>
     /// Sets the faces of a desired cube randomly.
     /// </summary>

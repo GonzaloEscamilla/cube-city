@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2009102466157945062}
   - component: {fileID: 8559382472760561954}
+  - component: {fileID: 1063532862151543278}
   m_Layer: 0
   m_Name: _FaceGraphics - Base
   m_TagString: Untagged
@@ -44,3 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 0
+--- !u!114 &1063532862151543278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5722387342622938243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d21d57b4f90a954aa421f068636bd81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

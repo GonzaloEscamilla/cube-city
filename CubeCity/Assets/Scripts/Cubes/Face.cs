@@ -6,6 +6,7 @@ using UnityEngine;
 public class Face : MonoBehaviour, IRaySelectable, IPoolable
 {
     [SerializeField] FaceDataSO _faceData;
+    [SerializeField] FaceGraphicsHandler faceGraphicsHandler;
 
     public FaceTypes Type
     {
@@ -213,6 +214,8 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
         LevelManager.control.GetLevelStatistics().CalculateNextResources(-GetFaceData());
         CheckAdjacenciesAffected();
         Type = FaceTypes.Demolished;
+
+        faceGraphicsHandler.SwitchFaceGraphics(FaceTypes.Demolished);
     }
 
     [ContextMenu("Reform")]
@@ -231,6 +234,7 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
                 LevelManager.control.GetAdjacencyBounisesSO().GetBonusForFaces(Type, adjacentFace.Type)
             );
         }
+        faceGraphicsHandler.SwitchFaceGraphics(newType);
     }
 
     private void CheckAdjacenciesAffected()

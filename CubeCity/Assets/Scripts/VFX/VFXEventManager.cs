@@ -29,7 +29,6 @@ public class VFXEventManager : MonoBehaviour
 
     private void OnEnable()
     {
-        //EventsManager.Instance.onCubeBuilded += OnCubeBuildedEffect;
         EventsManager.Instance.OnCubeMovingToPosition += OnCubeMovingEffect;
     }
 
@@ -37,9 +36,7 @@ public class VFXEventManager : MonoBehaviour
     {
         if (EventsManager.Instance != null)
         {
-           // EventsManager.Instance.onCubeBuilded -= OnCubeBuildedEffect;
             EventsManager.Instance.OnCubeMovingToPosition -= OnCubeMovingEffect;
-
         }
     }
 
@@ -47,14 +44,6 @@ public class VFXEventManager : MonoBehaviour
     private void OnCubeMovingEffect(Vector3 finalPosition, Quaternion rotation)
     {
         StartCoroutine(CallWithDealy(finalPosition,rotation));
-    }
-
-    private void OnCubeBuildedEffect(CubeBehaviour newCube)
-    {
-        if (LevelManager.control.CurrentSelectedFace != null)
-        {
-            //onCubeBuildedEffect?.Invoke(LevelManager.control.CurrentSelectedFace);
-        }
     }
 
     private IEnumerator CallWithDealy(Vector3 finalPosition, Quaternion rotation)

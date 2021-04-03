@@ -15,3 +15,4 @@ MonoBehaviour:
   MIN_ELEMS_FOR_COMBO: 3
   EditorMode: 1
   loadingTime: 3
+  explotionParticleDelay: 0.9

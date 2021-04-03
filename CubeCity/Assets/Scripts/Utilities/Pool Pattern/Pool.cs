@@ -41,8 +41,8 @@ public class Pool : MonoBehaviour
     public Setup InstantiateNewObject(bool isActive, int objIndex)
     {
         Setup newObject;
-
         newObject = (Instantiate(objectToPool[objIndex], this.transform));
+        newObject.originalParent = this.transform;
         newObject.SetupAll();
         newObject.gameObject.SetActive(isActive);
 

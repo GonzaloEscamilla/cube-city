@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 1217806876311530422}
   - component: {fileID: 1217806876311530410}
   - component: {fileID: 8765128693451178991}
+  - component: {fileID: 6123122211608015546}
   m_Layer: 9
   m_Name: _Face
   m_TagString: Untagged
@@ -112,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _faceData: {fileID: 11400000, guid: 260641564ee5ed749838681a8603ae0e, type: 2}
+  faceGraphicsHandler: {fileID: 6123122211608015546}
   _type: 0
   _detectionPoints:
   - {fileID: 4672292168661810205}
@@ -154,6 +156,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 0.5, z: 10}
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &6123122211608015546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217806876311530411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f299326d4d66ad4fbff14562a745bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1545013707398705138
 GameObject:
   m_ObjectHideFlags: 0
