@@ -41,7 +41,7 @@ MonoBehaviour:
   - Name: BuyButton
     SoundEvent: event:/Oneshots/UISound/BuyButton
   - Name: RewardButton
-    SoundEvent: 
+    SoundEvent: event:/Bonus/AchivementAcomplished
   - Name: CheckBoxButton
     SoundEvent: 
   - Name: MoveOpenMenu
@@ -59,7 +59,7 @@ MonoBehaviour:
   - Name: PlayButton
     SoundEvent: 
   - Name: AchivementAcomplished
-    SoundEvent: 
+    SoundEvent: event:/Bonus/AchivementAcomplished
   - Name: ResourcesUpdate
     SoundEvent: 
   - Name: GameEndVictory
@@ -70,7 +70,7 @@ MonoBehaviour:
   - Name: PowerUp
     SoundEvent: 
   - Name: ComboSound
-    SoundEvent: 
+    SoundEvent: event:/Bonus/ComboSound
   LevelClips:
   - Name: SmallSuburb
     SoundEvent: event:/BG Music/SmallSuburb
@@ -79,7 +79,7 @@ MonoBehaviour:
   - Name: Downtown
     SoundEvent: event:/BG Music/DownTown
   - Name: Countryside
-    SoundEvent: 
+    SoundEvent: event:/BG Music/CountrySide
   - Name: BigCity
     SoundEvent: 
   - Name: Metropolis
@@ -88,5 +88,5 @@ MonoBehaviour:
   - Name: Ambience1
     SoundEvent: event:/Ambience sounds/ParkAmbience
   - Name: Ambience2
-    SoundEvent: 
+    SoundEvent: event:/Ambience sounds/AirAmbience
   None: 0
