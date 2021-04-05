@@ -46,6 +46,11 @@ public class Level : ScriptableObject
         return amountOfExtraCubes;
     }
 
+    public int GetCubesAmount()
+    {
+        return amountOfCubes;
+    }
+
     /// <summary>
     /// Return all the levels objetives.
     /// </summary>

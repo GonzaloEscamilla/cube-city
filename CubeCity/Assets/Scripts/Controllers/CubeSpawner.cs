@@ -60,6 +60,7 @@ public class CubeSpawner : MonoBehaviour
     {
         isExtraCubesActive = true;
         amountOfExtraFaces = 6 * LevelManager.control.GetLevelSystem().GetCurrentLevel().GetExtraCubes();
+        EventsManager.Instance.CubesAdded(LevelManager.control.GetLevelSystem().GetCurrentLevel().GetExtraCubes());
     }
 
     /// <summary>

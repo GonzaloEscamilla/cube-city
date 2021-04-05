@@ -53,7 +53,20 @@ public class LevelManager : MonoBehaviour
             return _gameSettings;
         }
     }
-   
+
+    private int cubesLeft;
+    public int CubesLeft
+    {
+        get
+        {
+            return cubesLeft;
+        }
+        set
+        {
+            cubesLeft = value;
+            EventsManager.Instance.SetCubesAmount(cubesLeft);
+        }
+    }
 
     private void Awake()
     {
@@ -75,6 +88,8 @@ public class LevelManager : MonoBehaviour
         EventsManager.Instance.onfaceSelected += OnFaceSelectedEvent;
         EventsManager.Instance.onFaceUnselected += OnFaceUnselectedEvent;
         EventsManager.Instance.onCreateButtonPressed += Build;
+        EventsManager.Instance.OnCubesAdded += AddCubes;
+
 
         InitializeLevel();
         _gameSettings.SetInitialization();
@@ -99,8 +114,12 @@ public class LevelManager : MonoBehaviour
             EventsManager.Instance.onfaceSelected -= OnFaceSelectedEvent;
             EventsManager.Instance.onFaceUnselected -= OnFaceUnselectedEvent;
             EventsManager.Instance.onCreateButtonPressed -= Build;
+            EventsManager.Instance.OnCubesAdded -= AddCubes;
+
         }
     }
+
+
 
     public FaceCollisionHandler GetFaceCollidionsHandler()
     {
@@ -119,6 +138,7 @@ public class LevelManager : MonoBehaviour
 
         //BuildInitialCube();
         StartCoroutine(InitializingLevel());
+        cubesLeft = _currentLevel.GetCubesAmount();
     }
 
     private IEnumerator InitializingLevel()
@@ -289,6 +309,8 @@ public class LevelManager : MonoBehaviour
     public void OnBuildFinish() // No se hace pero bue, lo de poner publico este metodo. es para probar el DOTween
     {
         Debug.LogWarning("OnBuild Finish", this.gameObject);
+
+        CubesLeft--;
 
         _cubeIsMoving = false;
         CubeBehaviour currentCube = _spawner.GetCurrentCube();
@@ -490,5 +512,9 @@ public class LevelManager : MonoBehaviour
     public AdjacencyBonusesSO GetAdjacencyBounisesSO()
     {
         return _adjacencyBonusesSO;
+    }
+    private void AddCubes(int amount)
+    {
+        CubesLeft += amount;
     }
 }

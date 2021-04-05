@@ -71,7 +71,18 @@ public class EventsManager : MonoBehaviour
     public Action OnBuy;
     public Action OnAchievementRedimed;
     public Action<Vector3, Quaternion> OnCubeMovingToPosition;
-    
+    public Action<int> OnCubesAdded;
+    public Action<int> OnSetCubesAmount;
+
+    public void SetCubesAmount(int amount)
+    {
+        OnSetCubesAmount?.Invoke(amount);
+    }
+
+    public void CubesAdded(int amount)
+    {
+        OnCubesAdded?.Invoke(amount);
+    }
 
     public void CubeMovingToPosition(Vector3 finalPosition, Quaternion rotation)
     {
