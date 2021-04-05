@@ -87,7 +87,7 @@ public class PreviewCube : CubeBehaviour, IRaySelectable
 
     private void Start()
     {
-        DisableFaceColliders();
+        ResetPosition();
     }
     
     public void HandleNewCube(CubeBehaviour newCube)
