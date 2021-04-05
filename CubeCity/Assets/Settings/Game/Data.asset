@@ -22,7 +22,7 @@ MonoBehaviour:
     - name: Sustainability
       amount: 0
     - name: Wealth
-      amount: 100
+      amount: 50
   - name: CommercialArea
     resources:
     - name: Prosperity
@@ -32,7 +32,7 @@ MonoBehaviour:
     - name: Sustainability
       amount: 0
     - name: Wealth
-      amount: 50
+      amount: 25
   - name: GarbagedumpArea
     resources:
     - name: Prosperity
@@ -52,7 +52,7 @@ MonoBehaviour:
     - name: Sustainability
       amount: -50
     - name: Wealth
-      amount: 80
+      amount: 40
   - name: ParkArera
     resources:
     - name: Prosperity
@@ -82,7 +82,7 @@ MonoBehaviour:
     - name: Sustainability
       amount: 25
     - name: Wealth
-      amount: 50
+      amount: 25
   - name: BusinessAreaLevel2
     resources:
     - name: Prosperity

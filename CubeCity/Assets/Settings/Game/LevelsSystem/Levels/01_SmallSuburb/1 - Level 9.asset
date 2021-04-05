@@ -20,21 +20,24 @@ MonoBehaviour:
     _type: 0
     _resourceType: 0
     _condition: 1
-    _value: 6000
+    _value: 5000
   _secondaryObjetives:
   - _type: 0
     _resourceType: 2
     _condition: 1
-    _value: 600
+    _value: 500
   - _type: 0
     _resourceType: 1
     _condition: 1
-    _value: 400
+    _value: 200
   - _type: 0
     _resourceType: 0
     _condition: 1
-    _value: 9000
-  secondaryObjetivesNames: []
+    _value: 7000
+  secondaryObjetivesNames:
+  - Sustainability greater than 500
+  - Happiness greater than 200
+  - Prosperity greater than 7000
   _facesDistribution:
     distribution:
     - name: BusinessArea
@@ -42,13 +45,13 @@ MonoBehaviour:
     - name: CommercialArea
       amount: 0
     - name: GarbagedumpArea
-      amount: 23
+      amount: 12
     - name: IndustrialArea
       amount: 0
     - name: ParkArera
-      amount: 10
+      amount: 16
     - name: ResidentialArea
-      amount: 15
+      amount: 20
     - name: FarmArea
       amount: 0
   amountOfCubes: 8

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Level 9
   LevelNumber: 17
+  tutorial: {fileID: 0}
   _levelConstraints: []
   _mainObjective:
     _type: 0
@@ -24,15 +25,19 @@ MonoBehaviour:
   - _type: 0
     _resourceType: 3
     _condition: 1
-    _value: 600
+    _value: 500
   - _type: 0
     _resourceType: 1
     _condition: 1
-    _value: 500
+    _value: 300
   - _type: 0
     _resourceType: 2
     _condition: 1
     _value: 500
+  secondaryObjetivesNames:
+  - Economy greater than 500
+  - Happiness greater than 300
+  - Sustainability greater than 500
   _facesDistribution:
     distribution:
     - name: BusinessArea
@@ -53,3 +58,4 @@ MonoBehaviour:
   levelSound:
     Name: 
     SoundEvent: 
+  amountOfExtraCubes: 3

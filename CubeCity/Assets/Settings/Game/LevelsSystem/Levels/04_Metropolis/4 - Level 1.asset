@@ -34,7 +34,10 @@ MonoBehaviour:
     _resourceType: 2
     _condition: 1
     _value: 5
-  secondaryObjetivesNames: []
+  secondaryObjetivesNames:
+  - Economy greater than 800
+  - Prosperity greater than 12000
+  - Achieve 5 combos
   _facesDistribution:
     distribution:
     - name: BusinessArea

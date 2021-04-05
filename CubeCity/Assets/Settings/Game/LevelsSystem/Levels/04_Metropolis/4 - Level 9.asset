@@ -34,7 +34,10 @@ MonoBehaviour:
     _resourceType: 2
     _condition: 1
     _value: 8
-  secondaryObjetivesNames: []
+  secondaryObjetivesNames:
+  - Happiness greater than 1000
+  - Prosperity greater than 25000
+  - Achieve 8 combos
   _facesDistribution:
     distribution:
     - name: BusinessArea

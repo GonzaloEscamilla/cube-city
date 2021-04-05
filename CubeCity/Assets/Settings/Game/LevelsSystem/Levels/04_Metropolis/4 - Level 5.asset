@@ -20,7 +20,7 @@ MonoBehaviour:
     _type: 0
     _resourceType: 0
     _condition: 1
-    _value: 13000
+    _value: 11000
   _secondaryObjetives:
   - _type: 0
     _resourceType: 3
@@ -34,7 +34,10 @@ MonoBehaviour:
     _resourceType: 2
     _condition: 1
     _value: 5
-  secondaryObjetivesNames: []
+  secondaryObjetivesNames:
+  - Economy greater than 1000
+  - Happiness greater than 500
+  - Achieve 5 combos
   _facesDistribution:
     distribution:
     - name: BusinessArea

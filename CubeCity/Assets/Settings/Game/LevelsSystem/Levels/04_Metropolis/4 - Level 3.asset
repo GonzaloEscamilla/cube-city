@@ -29,12 +29,15 @@ MonoBehaviour:
   - _type: 0
     _resourceType: 1
     _condition: 3
-    _value: 200
+    _value: -200
   - _type: 0
     _resourceType: 2
     _condition: 3
-    _value: 200
-  secondaryObjetivesNames: []
+    _value: -200
+  secondaryObjetivesNames:
+  - Economy greater than 800
+  - Happiness less than -200
+  - Sustainability less than -200
   _facesDistribution:
     distribution:
     - name: BusinessArea

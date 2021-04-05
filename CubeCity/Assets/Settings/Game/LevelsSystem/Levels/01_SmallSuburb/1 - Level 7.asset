@@ -20,21 +20,24 @@ MonoBehaviour:
     _type: 0
     _resourceType: 0
     _condition: 1
-    _value: 4000
+    _value: 2000
   _secondaryObjetives:
   - _type: 0
     _resourceType: 2
     _condition: 3
-    _value: 400
+    _value: -100
   - _type: 0
     _resourceType: 1
     _condition: 3
-    _value: 200
+    _value: -50
   - _type: 1
     _resourceType: 0
     _condition: 1
     _value: 3
-  secondaryObjetivesNames: []
+  secondaryObjetivesNames:
+  - Sustainability less than -100
+  - Happiness less than -50
+  - Achieve 3 Combos
   _facesDistribution:
     distribution:
     - name: BusinessArea

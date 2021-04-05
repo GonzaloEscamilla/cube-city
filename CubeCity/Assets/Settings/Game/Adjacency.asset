@@ -22,7 +22,7 @@ MonoBehaviour:
       - name: Prosperity
         amount: 0
       - name: Happiness
-        amount: -30
+        amount: -100
       - name: Sustainability
         amount: 0
       - name: Wealth
@@ -36,7 +36,7 @@ MonoBehaviour:
       - name: Prosperity
         amount: 0
       - name: Happiness
-        amount: -10
+        amount: -25
       - name: Sustainability
         amount: 0
       - name: Wealth
@@ -50,7 +50,7 @@ MonoBehaviour:
       - name: Prosperity
         amount: 0
       - name: Happiness
-        amount: 20
+        amount: 100
       - name: Sustainability
         amount: 0
       - name: Wealth
@@ -64,11 +64,11 @@ MonoBehaviour:
       - name: Prosperity
         amount: 0
       - name: Happiness
-        amount: 10
+        amount: 25
       - name: Sustainability
         amount: 0
       - name: Wealth
-        amount: 5
+        amount: 25
   - Name: Comercial - Industrial
     type1: 1
     type2: 3
@@ -82,7 +82,7 @@ MonoBehaviour:
       - name: Sustainability
         amount: 0
       - name: Wealth
-        amount: 20
+        amount: 50
   - Name: Busines Area - Park
     type1: 0
     type2: 4
@@ -92,7 +92,7 @@ MonoBehaviour:
       - name: Prosperity
         amount: 0
       - name: Happiness
-        amount: 10
+        amount: 50
       - name: Sustainability
         amount: 0
       - name: Wealth
@@ -110,4 +110,4 @@ MonoBehaviour:
       - name: Sustainability
         amount: 0
       - name: Wealth
-        amount: 20
+        amount: 50

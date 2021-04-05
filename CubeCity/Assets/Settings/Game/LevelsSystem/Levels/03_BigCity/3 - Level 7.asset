@@ -34,7 +34,10 @@ MonoBehaviour:
     _resourceType: 2
     _condition: 1
     _value: 4
-  secondaryObjetivesNames: []
+  secondaryObjetivesNames:
+  - Economy greater than 800
+  - Happiness greater than 200
+  - Achieve 4 combos
   _facesDistribution:
     distribution:
     - name: BusinessArea

@@ -25,16 +25,19 @@ MonoBehaviour:
   - _type: 0
     _resourceType: 3
     _condition: 1
-    _value: 600
+    _value: 400
   - _type: 0
     _resourceType: 1
     _condition: 1
-    _value: 100
+    _value: 200
   - _type: 1
     _resourceType: 2
     _condition: 1
-    _value: 3
-  secondaryObjetivesNames: []
+    _value: 2
+  secondaryObjetivesNames:
+  - Economy greater than 400
+  - Happiness greater than 200
+  - Achieve 2 combos
   _facesDistribution:
     distribution:
     - name: BusinessArea

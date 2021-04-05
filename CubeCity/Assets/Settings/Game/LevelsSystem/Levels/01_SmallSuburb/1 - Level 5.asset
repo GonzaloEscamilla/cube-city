@@ -20,7 +20,7 @@ MonoBehaviour:
     _type: 0
     _resourceType: 0
     _condition: 1
-    _value: 3000
+    _value: 2500
   _secondaryObjetives:
   - _type: 0
     _resourceType: 2
@@ -29,12 +29,15 @@ MonoBehaviour:
   - _type: 0
     _resourceType: 1
     _condition: 1
-    _value: 200
+    _value: 100
   - _type: 0
     _resourceType: 0
     _condition: 1
-    _value: 4500
-  secondaryObjetivesNames: []
+    _value: 3500
+  secondaryObjetivesNames:
+  - Sustainability greater than 200
+  - Happiness greater than 100
+  - Prosperity greater than 3500
   _facesDistribution:
     distribution:
     - name: BusinessArea

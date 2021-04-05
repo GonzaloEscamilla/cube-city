@@ -20,7 +20,7 @@ MonoBehaviour:
     _type: 0
     _resourceType: 0
     _condition: 1
-    _value: 800
+    _value: 300
   _secondaryObjetives:
   - _type: 1
     _resourceType: 1
@@ -33,11 +33,11 @@ MonoBehaviour:
   - _type: 0
     _resourceType: 0
     _condition: 1
-    _value: 1500
+    _value: 600
   secondaryObjetivesNames:
   - Achieve 1 Combo
   - Happiness greater than 0
-  - Prosperity greater than 1500
+  - Prosperity greater than 600
   _facesDistribution:
     distribution:
     - name: BusinessArea

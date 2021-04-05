@@ -20,21 +20,24 @@ MonoBehaviour:
     _type: 0
     _resourceType: 0
     _condition: 1
-    _value: 1000
+    _value: 800
   _secondaryObjetives:
   - _type: 1
     _resourceType: 1
     _condition: 1
-    _value: 4
+    _value: 3
   - _type: 0
     _resourceType: 1
     _condition: 3
-    _value: 50
+    _value: -50
   - _type: 0
     _resourceType: 0
     _condition: 1
-    _value: 1500
-  secondaryObjetivesNames: []
+    _value: 1200
+  secondaryObjetivesNames:
+  - Achieve 4 Combo
+  - Happiness less than -50
+  - Prosperity greater than 1500
   _facesDistribution:
     distribution:
     - name: BusinessArea
@@ -42,13 +45,13 @@ MonoBehaviour:
     - name: CommercialArea
       amount: 0
     - name: GarbagedumpArea
-      amount: 14
+      amount: 10
     - name: IndustrialArea
       amount: 0
     - name: ParkArera
       amount: 0
     - name: ResidentialArea
-      amount: 22
+      amount: 26
     - name: FarmArea
       amount: 0
   amountOfCubes: 6
