@@ -43,3 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d606fbf2484d3e047b743dba47d20c7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelSkybox: {fileID: 2100000, guid: 3c2e6d6d7ccaf9e4396a9ea31f99f00b, type: 2}
