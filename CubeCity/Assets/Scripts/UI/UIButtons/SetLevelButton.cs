@@ -121,5 +121,8 @@ public class SetLevelButton : ButtonComponent
                 }
             }
         }
+
+        EventsManager.Instance.SceneLoaded(GameScenes.LevelSelectionMenu);
     }
+
 }
