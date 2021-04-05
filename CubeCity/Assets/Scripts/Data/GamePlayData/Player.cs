@@ -111,10 +111,7 @@ public class Player : MonoBehaviour
         switch (_playerData)
         {
             case PlayerData.StartsAmount:
-                if (!PlayerPrefs.HasKey(PlayerData.StartsAmount.ToString()))
-                {
                     PlayerPrefs.SetInt(PlayerData.StartsAmount.ToString(), 0);
-                }
                 break;
             case PlayerData.CristalsAmount:
                 if (!PlayerPrefs.HasKey(PlayerData.CristalsAmount.ToString()))
