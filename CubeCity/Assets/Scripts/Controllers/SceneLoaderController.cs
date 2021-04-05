@@ -39,6 +39,7 @@ public class SceneLoaderController : MonoBehaviour
     public void Reload()
     {
         LoadScene(_currentScene);
+        SoundManager.Instance.StopLevelSound();
     }
 
     /// <summary>

@@ -46,12 +46,14 @@ public class UILevelScores : MonoBehaviour
 
     private void Init()
     {
+        Debug.Log("Aca:", this.gameObject);
+
         EventsManager.Instance.OnStatisticsUpdate += OnStatisticsUpdate;
         _levelMaxProsperity = LevelManager.control.GetLevelSystem().GetCurrentLevel().GetMainObjective().GetObjetiveValue();
 
-        _levelMaxHappines = LevelManager.control.GetLevelSystem().GetCurrentLevel().GetResourceAmountByType(ResourceTypes.Happiness);
-        _levelMaxSustainability = LevelManager.control.GetLevelSystem().GetCurrentLevel().GetResourceAmountByType(ResourceTypes.Sustainability);
-        _levelMaxWealth = LevelManager.control.GetLevelSystem().GetCurrentLevel().GetResourceAmountByType(ResourceTypes.Wealth);
+        _levelMaxHappines = Mathf.Abs(LevelManager.control.GetLevelSystem().GetCurrentLevel().GetResourceAmountByType(ResourceTypes.Happiness));
+        _levelMaxSustainability = Mathf.Abs(LevelManager.control.GetLevelSystem().GetCurrentLevel().GetResourceAmountByType(ResourceTypes.Sustainability));
+        _levelMaxWealth = Mathf.Abs(LevelManager.control.GetLevelSystem().GetCurrentLevel().GetResourceAmountByType(ResourceTypes.Wealth));
         OnStatisticsUpdate();
     }
 
@@ -89,33 +91,6 @@ public class UILevelScores : MonoBehaviour
             yield return null;
         }
         _prosperityBar.fillAmount = _prosperityBarFillAmount;
-    }
-
-    private IEnumerator FillingSecondaryResources()
-    {
-        function = EasingFunction.GetEasingFunction(type);
-
-        float elapsedTime = 0;
-        float initialHappinesFill = _happinesBarsFillAmount;
-
-        _happinesBarsFillAmount = Mathf.Clamp(Mathf.Abs((float)_levelStatistics.GetResourceAmount(ResourceTypes.Happiness)) / (float)_levelMaxHappines, 0, 1);
-
-        while (elapsedTime <= secondaryBarFillSpeed)
-        {
-            if (_levelStatistics.GetResourceAmount(ResourceTypes.Happiness) > 0)
-            {
-                _happinesPositiveBar.fillAmount = function(initialHappinesFill, _happinesBarsFillAmount, elapsedTime / secondaryBarFillSpeed);
-                _happinesNegativeBar.fillAmount = 0;
-            }
-            else if(_levelStatistics.GetResourceAmount(ResourceTypes.Happiness) < 0)
-            {
-                _happinesNegativeBar.fillAmount = function(initialHappinesFill, _happinesBarsFillAmount, elapsedTime / secondaryBarFillSpeed);
-                _happinesPositiveBar.fillAmount = 0;
-            }
-
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
     }
 
 
