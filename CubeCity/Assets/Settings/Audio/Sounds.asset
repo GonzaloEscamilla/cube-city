@@ -81,7 +81,7 @@ MonoBehaviour:
   - Name: Countryside
     SoundEvent: event:/BG Music/CountrySide
   - Name: BigCity
-    SoundEvent: 
+    SoundEvent: event:/BG Music/CountrySide
   - Name: Metropolis
     SoundEvent: event:/BG Music/Metropolis
   AmbienceSounds:

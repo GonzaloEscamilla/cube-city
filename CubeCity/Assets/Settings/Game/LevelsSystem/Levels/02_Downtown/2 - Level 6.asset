@@ -57,5 +57,5 @@ MonoBehaviour:
   amountOfCubes: 8
   levelSound:
     Name: 
-    SoundEvent: 
+    SoundEvent: event:/BG Music/CountrySide
   amountOfExtraCubes: 3
