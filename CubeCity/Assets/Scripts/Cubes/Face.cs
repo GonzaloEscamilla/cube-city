@@ -131,7 +131,8 @@ public class Face : MonoBehaviour, IRaySelectable, IPoolable
 
     public void Upgrade()
     {
-        //TODO: cambiar el gráfico, animaciones, etc
+        //TODO: Ahora esta hardcodeado para nada es una buena forma de hacerlo.
+        faceGraphicsHandler.SwitchFaceGraphics((FaceTypes) (int)Type + 7);
         _level++;
     }
 
