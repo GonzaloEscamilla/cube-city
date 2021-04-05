@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Level 2
   LevelNumber: 10
+  tutorial: {fileID: 0}
   _levelConstraints: []
   _mainObjective:
     _type: 0
@@ -33,6 +34,7 @@ MonoBehaviour:
     _resourceType: 2
     _condition: 1
     _value: 100
+  secondaryObjetivesNames: []
   _facesDistribution:
     distribution:
     - name: BusinessArea
@@ -52,4 +54,5 @@ MonoBehaviour:
   amountOfCubes: 6
   levelSound:
     Name: 
-    SoundEvent: 
+    SoundEvent: event:/BG Music/CountrySide
+  amountOfExtraCubes: 3

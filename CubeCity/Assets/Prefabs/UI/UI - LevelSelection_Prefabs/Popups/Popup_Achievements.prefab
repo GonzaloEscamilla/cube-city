@@ -1109,6 +1109,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3400531406831094755, guid: 931ef2698fb924a44aecbfce9757482d,
+        type: 3}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -1169,6 +1180,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359729402953395335, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359729402953395335, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 3827765645033239339, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
@@ -1290,6 +1311,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 94478d4e7238b9d4bafe1b73de268cf3,
+        type: 3}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -1471,6 +1498,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1579103731181334041, guid: 29572170f2b184146b74e65f3bf396c9,
+        type: 3}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -1531,6 +1564,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359729402953395335, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359729402953395335, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 3827765645033239339, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
@@ -1652,6 +1695,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 94478d4e7238b9d4bafe1b73de268cf3,
+        type: 3}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -1712,6 +1761,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359729402953395335, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359729402953395335, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 3827765645033239339, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
@@ -1833,6 +1892,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 94478d4e7238b9d4bafe1b73de268cf3,
+        type: 3}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -1893,6 +1958,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359729402953395335, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359729402953395335, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3827765645033239339, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
@@ -2014,6 +2089,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5028223025864572289, guid: a51ae431077692942aea9ebb65f41295,
+        type: 3}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -2074,6 +2160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359729402953395335, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3827765645033239339, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
@@ -2194,6 +2285,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5028223025864572289, guid: a51ae431077692942aea9ebb65f41295,
+        type: 3}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
@@ -2376,6 +2478,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1579103731181334041, guid: 29572170f2b184146b74e65f3bf396c9,
+        type: 3}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -2436,6 +2544,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359729402953395335, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3827765645033239339, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
@@ -2556,6 +2669,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5028223025864572289, guid: a51ae431077692942aea9ebb65f41295,
+        type: 3}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
@@ -2738,6 +2862,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6728580039193710210, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5797075543005013831, guid: 00e9a36d468bc814a9c7517f4ac5118a,
+        type: 3}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
