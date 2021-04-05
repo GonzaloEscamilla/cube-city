@@ -347,6 +347,7 @@ public class LevelManager : MonoBehaviour
             {
                 _levelStatistics.CalculateNextResources(face.GetFaceData());
                 face.Upgrade();
+                VFXEventManager.Instance.SpawnComboEffectInFace(face);
             }
         }
     }
@@ -372,7 +373,6 @@ public class LevelManager : MonoBehaviour
             {
                 result.Add(group);
                 _levelStatistics.AmountOfCombosMade++;
-                Debug.Log("aca");
                 EventsManager.Instance.ComboMade();
                 //SoundManager.Instance.PlayComboSound(group[0].Type);
             }
