@@ -29,15 +29,15 @@ MonoBehaviour:
   - _type: 0
     _resourceType: 1
     _condition: 1
-    _value: 300
+    _value: 400
   - _type: 1
     _resourceType: 0
     _condition: 1
     _value: 5
   secondaryObjetivesNames:
-  - Sustainability greater than 800
-  - Happiness greater than 600
-  - Achieve 8 Combos
+  - Sustainability greater than 500
+  - Happiness greater than 400
+  - Achieve 5 Combos
   _facesDistribution:
     distribution:
     - name: BusinessArea

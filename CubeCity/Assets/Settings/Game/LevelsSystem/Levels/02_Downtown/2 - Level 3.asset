@@ -25,7 +25,7 @@ MonoBehaviour:
   - _type: 0
     _resourceType: 3
     _condition: 1
-    _value: 100
+    _value: 200
   - _type: 0
     _resourceType: 1
     _condition: 3
@@ -35,7 +35,7 @@ MonoBehaviour:
     _condition: 1
     _value: 1500
   secondaryObjetivesNames:
-  - Economy greater than 100
+  - Economy greater than 200
   - Happiness less than -100
   - Prosperity greater than 1500
   _facesDistribution:
@@ -59,3 +59,4 @@ MonoBehaviour:
     Name: 
     SoundEvent: event:/BG Music/CountrySide
   amountOfExtraCubes: 3
+  tutorialContainer: {fileID: 0}
