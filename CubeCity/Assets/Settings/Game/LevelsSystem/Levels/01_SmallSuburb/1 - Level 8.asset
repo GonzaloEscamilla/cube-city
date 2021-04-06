@@ -35,9 +35,9 @@ MonoBehaviour:
     _condition: 1
     _value: 5
   secondaryObjetivesNames:
-  - Sustainability greater than 500
-  - Happiness greater than 300
-  - Achieve 5 Combos
+  - Sustainability greater than 800
+  - Happiness greater than 600
+  - Achieve 8 Combos
   _facesDistribution:
     distribution:
     - name: BusinessArea
@@ -59,3 +59,4 @@ MonoBehaviour:
     Name: 
     SoundEvent: event:/BG Music/GreenComunity
   amountOfExtraCubes: 3
+  tutorialContainer: {fileID: 0}

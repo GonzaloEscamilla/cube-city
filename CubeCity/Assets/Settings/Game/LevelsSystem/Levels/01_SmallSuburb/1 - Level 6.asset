@@ -35,9 +35,9 @@ MonoBehaviour:
     _condition: 1
     _value: 4500
   secondaryObjetivesNames:
-  - Sustainability greater than 300
-  - Happiness greater than 150
-  - Prosperity greater than 4500
+  - Sustainability greater than 400
+  - Happiness greater than 100
+  - Prosperity greater than 6000
   _facesDistribution:
     distribution:
     - name: BusinessArea
@@ -59,3 +59,4 @@ MonoBehaviour:
     Name: 
     SoundEvent: event:/BG Music/GreenComunity
   amountOfExtraCubes: 3
+  tutorialContainer: {fileID: 0}

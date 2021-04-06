@@ -59,3 +59,5 @@ MonoBehaviour:
     Name: 
     SoundEvent: event:/BG Music/SmallSuburb
   amountOfExtraCubes: 3
+  tutorialContainer: {fileID: 6902893806086900524, guid: d92d19dcf50a88e4f8b3297327194163,
+    type: 3}

@@ -59,3 +59,5 @@ MonoBehaviour:
     Name: 
     SoundEvent: event:/BG Music/CountrySide
   amountOfExtraCubes: 3
+  tutorialContainer: {fileID: 6902893806086900524, guid: 02be774e8f057004898e67aa7df81a14,
+    type: 3}

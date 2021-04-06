@@ -90,13 +90,11 @@ public class LevelManager : MonoBehaviour
         EventsManager.Instance.onCreateButtonPressed += Build;
         EventsManager.Instance.OnCubesAdded += AddCubes;
 
-
         InitializeLevel();
         _gameSettings.SetInitialization();
         SoundManager.Instance.PlayLevelSound();
 
         PowerUpsManager.Instance.Init(FindObjectOfType<InputManager>());
-        Debug.Log("Playerskybox: " + Player.Instance.LevelSkybox);
 
         StartCoroutine(WaitToSetSkybox());
     }

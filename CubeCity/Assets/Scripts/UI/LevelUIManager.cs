@@ -18,6 +18,26 @@ public class LevelUIManager : MonoBehaviour
         _createButton.onClick.AddListener(() => CreateNewCube());
         _cancel.onClick.AddListener(() => CancelButtonPressed());
         _UIButtonQuit.onClick.AddListener(() => QuitLevel());
+
+        StartCoroutine(WaitToShowTutorial());
+    }
+
+    private IEnumerator WaitToShowTutorial()
+    {
+        yield return new WaitForSeconds(1f);
+        GameObject tutorial = LevelManager.control.GetCurrentLevel().GetTutorialContainer();
+     
+        if (tutorial != null)
+        {
+            tutorial.transform.parent = this.transform;
+            tutorial.transform.position = this.transform.position;
+        }
+    }
+
+    [ContextMenu("Teswt")]
+    public void Test()
+    {
+        GameObject tutorial = LevelManager.control.GetCurrentLevel().GetTutorialContainer();
     }
 
     private void OnEnable()

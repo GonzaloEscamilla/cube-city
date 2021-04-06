@@ -37,7 +37,7 @@ MonoBehaviour:
   secondaryObjetivesNames:
   - Achieve 1 Combo
   - Happiness greater than 0
-  - Prosperity greater than 600
+  - Prosperity greater than 1500
   _facesDistribution:
     distribution:
     - name: BusinessArea
@@ -59,3 +59,5 @@ MonoBehaviour:
     Name: 
     SoundEvent: event:/BG Music/SmallSuburb
   amountOfExtraCubes: 3
+  tutorialContainer: {fileID: 6902893806086900524, guid: c68fd178ac2ec6743a9c2092790ca552,
+    type: 3}

@@ -59,3 +59,4 @@ MonoBehaviour:
     Name: 
     SoundEvent: event:/BG Music/GreenComunity
   amountOfExtraCubes: 3
+  tutorialContainer: {fileID: 0}

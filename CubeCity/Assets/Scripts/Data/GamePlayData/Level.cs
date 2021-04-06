@@ -29,6 +29,8 @@ public class Level : ScriptableObject
 
     [SerializeField] private int amountOfExtraCubes = 3;
 
+    [Header("Tutorials")]
+    [SerializeField] private GameObject tutorialContainer;
 
     private void OnValidate()
     {
@@ -39,6 +41,14 @@ public class Level : ScriptableObject
         }
 
         amountOfExtraCubes = 3;
+    }
+
+    public GameObject GetTutorialContainer()
+    {
+        if (tutorialContainer != null)
+            return Instantiate(tutorialContainer);
+        else
+            return null;
     }
 
     public int GetExtraCubes()
