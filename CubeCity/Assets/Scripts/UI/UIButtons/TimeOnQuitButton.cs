@@ -7,7 +7,7 @@ public class TimeOnQuitButton : ButtonComponent
 {
     public override void Release()
     {
-        Player.Instance.TimePlayed =+ LevelManager.control.GetLevelStatistics().ElapsedTime;
+        Player.Instance.TimePlayed += LevelManager.control.GetLevelStatistics().ElapsedTime;
         SaveLoadController.instance.Save();
     }
 }
