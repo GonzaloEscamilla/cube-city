@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555473fcb09d38347aab97e833060f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: 8
+  soundToPlay: 2
 --- !u!114 &3432410519521986266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2727,7 +2727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555473fcb09d38347aab97e833060f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: 8
+  soundToPlay: 2
 --- !u!114 &7287936766552026009
 MonoBehaviour:
   m_ObjectHideFlags: 0

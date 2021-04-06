@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555473fcb09d38347aab97e833060f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: 8
+  soundToPlay: 2
 --- !u!114 &4772563631204402359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1120,6 +1120,11 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7536587882731924808, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_text
+      value: 005
+      objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -1317,6 +1322,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 94478d4e7238b9d4bafe1b73de268cf3,
         type: 3}
+    - target: {fileID: 7536587882731924808, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_text
+      value: 003
+      objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -1504,6 +1514,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1579103731181334041, guid: 29572170f2b184146b74e65f3bf396c9,
         type: 3}
+    - target: {fileID: 7536587882731924808, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_text
+      value: 010
+      objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -1701,6 +1716,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 94478d4e7238b9d4bafe1b73de268cf3,
         type: 3}
+    - target: {fileID: 7536587882731924808, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_text
+      value: 005
+      objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -1898,6 +1918,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 94478d4e7238b9d4bafe1b73de268cf3,
         type: 3}
+    - target: {fileID: 7536587882731924808, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_text
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -2100,6 +2125,11 @@ PrefabInstance:
       propertyPath: m_Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7536587882731924808, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_text
+      value: 003
+      objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -2297,6 +2327,11 @@ PrefabInstance:
       propertyPath: m_Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7536587882731924808, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_text
+      value: 050
+      objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -2484,6 +2519,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1579103731181334041, guid: 29572170f2b184146b74e65f3bf396c9,
         type: 3}
+    - target: {fileID: 7536587882731924808, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_text
+      value: 003
+      objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -2681,6 +2721,11 @@ PrefabInstance:
       propertyPath: m_Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7536587882731924808, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_text
+      value: 005
+      objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
@@ -2868,6 +2913,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5797075543005013831, guid: 00e9a36d468bc814a9c7517f4ac5118a,
         type: 3}
+    - target: {fileID: 7536587882731924808, guid: e8c31085d9969164e9ceab27d9c4b24c,
+        type: 3}
+      propertyPath: m_text
+      value: 010
+      objectReference: {fileID: 0}
     - target: {fileID: 8549420704754145331, guid: e8c31085d9969164e9ceab27d9c4b24c,
         type: 3}
       propertyPath: achievement
