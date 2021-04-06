@@ -29,15 +29,15 @@ MonoBehaviour:
   - _type: 0
     _resourceType: 1
     _condition: 1
-    _value: 50
+    _value: 100
   - _type: 1
     _resourceType: 0
     _condition: 1
     _value: 2
   secondaryObjetivesNames:
-  - Achieve 2 Combo
   - Economy greater than 100
-  - Happiness greater than 50
+  - Happiness greater than 100
+  - Achieve 2 Combo
   _facesDistribution:
     distribution:
     - name: BusinessArea

@@ -29,14 +29,14 @@ MonoBehaviour:
   - _type: 0
     _resourceType: 1
     _condition: 1
-    _value: 200
+    _value: 400
   - _type: 0
     _resourceType: 0
     _condition: 1
     _value: 7000
   secondaryObjetivesNames:
   - Sustainability greater than 500
-  - Happiness greater than 200
+  - Happiness greater than 400
   - Prosperity greater than 7000
   _facesDistribution:
     distribution:

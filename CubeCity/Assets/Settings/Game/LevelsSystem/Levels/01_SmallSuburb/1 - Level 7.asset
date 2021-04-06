@@ -25,7 +25,7 @@ MonoBehaviour:
   - _type: 0
     _resourceType: 2
     _condition: 3
-    _value: -100
+    _value: 100
   - _type: 0
     _resourceType: 1
     _condition: 3
@@ -35,8 +35,8 @@ MonoBehaviour:
     _condition: 1
     _value: 3
   secondaryObjetivesNames:
-  - Sustainability less than 400
-  - Happiness less than 200
+  - Sustainability less than 100
+  - Happiness less than -50
   - Achieve 3 Combos
   _facesDistribution:
     distribution:
