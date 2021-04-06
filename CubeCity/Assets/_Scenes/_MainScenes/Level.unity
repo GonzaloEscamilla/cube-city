@@ -3670,18 +3670,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4697cd0ac538b6f4c8c9276d5657d672, type: 3}
---- !u!114 &1375009392 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5998183404356004179, guid: 4697cd0ac538b6f4c8c9276d5657d672,
+--- !u!1 &1375009392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8307974250297090170, guid: 4697cd0ac538b6f4c8c9276d5657d672,
     type: 3}
   m_PrefabInstance: {fileID: 1375009391}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1375009393 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7203507507456231959, guid: 4697cd0ac538b6f4c8c9276d5657d672,
@@ -3694,16 +3688,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0390bd8b8ffd640b34fe25065ff1df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1375009394 stripped
+--- !u!114 &1375009394
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8126998791096414195, guid: 4697cd0ac538b6f4c8c9276d5657d672,
-    type: 3}
-  m_PrefabInstance: {fileID: 1375009391}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1375009392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 48274e897b6b5b249aad5c4d67a8204c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1375009395 stripped
@@ -4399,7 +4393,7 @@ PrefabInstance:
         type: 3}
       propertyPath: tutorialText
       value: 
-      objectReference: {fileID: 1375009392}
+      objectReference: {fileID: 0}
     - target: {fileID: 2364388228845091328, guid: 80fa79d6797e3bd4198c2c8a804dd12f,
         type: 3}
       propertyPath: tutorialPanel
@@ -4409,7 +4403,7 @@ PrefabInstance:
         type: 3}
       propertyPath: tutorialImage
       value: 
-      objectReference: {fileID: 1375009394}
+      objectReference: {fileID: 0}
     - target: {fileID: 3124108026444615407, guid: 80fa79d6797e3bd4198c2c8a804dd12f,
         type: 3}
       propertyPath: txtCubeCount
