@@ -82,7 +82,7 @@ public class StageCompleteInformation : MonoBehaviour
                 break;
         }
 
-        Player.Instance.TimePlayed =+ endData.timeSpent;
+        Player.Instance.TimePlayed += endData.timeSpent;
 
         SaveInformarion(endData.levelNumber,starsAmount, levelStatistics.GetResourceAmount(ResourceTypes.Prosperity), endData.success);
 
