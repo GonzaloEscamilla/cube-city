@@ -63,8 +63,8 @@ MonoBehaviour:
   objectToPool:
   - {fileID: 3481187157335841208, guid: 7c0deb915c1419c43b3311410295ef32, type: 3}
   pool: []
-  startAmount: 6
-  canGrow: 0
+  startAmount: 12
+  canGrow: 1
   initializedAtStart: 0
   detachObjectWhenPooled: 0
 --- !u!1001 &2248329692672665349

@@ -13,6 +13,6 @@ public class SetTimePlayedButton : ButtonComponent
     public override void Release()
     {
         TimeSpan time = TimeSpan.FromSeconds(Player.Instance.TimePlayed);
-        hourText.text = time.ToString();
+        hourText.text = string.Format("{0:D2}:{1:D2}:{2:D2}", time.Hours, time.Minutes, time.Seconds);
     }
 }

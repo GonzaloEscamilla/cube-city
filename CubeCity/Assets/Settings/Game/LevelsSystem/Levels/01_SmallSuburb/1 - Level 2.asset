@@ -35,9 +35,9 @@ MonoBehaviour:
     _condition: 1
     _value: 1000
   secondaryObjetivesNames:
-  - Achieve 2 Combo
+  - Achieve 1 Combo
   - Happiness greater than 0
-  - Prosperity greater than 3500
+  - Prosperity greater than 1000
   _facesDistribution:
     distribution:
     - name: BusinessArea
